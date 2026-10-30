@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emily & Alexandre · Rome 2027</title>
+<meta name="description" content="Emily & Alexandre are getting married · June 26–27, 2027 · Rome, Italy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#CC6600;   /* tramonto */
+  --rose:#D4847A;     /* rosa antico */
+  --pink:#DE4579;     /* magenta tramonto */
+  --cream:#F7D89A;    /* oro chiaro */
+  --ink:#8A3A22;      /* terracotta scritte */
+  --text:#4a3428;
+  --paper:#FBF6EE;
+  --paper2:#F6EBDD;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.6}
+a{color:inherit}
+img{max-width:100%;display:block}
+.script{font-family:'Pinyon Script',cursive;font-weight:400;color:var(--ink)}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange)}
+.btn{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border:1px solid var(--ink);color:var(--ink);transition:.3s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:linear-gradient(90deg,var(--orange),var(--pink));border:0;color:#fff}
+.btn.solid:hover{opacity:.88}
+.todo{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;background:#fff3c4;color:#8a6500;padding:2px 8px;border-radius:3px;margin-top:6px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:20;background:rgba(251,246,238,.94);backdrop-filter:blur(6px);border-bottom:1px solid #ecdcc6}
+.nav-in{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:22px;list-style:none}
+.links a{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none}
+.links a:hover{color:var(--orange)}
+.burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
+@media(max-width:960px){
+  .burger{display:block}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:center;gap:18px;padding:24px;background:var(--paper);border-bottom:1px solid #ecdcc6}
+  .links.open{display:flex}
+}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:70px 20px 40px;background:linear-gradient(180deg,#F9D9B8 0%,#F6C9C0 30%,var(--paper) 75%)}
+.hero .eyebrow{color:var(--ink)}
+.hero h1{font-size:clamp(64px,11vw,130px);line-height:1.05;margin:16px 0 6px}
+.hero .date{font-size:28px;letter-spacing:.12em}
+.hero .place{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.35em;text-transform:uppercase;margin-top:4px}
+.hero img{max-width:1000px;width:100%;margin:40px auto 0;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%)}
+.scroll{display:block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.3em;text-decoration:none;color:var(--orange)}
+
+/* SECTIONS */
+section{padding:90px 20px}
+section.alt{background:var(--paper2)}
+.wrap{max-width:1100px;margin:auto}
+.head{text-align:center;margin-bottom:50px}
+.head h2{font-size:clamp(52px,7vw,78px);line-height:1.1;margin-top:8px}
+.head p{font-style:italic;max-width:620px;margin:8px auto 0}
+.divider{width:120px;height:2px;margin:18px auto 0;background:linear-gradient(90deg,var(--cream),var(--orange),var(--pink),var(--rose))}
+
+/* SCHEDULE */
+.event{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:70px}
+.event:nth-child(even) .pic{order:2}
+.event .pic img{width:100%;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%)}
+.event h3{font-size:58px;line-height:1.1;margin:6px 0}
+.event .time{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.25em;color:var(--pink);text-transform:uppercase}
+.event .addr{font-style:italic}
+.event .addr a{text-decoration:none;border-bottom:1px solid var(--rose)}
+.shuttle{max-width:760px;margin:-30px auto 70px;text-align:center;padding:22px 26px;border:1px dashed var(--rose);border-radius:4px;font-style:italic;background:#fff8}
+.shuttle b{font-style:normal;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:4px}
+@media(max-width:760px){.event{grid-template-columns:1fr;gap:16px;text-align:center}.event:nth-child(even) .pic{order:0}}
+
+/* CARDS */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.card{background:#fff;padding:40px 36px;border-top:3px solid var(--orange);box-shadow:0 10px 30px -18px rgba(138,58,34,.35)}
+.card:nth-child(2){border-top-color:var(--pink)}
+.card h3{font-size:46px;line-height:1.1;margin:8px 0 10px}
+.card p{margin-bottom:16px}
+.card .link{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;color:var(--orange)}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+/* RSVP */
+.rsvp{text-align:center;background:linear-gradient(160deg,#F7D89A55,#D4847A40,#DE457930)}
+.asks{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;max-width:640px;margin:0 auto 40px;list-style:none;text-align:left}
+.asks li::before{content:"✦ ";color:var(--orange)}
+.deadline{margin-top:24px;font-style:italic}
+@media(max-width:560px){.asks{grid-template-columns:1fr}}
+
+/* HOTELS */
+.hotel h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--ink)}
+.code{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.12em;padding:6px 12px;background:var(--cream);color:var(--ink)}
+.others{margin-top:50px;text-align:center}
+.others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:18px}
+.others a{display:block;padding:10px 18px;border:1px solid #e3cbb3;text-decoration:none;background:#fff;transition:.25s}
+.others a:hover{border-color:var(--orange);color:var(--orange)}
+
+/* SIGHTS */
+.top4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.top4 div{padding:30px 10px;background:#fff;border-bottom:3px solid var(--rose)}
+.top4 .num{font-size:34px;color:var(--orange);font-style:italic}
+.top4 h4{font-size:24px;font-weight:600;color:var(--ink)}
+.extra{text-align:center;margin-top:50px}
+.extra .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.extra span{padding:8px 16px;border-radius:30px;background:#fff;border:1px solid #ecd2c0;font-size:18px}
+@media(max-width:760px){.top4{grid-template-columns:1fr 1fr}}
+
+/* INFO */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px}
+.info h4{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+@media(max-width:760px){.info{grid-template-columns:1fr}}
+
+footer{text-align:center;padding:80px 20px 60px;background:linear-gradient(0deg,#F6C9C0,var(--paper))}
+footer .script{font-size:64px}
+footer .tag{font-family:'Montserrat',sans-serif;letter-spacing:.3em;font-size:12px;color:var(--pink);margin-top:14px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#top">E&amp;A</a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <ul class="links" onclick="this.classList.remove('open')">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#dress">Dress Code</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#stay">Where to Stay</a></li>
+      <li><a href="#kids">Kids &amp; Transfers</a></li>
+      <li><a href="#see">Things to See</a></li>
+      <li><a href="#info">Useful Info</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="eyebrow">We're getting married</p>
+  <h1 class="script">Emily &amp; Alexandre</h1>
+  <p class="date">June 26 – 27, 2027</p>
+  <p class="place">Rome, Italy</p>
+  <img src="img/terrazza.webp" alt="Watercolor view of Rome's rooftops from Terrazza Caffarelli">
+  <a class="scroll" href="#schedule">SCROLL FOR DETAILS ↓</a>
+</header>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">The Weekend</p>
+      <h2 class="script">Schedule</h2>
+      <p>Two days, three special places. Here's what to expect.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="event reveal">
+      <div class="pic"><img src="img/terrazza.webp" alt="Terrazza Caffarelli watercolor"></div>
+      <div>
+        <p class="eyebrow">Day 1 · Saturday, June 26</p>
+        <h3 class="script">Welcome Party</h3>
+        <p class="time">19:00</p>
+        <p class="addr"><strong>Terrazza Caffarelli</strong><br>
+          <a href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></p>
+      </div>
+    </div>
+
+    <div class="event reveal">
+      <div class="pic"><img src="img/synagogue.webp" alt="Great Synagogue of Rome watercolor"></div>
+      <div>
+        <p class="eyebrow">Day 2 · Sunday, June 27</p>
+        <h3 class="script">Ceremony</h3>
+        <p class="time">15:30</p>
+        <p class="addr"><strong>Tempio Maggiore di Roma</strong><br>
+          <a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
+      </div>
+    </div>
+
+    <div class="shuttle reveal">
+      <b>Shuttle transfer</b>
+      About 45 minutes each way to the Castle. Departing from the Tempio Maggiore only — let us know if you'd like to use it when you fill out your RSVP.
+    </div>
+
+    <div class="event reveal">
+      <div class="pic"><img src="img/castello.webp" alt="Castello Odescalchi at sunset watercolor"></div>
+      <div>
+        <p class="eyebrow">Day 2 · Sunday, June 27</p>
+        <h3 class="script">Reception</h3>
+        <p class="time">18:00</p>
+        <p class="addr"><strong>Castello Odescalchi di Palo Laziale</strong><br>
+          <a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dress" class="alt">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">What to Wear</p>
+      <h2 class="script">Dress Code</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid2">
+      <div class="card reveal">
+        <p class="eyebrow">Welcome Party</p>
+        <h3 class="script">Italian Dolce Vita</h3>
+        <p>An Italian Dolce Vita style — think vibrant colors, light fabrics and relaxed elegance.</p>
+        <a class="link" href="#" target="_blank" rel="noopener">View the Pinterest moodboard →</a><br>
+        <span class="todo">TODO: Pinterest link</span>
+      </div>
+      <div class="card reveal">
+        <p class="eyebrow">Wedding Day</p>
+        <h3 class="script">Black Tie Elegant</h3>
+        <p>Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.</p>
+        <a class="link" href="#" target="_blank" rel="noopener">View the Pinterest moodboard →</a><br>
+        <span class="todo">TODO: Pinterest link</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp" class="rsvp">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Let us know you're coming</p>
+      <h2 class="script">RSVP</h2>
+      <p>Filling out the form will help us plan every detail. Here's what we'll ask you:</p>
+      <div class="divider"></div>
+    </div>
+    <ul class="asks reveal">
+      <li>Full name</li><li>Email address</li>
+      <li>Home address</li><li>Attendance at each event</li>
+      <li>Whether you need the transfer</li><li>Allergies or intolerances</li>
+      <li>Which hotel you'll be staying at</li>
+    </ul>
+    <a class="btn solid" href="#" target="_blank" rel="noopener">Fill out the RSVP form</a><br>
+    <span class="todo">TODO: Google Form link</span>
+    <p class="deadline">Please respond by <span class="todo">date TBD</span></p>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Where to Stay</p>
+      <h2 class="script">Recommended Hotels</h2>
+      <p>These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid2">
+      <div class="card hotel reveal">
+        <p class="eyebrow">Recommended · Near the Temple</p>
+        <h3>Hotel 47 Rome</h3>
+        <p class="addr"><em>Via Luigi Petroselli 47, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
+        <a class="link" href="https://www.google.com/search?q=Hotel+47+Rome" target="_blank" rel="noopener">Visit website →</a><br>
+        <span class="code">Code TheRomilys · 10% off</span>
+      </div>
+      <div class="card hotel reveal">
+        <p class="eyebrow">Recommended · Near the Temple</p>
+        <h3>Rhinoceros Rome</h3>
+        <p class="addr"><em>Via del Velabro 9, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
+        <a class="link" href="https://www.google.com/search?q=Rhinoceros+Rome" target="_blank" rel="noopener">Visit website →</a><br>
+        <span class="code">Code TheRomilys · 10% off</span>
+      </div>
+      <div class="card hotel reveal">
+        <p class="eyebrow">Recommended · Near the Temple</p>
+        <h3>Palazzo Velabro</h3>
+        <p class="addr"><em>Via del Velabro 16, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
+        <a class="link" href="https://www.google.com/search?q=Palazzo+Velabro+Rome" target="_blank" rel="noopener">Visit website →</a>
+      </div>
+      <div class="card hotel reveal">
+        <p class="eyebrow">Recommended · Near the Temple</p>
+        <h3>CitizenM Isola Tiberina</h3>
+        <p class="addr"><em>Lungotevere de' Cenci 5–8, Rome (RM)</em><br>Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</p>
+        <a class="link" href="https://www.google.com/search?q=citizenM+Isola+Tiberina" target="_blank" rel="noopener">Visit website →</a>
+      </div>
+    </div>
+    <div class="others reveal">
+      <p class="eyebrow">Other options in the city</p>
+      <ul>
+        <li><a href="https://www.google.com/search?q=The+Corner+Hotel+Roma" target="_blank" rel="noopener">The Corner Hotel Roma →</a></li>
+        <li><a href="https://www.google.com/search?q=NYX+Hotel+Rome" target="_blank" rel="noopener">NYX Hotel →</a></li>
+        <li><a href="https://www.google.com/search?q=NH+Hotel+Roma+Centro" target="_blank" rel="noopener">NH Hotel Roma Centro →</a></li>
+        <li><a href="https://www.google.com/search?q=The+Hoxton+Rome" target="_blank" rel="noopener">The Hoxton →</a></li>
+        <li><a href="https://www.google.com/search?q=Hotel+De+Russie+Rome" target="_blank" rel="noopener">Hotel De Russie →</a></li>
+        <li><a href="https://www.google.com/search?q=Bvlgari+Hotel+Roma" target="_blank" rel="noopener">Bvlgari Hotel →</a></li>
+        <li><a href="https://www.google.com/search?q=The+Rome+Edition" target="_blank" rel="noopener">The Edition →</a></li>
+        <li><a href="https://www.google.com/search?q=Hotel+Eden+Roma" target="_blank" rel="noopener">Hotel Eden Roma →</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kids" class="alt">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">For Peace of Mind</p>
+      <h2 class="script">Kids &amp; Private Transfers</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid2">
+      <div class="card reveal">
+        <h3 class="script">Childcare</h3>
+        <p>Babysitting service provided by Orienta Family. For all arrangements, please contact Francesca directly.</p>
+        <a class="link" href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br>
+        <a class="link" href="mailto:info@orientafamily.com">info@orientafamily.com</a>
+      </div>
+      <div class="card reveal">
+        <h3 class="script">Private Transfers</h3>
+        <p>To book a private car at any time.</p>
+        <a class="link" href="tel:+390000000000">+39 000 000 0000</a><br>
+        <span class="todo">TODO: phone number</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="eat">
+  <div class="wrap" style="text-align:center">
+    <div class="head reveal">
+      <p class="eyebrow">Our Favorite Spots</p>
+      <h2 class="script">Where to Eat in Rome</h2>
+      <p>We've put our favorite restaurants in the city on one map.</p>
+      <div class="divider"></div>
+    </div>
+    <a class="btn" href="#" target="_blank" rel="noopener">Open the restaurant map</a><br>
+    <span class="todo">TODO: Google Maps list link</span>
+  </div>
+</section>
+
+<section id="see" class="alt">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Make the Most of Your Trip</p>
+      <h2 class="script">Things to See in Rome</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="top4 reveal">
+      <div><p class="num">I</p><h4>Vatican City</h4></div>
+      <div><p class="num">II</p><h4>Vatican Museums</h4></div>
+      <div><p class="num">III</p><h4>Colosseum</h4></div>
+      <div><p class="num">IV</p><h4>Roman &amp; Imperial Forums</h4></div>
+    </div>
+    <div class="extra reveal">
+      <p class="eyebrow">If you have extra time, here are our picks</p>
+      <div class="tags">
+        <span>Pantheon</span><span>Trevi Fountain &amp; Piazza Navona</span><span>Villa Borghese &amp; Borghese Gallery</span>
+        <span>Trastevere</span><span>Castel Sant'Angelo</span><span>Baths of Caracalla</span>
+        <span>Appian Way</span><span>Day Trip to Tivoli or Ostia Antica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">A Few Last Things</p>
+      <h2 class="script">Useful Information</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="info reveal">
+      <div><h4>What the Weather's Like</h4><p>Late June in Rome is warm (82–91°F / 28–33°C). Light fabrics, a fan, and sunscreen are your best friends.</p></div>
+      <div><h4>Kids</h4><p>If you need a nanny for the events, you'll find everything in the <a href="#kids">“Kids &amp; Private Transfers”</a> section.</p></div>
+      <div><h4>Gifts</h4><p>Having you with us in Rome is the greatest gift. If you'd still like to give something, we'll share details closer to the date.</p></div>
+      <div><h4>Getting There</h4><p>The main airports are Fiumicino (FCO) and Ciampino (CIA). For a private airport transfer, see the number under <a href="#kids">“Private Transfers”</a>. Also note that on Sunday a round-trip shuttle will run between the Tempio Maggiore and Castello Odescalchi (see <a href="#schedule">“Schedule”</a>).</p></div>
+      <div><h4>Contact</h4><p>For any questions, feel free to reach out at <a href="tel:+393279304587">+39 327 930 4587</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="script">Emily &amp; Alexandre</p>
+  <p>June 26–27, 2027 · Rome, Italy</p>
+  <p class="tag">#EMILYALEXANDRE2027</p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
