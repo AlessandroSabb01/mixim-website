@@ -1,389 +1,689 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Emily & Alexandre · Rome 2027</title>
 <meta name="description" content="Emily & Alexandre are getting married · June 26–27, 2027 · Rome, Italy">
+<meta name="theme-color" content="#2a1510">
+<meta property="og:title" content="Emily & Alexandre · Rome 2027">
+<meta property="og:description" content="June 26–27, 2027 · Rome, Italy">
+<meta property="og:image" content="img/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Ms+Madi&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<script>document.documentElement.classList.replace('no-js','js')</script>
 <style>
+/* ───────────────────────── Tokens ───────────────────────── */
 :root{
-  --orange:#CC6600;   /* tramonto */
-  --rose:#D4847A;     /* rosa antico */
-  --pink:#DE4579;     /* magenta tramonto */
-  --cream:#F7D89A;    /* oro chiaro */
-  --ink:#8A3A22;      /* terracotta scritte */
-  --text:#4a3428;
-  --paper:#FBF6EE;
-  --paper2:#F6EBDD;
+  /* Rome-sunset palette from the brief */
+  --sunset:#CC6600;
+  --rose:#D4847A;
+  --magenta:#DE4579;
+  --gold:#F7D89A;
+
+  --cream:#F4ECDF;          /* page, like Giona's parchment */
+  --cream-2:#EFE3D0;
+  --ink:#5E2A1C;            /* headings on light */
+  --text:#4B3A31;           /* body on light */
+  --night:#2A1510;          /* dark painted sections */
+  --dusk:#7D3B2A;           /* countdown band */
+  --on-dark:#F6EBDA;
+
+  --serif:'Instrument Serif',Georgia,serif;
+  --script:'Ms Madi',cursive;
+  --sans:'Hanken Grotesk',system-ui,sans-serif;
+
+  --ease:cubic-bezier(.22,.8,.16,1);
+  --gutter:clamp(16px,4vw,56px);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--paper);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.6}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--cream);color:var(--text);font:300 16px/1.75 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit}
-img{max-width:100%;display:block}
-.script{font-family:'Pinyon Script',cursive;font-weight:400;color:var(--ink)}
-.eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange)}
-.btn{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border:1px solid var(--ink);color:var(--ink);transition:.3s}
-.btn:hover{background:var(--ink);color:var(--paper)}
-.btn.solid{background:linear-gradient(90deg,var(--orange),var(--pink));border:0;color:#fff}
-.btn.solid:hover{opacity:.88}
-.todo{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;background:#fff3c4;color:#8a6500;padding:2px 8px;border-radius:3px;margin-top:6px}
+::selection{background:var(--rose);color:#fff}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:20;background:rgba(251,246,238,.94);backdrop-filter:blur(6px);border-bottom:1px solid #ecdcc6}
-.nav-in{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-.logo{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--ink);text-decoration:none}
-.links{display:flex;gap:22px;list-style:none}
-.links a{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none}
-.links a:hover{color:var(--orange)}
-.burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
-@media(max-width:960px){
-  .burger{display:block}
-  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:center;gap:18px;padding:24px;background:var(--paper);border-bottom:1px solid #ecdcc6}
-  .links.open{display:flex}
+/* paper grain over everything, animated like film */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* ───────────────────────── Type ───────────────────────── */
+.h-xl,.h-lg,.h-md{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:.98;color:var(--ink)}
+.h-xl{font-size:clamp(48px,9.2vw,148px)}
+.h-lg{font-size:clamp(40px,5.6vw,84px)}
+.h-md{font-size:clamp(30px,3.4vw,48px)}
+.script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;line-height:1.05}
+.s-lg{font-size:clamp(46px,5vw,72px);color:var(--ink)}
+.s-md{font-size:clamp(34px,3.2vw,46px);color:var(--ink)}
+.eyebrow{font:400 11px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--sunset)}
+.lead{max-width:34ch;margin-inline:auto;font-size:15px;text-align:center}
+.on-dark,.on-dark .h-xl,.on-dark .h-lg,.on-dark .h-md,.on-dark .s-lg,.on-dark .s-md{color:var(--on-dark)}
+.on-dark .eyebrow{color:var(--gold)}
+.center{text-align:center}
+
+/* oval pen-drawn button, the Giona signature */
+.oval{position:relative;display:inline-grid;place-items:center;min-width:190px;height:58px;padding:0 34px;font:400 26px/1 var(--script);color:currentColor;text-decoration:none;background:none;border:0;cursor:pointer;transition:color .5s var(--ease)}
+.oval svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.oval ellipse{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}
+.oval .o2{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1s var(--ease)}
+.oval:hover .o2,.oval:focus-visible .o2{stroke-dashoffset:0}
+.oval span{position:relative;transform:translateY(2px)}
+.oval.ink{color:var(--ink)}
+.todo{display:inline-block;margin-top:10px;font:400 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border:1px dashed currentColor;opacity:.55}
+
+/* ───────────────────────── Preloader ───────────────────────── */
+.loader{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--night);color:var(--on-dark)}
+.loader .mono{width:min(180px,40vw)}
+.loader .mono text{font-family:var(--serif);font-size:120px;fill:none;stroke:var(--gold);stroke-width:.8;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.2s var(--ease) forwards}
+.loader .mono text+text{animation-delay:.3s}
+@keyframes draw{to{stroke-dashoffset:0;fill:var(--gold)}}
+.no-js .loader,.loader.gone{display:none}
+
+/* ───────────────────────── Header ───────────────────────── */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--gutter);color:var(--on-dark);transition:background .6s var(--ease),padding .6s var(--ease),color .6s,transform .6s var(--ease)}
+.hdr.scrolled{background:rgba(244,236,223,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);padding-block:12px}
+.hdr.hide{transform:translateY(-100%)}
+.mono-link{justify-self:start;text-decoration:none;line-height:.8;font-family:var(--serif);font-size:40px;position:relative;width:64px;height:58px}
+.mono-link .a{position:absolute;left:0;top:0}
+.mono-link .b{position:absolute;left:22px;top:18px}
+.mono-link .amp{position:absolute;left:21px;top:12px;font-family:var(--script);font-size:22px;opacity:.8}
+.nav{display:flex;gap:clamp(18px,2.6vw,42px);list-style:none}
+.nav>li{position:relative}
+.nav a,.nav button{font:400 15px/1 var(--serif);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;background:none;border:0;color:inherit;cursor:pointer;padding:8px 0}
+.nav:hover>li>a,.nav:hover>li>button{opacity:.45}
+.nav>li:hover>a,.nav>li:hover>button{opacity:1}
+.nav a,.nav button{transition:opacity .4s}
+.folder ul{position:absolute;top:100%;left:50%;translate:-50% 8px;list-style:none;padding:16px 26px;background:var(--cream);color:var(--ink);white-space:nowrap;opacity:0;pointer-events:none;transition:.4s var(--ease);box-shadow:0 20px 40px -24px rgba(42,21,16,.4)}
+.folder ul li{padding:5px 0}
+.folder:hover ul,.folder:focus-within ul{opacity:1;pointer-events:auto;translate:-50% 0}
+.hdr-cta{justify-self:end}
+.hdr .oval{min-width:120px;height:46px;font-size:22px;padding:0 24px}
+.burger{display:none;justify-self:end;background:none;border:0;color:inherit;width:44px;height:44px;cursor:pointer}
+.burger i{display:block;width:28px;height:1px;background:currentColor;margin:7px auto;transition:.5s var(--ease)}
+.menu-open .burger i:first-child{transform:translateY(4px) rotate(45deg)}
+.menu-open .burger i:last-child{transform:translateY(-4px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:55;background:var(--night) url(img/bg-garden.webp) center/cover;color:var(--on-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;clip-path:circle(0% at 100% 0);transition:clip-path .9s var(--ease)}
+.mmenu::before{content:"";position:absolute;inset:0;background:rgba(42,21,16,.78)}
+.mmenu a{position:relative;font:400 34px/1.2 var(--serif);text-transform:uppercase;text-decoration:none}
+.mmenu a.script{font-family:var(--script);text-transform:none;font-size:40px;color:var(--gold)}
+.menu-open .mmenu{clip-path:circle(150% at 100% 0)}
+@media(max-width:1020px){.nav,.hdr-cta{display:none}.burger{display:block}.hdr{grid-template-columns:1fr 1fr}}
+
+/* ───────────────────────── Hero ───────────────────────── */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;display:grid;place-items:center;text-align:center;color:var(--on-dark);background:var(--night)}
+.hero-bg{position:absolute;inset:-8% 0;background:url(img/hero.webp) center 60%/cover;transform-origin:50% 60%;will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 50% 45%,rgba(42,21,16,.25),rgba(42,21,16,.72) 75%),
+  linear-gradient(180deg,rgba(42,21,16,.55),transparent 30%,transparent 70%,rgba(42,21,16,.6))}
+.hero-in{position:relative;z-index:2;padding:0 var(--gutter)}
+.hero .date{font:400 clamp(34px,3.6vw,52px)/1 var(--script);color:var(--gold);margin-bottom:.15em}
+.hero .h-xl{color:var(--on-dark)}
+.hero .place{font:400 clamp(40px,4.2vw,62px)/1 var(--script);margin-top:.2em}
+.split .ch{display:inline-block;will-change:transform}
+.split .w{display:inline-block;white-space:nowrap}
+.cue{position:absolute;z-index:2;bottom:28px;left:50%;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:10px;font:400 10px/1 var(--sans);letter-spacing:.34em;color:var(--on-dark);text-decoration:none}
+.cue i{width:1px;height:54px;background:linear-gradient(var(--on-dark),transparent);transform-origin:top;animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ───────────────────────── Sections ───────────────────────── */
+section{position:relative;padding:clamp(90px,12vw,170px) var(--gutter);overflow:hidden}
+.paper{background:var(--cream)}
+.paper::before{content:"";position:absolute;inset:0;background:url(img/bg-sky.webp) center/cover;opacity:.55;mix-blend-mode:multiply;pointer-events:none}
+.painted{background:var(--night);color:var(--on-dark)}
+.painted>.bg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.painted::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,21,16,.7),rgba(42,21,16,.45) 50%,rgba(42,21,16,.7));pointer-events:none}
+.painted>*:not(.bg){position:relative;z-index:2}
+.wrap{position:relative;z-index:2;max-width:1180px;margin-inline:auto}
+
+/* silhouettes: Roman statuary in the background */
+.statue{position:absolute;z-index:1;pointer-events:none;color:var(--ink);opacity:.07;will-change:transform}
+.statue svg{width:100%;height:auto;display:block}
+.on-dark .statue,.painted .statue{color:var(--gold);opacity:.09}
+
+/* alternating Giona rows */
+.row{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,7vw,110px);margin-top:clamp(70px,9vw,130px)}
+.row:first-child{margin-top:0}
+.row.flip .media{order:2}
+.row .txt{text-align:center;max-width:380px;justify-self:center}
+.row .txt p{font-size:15px;margin-top:18px}
+.row .txt .oval{margin-top:30px}
+.media{position:relative}
+.frame{overflow:hidden;position:relative}
+.frame img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.tall{aspect-ratio:2/3}
+.wide{aspect-ratio:4/5}
+@media(max-width:820px){.row{grid-template-columns:1fr}.row.flip .media{order:0}}
+
+/* intro: two staggered photos like Giona */
+.intro-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,6vw,100px);align-items:start;margin-top:clamp(50px,6vw,80px)}
+.intro-grid .side{display:flex;flex-direction:column;align-items:center;gap:40px;padding-top:6vw;text-align:center}
+.intro-grid .side .frame{width:min(300px,80%)}
+.intro-grid .side p{max-width:32ch;font-size:15px}
+.intro-grid .angel-sketch{position:absolute;left:-70px;bottom:40px;width:120px;color:var(--ink);opacity:.35}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr}.intro-grid .side{padding-top:0}}
+
+/* venue watercolours: soft-edged plates */
+.plate{position:relative}
+.plate img{width:100%;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)}
+.time{display:block;font:400 clamp(44px,4vw,60px)/1 var(--serif);color:var(--sunset);margin:14px 0 4px}
+.venue{font:400 22px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-top:10px}
+.addr{font-size:14px;margin-top:6px}
+.addr a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .6s var(--ease)}
+.addr a:hover{background-size:100% 1px}
+
+/* celebration overview (dark) */
+.days{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:clamp(50px,6vw,80px) auto 0;max-width:860px;text-align:center}
+.days .s-md{line-height:1.05}
+.days ul{list-style:none;margin-top:26px;display:grid;gap:18px;font-size:14px}
+.days ul b{display:block;font-weight:400;letter-spacing:.12em}
+.shuttle{max-width:560px;margin:60px auto 0;text-align:center;font-size:14px;padding-top:36px;border-top:1px solid rgba(247,216,154,.3)}
+@media(max-width:620px){.days{grid-template-columns:1fr}}
+
+/* dress code / lists */
+.hotel-list{display:grid;gap:34px;margin-top:30px;text-align:left}
+.hotel{padding-bottom:28px;border-bottom:1px solid rgba(94,42,28,.18)}
+.hotel h4{font:400 26px/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.hotel p{font-size:14px;margin-top:6px!important}
+.hotel .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px}
+.hotel .meta a{font:400 22px/1 var(--script);text-decoration:none;color:var(--sunset)}
+.code{font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--sunset);color:var(--sunset)}
+.others{margin-top:clamp(70px,8vw,110px);text-align:center}
+.others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:28px;font:400 clamp(22px,2.2vw,32px)/1.5 var(--serif);text-transform:uppercase}
+.others li:not(:last-child)::after{content:"·";margin:0 .55em;color:var(--sunset)}
+.others a{text-decoration:none;transition:color .4s}
+.others a:hover{color:var(--magenta)}
+
+/* rsvp list */
+.asks{list-style:none;columns:2;column-gap:40px;max-width:520px;margin:30px auto 0;text-align:left;font-size:14px}
+.asks li{break-inside:avoid;padding:8px 0;border-bottom:1px solid rgba(246,235,218,.18)}
+@media(max-width:560px){.asks{columns:1}}
+
+/* things to see */
+.top4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(50px,6vw,80px);text-align:center}
+.top4 .n{font:400 clamp(60px,6vw,96px)/1 var(--serif);color:var(--gold);opacity:.9}
+.top4 h4{font:400 20px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;margin-top:10px}
+.extra{margin-top:clamp(60px,7vw,100px);text-align:center}
+.extra p.list{max-width:820px;margin:24px auto 0;font:400 clamp(20px,1.9vw,27px)/1.7 var(--serif);text-transform:uppercase}
+.extra p.list span{white-space:nowrap}
+.extra p.list i{font-style:normal;color:var(--gold);margin:0 .5em}
+@media(max-width:760px){.top4{grid-template-columns:1fr 1fr;row-gap:44px}}
+
+/* faqs / useful info accordion */
+.faq{max-width:760px;margin:clamp(40px,5vw,70px) auto 0}
+.faq details{border-top:1px solid rgba(94,42,28,.22)}
+.faq details:last-child{border-bottom:1px solid rgba(94,42,28,.22)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font:400 clamp(22px,2.2vw,30px)/1.1 var(--serif);text-transform:uppercase;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{position:relative;width:16px;height:16px;flex:none}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1px;background:currentColor;transition:transform .5s var(--ease)}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .ans{overflow:hidden}
+.faq .ans p{padding:0 0 28px;max-width:60ch;font-size:15px}
+
+/* countdown band */
+.count{background:var(--dusk);color:var(--on-dark);text-align:center}
+.count::before{content:"";position:absolute;inset:0;background:url(img/bg-tiber.webp) center/cover;opacity:.22;mix-blend-mode:luminosity}
+.timer{display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px)}
+.timer>div{padding:0 clamp(14px,3vw,40px);border-left:1px solid rgba(246,235,218,.4)}
+.timer>div:first-child{border:0}
+.timer b{display:block;font:400 clamp(44px,7vw,104px)/1 var(--serif);font-variant-numeric:tabular-nums}
+.timer span{font:400 clamp(20px,2vw,30px)/1 var(--script)}
+
+footer{background:var(--night);color:var(--on-dark);text-align:center;padding:90px var(--gutter) 40px;position:relative;overflow:hidden}
+footer .s-lg{color:var(--gold)}
+footer .tag{margin-top:26px;font:400 11px/1 var(--sans);letter-spacing:.4em;color:var(--rose)}
+footer small{display:block;margin-top:60px;font-size:11px;opacity:.5;letter-spacing:.1em}
+
+/* reveal defaults (JS enhances) */
+.js [data-reveal]{opacity:0}
+.no-js [data-reveal]{opacity:1}
+
+@media(prefers-reduced-motion:reduce){
+  .grain,.cue i{animation:none}
+  .js [data-reveal]{opacity:1}
 }
-
-/* HERO */
-.hero{position:relative;text-align:center;padding:70px 20px 40px;background:linear-gradient(180deg,#F9D9B8 0%,#F6C9C0 30%,var(--paper) 75%)}
-.hero .eyebrow{color:var(--ink)}
-.hero h1{font-size:clamp(64px,11vw,130px);line-height:1.05;margin:16px 0 6px}
-.hero .date{font-size:28px;letter-spacing:.12em}
-.hero .place{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.35em;text-transform:uppercase;margin-top:4px}
-.hero img{max-width:1000px;width:100%;margin:40px auto 0;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%)}
-.scroll{display:block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.3em;text-decoration:none;color:var(--orange)}
-
-/* SECTIONS */
-section{padding:90px 20px}
-section.alt{background:var(--paper2)}
-.wrap{max-width:1100px;margin:auto}
-.head{text-align:center;margin-bottom:50px}
-.head h2{font-size:clamp(52px,7vw,78px);line-height:1.1;margin-top:8px}
-.head p{font-style:italic;max-width:620px;margin:8px auto 0}
-.divider{width:120px;height:2px;margin:18px auto 0;background:linear-gradient(90deg,var(--cream),var(--orange),var(--pink),var(--rose))}
-
-/* SCHEDULE */
-.event{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-bottom:70px}
-.event:nth-child(even) .pic{order:2}
-.event .pic img{width:100%;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%)}
-.event h3{font-size:58px;line-height:1.1;margin:6px 0}
-.event .time{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.25em;color:var(--pink);text-transform:uppercase}
-.event .addr{font-style:italic}
-.event .addr a{text-decoration:none;border-bottom:1px solid var(--rose)}
-.shuttle{max-width:760px;margin:-30px auto 70px;text-align:center;padding:22px 26px;border:1px dashed var(--rose);border-radius:4px;font-style:italic;background:#fff8}
-.shuttle b{font-style:normal;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:4px}
-@media(max-width:760px){.event{grid-template-columns:1fr;gap:16px;text-align:center}.event:nth-child(even) .pic{order:0}}
-
-/* CARDS */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.card{background:#fff;padding:40px 36px;border-top:3px solid var(--orange);box-shadow:0 10px 30px -18px rgba(138,58,34,.35)}
-.card:nth-child(2){border-top-color:var(--pink)}
-.card h3{font-size:46px;line-height:1.1;margin:8px 0 10px}
-.card p{margin-bottom:16px}
-.card .link{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;color:var(--orange)}
-@media(max-width:760px){.grid2{grid-template-columns:1fr}}
-
-/* RSVP */
-.rsvp{text-align:center;background:linear-gradient(160deg,#F7D89A55,#D4847A40,#DE457930)}
-.asks{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;max-width:640px;margin:0 auto 40px;list-style:none;text-align:left}
-.asks li::before{content:"✦ ";color:var(--orange)}
-.deadline{margin-top:24px;font-style:italic}
-@media(max-width:560px){.asks{grid-template-columns:1fr}}
-
-/* HOTELS */
-.hotel h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--ink)}
-.code{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.12em;padding:6px 12px;background:var(--cream);color:var(--ink)}
-.others{margin-top:50px;text-align:center}
-.others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:18px}
-.others a{display:block;padding:10px 18px;border:1px solid #e3cbb3;text-decoration:none;background:#fff;transition:.25s}
-.others a:hover{border-color:var(--orange);color:var(--orange)}
-
-/* SIGHTS */
-.top4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-.top4 div{padding:30px 10px;background:#fff;border-bottom:3px solid var(--rose)}
-.top4 .num{font-size:34px;color:var(--orange);font-style:italic}
-.top4 h4{font-size:24px;font-weight:600;color:var(--ink)}
-.extra{text-align:center;margin-top:50px}
-.extra .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
-.extra span{padding:8px 16px;border-radius:30px;background:#fff;border:1px solid #ecd2c0;font-size:18px}
-@media(max-width:760px){.top4{grid-template-columns:1fr 1fr}}
-
-/* INFO */
-.info{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px}
-.info h4{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
-@media(max-width:760px){.info{grid-template-columns:1fr}}
-
-footer{text-align:center;padding:80px 20px 60px;background:linear-gradient(0deg,#F6C9C0,var(--paper))}
-footer .script{font-size:64px}
-footer .tag{font-family:'Montserrat',sans-serif;letter-spacing:.3em;font-size:12px;color:var(--pink);margin-top:14px}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
-<nav>
-  <div class="nav-in">
-    <a class="logo" href="#top">E&amp;A</a>
-    <button class="burger" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
-    <ul class="links" onclick="this.classList.remove('open')">
-      <li><a href="#schedule">Schedule</a></li>
-      <li><a href="#dress">Dress Code</a></li>
-      <li><a href="#rsvp">RSVP</a></li>
-      <li><a href="#stay">Where to Stay</a></li>
-      <li><a href="#kids">Kids &amp; Transfers</a></li>
-      <li><a href="#see">Things to See</a></li>
-      <li><a href="#info">Useful Info</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="loader" aria-hidden="true">
+  <svg class="mono" viewBox="0 0 240 200"><text x="20" y="120">E</text><text x="105" y="175">A</text></svg>
+</div>
 
-<header class="hero" id="top">
-  <p class="eyebrow">We're getting married</p>
-  <h1 class="script">Emily &amp; Alexandre</h1>
-  <p class="date">June 26 – 27, 2027</p>
-  <p class="place">Rome, Italy</p>
-  <img src="img/terrazza.webp" alt="Watercolor view of Rome's rooftops from Terrazza Caffarelli">
-  <a class="scroll" href="#schedule">SCROLL FOR DETAILS ↓</a>
+<!-- ═════════ HEADER ═════════ -->
+<header class="hdr" id="hdr">
+  <a class="mono-link" href="#top" aria-label="Emily & Alexandre — home"><span class="a">E</span><span class="amp">&amp;</span><span class="b">A</span></a>
+  <ul class="nav">
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#dress">Dress Code</a></li>
+    <li><a href="#stay">Travel &amp; Stay</a></li>
+    <li><a href="#rome">Rome</a></li>
+    <li class="folder"><button aria-haspopup="true">Extra</button>
+      <ul>
+        <li><a href="#kids">Kids &amp; Transfers</a></li>
+        <li><a href="#eat">Where to Eat</a></li>
+        <li><a href="#info">Useful Info</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="hdr-cta"><a class="oval" href="#rsvp"><svg viewBox="0 0 120 46" preserveAspectRatio="none"><ellipse cx="60" cy="23" rx="59" ry="22"/><ellipse class="o2" pathLength="1" cx="60" cy="23" rx="57" ry="20.5" transform="rotate(-2 60 23)"/></svg><span>Rsvp</span></a></div>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
 </header>
 
-<section id="schedule">
+<nav class="mmenu" aria-label="Mobile">
+  <a href="#schedule">Schedule</a>
+  <a href="#dress">Dress Code</a>
+  <a href="#stay">Travel &amp; Stay</a>
+  <a href="#kids">Kids &amp; Transfers</a>
+  <a href="#rome">Rome</a>
+  <a href="#info">Useful Info</a>
+  <a class="script" href="#rsvp">Rsvp</a>
+</nav>
+
+<main>
+<!-- ═════════ HERO ═════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="Impressionist painting of Rome's domes at sunset"></div>
+  <div class="hero-in">
+    <p class="date split" data-hero>26 · 06 · 2027</p>
+    <h1 class="h-xl split" data-hero>Emily &amp; Alexandre</h1>
+    <p class="place split" data-hero>Rome</p>
+  </div>
+  <a class="cue" href="#intro"><span>SCROLL</span><i></i></a>
+</section>
+
+<!-- ═════════ INTRO ═════════ -->
+<section class="paper" id="intro">
+  <div class="statue" data-drift="-14" style="right:-4%;top:6%;width:min(360px,34vw)"><svg viewBox="0 0 470 700"><use href="#angel-trumpet"/></svg></div>
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">The Weekend</p>
-      <h2 class="script">Schedule</h2>
-      <p>Two days, three special places. Here's what to expect.</p>
-      <div class="divider"></div>
-    </div>
-
-    <div class="event reveal">
-      <div class="pic"><img src="img/terrazza.webp" alt="Terrazza Caffarelli watercolor"></div>
-      <div>
-        <p class="eyebrow">Day 1 · Saturday, June 26</p>
-        <h3 class="script">Welcome Party</h3>
-        <p class="time">19:00</p>
-        <p class="addr"><strong>Terrazza Caffarelli</strong><br>
-          <a href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></p>
-      </div>
-    </div>
-
-    <div class="event reveal">
-      <div class="pic"><img src="img/synagogue.webp" alt="Great Synagogue of Rome watercolor"></div>
-      <div>
-        <p class="eyebrow">Day 2 · Sunday, June 27</p>
-        <h3 class="script">Ceremony</h3>
-        <p class="time">15:30</p>
-        <p class="addr"><strong>Tempio Maggiore di Roma</strong><br>
-          <a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
-      </div>
-    </div>
-
-    <div class="shuttle reveal">
-      <b>Shuttle transfer</b>
-      About 45 minutes each way to the Castle. Departing from the Tempio Maggiore only — let us know if you'd like to use it when you fill out your RSVP.
-    </div>
-
-    <div class="event reveal">
-      <div class="pic"><img src="img/castello.webp" alt="Castello Odescalchi at sunset watercolor"></div>
-      <div>
-        <p class="eyebrow">Day 2 · Sunday, June 27</p>
-        <h3 class="script">Reception</h3>
-        <p class="time">18:00</p>
-        <p class="addr"><strong>Castello Odescalchi di Palo Laziale</strong><br>
-          <a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
+    <p class="eyebrow center" data-reveal>We're getting married</p>
+    <h2 class="h-lg center" data-lines style="max-width:15ch;margin:22px auto 0">Two days, three special places in the Eternal City</h2>
+    <div class="intro-grid">
+      <div class="media"><div class="frame tall" data-wipe><img src="img/couple.webp" alt="An elegant couple walking along a Roman terrace at sunset" data-parallax loading="lazy"></div></div>
+      <div class="side">
+        <p data-reveal>June 26 – 27, 2027 · Rome, Italy. A welcome evening on the Capitoline Hill, a ceremony at the Great Synagogue, and a reception by the sea at a fifteenth-century castle. Here's everything you need to know.</p>
+        <div class="frame wide" data-wipe><img src="img/angel-statue.webp" alt="Marble angel statue among cypress trees at golden hour" data-parallax loading="lazy"></div>
+        <a class="oval ink" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>The Weekend</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="dress" class="alt">
-  <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">What to Wear</p>
-      <h2 class="script">Dress Code</h2>
-      <div class="divider"></div>
+<!-- ═════════ CELEBRATION (dark painted) ═════════ -->
+<section class="painted on-dark" id="schedule">
+  <div class="bg" data-bgpar style="background-image:url(img/bg-garden.webp)"></div>
+  <div class="statue" data-drift="18" style="left:-3%;bottom:-2%;width:min(300px,30vw)"><svg viewBox="0 0 470 700"><use href="#angel-kneel"/></svg></div>
+  <div class="statue" data-drift="-10" style="right:-2%;top:8%;width:min(260px,26vw);transform:scaleX(-1)"><svg viewBox="0 0 470 700"><use href="#angel-trumpet"/></svg></div>
+  <div class="wrap center">
+    <p class="eyebrow" data-reveal>The Weekend</p>
+    <h2 class="h-lg" data-lines style="margin-top:22px">The Celebration</h2>
+    <div class="days">
+      <div data-reveal>
+        <p class="script s-md">Saturday<br>June, 26th</p>
+        <ul><li><b>7:00 PM</b>Welcome Party · Terrazza Caffarelli</li></ul>
+      </div>
+      <div data-reveal>
+        <p class="script s-md">Sunday<br>June, 27th</p>
+        <ul><li><b>3:30 PM</b>Ceremony · Tempio Maggiore</li><li><b>6:00 PM</b>Reception · Castello Odescalchi</li></ul>
+      </div>
     </div>
-    <div class="grid2">
-      <div class="card reveal">
+    <p class="shuttle" data-reveal>Shuttle transfer · about 45 minutes each way to the Castle. Departing from the Tempio Maggiore only — let us know if you'd like to use it when you fill out your RSVP.</p>
+    <div style="margin-top:44px" data-reveal><a class="oval" href="#rsvp"><svg viewBox="0 0 260 58" preserveAspectRatio="none"><ellipse cx="130" cy="29" rx="129" ry="28"/><ellipse class="o2" pathLength="1" cx="130" cy="29" rx="127" ry="26" transform="rotate(-1.5 130 29)"/></svg><span>Confirm Your Presence</span></a></div>
+  </div>
+</section>
+
+<!-- ═════════ VENUES ═════════ -->
+<section class="paper">
+  <div class="statue" data-drift="-12" style="left:-6%;top:30%;width:min(380px,36vw)"><svg viewBox="0 0 700 700"><use href="#urn"/></svg></div>
+  <div class="wrap">
+    <div class="row">
+      <div class="media plate" data-rise><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div>
+      <div class="txt" data-reveal>
+        <p class="eyebrow">Day 1 · June 26</p>
+        <h3 class="script s-lg" style="margin-top:14px">Welcome Party</h3>
+        <span class="time">19:00</span>
+        <p class="venue">Terrazza Caffarelli</p>
+        <p class="addr"><a href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></p>
+      </div>
+    </div>
+    <div class="row flip">
+      <div class="media plate" data-rise><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div>
+      <div class="txt" data-reveal>
+        <p class="eyebrow">Day 2 · June 27</p>
+        <h3 class="script s-lg" style="margin-top:14px">Ceremony</h3>
+        <span class="time">15:30</span>
+        <p class="venue">Tempio Maggiore di Roma</p>
+        <p class="addr"><a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="media plate" data-rise><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div>
+      <div class="txt" data-reveal>
+        <p class="eyebrow">Day 2 · June 27</p>
+        <h3 class="script s-lg" style="margin-top:14px">Reception</h3>
+        <span class="time">18:00</span>
+        <p class="venue">Castello Odescalchi</p>
+        <p class="addr"><a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ DRESS CODE ═════════ -->
+<section class="paper" id="dress" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow center" data-reveal>What to Wear</p>
+    <h2 class="h-lg center" data-lines style="margin:22px 0 clamp(60px,7vw,100px)">Dress Code</h2>
+    <div class="row">
+      <div class="media"><div class="frame tall" data-wipe style="max-width:420px;margin-left:auto"><img src="img/dinner.webp" alt="Candlelit dinner table on a Roman terrace at sunset" data-parallax loading="lazy"></div></div>
+      <div class="txt" data-reveal>
         <p class="eyebrow">Welcome Party</p>
-        <h3 class="script">Italian Dolce Vita</h3>
+        <h3 class="script s-lg" style="margin-top:14px">Italian Dolce Vita</h3>
         <p>An Italian Dolce Vita style — think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="link" href="#" target="_blank" rel="noopener">View the Pinterest moodboard →</a><br>
-        <span class="todo">TODO: Pinterest link</span>
+        <a class="oval ink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <span class="todo">Pinterest link to add</span>
       </div>
-      <div class="card reveal">
+    </div>
+    <div class="row flip">
+      <div class="media"><div class="frame tall" data-wipe style="max-width:420px"><img src="img/palazzo.webp" alt="Gilded salon of a Roman palazzo with a marble bust" data-parallax loading="lazy"></div></div>
+      <div class="txt" data-reveal>
         <p class="eyebrow">Wedding Day</p>
-        <h3 class="script">Black Tie Elegant</h3>
+        <h3 class="script s-lg" style="margin-top:14px">Black Tie Elegant</h3>
         <p>Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.</p>
-        <a class="link" href="#" target="_blank" rel="noopener">View the Pinterest moodboard →</a><br>
-        <span class="todo">TODO: Pinterest link</span>
+        <a class="oval ink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <span class="todo">Pinterest link to add</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="rsvp" class="rsvp">
+<!-- ═════════ RSVP (painted) ═════════ -->
+<section class="painted on-dark center" id="rsvp">
+  <div class="bg" data-bgpar style="background-image:url(img/hero.webp);filter:saturate(.9)"></div>
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Let us know you're coming</p>
-      <h2 class="script">RSVP</h2>
-      <p>Filling out the form will help us plan every detail. Here's what we'll ask you:</p>
-      <div class="divider"></div>
-    </div>
-    <ul class="asks reveal">
-      <li>Full name</li><li>Email address</li>
-      <li>Home address</li><li>Attendance at each event</li>
-      <li>Whether you need the transfer</li><li>Allergies or intolerances</li>
-      <li>Which hotel you'll be staying at</li>
+    <p class="eyebrow" data-reveal>Let us know you're coming</p>
+    <h2 class="h-lg" data-lines style="margin-top:22px">Rsvp</h2>
+    <p class="lead" data-reveal style="margin-top:24px;max-width:46ch">Filling out the form will help us plan every detail. Here's what we'll ask you:</p>
+    <ul class="asks" data-reveal>
+      <li>Full name</li><li>Email address</li><li>Home address</li><li>Attendance at each event</li>
+      <li>Whether you need the transfer</li><li>Allergies or intolerances</li><li>Which hotel you'll be staying at</li>
     </ul>
-    <a class="btn solid" href="#" target="_blank" rel="noopener">Fill out the RSVP form</a><br>
-    <span class="todo">TODO: Google Form link</span>
-    <p class="deadline">Please respond by <span class="todo">date TBD</span></p>
+    <div style="margin-top:50px" data-reveal><a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 260 58" preserveAspectRatio="none"><ellipse cx="130" cy="29" rx="129" ry="28"/><ellipse class="o2" pathLength="1" cx="130" cy="29" rx="127" ry="26" transform="rotate(-1.5 130 29)"/></svg><span>Fill out the form</span></a><br><span class="todo">Google Form link to add</span></div>
+    <p data-reveal style="margin-top:28px;font-size:14px">Please respond by <span class="todo" style="margin:0">date to be decided</span></p>
   </div>
 </section>
 
-<section id="stay">
+<!-- ═════════ TRAVEL & STAY ═════════ -->
+<section class="paper" id="stay">
+  <div class="statue" data-drift="14" style="right:-5%;bottom:4%;width:min(320px,30vw)"><svg viewBox="0 0 470 700"><use href="#angel-kneel"/></svg></div>
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Where to Stay</p>
-      <h2 class="script">Recommended Hotels</h2>
-      <p>These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
-      <div class="divider"></div>
-    </div>
-    <div class="grid2">
-      <div class="card hotel reveal">
-        <p class="eyebrow">Recommended · Near the Temple</p>
-        <h3>Hotel 47 Rome</h3>
-        <p class="addr"><em>Via Luigi Petroselli 47, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
-        <a class="link" href="https://www.google.com/search?q=Hotel+47+Rome" target="_blank" rel="noopener">Visit website →</a><br>
-        <span class="code">Code TheRomilys · 10% off</span>
-      </div>
-      <div class="card hotel reveal">
-        <p class="eyebrow">Recommended · Near the Temple</p>
-        <h3>Rhinoceros Rome</h3>
-        <p class="addr"><em>Via del Velabro 9, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
-        <a class="link" href="https://www.google.com/search?q=Rhinoceros+Rome" target="_blank" rel="noopener">Visit website →</a><br>
-        <span class="code">Code TheRomilys · 10% off</span>
-      </div>
-      <div class="card hotel reveal">
-        <p class="eyebrow">Recommended · Near the Temple</p>
-        <h3>Palazzo Velabro</h3>
-        <p class="addr"><em>Via del Velabro 16, Rome (RM)</em><br>Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p>
-        <a class="link" href="https://www.google.com/search?q=Palazzo+Velabro+Rome" target="_blank" rel="noopener">Visit website →</a>
-      </div>
-      <div class="card hotel reveal">
-        <p class="eyebrow">Recommended · Near the Temple</p>
-        <h3>CitizenM Isola Tiberina</h3>
-        <p class="addr"><em>Lungotevere de' Cenci 5–8, Rome (RM)</em><br>Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</p>
-        <a class="link" href="https://www.google.com/search?q=citizenM+Isola+Tiberina" target="_blank" rel="noopener">Visit website →</a>
+    <p class="eyebrow center" data-reveal>Where to Stay</p>
+    <h2 class="h-lg center" data-lines style="margin:22px auto 0;max-width:14ch">Recommended Hotels</h2>
+    <p class="lead" data-reveal style="margin-top:24px;max-width:52ch">These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
+    <div class="row" style="margin-top:clamp(60px,7vw,100px);align-items:start">
+      <div class="media" style="position:sticky;top:110px"><div class="frame tall" data-wipe style="max-width:440px;margin-left:auto"><img src="img/suite.webp" alt="Hotel suite with open shutters over Roman rooftops at dusk" data-parallax loading="lazy"></div></div>
+      <div class="hotel-list">
+        <div class="hotel" data-reveal><p class="eyebrow">Near the Temple</p><h4 style="margin-top:10px">Hotel 47 Rome</h4><p>Via Luigi Petroselli 47, Rome (RM). Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p><div class="meta"><a href="https://www.google.com/search?q=Hotel+47+Rome" target="_blank" rel="noopener">Visit website</a><span class="code">Code TheRomilys · 10% off</span></div></div>
+        <div class="hotel" data-reveal><p class="eyebrow">Near the Temple</p><h4 style="margin-top:10px">Rhinoceros Rome</h4><p>Via del Velabro 9, Rome (RM). Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p><div class="meta"><a href="https://www.google.com/search?q=Rhinoceros+Rome" target="_blank" rel="noopener">Visit website</a><span class="code">Code TheRomilys · 10% off</span></div></div>
+        <div class="hotel" data-reveal><p class="eyebrow">Near the Temple</p><h4 style="margin-top:10px">Palazzo Velabro</h4><p>Via del Velabro 16, Rome (RM). Just steps from the Great Synagogue of Rome (Tempio Maggiore).</p><div class="meta"><a href="https://www.google.com/search?q=Palazzo+Velabro+Rome" target="_blank" rel="noopener">Visit website</a></div></div>
+        <div class="hotel" data-reveal><p class="eyebrow">Near the Temple</p><h4 style="margin-top:10px">CitizenM Isola Tiberina</h4><p>Lungotevere de' Cenci 5–8, Rome (RM). Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</p><div class="meta"><a href="https://www.google.com/search?q=citizenM+Isola+Tiberina" target="_blank" rel="noopener">Visit website</a></div></div>
       </div>
     </div>
-    <div class="others reveal">
-      <p class="eyebrow">Other options in the city</p>
-      <ul>
-        <li><a href="https://www.google.com/search?q=The+Corner+Hotel+Roma" target="_blank" rel="noopener">The Corner Hotel Roma →</a></li>
-        <li><a href="https://www.google.com/search?q=NYX+Hotel+Rome" target="_blank" rel="noopener">NYX Hotel →</a></li>
-        <li><a href="https://www.google.com/search?q=NH+Hotel+Roma+Centro" target="_blank" rel="noopener">NH Hotel Roma Centro →</a></li>
-        <li><a href="https://www.google.com/search?q=The+Hoxton+Rome" target="_blank" rel="noopener">The Hoxton →</a></li>
-        <li><a href="https://www.google.com/search?q=Hotel+De+Russie+Rome" target="_blank" rel="noopener">Hotel De Russie →</a></li>
-        <li><a href="https://www.google.com/search?q=Bvlgari+Hotel+Roma" target="_blank" rel="noopener">Bvlgari Hotel →</a></li>
-        <li><a href="https://www.google.com/search?q=The+Rome+Edition" target="_blank" rel="noopener">The Edition →</a></li>
-        <li><a href="https://www.google.com/search?q=Hotel+Eden+Roma" target="_blank" rel="noopener">Hotel Eden Roma →</a></li>
+    <div class="others">
+      <p class="eyebrow" data-reveal>Other options in the city</p>
+      <ul data-reveal>
+        <li><a href="https://www.google.com/search?q=The+Corner+Hotel+Roma" target="_blank" rel="noopener">The Corner</a></li>
+        <li><a href="https://www.google.com/search?q=NYX+Hotel+Rome" target="_blank" rel="noopener">NYX</a></li>
+        <li><a href="https://www.google.com/search?q=NH+Hotel+Roma+Centro" target="_blank" rel="noopener">NH Roma Centro</a></li>
+        <li><a href="https://www.google.com/search?q=The+Hoxton+Rome" target="_blank" rel="noopener">The Hoxton</a></li>
+        <li><a href="https://www.google.com/search?q=Hotel+De+Russie+Rome" target="_blank" rel="noopener">Hotel de Russie</a></li>
+        <li><a href="https://www.google.com/search?q=Bvlgari+Hotel+Roma" target="_blank" rel="noopener">Bvlgari</a></li>
+        <li><a href="https://www.google.com/search?q=The+Rome+Edition" target="_blank" rel="noopener">The Edition</a></li>
+        <li><a href="https://www.google.com/search?q=Hotel+Eden+Roma" target="_blank" rel="noopener">Hotel Eden</a></li>
       </ul>
     </div>
   </div>
 </section>
 
-<section id="kids" class="alt">
+<!-- ═════════ KIDS & TRANSFERS ═════════ -->
+<section class="paper" id="kids" style="padding-top:0">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">For Peace of Mind</p>
-      <h2 class="script">Kids &amp; Private Transfers</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="grid2">
-      <div class="card reveal">
-        <h3 class="script">Childcare</h3>
+    <p class="eyebrow center" data-reveal>For Peace of Mind</p>
+    <h2 class="h-lg center" data-lines style="margin:22px auto 0;max-width:14ch">Kids &amp; Private Transfers</h2>
+    <div class="row">
+      <div class="txt" data-reveal>
+        <h3 class="script s-lg">Childcare</h3>
         <p>Babysitting service provided by Orienta Family. For all arrangements, please contact Francesca directly.</p>
-        <a class="link" href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br>
-        <a class="link" href="mailto:info@orientafamily.com">info@orientafamily.com</a>
+        <p class="addr" style="margin-top:14px"><a href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br><a href="mailto:info@orientafamily.com">info@orientafamily.com</a></p>
       </div>
-      <div class="card reveal">
-        <h3 class="script">Private Transfers</h3>
+      <div class="txt" data-reveal>
+        <h3 class="script s-lg">Private Transfers</h3>
         <p>To book a private car at any time.</p>
-        <a class="link" href="tel:+390000000000">+39 000 000 0000</a><br>
-        <span class="todo">TODO: phone number</span>
+        <p class="addr" style="margin-top:14px"><a href="tel:+390000000000">+39 000 000 0000</a></p>
+        <span class="todo">Phone number to add</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="eat">
-  <div class="wrap" style="text-align:center">
-    <div class="head reveal">
-      <p class="eyebrow">Our Favorite Spots</p>
-      <h2 class="script">Where to Eat in Rome</h2>
-      <p>We've put our favorite restaurants in the city on one map.</p>
-      <div class="divider"></div>
+<!-- ═════════ ROME (painted) ═════════ -->
+<section class="painted on-dark" id="rome">
+  <div class="bg" data-bgpar style="background-image:url(img/bg-tiber.webp)"></div>
+  <div class="wrap center">
+    <p class="eyebrow" data-reveal>Make the Most of Your Trip</p>
+    <h2 class="h-lg" data-lines style="margin-top:22px">Things to See<br>in Rome</h2>
+    <div class="top4">
+      <div data-reveal><p class="n">I</p><h4>Vatican City</h4></div>
+      <div data-reveal><p class="n">II</p><h4>Vatican Museums</h4></div>
+      <div data-reveal><p class="n">III</p><h4>Colosseum</h4></div>
+      <div data-reveal><p class="n">IV</p><h4>Roman &amp; Imperial Forums</h4></div>
     </div>
-    <a class="btn" href="#" target="_blank" rel="noopener">Open the restaurant map</a><br>
-    <span class="todo">TODO: Google Maps list link</span>
+    <div class="extra">
+      <p class="script s-md" data-reveal>If you have extra time, here are our picks</p>
+      <p class="list" data-reveal><span>Pantheon</span> <i>·</i> <span>Trevi Fountain &amp; Piazza Navona</span> <i>·</i> <span>Villa Borghese &amp; Borghese Gallery</span> <i>·</i> <span>Trastevere</span> <i>·</i> <span>Castel Sant'Angelo</span> <i>·</i> <span>Baths of Caracalla</span> <i>·</i> <span>Appian Way</span> <i>·</i> <span>Day Trip to Tivoli or Ostia Antica</span></p>
+    </div>
   </div>
 </section>
 
-<section id="see" class="alt">
+<!-- ═════════ WHERE TO EAT ═════════ -->
+<section class="paper" id="eat">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Make the Most of Your Trip</p>
-      <h2 class="script">Things to See in Rome</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="top4 reveal">
-      <div><p class="num">I</p><h4>Vatican City</h4></div>
-      <div><p class="num">II</p><h4>Vatican Museums</h4></div>
-      <div><p class="num">III</p><h4>Colosseum</h4></div>
-      <div><p class="num">IV</p><h4>Roman &amp; Imperial Forums</h4></div>
-    </div>
-    <div class="extra reveal">
-      <p class="eyebrow">If you have extra time, here are our picks</p>
-      <div class="tags">
-        <span>Pantheon</span><span>Trevi Fountain &amp; Piazza Navona</span><span>Villa Borghese &amp; Borghese Gallery</span>
-        <span>Trastevere</span><span>Castel Sant'Angelo</span><span>Baths of Caracalla</span>
-        <span>Appian Way</span><span>Day Trip to Tivoli or Ostia Antica</span>
+    <div class="row flip">
+      <div class="media"><div class="frame tall" data-wipe style="max-width:420px"><img src="img/car.webp" alt="Vintage cream convertible on a Roman cobblestone street under umbrella pines" data-parallax loading="lazy"></div></div>
+      <div class="txt" data-reveal>
+        <p class="eyebrow">Our Favorite Spots</p>
+        <h3 class="script s-lg" style="margin-top:14px">Where to Eat in Rome</h3>
+        <p>We've put our favorite restaurants in the city on one map.</p>
+        <a class="oval ink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Open the Map</span></a><br>
+        <span class="todo">Google Maps list to add</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="info">
+<!-- ═════════ USEFUL INFO ═════════ -->
+<section class="paper" id="info" style="padding-top:0">
+  <div class="statue" data-drift="-12" style="left:-4%;top:10%;width:min(300px,28vw);transform:scaleX(-1)"><svg viewBox="0 0 470 700"><use href="#angel-trumpet"/></svg></div>
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">A Few Last Things</p>
-      <h2 class="script">Useful Information</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="info reveal">
-      <div><h4>What the Weather's Like</h4><p>Late June in Rome is warm (82–91°F / 28–33°C). Light fabrics, a fan, and sunscreen are your best friends.</p></div>
-      <div><h4>Kids</h4><p>If you need a nanny for the events, you'll find everything in the <a href="#kids">“Kids &amp; Private Transfers”</a> section.</p></div>
-      <div><h4>Gifts</h4><p>Having you with us in Rome is the greatest gift. If you'd still like to give something, we'll share details closer to the date.</p></div>
-      <div><h4>Getting There</h4><p>The main airports are Fiumicino (FCO) and Ciampino (CIA). For a private airport transfer, see the number under <a href="#kids">“Private Transfers”</a>. Also note that on Sunday a round-trip shuttle will run between the Tempio Maggiore and Castello Odescalchi (see <a href="#schedule">“Schedule”</a>).</p></div>
-      <div><h4>Contact</h4><p>For any questions, feel free to reach out at <a href="tel:+393279304587">+39 327 930 4587</a></p></div>
+    <p class="eyebrow center" data-reveal>A Few Last Things</p>
+    <h2 class="h-lg center" data-lines style="margin-top:22px">Useful Information</h2>
+    <div class="faq" data-reveal>
+      <details><summary>What the weather's like<i></i></summary><div class="ans"><p>Late June in Rome is warm (82–91°F / 28–33°C). Light fabrics, a fan, and sunscreen are your best friends.</p></div></details>
+      <details><summary>Getting there<i></i></summary><div class="ans"><p>The main airports are Fiumicino (FCO) and Ciampino (CIA). For a private airport transfer, see the number under <a href="#kids">“Private Transfers”</a>. Also note that on Sunday a round-trip shuttle will run between the Tempio Maggiore and Castello Odescalchi (see <a href="#schedule">“Schedule”</a>).</p></div></details>
+      <details><summary>Kids<i></i></summary><div class="ans"><p>If you need a nanny for the events, you'll find everything in the <a href="#kids">“Kids &amp; Private Transfers”</a> section.</p></div></details>
+      <details><summary>Gifts<i></i></summary><div class="ans"><p>Having you with us in Rome is the greatest gift. If you'd still like to give something, we'll share details closer to the date.</p></div></details>
+      <details><summary>Contact<i></i></summary><div class="ans"><p>For any questions, feel free to reach out at <a href="tel:+393279304587">+39 327 930 4587</a>.</p></div></details>
     </div>
   </div>
 </section>
+
+<!-- ═════════ COUNTDOWN ═════════ -->
+<section class="count">
+  <div class="statue" data-drift="-8" style="left:4%;bottom:0;width:min(280px,24vw);opacity:.12;color:var(--gold)"><svg viewBox="0 0 700 700"><use href="#urn"/></svg></div>
+  <div class="statue" data-drift="-8" style="right:4%;bottom:0;width:min(280px,24vw);opacity:.12;color:var(--gold)"><svg viewBox="0 0 700 700"><use href="#urn"/></svg></div>
+  <div class="wrap">
+    <h2 class="h-lg" data-lines style="color:var(--on-dark)">Let the<br>countdown begin</h2>
+    <p data-reveal style="margin-top:24px;font-size:14px">We can't wait to celebrate with you in Rome.</p>
+    <div style="margin-top:30px;color:var(--on-dark)" data-reveal><a class="oval" href="#rsvp"><svg viewBox="0 0 120 46" preserveAspectRatio="none"><ellipse cx="60" cy="23" rx="59" ry="22"/><ellipse class="o2" pathLength="1" cx="60" cy="23" rx="57" ry="20.5" transform="rotate(-2 60 23)"/></svg><span>Rsvp</span></a></div>
+    <div class="timer" data-reveal aria-live="polite">
+      <div><b id="cd-d">—</b><span>Days</span></div>
+      <div><b id="cd-h">—</b><span>Hours</span></div>
+      <div><b id="cd-m">—</b><span>Minutes</span></div>
+      <div><b id="cd-s">—</b><span>Seconds</span></div>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
-  <p class="script">Emily &amp; Alexandre</p>
-  <p>June 26–27, 2027 · Rome, Italy</p>
+  <p class="script s-lg">Emily &amp; Alexandre</p>
+  <p style="margin-top:10px;font:400 18px/1 var(--serif);text-transform:uppercase;letter-spacing:.12em">June 26–27, 2027 · Rome, Italy</p>
   <p class="tag">#EMILYALEXANDRE2027</p>
 </footer>
 
+<!-- silhouette symbols, injected from vector files -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="angel-trumpet" viewBox="0 0 470 700"><path fill="currentColor" fill-rule="evenodd" d="M140 690C140 689 141 686 142 684C144 681 144 660 142 658C141 657 141 656 141 654C141 653 140 651 138 650C137 649 136 647 136 645C136 644 135 643 134 642C134 642 133 641 133 639L133 636L143 636L153 636L153 631C153 626 153 625 157 622C161 618 166 615 169 615C170 615 170 615 169 613C168 609 168 606 171 603C174 599 178 592 178 590C178 588 171 584 168 585C163 586 157 582 155 577C151 572 151 571 154 565L156 561L153 558C151 556 150 555 148 556C144 557 136 550 136 545C136 543 135 541 134 540C131 536 133 533 141 525C146 520 150 515 151 513C152 511 154 507 156 505L160 501L157 499C155 498 153 497 151 498C142 499 136 494 138 486C138 484 139 483 139 483C139 482 137 482 134 481C130 478 126 478 124 481C121 484 114 480 114 475C114 473 113 471 112 469C109 460 113 450 123 440C127 437 131 433 132 431C133 429 136 427 139 426C152 422 152 422 157 415C159 411 163 406 166 402C175 393 176 388 176 368C176 358 177 350 177 348C178 347 177 350 175 354C171 360 171 362 171 368C171 373 170 378 169 382C165 391 165 391 160 391C154 390 152 387 153 382C153 379 153 378 150 377C149 375 147 375 145 375C142 376 138 374 136 369C134 366 134 366 136 360C138 355 138 353 138 343C137 337 141 331 149 326C153 323 155 321 157 317C161 308 166 303 173 298C177 295 180 292 181 292C181 291 182 291 183 291C185 291 186 290 187 286C188 284 189 280 190 279L192 276L190 274C188 272 187 272 188 270C189 268 188 266 186 262L184 258L182 263C181 265 179 269 178 270C177 272 176 274 176 275C176 275 175 277 173 279C171 280 169 283 168 284C167 286 165 287 163 288C161 288 159 290 158 292C155 295 150 297 149 296C148 296 147 297 146 298C139 302 131 294 131 285C131 283 130 278 129 274C128 266 128 266 130 258C131 253 132 249 132 247C132 245 138 231 140 229C141 227 142 225 143 224C143 223 144 221 146 219C147 218 148 216 149 214C150 207 154 198 159 194C164 189 171 186 174 187C174 188 177 187 178 186C181 184 183 184 185 184C189 185 192 183 192 180C192 178 191 177 190 177C188 177 188 176 188 173C188 172 187 171 186 171C184 170 183 165 186 161C187 158 187 158 185 157C183 156 183 156 183 157C184 159 183 160 181 158C178 154 186 139 189 142C191 143 194 142 194 140C193 139 193 137 194 135C194 133 194 132 194 131C192 130 193 127 195 125C197 124 197 124 198 125C199 126 199 126 198 126C198 126 197 126 197 127C197 129 199 128 203 124C205 122 208 120 210 119C211 119 214 118 215 116C219 114 222 113 223 116C223 116 224 117 226 117C227 117 229 117 230 118C231 119 233 119 235 118C237 117 238 117 241 118C244 120 244 120 246 119C247 117 247 117 249 119C251 121 252 124 250 125C248 125 249 128 251 130C252 132 252 135 250 136C250 136 249 137 249 138C249 139 248 140 247 140C245 140 244 147 245 152C246 157 246 158 245 158C243 158 240 164 239 168C239 171 238 172 235 172L231 172L241 184C249 193 251 195 256 196C268 201 273 206 277 218C279 224 280 226 284 228C286 230 289 232 289 234C290 235 292 238 293 240C295 242 296 244 296 246C296 247 297 248 298 249C301 250 305 256 309 263C310 265 315 272 319 277C325 284 327 286 329 286C331 286 332 286 332 288C333 289 334 290 335 290C335 290 336 291 337 292C337 294 338 295 339 295C340 296 340 297 340 298C340 299 341 300 342 301C343 301 343 302 343 304C342 306 344 308 352 319C379 350 396 363 411 363C414 363 416 363 417 364C420 370 395 394 381 398C375 400 374 398 376 390C380 376 371 358 344 321L334 309L325 309C317 309 315 309 312 307C308 304 304 304 301 306C299 308 292 312 289 312C288 312 287 311 286 310C285 310 283 308 280 307C277 306 276 304 274 301C269 288 265 281 262 278C259 274 259 274 260 271C262 269 262 267 261 266C260 265 260 265 260 268C260 270 259 271 258 272C257 273 257 273 261 278C268 287 274 302 277 315C278 320 279 322 285 328C295 338 297 343 292 349C289 353 289 357 291 359C292 359 294 362 295 363C296 365 299 369 302 373C304 376 308 380 309 382L310 386L305 391C301 394 299 396 297 396C295 396 294 397 292 399C290 402 290 403 293 407C295 413 297 424 296 430C296 436 292 444 289 448C286 451 286 452 286 461C286 470 285 472 283 476C282 478 280 480 280 479C278 478 282 492 286 497C287 499 288 501 288 502C288 503 289 506 290 507C294 512 298 521 298 524C298 525 297 527 297 529C296 530 295 533 294 534C293 539 287 542 283 542C280 541 279 542 276 544C272 547 271 548 274 554C275 558 275 560 273 564C271 568 268 571 265 571C261 571 258 577 260 580C262 581 265 589 265 591C265 592 264 594 262 595C260 598 258 599 256 599C254 599 252 600 252 600C251 603 249 602 242 596C237 591 236 591 236 585C236 582 237 578 237 576C238 572 238 572 237 574C236 575 236 580 236 584L236 591L243 598C249 603 252 605 256 606C258 607 262 610 264 611C267 613 269 615 270 615C274 615 279 618 283 622C286 625 286 626 286 631L286 636L221 636L156 637L231 637L306 637L306 639C306 641 305 642 305 643C304 644 303 645 303 646C303 647 302 649 300 650C299 651 298 653 298 655C298 656 298 657 297 658C295 659 296 681 298 686C298 688 299 690 299 691C298 692 283 692 219 692L140 692L140 690ZM191 614C194 611 194 611 194 607C194 604 194 602 195 602C196 601 196 600 196 600C196 599 195 599 194 600C194 601 193 603 193 606C193 610 193 611 190 613C186 616 185 617 182 615C180 613 180 613 180 615C179 615 179 616 180 615C181 615 182 615 183 616C186 618 187 617 191 614ZM207 598C209 596 212 593 213 591C215 589 213 590 209 594C205 598 202 600 200 600C197 601 197 601 200 601C201 601 204 600 207 598ZM200 572C201 562 205 550 212 535C218 523 218 522 212 534C206 545 200 562 199 569C199 573 199 578 199 580C198 582 199 584 199 583C199 582 200 577 200 572ZM238 554C242 552 253 545 251 545C251 545 248 547 246 548C243 550 238 553 236 555C233 557 228 561 224 564L218 570L226 563C230 560 235 556 238 554ZM259 545C260 537 259 534 259 537C258 541 258 559 258 558C259 558 259 552 259 545ZM241 497C243 491 244 482 244 477L245 468L243 478C242 488 240 498 238 506C238 507 238 508 238 508C239 508 240 503 241 497ZM174 482C178 478 181 473 181 472C182 471 184 468 186 466C192 459 198 451 195 454C194 455 192 456 192 456C191 456 192 448 193 443C194 441 194 439 192 435C191 433 190 431 190 432C190 432 191 434 191 437C193 440 193 441 191 445C191 447 190 451 190 454C190 458 189 459 186 464C183 467 181 470 181 471C181 472 178 476 174 479C170 483 165 488 165 490C163 493 163 493 165 491C166 490 170 485 174 482ZM233 476C241 460 241 458 241 430L242 406L241 430C240 459 239 463 229 481C227 485 226 488 226 487C227 487 230 481 233 476ZM279 455L279 432L278 449C277 463 277 478 278 478C278 478 279 468 279 455ZM279 351C279 350 273 347 265 343C258 339 247 333 242 329C237 325 233 323 234 323C238 328 252 337 264 344C280 352 279 351 279 351ZM318 288C318 288 314 282 309 276C302 267 298 264 294 262C291 260 288 258 287 256C286 255 284 254 283 254C280 253 276 248 268 232C264 224 258 214 255 210C245 196 230 178 227 177C224 176 220 179 216 184C215 186 212 189 209 191C202 195 200 197 188 218C178 238 172 245 164 251L162 253L165 251C172 247 178 240 188 221C194 210 200 201 201 199C202 197 205 195 207 193C210 192 213 189 215 187C223 177 226 175 226 181C226 184 229 188 234 190C235 190 237 192 238 193C239 194 240 195 240 194C241 194 242 195 243 197C244 198 246 201 249 204C256 212 261 222 267 234C273 247 278 254 282 256C284 256 285 258 286 259C286 260 287 261 288 261C289 261 292 263 299 269C304 273 307 279 307 284C307 287 308 288 310 290C312 292 312 292 315 290C317 289 318 288 318 288ZM118 267C117 265 117 259 118 256C121 252 120 252 118 253C115 256 112 255 111 253C110 250 111 247 115 239L118 233L114 235C110 238 106 237 105 234C105 232 105 230 106 229C107 227 107 227 105 227C100 227 100 223 105 217C108 215 107 215 104 216C101 217 101 217 99 215C96 212 97 209 101 204L103 201L100 201C97 201 96 200 95 199C93 196 94 194 98 189C102 185 102 185 100 185C93 185 91 177 98 174C100 172 101 171 98 171C96 170 97 165 100 163L103 162L101 161C95 158 92 153 96 150C98 148 98 148 93 145C90 143 87 140 87 139C85 133 89 130 95 133C98 135 97 134 93 129C90 125 88 122 87 120C86 114 89 111 93 115C96 117 95 116 91 110C87 104 83 93 84 90C85 86 88 85 91 89L94 92L92 87C86 78 83 64 86 59C86 56 89 57 91 59C93 61 93 61 92 60C86 42 86 22 93 26C95 27 95 26 94 19C94 9 98 4 102 9C105 12 113 30 114 36C116 44 121 56 127 63C128 65 132 71 135 75C138 79 141 83 142 84C143 86 144 88 145 90C146 91 148 95 149 96C151 98 153 104 155 109C158 121 158 128 154 137C151 146 150 158 154 163C158 167 159 171 160 176C160 179 161 182 163 184C165 187 165 188 163 188C156 193 149 203 147 212C147 214 146 217 145 218C136 230 132 240 128 256C127 262 125 267 124 268C122 269 118 269 118 267ZM315 266C314 266 312 263 310 260C309 257 306 253 303 250C301 247 297 242 295 238C293 235 289 230 286 227C283 224 281 221 279 216C278 213 276 209 274 207L271 203L274 200C276 198 278 194 279 190C280 187 282 183 283 181C288 177 289 164 287 157C283 147 284 139 292 123C295 117 299 110 301 108C303 106 305 102 306 99C309 92 330 63 334 61C337 60 344 51 350 42C357 32 369 22 372 24C374 26 373 34 370 39C368 43 368 44 369 44C371 42 374 44 374 46C374 50 370 60 367 66C363 72 363 74 366 71C368 69 370 71 370 74C370 78 364 90 359 96C354 102 354 103 358 100C362 96 364 96 365 100C366 103 360 113 353 122C349 127 348 128 351 126C355 123 358 124 357 128C357 129 357 132 357 134C357 137 352 143 346 147L344 149L347 148C353 147 352 154 344 159L340 162L344 162C347 162 348 163 348 165C348 169 346 171 342 173C340 174 339 175 340 176C342 178 341 181 336 184L332 186L335 187C336 188 338 189 338 191C338 192 339 193 340 194C343 197 340 203 335 203L333 203L335 206C341 212 340 219 334 219L331 219L334 223C337 227 337 232 333 233C332 234 331 235 331 237C331 239 331 239 327 238L324 236L327 240C332 249 329 255 321 251L317 249L319 253C322 258 323 264 320 266C318 268 318 268 315 266Z"/></symbol><symbol id="angel-kneel" viewBox="0 0 470 700"><path fill="currentColor" fill-rule="evenodd" d="M62 652L62 636L68 634C71 632 74 631 74 631C75 631 75 627 76 623C76 617 76 615 78 613C79 612 80 611 80 610C78 608 81 605 88 598C97 590 101 584 102 578C103 565 107 560 115 560C118 560 121 560 122 559C124 558 127 557 130 557C137 557 142 555 144 552C148 548 152 547 158 548L164 548L167 544C169 541 172 538 175 537L179 535L179 525C179 515 180 508 187 481L191 461L188 453C184 446 184 446 184 438C185 433 185 429 186 427C186 425 186 425 183 424C178 422 176 418 176 415C177 414 176 411 175 409C172 403 173 401 180 379C189 349 200 322 209 308C212 304 213 301 213 297C213 292 213 292 210 292C207 292 203 289 203 287C203 285 202 283 201 282C199 278 198 274 200 269C202 265 206 250 206 249C205 249 204 251 203 253C201 256 201 256 198 256C194 255 195 254 192 279C190 301 189 306 186 310C184 314 182 315 179 313C177 311 177 312 177 323C175 355 172 367 166 363C165 363 164 362 164 362C163 362 163 367 163 373C162 393 158 403 153 400C151 399 151 399 151 406C151 410 151 417 150 423C148 440 146 446 142 443C140 442 140 443 139 458C137 480 135 488 131 487C129 486 129 487 128 494C125 514 118 527 112 524C111 523 110 522 110 521C108 517 103 427 102 388C102 362 102 360 100 361C98 361 97 360 96 351C95 344 96 314 98 306C98 304 98 303 97 304C93 305 92 302 92 291C92 283 94 264 96 256C96 255 96 254 94 255C89 256 89 241 94 219C99 203 98 204 97 205C90 207 93 189 102 167C106 157 105 158 103 158C98 156 104 138 116 120C120 113 121 112 119 111C118 110 118 110 119 106C122 99 128 89 135 81C138 77 140 73 140 72C137 69 159 46 175 37C188 29 203 30 212 39C219 45 220 53 216 72C211 94 214 108 230 141C234 150 236 152 239 150C242 148 262 132 262 131C262 131 261 131 260 131C258 132 257 131 257 130C257 128 257 127 265 126C272 124 274 122 270 121C268 120 267 119 266 117C264 114 262 113 262 116C262 116 262 117 261 117C260 117 257 113 257 112C258 112 257 110 257 108C255 104 257 99 261 96C263 95 264 94 263 91C263 87 263 84 267 80C269 78 270 76 270 76C270 74 277 70 280 70C282 70 283 71 285 71C286 72 288 73 289 73C290 73 292 74 293 75L295 77L299 74C300 73 302 71 302 71C302 69 311 66 317 64C327 62 335 63 343 67C350 71 360 80 361 83C361 85 363 86 364 87C366 88 368 93 368 97C368 98 369 99 370 100C372 101 373 103 373 104C373 105 374 107 375 108C378 111 378 115 375 118C374 119 373 121 373 121C373 124 371 125 367 125C364 125 363 126 358 132C356 136 352 139 350 140C347 141 347 143 344 150C340 159 340 160 336 158C333 157 333 157 332 158C331 159 326 162 324 162C323 162 322 163 321 165C318 170 314 169 305 161L300 156L296 159C292 162 286 169 286 170C286 173 293 185 295 187C296 188 297 190 297 190C297 191 298 193 299 194C300 196 301 198 301 200C301 202 303 207 306 213C312 225 312 231 309 241C307 249 307 252 310 254C312 255 312 254 315 250C317 247 320 241 322 238L325 231L324 221C321 210 322 209 328 195C332 188 333 187 335 191C335 193 336 192 338 188C343 177 346 173 349 173C350 174 351 173 352 173C353 171 356 172 356 174C356 176 357 177 358 177C359 178 359 179 359 183C359 186 359 188 360 188C361 188 361 202 360 210C358 218 355 225 351 233C347 239 346 243 337 270C332 286 326 299 320 307L317 312L317 322C318 331 318 332 315 336L312 342L307 342C296 342 297 341 299 349C300 352 301 357 301 360C301 364 301 364 308 366C310 366 312 367 313 369C314 371 316 372 319 373C321 374 323 375 324 376C325 377 326 378 328 378C330 378 332 379 334 381C337 384 341 386 349 389C368 397 384 408 389 418C396 431 393 454 378 501C375 511 371 522 371 526C370 530 367 540 365 549C360 567 359 568 351 572C347 574 347 576 350 582C353 586 354 591 352 595C351 598 351 598 354 601C356 603 357 606 358 607C358 610 364 614 374 619C377 620 377 621 378 625C378 630 378 631 384 632C393 636 393 635 393 653L393 668L227 668L62 668L62 652Z"/></symbol><symbol id="urn" viewBox="0 0 700 700"><path fill="currentColor" fill-rule="evenodd" d="M252 664C252 657 252 653 253 652C255 650 445 650 447 652C448 653 448 657 448 664L448 674L350 674L252 674L252 664ZM264 644C264 641 265 638 266 637L268 634L350 634C429 634 431 634 433 636C435 638 436 642 436 645L436 648L350 648L264 648L264 644ZM511 631C510 628 509 624 509 623C509 621 508 620 507 620C506 620 505 619 504 619C502 617 502 617 503 614C504 612 505 610 506 610C507 609 508 608 508 606C509 603 513 603 516 606L519 609L520 604C521 602 524 596 527 592C535 580 537 576 535 572C534 568 532 560 531 556C531 556 529 558 527 560L523 564L526 567L528 569L526 573C524 578 523 579 521 576C520 575 519 575 518 576C517 577 511 580 509 580C509 580 509 573 510 571C511 569 511 568 510 566C508 563 508 563 510 562C511 561 513 560 514 560C515 560 516 560 516 559C516 557 519 558 521 561L522 563L526 560C527 557 530 554 531 551C531 549 533 544 535 541C537 534 538 525 536 521C535 520 534 520 534 521C534 521 532 525 529 528L524 535L520 528C516 523 515 521 515 518C515 514 514 514 511 514C510 514 507 513 505 512L501 511L503 507C504 506 505 503 505 503C505 502 506 500 508 499C510 498 511 497 510 495C510 492 514 490 518 492C520 493 522 494 522 495C522 496 522 496 523 496C524 496 524 495 524 494C524 492 525 489 526 486C527 481 527 481 525 479C524 478 524 478 526 477C530 476 542 457 540 453C540 452 539 452 538 454C537 455 536 456 536 456C535 456 533 457 531 458C529 460 527 461 527 461C526 461 525 449 526 447C527 445 527 444 525 443C522 441 523 435 527 434C528 434 530 433 531 432C532 431 536 432 537 435C538 437 539 437 543 431C550 424 553 414 553 400C553 395 553 391 552 391C551 391 550 390 549 388C548 386 547 384 546 384C546 383 545 382 545 381C545 380 544 378 544 378C541 376 544 370 548 369L551 368L547 365C545 363 543 362 542 362C542 362 540 365 538 369C535 376 535 376 536 381C538 385 538 385 536 385C535 385 534 384 533 383C531 381 531 381 530 385C529 388 527 391 526 394L525 398L528 397C535 396 541 401 538 405C537 406 537 408 538 408C538 409 536 422 535 422C535 422 533 421 530 419C528 418 526 417 526 417C525 417 525 420 524 422C522 428 518 434 512 439L507 443L510 444C517 446 522 453 519 455C518 456 517 458 517 460C517 461 517 463 516 464C515 464 514 466 513 468C512 470 512 472 511 472C510 472 504 467 503 466C502 464 502 464 498 467C495 471 494 471 492 471C491 471 488 472 484 474L478 477L478 473C479 471 479 467 480 464C480 457 482 453 484 451C486 450 485 449 482 447C481 445 479 443 479 442C479 441 478 440 477 439C476 437 476 436 481 434C484 432 488 431 489 431C491 432 492 431 493 429C495 424 504 431 505 438L506 442L511 437C517 432 520 427 521 423C522 421 522 421 516 424C513 426 510 428 509 428C509 429 508 428 507 424C506 415 506 413 507 410C508 407 508 407 507 406C506 405 504 404 503 403L500 401L504 398C506 396 508 394 509 393C510 393 511 392 511 391C511 387 520 388 522 393L524 396L527 387C529 382 531 378 531 378C531 377 530 377 529 377C528 377 527 377 527 377C527 375 531 372 532 372C535 372 540 360 541 351C541 347 541 345 540 346C540 347 538 349 537 349C536 349 534 351 533 353C529 357 528 357 526 352C525 349 524 349 522 350C520 350 517 351 516 351L514 353L516 354C520 356 522 359 522 363C522 366 522 367 520 368C519 368 518 369 518 370C517 372 510 380 509 380C508 380 507 378 505 375C502 370 502 370 500 372C498 373 495 373 489 373C484 373 480 374 480 374C480 374 481 370 483 365C485 359 487 356 489 354C492 351 492 351 490 349C489 347 487 342 487 338C487 337 498 335 501 336C503 337 504 336 505 334C508 331 509 331 513 336C516 339 517 344 515 348C514 350 514 350 518 349C522 347 524 343 521 342C519 341 520 340 523 336C526 333 527 333 531 334C533 335 536 327 536 319C536 313 535 311 534 314C533 316 519 327 518 327C517 327 517 326 517 325C517 324 516 320 515 317C513 310 512 305 514 302C515 301 514 300 511 299C509 298 507 297 506 296C504 295 504 295 506 290C507 288 510 285 511 284C514 282 514 278 512 278C512 278 510 277 508 275C506 273 505 273 504 274C503 277 499 281 495 282C493 283 490 284 489 285C487 286 486 287 486 287C484 286 484 269 486 267C487 263 487 262 486 262C485 262 483 261 481 259L478 257L481 252C483 250 486 248 487 247C489 247 490 245 490 244C490 243 491 242 491 241C493 239 493 239 497 240C502 242 505 246 505 250C505 252 506 251 510 248C519 241 520 240 517 235C513 229 511 228 510 233C509 234 508 236 508 236C507 236 507 237 506 239C505 243 505 243 503 240C502 238 500 237 500 237C499 237 497 236 497 235C496 234 495 233 494 234C494 234 493 233 492 231C492 230 491 229 490 229C490 230 489 229 488 228C488 227 487 225 486 224C485 224 485 221 484 217C484 212 484 211 486 207C488 205 490 203 490 203C491 203 489 198 486 196C485 196 485 195 485 194C485 193 487 195 489 197C492 201 494 202 495 201C500 200 511 206 512 211C512 212 512 215 513 217C513 220 514 223 513 224C512 226 522 238 523 236C524 235 531 233 532 234C533 234 533 236 533 237C533 241 535 242 538 242C539 242 543 243 545 243C548 244 550 245 550 245C550 244 550 243 549 241C548 237 549 235 554 230L558 227L561 230C563 231 564 233 564 234C564 235 565 235 568 235C570 235 573 236 577 237C580 239 582 240 583 240C584 240 584 242 582 243C582 244 581 245 581 246C581 247 580 249 578 250C575 253 575 253 577 256C579 259 580 264 579 264C579 264 578 267 579 272L579 279L577 278C575 277 572 275 568 274C565 273 561 271 560 269L558 267L554 270L551 274L547 269C546 266 544 263 544 262C544 262 543 261 543 261C541 261 540 259 540 256C540 253 544 249 547 248L550 246L543 245C534 243 532 243 534 246C536 249 535 249 532 249C530 249 528 249 528 249C528 251 534 270 536 275C538 280 539 282 540 282C543 282 547 284 548 287C550 290 550 290 549 292C547 293 547 293 548 295C549 296 549 298 549 299C549 301 550 303 553 305C556 306 559 309 561 310L565 313L565 311C565 307 568 303 574 301L578 299L581 302C582 303 583 306 583 307C583 309 583 310 585 310C588 310 593 312 592 314C592 314 592 315 593 315C593 315 596 317 598 319L602 323L597 327C594 330 592 331 590 331C587 331 587 331 588 333C589 336 589 345 588 345C587 345 587 346 587 347C587 348 586 350 586 352C585 353 584 355 584 357C584 360 583 360 578 355C575 352 572 350 571 350C570 350 567 345 566 341L565 338L560 341C557 342 554 343 554 342C553 341 551 331 551 328C551 327 551 326 550 325C546 322 552 316 559 315L564 314L557 310C550 304 549 304 548 308C548 310 547 311 546 311C545 310 543 310 542 310L538 309L539 318C539 330 540 334 546 349C548 355 550 361 550 361C550 362 551 361 553 359C555 356 559 355 560 357C560 358 561 359 562 358C563 358 571 360 572 361C573 361 572 364 571 366L568 371L571 372C572 373 573 376 574 378C575 381 576 384 576 386C577 388 577 389 577 390C576 390 562 387 560 386C557 383 555 387 555 398C555 408 556 411 561 415C564 418 565 418 564 414C564 412 564 410 567 408C570 404 572 404 573 407C574 408 576 409 578 409C581 409 590 412 590 413C590 413 589 414 588 415C588 416 587 417 587 418C587 418 586 420 585 420L583 422L585 425C587 428 590 441 589 442C588 442 586 441 584 441C581 440 578 439 578 439C577 439 575 438 573 437L570 434L567 437C566 439 564 440 564 440C563 440 558 432 558 430C558 430 557 429 556 428C555 427 555 427 556 424C557 421 559 420 561 419L563 419L560 416C558 415 556 413 556 413C556 412 556 412 555 412C554 412 554 413 554 414C554 415 552 421 551 427C549 433 547 442 546 446C546 453 545 454 544 454C539 456 543 474 549 478C551 479 551 479 551 477C549 473 553 468 556 470C557 470 559 470 562 470C566 470 566 470 566 473C566 474 565 476 565 477C564 478 564 479 566 479C567 480 574 490 573 490C571 492 564 493 562 492C560 491 560 492 559 495L558 500L555 497C553 496 552 495 551 495C551 495 550 494 549 493C548 491 547 490 546 491C544 492 545 485 547 483L550 480L546 478C544 476 543 472 541 469L540 463L535 471C531 478 530 480 530 485C530 492 530 492 535 494C539 494 540 495 540 498C540 500 542 504 543 506L545 511L542 513C540 513 538 514 537 514C535 514 540 526 545 534L547 537L548 535C549 531 552 530 554 532C555 532 557 533 558 533C560 533 562 534 564 535C568 536 568 541 565 543C563 545 563 545 565 548C568 553 568 565 565 563C564 563 562 562 560 562C557 561 555 560 553 559C551 557 551 557 549 559C548 561 546 562 546 562C545 562 540 554 540 553C540 552 540 551 539 551C537 551 538 547 540 545C541 543 543 542 544 542C547 542 547 541 544 535C540 529 539 529 539 533C539 534 538 538 536 542C533 550 533 559 536 566C537 569 539 575 539 579C540 585 541 587 541 586C543 584 545 585 549 588C554 592 554 593 550 594C549 595 548 596 548 598C548 601 546 607 545 607C545 607 542 605 540 604C537 600 537 600 535 602C532 603 531 603 531 597C531 594 531 592 530 592C528 592 522 601 521 607C520 609 520 609 523 608C528 607 529 610 530 617L530 624L526 624C523 623 523 624 522 626C521 627 519 630 517 632L513 636L511 631ZM182 631C180 629 178 626 178 625C178 623 177 623 174 624L170 624L170 617C171 610 173 608 177 608C179 609 180 609 180 609C180 606 172 592 170 592C170 592 169 594 169 597C168 602 168 603 165 601C163 600 163 601 160 604C158 605 155 607 155 607C154 607 152 602 152 598C152 596 151 595 151 595C150 595 149 594 148 593C147 592 147 591 151 588C155 584 155 584 157 585C160 587 160 587 160 580C161 577 162 573 162 571C163 570 164 566 165 562C167 555 167 550 163 542C162 539 161 535 161 534C161 529 160 530 156 536C152 542 152 542 155 542C158 542 162 546 162 549C162 550 159 557 156 560L154 562L151 560L148 557L146 559C145 560 142 561 140 562C138 562 136 563 135 563C133 564 133 564 133 560C133 553 133 550 135 548L137 545L135 543C130 540 134 533 141 533C143 533 145 532 146 531C148 530 151 531 152 535C153 537 153 537 154 535C156 533 159 526 162 520L165 514L160 513C154 512 154 512 158 503C159 501 160 498 160 497C160 495 161 494 166 493C169 492 170 492 170 487C171 481 170 477 163 467L160 463L159 466C158 471 155 477 152 479L150 480L153 482C157 486 155 491 144 498L142 500L141 496C141 491 141 491 138 492C137 492 134 492 131 492L126 491L129 487C130 485 131 483 131 482C131 482 132 481 133 480C135 479 135 478 134 474L134 470L138 470C141 470 143 470 144 470C147 468 151 473 149 477C149 479 149 479 151 478C157 474 161 456 156 454C154 454 154 453 154 450C154 448 154 446 153 446C152 445 152 444 153 443C154 441 153 439 152 435C151 433 149 426 148 421C147 416 145 412 145 412C144 412 144 412 144 413C144 413 142 415 141 416L137 419L140 420C141 420 143 422 144 424C145 427 145 427 144 428C143 429 141 432 140 434C137 441 136 441 133 437L129 434L127 436C126 437 123 439 120 439C117 440 114 441 113 442C111 442 111 442 111 436C112 430 113 427 116 424C117 422 117 422 116 421C115 421 114 419 112 417C110 414 110 413 111 412C113 411 119 409 123 409C124 409 126 408 127 407C129 404 130 405 133 408C135 410 136 412 136 414C135 418 137 418 141 413L145 409L145 399C145 387 143 383 140 386C138 387 124 390 123 390C122 388 127 375 129 373C132 370 132 370 130 367C127 362 127 361 132 359C134 359 136 358 137 358C138 358 140 357 141 357C144 355 146 357 148 361L149 364L151 357C160 333 160 333 161 321L161 309L159 309C158 310 156 310 154 311C153 311 152 311 152 308L151 305L147 307C145 308 141 311 139 313L136 316L139 315C143 315 148 317 150 321C151 324 151 324 150 325C149 326 148 328 148 330C148 333 148 336 147 339C147 344 146 344 139 340L136 338L134 343C132 346 131 349 129 350C127 351 125 352 120 357C117 360 117 360 115 355C115 353 114 351 114 350C113 350 113 349 113 347C113 346 113 345 112 345C111 345 111 337 112 334C113 331 113 331 110 331C108 331 106 330 104 328C102 326 100 324 99 324C98 323 99 322 103 318C110 311 112 310 115 310C117 310 117 309 117 307C117 306 118 303 119 302L122 299L126 301C132 303 135 307 135 311C134 314 134 314 140 309C144 307 148 304 149 303C150 303 151 301 151 299C151 298 151 296 152 295C153 294 153 293 151 292C151 291 150 290 150 290C150 287 155 283 158 282C161 282 162 281 163 277C167 269 169 263 170 255L172 249L169 250C166 250 166 250 166 247L167 243L163 244C156 245 151 246 152 247C152 248 153 248 153 248C155 248 159 252 159 254C159 259 159 261 158 261C157 261 156 262 156 262C156 263 152 270 149 274C149 274 147 273 145 271L142 267L139 270C138 271 134 273 131 274C128 276 124 277 123 278L121 279L121 272C121 268 121 265 121 264C120 263 121 261 122 258L125 253L122 251C121 250 119 247 118 245C117 243 116 241 116 241C116 240 116 240 117 240C118 240 121 239 124 237C126 236 130 235 132 235C135 235 136 235 136 233C137 232 138 230 139 229L142 227L146 230C151 234 153 237 151 241C150 243 150 244 150 244C150 245 152 244 155 243C157 243 161 242 162 242C165 242 167 240 168 238C168 237 168 236 168 235C168 234 175 235 177 236C178 237 178 237 179 236C185 228 189 223 187 223C186 223 187 214 188 213C188 212 189 211 188 211C187 210 193 204 197 202C198 202 202 201 204 201C206 201 208 201 208 200C208 199 214 193 215 193C215 194 214 196 212 198C209 201 208 203 210 203C213 204 216 211 216 215C216 219 214 225 213 225C213 225 212 226 212 228C211 229 211 230 210 229C209 229 209 230 208 231C207 232 205 234 203 235C201 237 198 239 197 240L195 243L194 240C193 239 193 237 192 236C191 234 190 233 189 230C189 228 185 232 182 236C181 240 182 241 190 248C194 251 195 252 195 250C195 246 198 242 202 241C207 239 209 240 210 244C210 246 211 247 212 247C213 247 216 249 218 252L222 256L219 259C218 260 216 262 215 263C213 263 213 264 214 267C215 269 216 272 215 278C215 283 215 287 215 287C214 288 199 279 198 276C196 275 195 273 195 273C195 273 192 275 190 277L186 281L188 283C191 285 196 292 196 294C196 296 189 300 187 300C185 300 185 301 187 305C188 308 188 310 187 311C186 315 183 323 183 325C183 328 181 327 180 325C179 324 178 323 178 323C177 323 175 322 174 320C172 318 170 317 170 317C169 317 167 315 166 313L164 310L164 318C164 328 167 338 170 334C171 332 174 333 178 337L182 340L179 342C176 344 178 347 182 349C186 350 186 350 185 349C183 346 183 340 187 336C191 331 192 331 195 335C197 337 197 337 199 336C200 335 203 335 207 336L213 337L212 341C212 344 211 347 210 348L208 351L211 354C213 356 215 359 217 365C219 370 220 374 220 374C220 374 216 374 211 374C205 373 202 373 200 372C198 370 198 370 195 375C193 378 192 380 192 380C191 380 182 371 182 369C182 369 181 368 180 368C178 367 178 366 178 364C178 359 179 356 183 354L186 353L184 351C176 349 176 349 174 353L172 357L168 354C167 351 165 349 165 349C165 349 164 348 163 348C161 348 161 348 161 345C161 344 160 342 160 343C159 343 159 353 160 359C162 365 166 372 168 372C172 372 174 377 171 377C170 377 170 379 172 384C174 388 175 392 175 393C175 396 176 395 179 392C182 388 190 388 189 392C189 393 189 393 190 393C192 393 198 399 198 401C198 401 197 403 195 404C192 407 192 407 193 410C194 412 193 426 191 428C191 428 188 427 185 425C181 422 178 422 178 422C178 425 184 433 189 438L194 442L195 439C196 434 198 431 201 429C205 426 206 426 207 430C208 432 208 432 210 431C215 430 226 437 222 440C221 440 221 441 221 442C221 443 220 445 218 447L214 450L217 454C219 456 220 459 220 464C221 467 221 471 222 473L222 477L219 475C216 473 211 472 208 471C207 471 204 470 202 468C198 464 198 464 197 466C196 468 189 473 189 472C187 469 183 461 183 459C183 458 182 456 181 455C178 453 185 444 191 444C193 444 192 443 186 437C179 430 177 427 174 418C174 417 173 418 171 419C166 422 164 422 163 416C162 413 162 410 163 409C163 408 163 406 162 405C159 402 167 395 172 397C175 398 175 398 174 394C173 393 172 391 172 391C171 391 171 390 171 389C171 386 168 379 167 381C166 383 164 386 163 385C163 385 163 383 164 380C165 376 165 376 162 369C160 365 158 362 158 362C157 362 150 367 150 368C150 368 151 369 153 369C154 370 156 371 157 374C158 377 158 377 157 378C156 379 155 380 155 381C155 382 149 391 148 391C147 391 147 396 147 402C148 417 150 424 157 432C161 437 161 437 162 435C164 432 166 431 171 434C177 436 178 440 175 443C173 444 173 445 174 448C174 449 174 453 174 456L174 461L170 459C167 458 164 456 163 454C160 451 158 453 160 457C163 464 172 477 174 478C176 478 176 478 175 479C173 481 173 481 174 486C175 488 176 492 176 493C176 495 176 496 177 496C178 496 178 496 178 495C178 494 180 493 182 492C187 490 190 492 190 496C189 497 190 498 192 499C193 500 195 503 196 506L199 511L195 512C193 513 191 514 189 514C187 514 186 514 186 518C185 520 183 524 182 526C180 529 178 532 178 533C177 535 175 536 175 534C175 534 173 531 170 528C168 525 166 522 166 521C166 520 165 520 164 521C162 525 163 534 166 543C170 553 173 558 176 561C178 563 178 563 179 561C180 558 182 558 186 560C192 562 192 563 190 566C189 568 189 569 190 571C191 574 191 580 190 580C190 580 187 579 185 578C181 576 180 576 179 577C177 579 176 578 174 574C172 569 172 566 175 565C177 565 177 565 173 561C169 555 168 555 168 559C168 561 167 565 166 568C165 571 164 574 164 575C164 578 168 584 174 594C177 597 179 602 180 604L181 609L184 606C187 603 191 603 192 607C192 608 193 609 193 609C194 609 195 611 196 613C198 618 198 618 193 620C192 620 191 621 191 623C191 626 187 635 186 635C186 635 184 633 182 631ZM278 630C278 630 279 628 280 628C282 626 282 624 282 583C282 543 282 541 280 539C279 537 278 536 278 536C278 535 310 535 350 535C390 535 422 535 422 536C422 536 421 538 420 538C418 540 418 542 418 583C418 625 418 626 420 628C421 629 422 630 422 630C422 631 390 631 350 631C310 631 278 631 278 630ZM167 587C167 587 166 585 165 583C163 579 163 579 162 581C160 586 161 588 164 588C166 588 167 587 167 587ZM538 584C538 578 538 578 535 583L532 588L535 588C538 588 539 587 538 584ZM267 530C264 527 264 526 264 518L264 513L350 513L436 513L436 520C436 533 444 532 350 532L270 532L267 530ZM282 505C282 500 285 496 289 496C291 496 294 495 303 490C311 486 316 481 318 474L319 470L350 470L381 470L382 473C384 481 392 489 401 493C404 493 407 495 407 495C408 496 409 496 411 496C415 496 418 500 418 505L418 510L350 510L282 510L282 505ZM174 490L173 486L172 489C171 493 171 494 173 495C175 498 176 496 174 490ZM528 490C528 485 526 486 525 492L525 498L527 495C529 494 529 493 528 490ZM318 465C305 459 297 440 304 432C308 428 315 427 315 431C315 432 316 432 318 430C323 426 329 428 327 434C327 436 327 436 328 433C330 430 333 428 336 428C340 428 341 430 340 436C340 441 341 454 343 464C343 467 343 467 340 467C335 467 330 459 328 444C327 438 326 437 326 440C326 443 327 449 329 454C330 458 331 464 332 465C332 467 332 467 330 467C326 467 321 463 318 455C314 447 312 440 314 436C315 433 315 433 314 434C313 435 313 438 313 441C313 447 313 449 317 457C319 461 322 466 322 466C322 467 321 467 318 465ZM346 466C343 462 341 442 342 435C343 430 345 428 350 428C356 428 358 431 358 442C358 452 356 461 354 465C353 467 348 468 346 466ZM357 463C359 454 360 441 359 436C359 430 359 430 361 429C371 425 375 437 370 454C367 463 364 467 360 467C357 467 357 467 357 463ZM368 467C368 466 369 462 370 458C374 446 374 440 373 435C372 431 372 430 374 429C378 426 384 430 386 437C389 447 378 467 370 467C369 467 368 467 368 467ZM378 467C378 466 380 463 381 460C383 456 386 451 387 447C388 441 388 440 386 435C385 431 385 430 386 429C388 428 389 428 393 430C402 436 398 455 385 464C382 466 378 468 378 467ZM316 423C321 418 320 411 314 404C311 402 309 400 307 400C305 400 302 397 302 394C302 392 303 390 304 389L305 387L350 387L395 387L396 389C399 393 397 400 393 400C390 400 385 404 383 409C380 414 381 420 384 423C385 425 385 425 350 425C316 425 315 425 316 423ZM330 382C322 378 311 360 306 343C301 326 299 300 302 295C304 293 316 292 320 294C324 296 324 296 325 314C326 341 330 363 336 377C338 380 339 383 339 384C339 385 333 384 330 382ZM344 383C342 381 340 379 338 372C332 357 327 320 328 303C329 293 330 293 350 293C373 293 372 292 371 313C371 346 364 377 356 382C353 384 347 384 344 383ZM375 383C375 383 377 380 380 378C393 363 401 339 403 311C403 294 404 293 414 293C425 293 426 297 424 316C419 344 405 369 387 380C383 382 375 384 375 383ZM299 379C272 366 252 334 252 303C252 295 254 293 261 293C270 293 271 294 271 307C273 339 287 366 308 380C312 383 312 383 310 383C309 383 304 381 299 379ZM313 380C293 368 277 339 275 308C275 298 275 298 277 296C280 293 281 293 286 293C295 293 296 294 296 308C298 338 308 365 321 378L325 383L322 383C320 383 316 382 313 380ZM364 376C370 363 374 340 376 313C376 293 377 293 387 293C393 293 397 294 398 296C399 298 399 315 398 324C396 341 389 358 382 370C375 379 371 383 365 383L361 383L364 376ZM394 379C413 364 425 339 428 309C429 294 430 293 438 293C441 293 444 294 446 295C448 297 448 297 448 306C446 336 427 365 402 378C390 385 385 385 394 379ZM288 379C260 367 240 345 234 316C230 301 232 293 240 293C246 293 248 295 248 305C250 334 265 360 289 376C300 383 300 383 288 379ZM411 376C434 361 449 334 452 305C452 295 454 293 460 293C468 293 470 301 466 318C459 344 438 368 412 379C403 382 403 382 411 376ZM155 362C158 361 158 359 157 354C157 351 156 350 155 353C154 354 153 357 153 359C152 362 151 364 152 364C152 364 154 363 155 362ZM548 362C548 361 547 357 546 355L544 350L543 355C543 358 543 360 545 362C548 365 549 365 548 362ZM166 337C166 336 164 330 163 330C162 330 162 331 162 332C162 334 162 336 161 337C161 338 161 338 163 337C164 337 166 337 166 337ZM538 335C537 330 537 329 535 333C534 337 534 337 536 337C537 338 539 338 539 338C539 338 539 337 538 335ZM250 289L242 289L244 286C248 277 239 254 227 247C225 246 221 244 219 244C215 244 214 243 214 240C214 235 217 228 221 225L226 221L350 221L474 221L479 224C483 228 486 235 486 240C486 243 485 244 480 244C474 245 470 248 464 256C457 265 453 280 456 286L458 289L449 289C427 289 257 289 250 289ZM168 280C168 274 167 274 165 279C164 282 164 282 166 284C167 284 168 285 168 285C168 285 168 283 168 280ZM536 281C535 280 535 279 534 277L534 274L533 277C533 278 532 281 532 282C532 285 532 285 534 284C535 283 536 282 536 281ZM177 276C179 275 181 275 182 275C184 276 184 276 184 273C183 272 183 269 182 268C182 266 181 263 181 262C179 259 182 255 187 253L192 251L188 248C181 243 180 243 180 247C180 250 179 250 177 250C173 250 171 259 172 265C173 268 173 268 172 268C170 267 169 270 169 277C169 283 170 284 172 280C173 279 175 277 177 276ZM531 274C531 268 530 268 529 268C527 268 527 268 527 265C529 258 527 250 523 251C520 251 518 248 519 246C521 243 516 246 511 250C507 252 507 252 511 253C516 253 522 259 519 262C519 263 518 265 518 267C517 269 517 272 516 273C516 276 516 276 518 275C522 275 527 277 528 281C530 285 531 282 531 274ZM161 235C159 233 159 213 160 212C161 212 161 211 161 210C161 205 173 197 178 198C179 199 185 195 184 194C181 191 178 190 175 190C174 190 173 190 174 189C174 188 173 188 169 189C168 189 167 190 167 192C167 196 162 205 160 205C160 205 158 206 157 207C156 208 155 209 155 209C154 208 153 209 152 210C149 212 131 214 129 212C129 211 128 211 127 212C126 212 125 213 124 212C124 212 122 213 120 213C116 215 116 215 119 210C120 208 121 206 121 205C121 205 121 203 122 202C123 201 123 199 123 199C123 199 129 189 130 189C131 189 131 189 131 188C129 186 141 180 147 179C155 178 159 179 164 184C167 187 168 187 172 186C175 186 177 185 177 183C178 182 179 181 180 181C180 180 181 179 180 179C180 179 181 178 182 177C183 176 184 175 184 174C184 174 184 173 185 173C185 173 186 172 187 172C194 165 208 166 210 173C211 175 213 178 214 180C217 182 217 183 215 184C215 186 214 187 214 188C214 190 209 194 205 196C201 197 194 198 193 197C192 195 186 195 184 197L182 199L184 203C186 207 187 212 185 216C183 222 170 232 165 232C165 232 163 233 163 234C162 235 161 236 161 235ZM538 235C538 234 535 233 532 231C516 223 511 214 516 204L518 200L516 197C514 195 511 195 508 197C506 198 498 198 497 197C497 196 496 196 495 196C492 196 487 191 485 186C484 182 484 182 487 179C488 177 489 174 490 173C491 166 506 165 513 172C514 172 515 173 515 173C516 173 516 174 516 174C516 175 517 176 518 177C519 177 520 179 519 179C519 180 519 180 520 180C520 180 521 181 522 183C524 187 532 188 535 184C542 177 555 177 565 184C567 186 569 187 569 188C569 188 570 189 571 190C572 191 574 194 575 196C576 198 578 201 578 202C579 203 579 205 579 205C579 206 580 208 581 210C584 214 584 215 581 214C578 212 570 211 570 212C570 214 550 212 549 210C548 209 547 209 546 209C545 209 543 208 542 207C541 206 540 205 539 205C538 205 534 199 533 194C532 189 528 186 527 189C527 189 526 190 524 190C523 190 520 191 518 192L515 193L518 196C520 198 521 199 523 198C530 197 539 205 541 215C541 219 540 236 539 236C538 236 538 236 538 235ZM289 214C286 210 283 210 274 214C270 215 267 216 265 216C263 216 257 212 255 209C254 207 254 207 257 205C259 204 263 201 265 198C267 196 270 193 273 192C275 191 277 189 278 187C280 183 283 182 288 180C291 179 295 177 296 175L299 173L300 175C302 178 302 183 301 190C298 197 300 198 305 193C306 191 309 190 311 189C315 188 321 189 321 190C321 191 322 191 323 191C326 191 334 201 334 206C335 206 335 207 336 209C336 210 337 211 336 211C336 212 336 213 337 214L339 217L322 217L306 217L304 214C300 211 299 206 300 202C301 198 301 198 299 198C299 197 296 198 294 199C289 203 288 208 291 213C294 218 295 218 292 218C291 218 290 216 289 214ZM406 217C406 217 407 215 408 213C412 208 411 203 406 200C400 196 398 196 400 202C401 206 400 209 397 214L395 217L378 217L361 217L362 214C363 212 364 211 363 211C363 210 363 209 364 208C364 207 366 205 366 203C367 201 370 198 371 196C373 195 375 193 374 193C374 192 375 192 376 191C377 191 379 190 381 189C385 187 391 189 395 193C400 198 402 197 399 190C398 185 398 178 400 175L401 173L406 176C409 178 412 180 414 181C416 181 418 183 421 186C423 189 425 191 427 192C429 193 433 195 435 198C438 201 441 204 443 205C447 207 447 208 442 212C437 217 434 217 426 213C418 210 414 210 411 214C409 217 406 219 406 217ZM222 215C218 212 216 209 216 204C216 199 217 199 219 201C223 205 227 208 228 208C229 208 231 209 232 210C233 211 236 212 237 212C238 212 239 213 239 214C239 217 239 217 232 217C227 217 225 217 222 215ZM461 215C460 213 461 212 463 212C466 212 482 201 482 200C482 199 482 199 483 200C484 200 484 202 484 205C483 214 478 217 466 217C462 217 461 217 461 215ZM349 214C348 211 342 205 341 205C340 205 340 204 339 202C339 200 338 199 338 200C337 200 334 194 335 193C335 192 335 191 334 191C332 190 332 180 334 176C336 171 341 166 345 165C349 164 349 164 349 161C349 159 349 157 350 156C351 156 351 157 351 160C351 163 351 164 355 165C361 167 367 174 367 182C368 185 366 196 365 196C364 196 364 197 364 198C364 199 363 200 363 200C362 200 361 201 361 202C361 203 360 204 359 204C359 204 357 205 357 206C356 208 355 209 355 208C354 208 353 210 352 212C350 216 350 216 349 214ZM234 209C233 208 231 207 230 206C228 206 225 203 222 201C218 198 218 197 217 192C217 188 217 186 218 185C220 183 220 183 223 185C225 186 228 187 231 188C233 188 237 190 240 192C246 195 252 197 260 196C266 195 266 196 261 200C256 205 250 208 243 210C236 211 236 211 234 209ZM455 209C446 206 438 201 436 197C435 195 435 195 442 196C450 196 456 195 461 191C463 189 467 188 469 188C472 187 475 186 477 185C480 183 480 183 482 185C485 189 482 198 477 202C475 204 473 205 472 205C472 205 470 206 468 208C464 211 463 212 455 209ZM247 193C245 192 242 191 241 190L238 188L243 187C245 186 249 185 250 184C252 182 258 179 263 176C275 169 279 165 282 158C283 152 284 153 285 160C287 169 279 188 273 190C260 194 254 195 247 193ZM436 192C434 192 432 191 430 191C422 191 411 168 415 156C416 153 418 152 418 155C418 162 422 167 432 173C436 175 443 179 446 182C450 184 455 186 457 187C460 187 461 187 460 189C456 193 443 195 436 192ZM307 184C308 182 308 181 307 181C306 180 307 166 309 162C310 160 312 158 314 157C318 156 318 156 322 159C324 160 327 161 329 162C335 162 335 164 334 170C332 175 329 179 323 182C319 183 317 184 315 184C313 184 311 185 309 186C307 187 307 187 307 184ZM391 186C391 185 388 184 386 184C379 183 377 182 375 181C374 180 373 179 372 179C372 179 371 178 369 176C364 168 364 162 368 162C370 162 373 161 376 159C383 155 385 155 389 158C392 161 394 167 393 174C393 178 393 182 393 184C393 187 393 188 391 186ZM228 185C218 181 213 176 212 170C212 167 211 164 210 161C209 157 209 157 211 154C212 152 214 150 214 150C216 150 218 144 218 141C218 137 220 133 223 131C231 127 236 126 239 128C241 129 238 137 233 142C227 148 225 153 225 164C225 174 227 179 231 183C234 186 233 187 228 185ZM467 185C467 184 468 184 468 183C469 183 471 181 472 178C475 174 475 172 475 164C475 153 474 148 468 142C462 136 458 129 460 128C462 127 465 127 471 129C478 131 481 133 482 138C483 146 484 150 487 152C490 154 490 155 490 158C489 160 489 164 488 167C488 170 487 174 486 175C484 178 477 183 473 184C472 185 470 185 469 186C468 186 467 186 467 185ZM233 182C229 179 227 175 227 169L227 166L230 168C233 172 240 174 246 174C252 174 258 175 258 176C258 176 255 178 252 180C243 186 238 186 233 182ZM452 184C449 182 442 176 443 176C443 175 447 175 452 174C462 173 467 171 470 168C473 166 473 166 473 168C474 171 470 180 466 183C463 185 457 186 452 184ZM285 177C287 171 288 166 288 161C287 155 285 150 284 150C284 150 283 147 283 143C283 140 283 135 283 134C282 131 282 131 285 130C290 130 294 132 297 137C298 139 301 141 302 142C305 144 305 144 305 147C304 149 305 152 306 154C308 158 306 164 300 170C293 177 283 182 285 177ZM411 178C405 176 398 169 395 164C393 158 392 155 395 152C395 151 396 149 396 148C395 145 396 144 399 142C400 141 402 139 403 137C407 129 420 127 417 135C416 137 416 140 416 143C417 146 416 148 415 151C411 158 412 168 415 177C416 179 415 179 411 178ZM264 165C265 159 267 153 267 152C267 148 263 140 261 137C259 135 259 135 261 135C266 133 273 137 275 143C276 144 277 148 278 151C280 160 277 165 268 171C264 173 261 175 261 175C260 175 262 170 264 165ZM434 172C425 167 422 163 422 154C422 144 427 137 434 135C439 134 442 134 439 137C438 137 436 141 435 144C433 150 433 153 437 165C438 169 439 173 439 174C439 174 436 174 434 172ZM247 172C244 172 239 167 239 164C238 163 238 162 239 163C240 167 253 162 256 156C258 153 258 151 257 151C257 152 256 151 256 149C255 146 256 146 260 151C263 156 264 158 261 166L259 172L254 173C252 173 248 173 247 172ZM439 167C436 159 436 156 441 151L444 148L444 152C443 159 449 164 457 164C462 164 462 164 459 168C457 171 452 173 445 173C441 173 441 173 439 167ZM162 170C160 170 157 169 156 169C153 169 152 167 153 162C155 158 156 157 167 154C172 152 178 150 180 149L184 147L184 153C184 159 184 159 179 165C172 172 167 173 162 170ZM532 171C530 171 529 171 527 170C526 170 523 168 521 165C517 160 516 158 516 153C515 147 515 147 526 151C530 153 535 154 538 155C540 156 543 157 544 158C547 160 548 168 546 168C545 169 543 169 541 170C536 172 534 172 532 171ZM234 169C227 165 225 157 230 148C232 143 239 137 242 137C243 137 244 136 245 136C246 134 255 135 258 138C259 139 261 141 262 143C263 144 264 146 264 147C266 152 264 154 262 149C260 147 254 144 251 144C248 144 238 150 237 153C235 157 235 162 237 167C240 172 239 172 234 169ZM462 167C467 159 464 152 455 146C449 143 444 143 439 149L435 152L436 149C437 141 439 139 444 136C450 134 450 134 455 136C467 140 474 149 472 158C472 164 469 167 465 170C460 172 460 171 462 167ZM205 163C199 159 196 158 192 161C189 162 186 163 185 163L182 163L184 159C185 157 186 155 185 153C184 147 189 136 197 127C202 122 203 121 208 121C213 120 213 120 212 122C212 124 211 128 211 132C211 136 209 140 208 144C205 148 205 149 207 150C208 151 208 151 206 151C203 151 203 151 203 153C204 154 204 155 204 156C205 156 205 158 206 159C207 160 208 162 208 163C208 165 207 165 205 163ZM492 163C492 162 493 160 493 159C494 158 495 156 495 155C495 152 495 152 493 151L490 150L493 150C496 149 496 149 495 147C492 144 490 138 489 132C489 128 488 124 488 122C488 121 488 121 492 121C497 121 498 121 503 127C511 135 513 140 514 151C514 157 515 159 516 161C518 163 518 163 515 163C514 163 511 162 508 161C504 159 499 159 495 163L492 165L492 163ZM241 162C239 161 238 157 239 154C240 151 247 146 250 146C251 146 255 150 255 151C255 152 254 152 251 152C247 152 244 154 244 159C245 162 244 163 241 162ZM456 159C456 155 454 152 449 152C446 152 445 152 445 151C445 149 448 146 450 146C452 146 459 150 461 152C463 157 461 163 456 163C455 163 455 162 456 159ZM246 158C246 155 248 153 251 153C254 153 254 154 253 157C251 161 246 161 246 158ZM448 158C445 155 446 154 449 153C452 153 454 155 454 158C454 161 451 161 448 158ZM326 157C324 156 321 154 320 153C319 151 317 150 315 149C310 148 309 146 308 137C307 125 311 119 316 124C319 126 330 133 340 138C350 142 362 141 369 134C370 132 372 131 373 131C373 131 377 129 381 126C386 123 387 122 389 123C392 126 393 131 392 138C392 144 391 145 388 148C378 157 365 161 356 157C351 156 351 154 355 151C358 148 360 143 360 142C359 142 359 142 359 143C359 146 348 156 343 157C337 160 329 159 326 157ZM141 156C141 155 140 154 139 153C136 153 137 151 139 146C144 140 145 139 148 143C149 144 151 147 152 148C153 150 156 151 158 152L162 154L160 155C154 157 142 158 141 156ZM542 155C540 155 538 154 538 154C538 154 539 153 542 153C544 152 546 150 548 149C549 147 551 144 552 143L555 140L557 142C559 143 560 145 560 146C560 146 561 147 562 148C563 150 563 153 562 153C561 153 560 154 559 155C558 157 549 158 542 155ZM159 151C157 150 157 149 161 145C164 143 167 140 168 139C170 139 171 137 171 136C171 134 176 124 180 118L183 114L181 112C179 109 175 108 174 110C173 111 172 111 171 111C169 111 167 112 166 113L162 116L166 114C169 112 171 112 172 113C177 116 177 120 173 128C171 131 170 134 170 135C170 135 168 137 166 138L162 141L159 139C156 137 155 136 155 134C155 133 155 132 156 133C156 133 158 134 160 134C164 134 164 134 163 132C162 131 162 131 163 130C165 129 172 122 172 120C172 118 169 118 167 119L164 120L167 120C168 119 169 120 170 120C170 121 167 127 165 128C162 130 162 129 162 126C163 124 163 124 162 126C161 127 160 129 160 130C160 134 158 134 156 131C155 129 156 125 160 122C161 121 162 119 162 119C162 116 155 127 154 130C153 136 153 137 158 140C163 143 163 143 159 146C156 149 152 149 152 146C152 145 150 143 148 141C145 138 144 137 144 135C145 134 145 131 145 130C146 129 146 127 146 126C146 126 148 124 150 123C152 121 153 120 153 119C153 115 157 111 160 111C161 111 162 110 163 108C164 107 166 105 168 105C169 104 172 102 174 101C178 98 180 98 183 102C185 104 186 106 186 109C186 112 187 114 189 117C192 120 192 121 192 125C191 128 190 132 189 135C187 137 186 141 186 142C184 148 164 154 159 151ZM524 149C521 148 518 147 517 146C516 146 515 144 514 142C513 139 511 135 510 132C508 125 508 119 512 116C513 114 514 112 514 109C514 103 518 99 522 99C524 100 526 101 528 102C529 103 530 104 531 104C533 104 537 107 537 109C536 109 537 110 539 111C544 111 546 113 546 117C547 120 548 121 550 123C554 125 556 129 555 131C554 131 555 132 555 134C556 137 554 140 550 143C548 144 547 145 547 145C548 149 544 149 541 146C537 143 537 143 541 141C548 138 549 130 542 123C540 121 539 119 538 119C538 120 539 121 541 123C543 126 544 127 544 129C543 133 540 134 540 131C540 129 539 128 538 126C537 125 537 125 538 126C538 127 538 128 537 128C535 128 532 125 532 124C532 123 531 122 531 122C528 121 531 119 534 119C536 120 536 120 535 119C533 118 530 118 528 119C527 121 531 126 535 129C537 130 538 131 538 132C537 134 538 134 540 134C546 134 547 136 541 139L538 141L534 138C532 137 530 135 530 135C530 134 529 131 528 129C524 122 523 117 526 114L528 112L532 114L536 116L534 113C532 112 530 111 529 111C528 111 527 111 526 110C523 106 516 113 519 117C524 125 528 132 529 134C529 136 533 140 537 143C544 150 544 150 541 151C537 153 531 152 524 149ZM280 148C280 146 276 140 273 136C270 134 270 133 259 133C253 133 246 134 244 134C240 136 239 135 243 129C245 124 246 123 253 120C261 116 264 115 266 118C267 119 270 120 271 120C278 123 284 136 282 146C282 150 280 152 280 148ZM418 143C418 132 422 123 430 120C432 119 434 117 435 117C437 115 439 116 449 120C455 123 463 137 457 134C456 134 449 134 442 134L430 134L427 137C425 139 422 142 421 145C420 147 419 149 419 149C418 149 418 146 418 143ZM339 135C334 132 331 128 328 123C327 121 327 121 331 121C335 122 358 120 364 119C366 118 370 117 371 115C378 111 378 117 372 127C366 135 361 138 350 138C344 138 343 138 339 135ZM300 133C296 131 291 124 290 121C290 119 289 116 287 115C284 111 284 110 288 106C289 104 292 100 293 98C295 92 298 90 303 89L306 89L306 95C307 98 307 103 307 107C308 111 308 114 310 116L312 120L310 122C308 125 306 129 306 133C306 135 305 136 300 133ZM394 132C394 129 392 124 390 122C388 121 388 120 391 116C392 113 393 111 393 108C393 106 393 102 394 100C394 97 395 93 395 92C395 90 395 90 398 90C402 90 406 93 407 98C408 100 410 103 412 105C416 109 416 111 413 114C412 115 410 117 410 120C409 123 407 126 404 130C397 136 394 137 394 132ZM193 125C193 120 193 119 191 116C185 110 187 105 194 101C200 99 201 100 203 112C203 117 201 122 196 127L192 130L193 125ZM504 126C501 124 499 120 498 118C497 115 497 107 498 106C499 106 499 105 499 104C499 99 504 99 510 105C514 108 513 112 510 116C508 118 508 119 508 124C508 127 507 130 507 130C507 130 506 128 504 126ZM323 126C314 120 308 110 310 104C311 96 318 87 323 87C325 87 325 93 322 100C320 106 322 116 326 123C329 130 329 130 323 126ZM281 120C276 112 277 112 270 114C267 114 256 110 256 108C256 107 255 106 254 106C254 105 253 104 253 103C253 102 253 101 252 101C251 100 251 97 251 89C251 85 250 81 250 80C249 77 249 76 251 78C252 79 255 79 258 80C260 80 263 80 264 81C264 82 265 82 265 81C266 80 273 85 277 89C282 95 283 100 280 106C277 111 277 111 282 119C287 125 288 128 286 128C286 128 283 125 281 120ZM376 123C379 116 380 103 378 99C377 97 376 94 376 92C376 90 375 87 373 83C369 77 369 76 376 76C379 75 378 75 374 75C366 75 359 74 351 69C345 66 345 65 350 62C354 59 369 58 371 61C373 63 375 65 379 68C382 71 383 72 383 74C382 76 383 77 386 78C391 79 393 83 393 91C393 100 392 101 388 97C387 95 386 94 385 94C385 95 386 96 387 98C391 102 392 107 390 111C388 117 377 128 374 128C373 128 374 126 376 123ZM413 127C413 126 415 123 417 118L422 111L420 106C418 103 418 101 419 98C419 94 425 85 427 85C428 85 429 84 430 83C431 82 433 82 434 81C435 81 436 81 437 81C438 80 440 80 442 80C444 80 446 79 448 78C451 77 451 77 450 79C449 81 449 86 449 98C449 99 448 100 447 101C447 102 446 103 447 103C447 104 446 105 446 105C445 106 444 107 444 107C444 108 442 110 438 112C433 114 431 114 425 113C424 113 422 115 419 120C415 127 413 129 413 127ZM231 121C230 121 227 119 225 117C222 114 220 113 218 113C214 113 214 112 218 110C219 109 220 108 220 107C219 107 220 106 221 106C222 105 222 104 219 101C217 98 217 98 212 99C206 99 200 97 197 93C194 90 189 80 189 78C189 78 188 76 186 75C183 72 184 72 194 72C210 73 220 80 219 92C218 96 219 97 221 100L223 103L227 101C229 100 231 99 231 99C232 98 240 99 243 100C244 101 245 101 245 101C245 101 243 96 241 91C237 80 232 74 228 74C222 74 216 68 215 60C214 57 210 53 208 53C206 54 206 53 208 51C209 50 210 50 212 52L215 54L215 50C215 47 214 44 213 42C210 39 210 35 213 37C214 37 215 37 216 38C217 38 217 38 216 36C215 34 215 34 218 31C221 28 225 27 227 29C229 30 229 31 226 36C224 41 224 41 221 39C220 38 219 38 219 38C218 38 220 39 222 41C224 42 225 42 225 42C225 40 231 28 233 28C234 28 235 31 234 33C234 35 236 39 239 44C242 46 242 46 241 44C241 42 242 41 243 39L245 37L244 40C244 43 245 46 246 49C249 56 248 63 244 67C241 71 240 80 244 89C247 97 252 108 254 111C257 115 255 117 253 114C250 111 249 111 248 115C245 120 238 123 231 121ZM457 120C455 119 453 117 452 115C450 111 450 111 448 114C447 115 446 116 445 116C443 115 444 114 448 108C458 90 462 74 456 68C451 63 451 57 454 49C456 46 456 43 456 40C455 39 455 37 456 37C457 37 458 40 458 43C458 46 458 46 460 45C463 42 466 34 466 33C465 31 466 28 468 28C468 28 469 29 469 30C470 32 470 32 472 30C476 26 485 30 484 35C483 38 484 38 486 37C489 35 490 38 487 41C486 43 485 45 485 49L485 54L487 52C489 50 491 49 493 52C496 54 495 55 493 54C489 52 487 54 486 60C483 70 479 74 472 74C468 74 463 80 459 91C457 96 455 100 455 101C455 101 456 100 458 100C461 98 468 98 469 99C469 99 471 100 473 101L477 103L479 100C481 97 481 96 481 92C480 79 490 73 507 72C516 72 516 73 513 76C512 76 511 78 511 78C511 79 510 81 509 83C503 96 496 100 488 99C484 98 483 98 481 101C479 103 478 106 480 106C481 106 481 106 481 107C480 107 481 109 483 110L485 113L483 113C481 113 478 115 476 117C469 122 463 123 457 120ZM327 118C323 115 322 104 324 100C325 98 325 98 327 101C329 103 333 107 338 109C342 112 347 115 348 117L350 119L347 119C346 119 341 119 337 120C331 120 329 120 327 118ZM521 119C518 116 520 110 524 110C526 110 527 112 525 113C524 114 524 115 523 117C523 119 522 120 521 119ZM176 115C174 111 175 109 177 110C180 111 180 113 180 117C179 120 178 120 176 115ZM355 117C356 116 360 113 364 109C369 106 373 102 374 100L375 97L377 100C379 105 378 109 373 113C367 117 352 120 355 117ZM344 111C337 105 334 99 336 94C337 92 337 92 338 94C338 95 339 96 339 97C341 99 349 102 352 102C355 102 361 98 362 95L363 92L364 95C366 100 363 106 358 111C355 114 352 116 351 116C351 116 348 114 344 111ZM331 103C324 96 325 87 333 79C342 70 347 69 357 74C361 75 364 77 366 77C368 78 374 89 374 94C374 97 371 102 367 105C365 106 365 106 366 103C369 92 363 85 350 83L343 83L339 87C334 91 332 96 334 102C336 107 336 107 331 103ZM413 103C412 102 412 98 413 95C414 88 414 87 410 86C406 86 398 78 398 75C398 74 398 73 397 72C395 71 394 54 396 54C397 54 397 53 397 51C397 49 397 48 398 48C399 48 399 47 399 46C399 45 399 44 400 43C401 43 401 41 401 39L401 36L404 39C406 40 407 42 407 41C408 41 408 42 409 42C410 43 411 44 411 44C413 44 420 51 422 56C425 62 426 67 426 72C425 78 424 80 419 84C416 87 416 88 415 96C414 104 414 107 413 103ZM286 103C285 103 285 99 285 95C284 88 283 87 281 84C273 77 272 64 279 54C281 51 287 45 288 45C289 45 290 44 291 43C291 42 292 41 293 41C293 42 294 40 296 39L299 36L299 40C299 42 299 44 300 44C301 44 301 45 301 46C301 47 301 48 302 48C303 48 303 49 303 51C303 53 303 54 304 54C305 54 305 71 303 72C302 73 302 74 302 75C302 78 294 86 290 87C286 87 286 89 287 97C288 102 287 106 286 103ZM347 99C345 96 347 92 350 92C351 92 352 93 353 94C357 98 351 102 347 99ZM309 97C308 94 308 83 309 81C310 79 311 78 312 76C313 75 314 73 314 72C315 70 317 68 319 66C322 63 324 63 331 63C338 63 339 63 342 65C347 69 347 70 343 70C339 71 328 80 327 83C326 84 324 85 322 86C317 87 313 90 311 95C310 98 309 98 309 97ZM341 96C338 93 339 90 343 86C346 83 354 84 358 88C360 90 360 92 359 96L358 98L356 95C353 89 345 89 345 96C345 99 344 99 341 96Z"/></symbol></svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ── Header: solid on scroll, hide on scroll-down, show on scroll-up ── */
+  const hdr = $('#hdr'); let lastY = 0;
+  const onScroll = y => {
+    hdr.classList.toggle('scrolled', y > innerHeight * .8);
+    hdr.classList.toggle('hide', y > lastY && y > innerHeight);
+    lastY = y;
+  };
+  addEventListener('scroll', () => onScroll(scrollY), { passive: true });
+
+  /* ── Mobile menu ── */
+  const burger = $('.burger');
+  const setMenu = open => { document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); };
+  burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  $$('.mmenu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  /* ── Countdown to the welcome party, Rome time ── */
+  const target = new Date('2027-06-26T19:00:00+02:00').getTime();
+  const pad = n => String(n).padStart(2, '0');
+  const tick = () => {
+    let t = Math.max(0, target - Date.now()) / 1000;
+    const d = Math.floor(t / 86400); t -= d * 86400;
+    const h = Math.floor(t / 3600); t -= h * 3600;
+    const m = Math.floor(t / 60); const s = Math.floor(t - m * 60);
+    $('#cd-d').textContent = d; $('#cd-h').textContent = pad(h);
+    $('#cd-m').textContent = pad(m); $('#cd-s').textContent = pad(s);
+  };
+  tick(); setInterval(tick, 1000);
+
+  /* ── FAQ: animate height open/close ── */
+  $$('.faq details').forEach(d => {
+    const sum = $('summary', d), ans = $('.ans', d);
+    sum.addEventListener('click', e => {
+      if (!window.gsap || reduce) return;
+      e.preventDefault();
+      if (d.open) gsap.to(ans, { height: 0, duration: .6, ease: 'power3.inOut', onComplete: () => { d.open = false; ans.style.height = ''; } });
+      else { d.open = true; gsap.fromTo(ans, { height: 0 }, { height: 'auto', duration: .7, ease: 'power3.out' }); }
+    });
+  });
+
+  const loader = $('.loader');
+  const reveal = () => $$('[data-reveal],[data-lines] ').forEach(el => el.style.opacity = 1);
+
+  /* No GSAP (offline / blocked CDN) or reduced motion: show everything, skip theatrics */
+  if (!window.gsap || reduce) { loader.classList.add('gone'); reveal(); return; }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ── Smooth inertial scroll synced to ScrollTrigger ── */
+  let lenis;
+  if (window.Lenis) {
+    lenis = new Lenis({ duration: 1.25, easing: t => 1 - Math.pow(1 - t, 4) });
+    lenis.on('scroll', e => { ScrollTrigger.update(); onScroll(e.scroll); });
+    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      const id = a.getAttribute('href'); if (id.length < 2) return;
+      const el = $(id); if (!el) return;
+      e.preventDefault(); lenis.scrollTo(el, { offset: id === '#top' ? 0 : -40, duration: 1.8 });
+    }));
+  }
+
+  /* ── Split text into characters, keeping words unbroken ── */
+  const splitChars = el => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute('aria-label', el.textContent.trim());
+    el.innerHTML = words.map(w => `<span class="w" aria-hidden="true">${[...w].map(c => `<span class="ch">${c}</span>`).join('')}</span>`).join(' ');
+    return $$('.ch', el);
+  };
+
+  /* ── Intro sequence: monogram draws, curtain lifts, names rise letter by letter ── */
+  const heroChars = $$('[data-hero]').map(splitChars);
+  gsap.set(heroChars.flat(), { yPercent: 110, opacity: 0, filter: 'blur(8px)' });
+  gsap.set('.hero-bg', { scale: 1.25 });
+  gsap.timeline({ delay: 1.6 })
+    .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.2, ease: 'expo.inOut', onComplete: () => loader.classList.add('gone') })
+    .to('.hero-bg', { scale: 1.06, duration: 3.2, ease: 'power3.out' }, '<.2')
+    .to(heroChars[0], { yPercent: 0, opacity: 1, filter: 'blur(0px)', stagger: .03, duration: 1.1, ease: 'expo.out' }, '<.5')
+    .to(heroChars[1], { yPercent: 0, opacity: 1, filter: 'blur(0px)', stagger: .035, duration: 1.4, ease: 'expo.out' }, '<.25')
+    .to(heroChars[2], { yPercent: 0, opacity: 1, filter: 'blur(0px)', stagger: .05, duration: 1.2, ease: 'expo.out' }, '<.7')
+    .from('.cue, .hdr', { opacity: 0, y: -10, duration: 1, stagger: .1 }, '<.3');
+
+  /* hero: painting drifts deeper while content floats away */
+  gsap.to('.hero-bg', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-in', { yPercent: -40, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  /* ── Section headings: each line slides out of a mask ── */
+  $$('[data-lines]').forEach(el => {
+    const lines = el.innerHTML.split(/<br\s*\/?>/i);
+    el.innerHTML = lines.map(l => `<span style="display:block;clip-path:inset(-5% -100vw 0 -100vw);padding-bottom:.06em"><span class="ln" style="display:block">${l}</span></span>`).join('');
+    el.style.opacity = 1;
+    gsap.from($$('.ln', el), { yPercent: 105, rotate: 2, duration: 1.4, stagger: .12, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+
+  /* ── Generic soft reveal ── */
+  $$('[data-reveal]').forEach(el => gsap.fromTo(el, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 88%' } }));
+
+  /* ── Photographs: curtain wipe up + slow settle; then gentle parallax inside the frame ── */
+  $$('[data-wipe]').forEach(fr => {
+    const img = $('img', fr);
+    gsap.timeline({ scrollTrigger: { trigger: fr, start: 'top 82%' } })
+      .fromTo(fr, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'expo.inOut' })
+      .fromTo(img, { scale: 1.35 }, { scale: 1.12, duration: 2.2, ease: 'expo.out' }, '<');
+    gsap.fromTo(img, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: fr, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  /* ── Watercolour plates bloom in like wet paint ── */
+  $$('[data-rise]').forEach(el => gsap.fromTo(el, { opacity: 0, scale: .92, filter: 'blur(14px) saturate(.3)' },
+    { opacity: 1, scale: 1, filter: 'blur(0px) saturate(1)', duration: 2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 80%' } }));
+
+  /* ── Painted section backgrounds move slower than the page ── */
+  $$('[data-bgpar]').forEach(bg => gsap.fromTo(bg, { yPercent: -8 }, { yPercent: 8, ease: 'none',
+    scrollTrigger: { trigger: bg.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+
+  /* ── Statues drift at their own depth ── */
+  $$('[data-drift]').forEach(st => gsap.fromTo(st, { y: () => -st.dataset.drift * 6 }, { y: () => st.dataset.drift * 6, ease: 'none',
+    scrollTrigger: { trigger: st.parentElement, start: 'top bottom', end: 'bottom top', scrub: 1.2 } }));
+
+  /* ── Countdown digits roll in ── */
+  gsap.from('.timer b', { yPercent: 60, opacity: 0, stagger: .1, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.timer', start: 'top 90%' } });
+
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
 </script>
 </body>
 </html>
