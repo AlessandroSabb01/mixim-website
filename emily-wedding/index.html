@@ -11,12 +11,12 @@
 <meta property="og:image" content="img/sky.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Ms+Madi&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Great+Vibes&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/sky.webp">
 <link rel="preload" as="image" href="img/seal.webp">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js')</script>
 <style>
-/* Layout: one long watercolour canvas. A pencil line draws itself down the page, sketching a Roman arch between chapters; content opens through arch-shaped masks. */
+/* Layout: one long watercolour canvas. Chapters are separated by small drawn Roman arches; content opens through arch-shaped masks. */
 :root{
   color-scheme:light;
   /* Rome-sunset palette from the brief */
@@ -35,7 +35,7 @@
   --on-dark:#FBF3E6;
 
   --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --script:'Ms Madi','Snell Roundhand','Apple Chancery',cursive;
+  --script:'Great Vibes','Snell Roundhand','Apple Chancery',cursive;
   --sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
 
   --ease:cubic-bezier(.22,.8,.16,1);
@@ -66,8 +66,8 @@ button{font:inherit;color:inherit}
 .h-xl{font-size:clamp(50px,9.4vw,152px)}
 .h-lg{font-size:clamp(40px,5.4vw,84px)}
 .script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;line-height:1.05}
-.s-lg{font-size:clamp(44px,4.8vw,72px);color:var(--ink)}
-.s-md{font-size:clamp(32px,3vw,44px);color:var(--ink)}
+.s-lg{font-size:clamp(40px,4.2vw,64px);color:var(--ink)}
+.s-md{font-size:clamp(30px,2.7vw,40px);color:var(--ink)}
 .eyebrow{font:400 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--sunset)}
 .lead{max-width:52ch;margin-inline:auto;font-size:15px;text-align:center}
 .center{text-align:center}
@@ -75,7 +75,7 @@ button{font:inherit;color:inherit}
 .ln{display:block;will-change:transform}
 
 /* pen-drawn oval button: only the second stroke draws on hover */
-.oval{position:relative;display:inline-grid;place-items:center;min-width:190px;height:58px;padding:0 34px;font:400 26px/1 var(--script);color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer}
+.oval{position:relative;display:inline-grid;place-items:center;min-width:190px;height:58px;padding:0 34px;font:400 24px/1 var(--script);color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer}
 .oval svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .oval ellipse{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}
 .oval .o2{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--ease)}
@@ -170,10 +170,11 @@ button{font:inherit;color:inherit}
 .hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 40% at 50% 46%,rgba(250,245,236,.78),rgba(250,245,236,.35) 60%,transparent 100%)}
 .hero-in{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 var(--gutter)}
 .hero .eyebrow{margin-bottom:18px}
-.hero .date{font:400 clamp(30px,3.2vw,50px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
+.hero .date{font:400 clamp(28px,2.9vw,46px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
 .hero .h-xl{perspective:800px}
-.hero .place{font:400 clamp(38px,4vw,62px)/1 var(--script);margin-top:.18em;color:var(--ink)}
+.hero .place{font:400 clamp(36px,3.6vw,56px)/1 var(--script);margin-top:.18em;color:var(--ink)}
 .split .w{display:inline-block;white-space:nowrap}
+.hero .date,.hero .place{display:inline-block;padding:.1em .3em}
 .split .ch{display:inline-block;will-change:transform;transform-origin:50% 100%}
 .arch-cap{position:absolute;left:0;right:0;bottom:3.5%;z-index:3;text-align:center;opacity:0;pointer-events:none}
 .arch-cap .script{font-size:clamp(34px,3.6vw,56px);color:var(--ink)}
@@ -181,22 +182,20 @@ button{font:inherit;color:inherit}
 .cue i{width:1px;height:54px;background:linear-gradient(var(--ink),transparent);transform-origin:top;animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* ───────── The canvas: chapters, joins and the pencil ───────── */
+/* ───────── The canvas: chapters and the arches between them ───────── */
 main{position:relative}
-#pencil{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:1;overflow:visible}
-#pencil path{fill:none;stroke-linecap:round;stroke-linejoin:round}
-#pencil .smudge{stroke:rgba(94,42,28,.07);stroke-width:4}
-#pencil .lead{stroke:var(--graphite);stroke-width:1.25}
-#pencil .tip{transition:opacity .4s}
 section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-right,0px)) clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-left,0px))}
-.join{height:clamp(130px,15vw,200px)}
+.join{height:clamp(110px,12vw,170px);display:grid;place-items:center}
+.join svg{width:44px;height:56px;overflow:visible}
+.join path{fill:none;stroke:var(--sunset);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke;opacity:.7}
+.join circle{fill:var(--sunset);opacity:0}
 .wrap{position:relative;max-width:1100px;margin-inline:auto}
 .narrow{max-width:760px}
 .head{text-align:center;margin-bottom:clamp(40px,5vw,70px)}
 .head .h-lg{margin-top:20px}
 .head .lead{margin-top:22px}
 
-/* arch-shaped surfaces with a pencil outline */
+/* arch-shaped surfaces with a drawn outline */
 .archbox{position:relative}
 .archbox>.arch{position:relative;border-radius:50% 50% 0 0/var(--ry,16%) var(--ry,16%) 0 0;overflow:hidden}
 .archbox>.outline{position:absolute;inset:-7px;width:calc(100% + 14px);height:calc(100% + 14px);overflow:visible;pointer-events:none;z-index:3}
@@ -205,7 +204,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .archbox.circ>.arch{border-radius:999px 999px 0 0}
 
 /* welcome */
-.welcome p{max-width:56ch;margin:26px auto 0;font-size:16px;text-align:center}
+.welcome p{max-width:46ch;margin:22px auto 0;font-size:16px;text-align:center}
 .welcome .oval{margin-top:34px}
 
 /* celebration */
@@ -213,7 +212,11 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .days{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:clamp(40px,5vw,60px) auto 0;max-width:760px}
 .days ul{list-style:none;margin-top:22px;display:grid;gap:16px;font-size:14px}
 .days ul b{display:block;font-weight:400;letter-spacing:.12em;font-family:var(--serif);font-size:24px;color:var(--sunset)}
-.shuttle{max-width:540px;margin:46px auto 0;font-size:14px;padding-top:30px;border-top:1px solid rgba(94,42,28,.18)}
+.days .ev{display:block;font:400 19px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-top:4px}
+.days .pl{display:block;font-size:14px;margin-top:2px}
+.days .ad{display:inline-block;font-size:13px;opacity:.8;text-decoration:none;border-bottom:1px solid rgba(94,42,28,.25)}
+.days .ad:hover{color:var(--sunset);border-color:var(--sunset)}
+.days li.shuttle{font-size:13px;font-style:italic;padding:14px 10px;border-block:1px dashed rgba(94,42,28,.22);max-width:340px;margin-inline:auto}
 @media(max-width:620px){.days{grid-template-columns:1fr}}
 
 /* venues */
@@ -222,8 +225,14 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .row.flip>.plate{order:2}
 .row .txt{text-align:center;max-width:390px;justify-self:center;min-width:0}
 .plate{position:relative;min-width:0}
-.plate .arch{border-radius:999px 999px 0 0;background:var(--veil)}
-.plate img{width:100%;mix-blend-mode:multiply;padding:12% 4% 3%}
+.plate .arch{border-radius:999px 999px 0 0;aspect-ratio:4/4.7;background:#efe3d0}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 58%}
+.plate[data-zoom] img{scale:var(--z,1.3)}
+.ph-empty{position:absolute;inset:0;display:grid;place-items:center;background:repeating-linear-gradient(45deg,rgba(94,42,28,.04) 0 10px,transparent 10px 20px)}
+.welcome-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.welcome .txt{text-align:center}
+.welcome-grid .plate{width:min(420px,100%);justify-self:center}
+@media(max-width:820px){.welcome-grid{grid-template-columns:1fr}}
 .time{display:block;font:400 clamp(44px,4vw,62px)/1 var(--serif);color:var(--sunset);margin:14px 0 4px;font-variant-numeric:tabular-nums}
 .venue{font:400 22px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-top:10px}
 .addr{font-size:14px;margin-top:6px}
@@ -249,63 +258,53 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .asks li{break-inside:avoid;padding:8px 0;border-bottom:1px solid rgba(94,42,28,.15)}
 @media(max-width:560px){.asks{columns:1}}
 
-/* hotels: pinned gallery */
-.hstage{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;max-width:1180px;margin-inline:auto;min-height:100svh;padding-block:90px 40px}
-.hpics{position:relative;height:min(72svh,660px);border-radius:999px 999px 0 0;overflow:hidden;background:rgba(94,42,28,.08);box-shadow:0 30px 60px -40px rgba(94,42,28,.6)}
-.hpics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0)}
-.hpics img.first{clip-path:inset(0)}
-.hcap{position:absolute;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-between;padding:18px 24px;color:#fff;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;background:linear-gradient(transparent,rgba(30,14,8,.45))}
-.hlist{list-style:none;display:grid;gap:clamp(18px,2.4vh,30px);min-width:0}
-.hotel{position:relative;padding-left:28px;opacity:.42;transition:opacity .7s var(--ease)}
-.hotel::before{content:"";position:absolute;left:0;top:.9em;width:16px;height:1px;background:var(--sunset);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
-.hotel.on{opacity:1}
-.hotel.on::before{transform:scaleX(1)}
-.hotel h4{font:400 clamp(24px,2.2vw,30px)/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-top:8px}
-.hotel p{font-size:14px;margin-top:6px}
-.hotel .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:10px}
-.hotel .meta a{font:400 22px/1 var(--script);text-decoration:none;color:var(--sunset)}
+/* hotels: alternating cards, like the venues */
+.hotels .row{margin-top:clamp(60px,8vw,120px)}
+.hotels .row:first-child{margin-top:0}
+.plate.photo .arch{aspect-ratio:4/4.8}
+.hotel{text-align:center}
+.hotel h4{font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-top:12px}
+.hotel .addr{font-size:13px;opacity:.85}
+.hotel p{font-size:15px;margin-top:10px}
+.hotel .hnote{font-size:13px;font-style:italic;max-width:36ch;margin:14px auto 0;padding:10px 14px;border:1px dashed rgba(94,42,28,.25)}
+.hotel .hnote:empty{display:none}
+.hotel .meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:18px}
+.hotel .meta a{font:400 26px/1 var(--script);text-decoration:none;color:var(--sunset)}
 .code{font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--sunset);color:var(--sunset)}
-.hcar{display:none}
-.others{margin-top:clamp(50px,6vw,80px);text-align:center}
+.others{margin-top:clamp(60px,7vw,100px);text-align:center}
 .others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:24px;font:400 clamp(22px,2.2vw,32px)/1.5 var(--serif);text-transform:uppercase}
 .others li:not(:last-child)::after{content:"·";margin:0 .55em;color:var(--sunset)}
 .others a{text-decoration:none;transition:color .4s}
 .others a:hover{color:var(--magenta)}
-@media(max-width:900px){
-  .hstage{grid-template-columns:1fr;min-height:0;padding-block:0}
-  .hpics{display:none}
-  .hotel{opacity:1;padding-left:0}
-  .hotel::before{display:none}
-  .hcar{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 16px;scrollbar-width:none}
-  .hcar::-webkit-scrollbar{display:none}
-  .hcar img{flex:none;width:82%;aspect-ratio:4/3.3;object-fit:cover;scroll-snap-align:start}
-  .hcar img:first-child{border-radius:999px 999px 0 0}
-  .hlist{gap:56px}
-}
+
+/* rsvp form */
+.rform{max-width:640px;margin:34px auto 0;text-align:left}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.wide{grid-column:1/-1}
+.f>span,.rform legend{font:400 10px/1.3 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset)}
+.rform input:not([type=radio]):not([type=checkbox]),.rform select,.rform textarea{width:100%;font:300 16px/1.4 var(--sans);color:var(--ink);background:rgba(255,252,246,.7);border:0;border-bottom:1px solid rgba(94,42,28,.3);padding:10px 4px;border-radius:0;outline:none;transition:border-color .4s,background .4s}
+.rform input:focus,.rform select:focus,.rform textarea:focus{border-color:var(--sunset);background:rgba(255,252,246,.95)}
+.rform .bad{border-color:var(--wax)!important;background:rgba(222,69,121,.06)!important}
+.rform fieldset{border:0;margin-top:30px}
+.rform legend{margin-bottom:12px}
+.yn{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid rgba(94,42,28,.12);font:400 19px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.yn.bad{background:rgba(222,69,121,.06)}
+.pills{display:flex;gap:8px;flex:none}
+.pills label,.chip{position:relative;cursor:pointer}
+.pills input,.chip input{position:absolute;opacity:0;pointer-events:none}
+.pills i,.chip i{display:inline-block;font:400 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;font-style:normal;padding:9px 16px;border:1px solid rgba(94,42,28,.3);border-radius:999px;color:var(--ink);transition:background .3s,color .3s,border-color .3s}
+.pills input:checked+i,.chip input:checked+i{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pills input:focus-visible+i,.chip input:focus-visible+i{outline:1px solid var(--sunset);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip i{text-transform:none;letter-spacing:.02em;font-size:13px;padding:8px 14px}
+.fsend{text-align:center;margin-top:34px}
+.fstatus{min-height:1.6em;margin-top:14px;font-size:14px}
+.fstatus.ok{font:400 30px/1.2 var(--script);color:var(--sunset)}
+@media(max-width:600px){.fgrid{grid-template-columns:1fr}.yn{font-size:16px}}
 
 /* kids */
 .kids .cols h3{margin-bottom:4px}
-
-/* Rome: zig-zag of arches over a living watercolour of the Tiber */
-.rome{overflow:hidden}
-.rome .bgv{position:absolute;inset:0;z-index:0;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);opacity:.6}
-.rome .bgv video,.rome .bgv .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
-.rome .bgv .still{background:url(img/tiber-wc.webp) center/cover}
-.rome>.wrap{z-index:2}
-.zig{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(30px,8vw,140px);row-gap:clamp(30px,4vw,60px);max-width:980px;margin:0 auto}
-.sight{width:min(380px,100%);text-decoration:none;color:var(--ink);display:block}
-.zig .sight:nth-child(even){justify-self:end;margin-top:clamp(120px,18vw,260px)}
-.zig .sight:nth-child(odd){justify-self:start}
-.zig .sight:nth-child(3){margin-top:calc(clamp(120px,18vw,260px) * -.2)}
-.sight .arch{aspect-ratio:3/3.6;background:var(--veil);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 20px 34px}
-.sight .n{font:400 clamp(70px,8vw,120px)/1 var(--serif);color:var(--sunset)}
-.sight h4{font:400 clamp(20px,1.9vw,26px)/1.15 var(--serif);text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
-.sight .go{margin-top:14px;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset);opacity:.8;transition:letter-spacing .6s var(--ease)}
-.sight:hover .go{letter-spacing:.34em}
-.extra{margin:clamp(70px,9vw,120px) auto 0;max-width:820px;text-align:center;background:var(--veil);padding:40px clamp(20px,4vw,50px);border-radius:999px/120px}
-.extra p.list{font:400 clamp(19px,1.8vw,25px)/1.7 var(--serif);text-transform:uppercase;margin-top:16px;color:var(--ink)}
-.extra p.list i{font-style:normal;color:var(--sunset);margin:0 .4em}
-@media(max-width:700px){.zig{grid-template-columns:1fr;row-gap:40px}.zig .sight:nth-child(n){margin-top:0;width:78%}.zig .sight:nth-child(even){justify-self:end}.extra{border-radius:40px}}
 
 /* eat: a hand-drawn map */
 .mapbox .arch{background:#f4e8d3;padding:clamp(70px,10vw,140px) clamp(10px,3vw,40px) 20px}
@@ -347,25 +346,23 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .faq .ans{overflow:hidden}
 .faq .ans p{padding:0 0 28px;max-width:60ch;font-size:15px}
 
-/* countdown band */
-.count{background:linear-gradient(180deg,rgba(164,85,59,0),var(--dusk) 22%,var(--dusk));color:var(--on-dark);text-align:center;padding-top:clamp(120px,14vw,200px)}
-.count::before{content:"";position:absolute;inset:0;background:url(img/tiber-wc.webp) center/cover;opacity:.16;mix-blend-mode:soft-light;-webkit-mask-image:linear-gradient(transparent,#000 30%);mask-image:linear-gradient(transparent,#000 30%)}
-.count .h-lg{color:var(--on-dark)}
-.count .oval{color:var(--on-dark)}
-.timer{display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px)}
-.timer>div{padding:0 clamp(12px,3vw,40px);border-left:1px solid rgba(251,243,230,.4);min-width:0}
+/* countdown and footer sit on the same watercolour canvas */
+.count{text-align:center}
+.count .h-lg{color:var(--ink)}
+.timer{display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px);color:var(--ink)}
+.timer>div{padding:0 clamp(12px,3vw,40px);border-left:1px solid rgba(94,42,28,.25);min-width:0}
 .timer>div:first-child{border:0}
 .timer b{display:block;position:relative;font:400 clamp(42px,7vw,108px)/1 var(--serif);font-variant-numeric:tabular-nums;overflow:hidden;height:1.02em}
 .timer b span{display:block}
-.timer em{font:400 clamp(20px,2vw,30px)/1 var(--script);font-style:normal}
+.timer em{font:400 clamp(20px,2vw,30px)/1 var(--script);font-style:normal;color:var(--sunset)}
 
-footer{background:var(--dusk);color:var(--on-dark);text-align:center;padding:70px max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px));position:relative}
-footer .garl{width:min(640px,92%);aspect-ratio:1316/407;margin:0 auto 30px;background:var(--gold);-webkit-mask:url(img/garland.svg) center/contain no-repeat;mask:url(img/garland.svg) center/contain no-repeat;opacity:.8}
-footer .s-lg{color:var(--gold)}
-footer .tag{margin-top:22px;font:400 11px/1 var(--sans);letter-spacing:.4em;color:var(--gold);opacity:.8}
-footer .remind{margin:44px auto 0;padding-top:34px;border-top:1px solid rgba(251,243,230,.25);max-width:520px}
+footer{position:relative;text-align:center;color:var(--ink);padding:clamp(60px,8vw,110px) max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px))}
+footer .skyline{width:min(860px,96%);aspect-ratio:1400/494;margin:0 auto 26px;background:var(--sunset);-webkit-mask:url(img/skyline.webp) center/contain no-repeat;mask:url(img/skyline.webp) center/contain no-repeat;opacity:.85}
+footer .s-lg{color:var(--ink)}
+footer .tag{margin-top:20px;font:400 12px/1 var(--sans);letter-spacing:.3em;color:var(--sunset)}
+footer .remind{margin:40px auto 0;padding-top:30px;border-top:1px solid rgba(94,42,28,.18);max-width:520px}
 footer .remind p{font-size:14px}
-footer .remind .oval{color:var(--on-dark);margin-top:16px}
+footer .remind .oval{margin-top:16px}
 footer .langs{justify-content:center;margin-top:30px}
 
 /* scroll seal (progress + back to top) */
@@ -426,15 +423,10 @@ footer .langs{justify-content:center;margin-top:30px}
   <ul class="nav">
     <li><a href="#schedule" data-i18n="nav_schedule">Schedule</a></li>
     <li><a href="#dress" data-i18n="nav_dress">Dress Code</a></li>
-    <li><a href="#stay" data-i18n="nav_stay">Travel &amp; Stay</a></li>
-    <li><a href="#rome" data-i18n="nav_rome">Rome</a></li>
-    <li class="folder"><button type="button" aria-haspopup="true" data-i18n="nav_extra">Extra</button>
-      <ul>
-        <li><a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a></li>
-        <li><a href="#eat" data-i18n="nav_eat">Where to Eat</a></li>
-        <li><a href="#info" data-i18n="nav_info">Useful Info</a></li>
-      </ul>
-    </li>
+    <li><a href="#stay" data-i18n="nav_stay">Where to Stay</a></li>
+    <li><a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a></li>
+    <li><a href="#eat" data-i18n="nav_eat">Where to Eat</a></li>
+    <li><a href="#info" data-i18n="nav_info">Useful Info</a></li>
   </ul>
   <div class="hdr-end">
     <div class="langs" data-langs></div>
@@ -448,7 +440,6 @@ footer .langs{justify-content:center;margin-top:30px}
   <a href="#dress" data-i18n="nav_dress">Dress Code</a>
   <a href="#stay" data-i18n="nav_stay">Travel &amp; Stay</a>
   <a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a>
-  <a href="#rome" data-i18n="nav_rome">Rome</a>
   <a href="#eat" data-i18n="nav_eat">Where to Eat</a>
   <a href="#info" data-i18n="nav_info">Useful Info</a>
   <a class="script" href="#rsvp">Rsvp</a>
@@ -464,9 +455,9 @@ footer .langs{justify-content:center;margin-top:30px}
   <div class="hero-in">
     <div>
       <p class="eyebrow" data-i18n="hero_eyebrow">We're getting married</p>
-      <p class="date split" data-i18n="hero_date">26th &amp; 27th of June 2027</p>
+      <p class="date" data-i18n="hero_date">26th &amp; 27th of June 2027</p>
       <h1 class="h-xl split">Emily &amp; Alexandre</h1>
-      <p class="place split" data-i18n="hero_place">Rome</p>
+      <p class="place" data-i18n="hero_place">Rome</p>
     </div>
   </div>
   <div class="arch-cap"><p class="script" data-i18n="arch_cap">Rome, the Eternal City</p></div>
@@ -474,21 +465,23 @@ footer .langs{justify-content:center;margin-top:30px}
 </section>
 
 <main id="canvas">
-<svg id="pencil" aria-hidden="true"><path class="smudge"/><path class="lead"/><g class="tip"><path d="M0 0 L7 -3 L30 -3 L30 3 L7 3 Z" fill="#f3e3c8" stroke="#5e3a26" stroke-width=".8"/><path d="M0 0 L7 -3 L7 3 Z" fill="#5e3a26"/><rect x="30" y="-3" width="5" height="6" fill="#c97a6a"/></g></svg>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ WELCOME ═════════ -->
 <section class="welcome" id="welcome">
-  <div class="wrap narrow center">
-    <p class="eyebrow" data-reveal data-i18n="intro_eyebrow">June 26 – 27, 2027 · Rome</p>
-    <h2 class="h-lg" data-lines data-i18n="intro_title" style="margin-top:22px">Two days, three special places in the Eternal City</h2>
-    <p data-reveal data-i18n="intro_p">A welcome evening on the Capitoline Hill, a ceremony at the Great Synagogue of Rome, and a reception by the sea at a fifteenth-century castle. Here is everything you need to know.</p>
-    <a class="oval" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span data-i18n="btn_weekend">The Weekend</span></a>
+  <div class="wrap welcome-grid">
+    <div class="txt">
+      <p class="eyebrow" data-reveal data-i18n="intro_eyebrow">June 26 – 27, 2027 · Rome, Italy</p>
+      <h2 class="h-lg" data-lines data-i18n="intro_title" style="margin-top:22px">Two days, three special places in the Eternal City</h2>
+      <p data-reveal data-i18n="intro_p">Two days, three special places. Here's what to expect.</p>
+      <a class="oval" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span data-i18n="btn_weekend">The Weekend</span></a>
+    </div>
+    <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><div class="ph-empty"><span class="todo">Photo of Emily &amp; Alex to add</span></div><!--COUPLE--></div></div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ CELEBRATION ═════════ -->
 <section class="celebration" id="schedule">
@@ -499,26 +492,31 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="days">
         <div data-reveal>
           <p class="script s-md" data-i18n="sat">Saturday<br>June 26th</p>
-          <ul><li><b>19:00</b><span data-i18n="ev_welcome">Welcome Party</span> · Terrazza Caffarelli</li></ul>
+          <ul>
+            <li><b>19:00</b><span class="ev" data-i18n="ev_welcome">Welcome Party</span><span class="pl">Terrazza Caffarelli</span><a class="ad" href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></li>
+          </ul>
         </div>
         <div data-reveal>
           <p class="script s-md" data-i18n="sun">Sunday<br>June 27th</p>
-          <ul><li><b>15:30</b><span data-i18n="ev_ceremony">Ceremony</span> · Tempio Maggiore</li><li><b>18:00</b><span data-i18n="ev_reception">Reception</span> · Castello Odescalchi</li></ul>
+          <ul>
+            <li><b>15:30</b><span class="ev" data-i18n="ev_ceremony">Ceremony</span><span class="pl">Tempio Maggiore di Roma</span><a class="ad" href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></li>
+            <li class="shuttle" data-i18n="shuttle">Shuttle transfer · about 45 minutes each way to the Castle.</li>
+            <li><b>18:00</b><span class="ev" data-i18n="ev_reception">Reception</span><span class="pl">Castello Odescalchi di Palo Laziale</span><a class="ad" href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></li>
+          </ul>
         </div>
       </div>
-      <p class="shuttle" data-reveal data-i18n="shuttle">Shuttle transfer · about 45 minutes each way to the Castle.</p>
       <div style="margin-top:36px" data-reveal><a class="oval" href="#rsvp"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_confirm">Confirm Your Presence</span></a></div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ VENUES: Emily's three watercolours ═════════ -->
 <section class="venues" id="venues">
   <div class="wrap">
     <div class="row">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.32"><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day1">Day 1 · June 26</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_welcome">Welcome Party</h3>
@@ -528,7 +526,7 @@ footer .langs{justify-content:center;margin-top:30px}
       </div>
     </div>
     <div class="row flip">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.22"><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_ceremony">Ceremony</h3>
@@ -538,19 +536,19 @@ footer .langs{justify-content:center;margin-top:30px}
       </div>
     </div>
     <div class="row">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.3"><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_reception">Reception</h3>
         <span class="time">18:00</span>
-        <p class="venue">Castello Odescalchi</p>
+        <p class="venue">Castello Odescalchi di Palo Laziale</p>
         <p class="addr"><a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ DRESS CODE ═════════ -->
 <section class="dress" id="dress">
@@ -564,7 +562,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style — think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         <span class="todo">Pinterest link to add</span>
       </div>
       <div class="rule" aria-hidden="true"></div>
@@ -572,14 +570,14 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         <span class="todo">Pinterest link to add</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ RSVP ═════════ -->
 <section class="rsvp" id="rsvp">
@@ -589,19 +587,38 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="inner">
         <p class="eyebrow" data-reveal data-i18n="rsvp_eyebrow">Let us know you're coming</p>
         <h2 class="h-lg" data-lines style="margin-top:20px">Rsvp</h2>
-        <p class="lead" data-reveal data-i18n="rsvp_p" style="margin-top:22px">Filling out the form will help us plan every detail. Here's what we'll ask you:</p>
-        <ul class="asks" data-reveal>
-          <li data-i18n="ask1">Full name</li><li data-i18n="ask2">Email address</li><li data-i18n="ask3">Home address</li><li data-i18n="ask4">Attendance at each event</li>
-          <li data-i18n="ask5">Whether you need the transfer</li><li data-i18n="ask6">Allergies or intolerances</li><li data-i18n="ask7">Which hotel you'll be staying at</li>
-        </ul>
-        <div style="margin-top:44px" data-reveal><a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 260 58" preserveAspectRatio="none"><ellipse cx="130" cy="29" rx="129" ry="28"/><ellipse class="o2" pathLength="1" cx="130" cy="29" rx="127" ry="26" transform="rotate(-1.5 130 29)"/></svg><span data-i18n="btn_form">Fill out the form</span></a><br><span class="todo">Google Form link to add</span></div>
+        <p class="lead" data-reveal data-i18n="rsvp_p" style="margin-top:22px">Filling out the form will help us plan every detail.</p>
+        <form class="rform" id="rsvp-form" novalidate data-reveal>
+          <div class="fgrid">
+            <label class="f"><span data-i18n="f_first">First name</span><input id="rf-first" name="first" required autocomplete="given-name"></label>
+            <label class="f"><span data-i18n="f_last">Last name</span><input id="rf-last" name="last" required autocomplete="family-name"></label>
+            <label class="f"><span data-i18n="f_email">Email address</span><input id="rf-email" name="email" type="email" required autocomplete="email"></label>
+            <label class="f"><span data-i18n="f_phone">Phone number</span><input id="rf-phone" name="phone" type="tel" autocomplete="tel"></label>
+            <label class="f wide"><span data-i18n="f_address">Home address</span><input id="rf-address" name="address" autocomplete="street-address"></label>
+          </div>
+          <fieldset><legend data-i18n="f_attend">Attendance at each event</legend>
+            <div class="yn"><span data-i18n="ev_welcome">Welcome Party</span><span class="pills"><label><input type="radio" name="welcome" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="welcome" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_ceremony">Ceremony</span><span class="pills"><label><input type="radio" name="ceremony" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="ceremony" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_reception">Reception</span><span class="pills"><label><input type="radio" name="reception" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="reception" value="No"><i data-i18n="no">No</i></label></span></div>
+          </fieldset>
+          <fieldset><legend data-i18n="f_transfer">Shuttle from the Tempio Maggiore to the Castle</legend>
+            <div class="yn"><span data-i18n="f_transfer_q">Will you use the shuttle?</span><span class="pills"><label><input type="radio" name="shuttle" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="shuttle" value="No"><i data-i18n="no">No</i></label></span></div>
+          </fieldset>
+          <fieldset><legend data-i18n="f_diet">Allergies or intolerances</legend>
+            <div class="chips"><label class="chip"><input type="checkbox" name="diet" value="none"><i data-i18n="d_none">No restrictions</i></label><label class="chip"><input type="checkbox" name="diet" value="vegetarian"><i data-i18n="d_veg">Vegetarian</i></label><label class="chip"><input type="checkbox" name="diet" value="vegan"><i data-i18n="d_vegan">Vegan</i></label><label class="chip"><input type="checkbox" name="diet" value="pescatarian"><i data-i18n="d_pesc">Pescatarian</i></label><label class="chip"><input type="checkbox" name="diet" value="gluten"><i data-i18n="d_gluten">Gluten-free / coeliac</i></label><label class="chip"><input type="checkbox" name="diet" value="lactose"><i data-i18n="d_lact">Lactose-free</i></label><label class="chip"><input type="checkbox" name="diet" value="nuts"><i data-i18n="d_nuts">Nut allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="shellfish"><i data-i18n="d_shell">Shellfish allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="kosher"><i data-i18n="d_kosher">Kosher</i></label><label class="chip"><input type="checkbox" name="diet" value="halal"><i data-i18n="d_halal">Halal</i></label><label class="chip"><input type="checkbox" name="diet" value="other"><i data-i18n="d_other">Other</i></label></div>
+            <label class="f wide" style="margin-top:14px"><span data-i18n="f_diet_notes">Anything we should know? (e.g. severe allergy, child's meal)</span><input id="rf-diet" name="diet_notes"></label>
+          </fieldset>
+          <div class="fgrid">
+            <label class="f wide"><span data-i18n="f_hotel">Which hotel you'll be staying at</span><select id="rf-hotel" name="hotel"><option value="" data-i18n="h_choose">Choose…</option><option>Hotel 47 Rome</option><option>Rhinoceros Rome</option><option>Palazzo Velabro</option><option>citizenM Isola Tiberina</option><option value="Other hotel" data-i18n="h_other">Another hotel in Rome</option><option value="Not decided yet" data-i18n="h_undecided">Not decided yet</option></select></label>
+            <label class="f wide"><span data-i18n="f_msg">A note for Emily &amp; Alexandre (optional)</span><textarea id="rf-msg" name="message" rows="3"></textarea></label>
+          </div>
+          <div class="fsend"><button class="oval" type="submit"><svg viewBox="0 0 220 58" preserveAspectRatio="none"><ellipse cx="110" cy="29" rx="109" ry="28"/><ellipse class="o2" pathLength="1" cx="110" cy="29" rx="107" ry="26" transform="rotate(-1.5 110 29)"/></svg><span data-i18n="btn_send">Send my RSVP</span></button><p class="fstatus" role="status" aria-live="polite"></p></div>
+        </form>
         <p data-reveal style="margin-top:24px;font-size:14px"><span data-i18n="respond_by">Please respond by</span> <span class="todo" style="margin:0" data-i18n="tbd">date to be decided</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ TRAVEL & STAY: pinned hotel gallery ═════════ -->
 <section class="stay" id="stay">
@@ -609,39 +626,50 @@ footer .langs{justify-content:center;margin-top:30px}
     <div class="head" style="margin-bottom:0">
       <p class="eyebrow" data-reveal data-i18n="stay_eyebrow">Where to Stay</p>
       <h2 class="h-lg" data-lines data-i18n="stay_title" style="max-width:14ch;margin-inline:auto">Recommended Hotels</h2>
-      <p class="lead" data-reveal data-i18n="stay_p">These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
+      <p class="lead" data-reveal data-i18n="stay_p" style="margin-bottom:clamp(50px,6vw,90px)">These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
     </div>
   </div>
-  <div class="hstage" data-nopath>
-    <div class="hpics" aria-hidden="true">
-      <img class="first" src="img/hotels/h47-1.webp" alt=""><img src="img/hotels/h47-2.webp" alt="" loading="lazy"><img src="img/hotels/h47-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/rh-1.webp" alt="" loading="lazy"><img src="img/hotels/rh-2.webp" alt="" loading="lazy"><img src="img/hotels/rh-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/vel-1.webp" alt="" loading="lazy"><img src="img/hotels/vel-2.webp" alt="" loading="lazy"><img src="img/hotels/vel-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/cz-1.webp" alt="" loading="lazy"><img src="img/hotels/cz-2.webp" alt="" loading="lazy"><img src="img/hotels/cz-3.webp" alt="" loading="lazy">
-      <div class="hcap"><span class="hcap-name">Hotel 47 Rome</span><span class="hcap-n">1 / 3</span></div>
+  <div class="wrap hotels">
+    <div class="row">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/h47-1.webp" alt="Hotel 47 Rome" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Hotel 47 Rome</h4>
+        <p class="addr">Via Luigi Petroselli 47, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.fortysevenhotel.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_47">Code</span></div>
+      </div>
     </div>
-    <ol class="hlist">
-      <li class="hotel on">
-        <div class="hcar"><img src="img/hotels/h47-1.webp" alt="Hotel 47 Rome rooftop terrace" loading="lazy"><img src="img/hotels/h47-2.webp" alt="View from Hotel 47 Rome" loading="lazy"><img src="img/hotels/h47-3.webp" alt="Room at Hotel 47 Rome" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Hotel 47 Rome</h4><p>Via Luigi Petroselli 47, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.fortysevenhotel.com" target="_blank" rel="noopener" data-i18n="visit">Visit website</a><span class="code" data-i18n="code">Code TheRomilys · 10% off</span></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/rh-1.webp" alt="Rhinoceros rooftop terrace" loading="lazy"><img src="img/hotels/rh-2.webp" alt="Arched windows at Rhinoceros" loading="lazy"><img src="img/hotels/rh-3.webp" alt="Rhinoceros building at night" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Rhinoceros Rome</h4><p>Via del Velabro 9, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://rhinocerosroma.com" target="_blank" rel="noopener" data-i18n="visit">Visit website</a><span class="code" data-i18n="code">Code TheRomilys · 10% off</span></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/vel-1.webp" alt="Palazzo Velabro at sunset" loading="lazy"><img src="img/hotels/vel-2.webp" alt="Room at Palazzo Velabro" loading="lazy"><img src="img/hotels/vel-3.webp" alt="Suite at Palazzo Velabro" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Palazzo Velabro</h4><p>Via del Velabro 16, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.palazzovelabro.it" target="_blank" rel="noopener" data-i18n="visit">Visit website</a></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/cz-1.webp" alt="citizenM Isola Tiberina rooftop" loading="lazy"><img src="img/hotels/cz-2.webp" alt="citizenM Isola Tiberina living room" loading="lazy"><img src="img/hotels/cz-3.webp" alt="Room at citizenM Isola Tiberina" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>CitizenM Isola Tiberina</h4><p>Lungotevere de' Cenci 5–8, Rome (RM). <span data-i18n="citizen">Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.google.com/search?q=citizenM+Rome+Isola+Tiberina" target="_blank" rel="noopener" data-i18n="visit">Visit website</a></div>
-      </li>
-    </ol>
+    <div class="row flip">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/rh-1.webp" alt="Rhinoceros Rome" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Rhinoceros Rome</h4>
+        <p class="addr">Via del Velabro 9, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <p class="hnote" data-i18n="note_rh"></p><div class="meta"><a href="https://rhinocerosroma.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_rh">Code</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/vel-1.webp" alt="Palazzo Velabro" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Palazzo Velabro</h4>
+        <p class="addr">Via del Velabro 16, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.palazzovelabro.it" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
+      </div>
+    </div>
+    <div class="row flip">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/cz-1.webp" alt="CitizenM Isola Tiberina" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>CitizenM Isola Tiberina</h4>
+        <p class="addr">Lungotevere de' Cenci 5–8, Rome (RM)</p>
+        <p><span data-i18n="citizen">Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.citizenm.com/hotels/europe/rome/rome-isola-tiberina-hotel" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
+      </div>
+    </div>
   </div>
   <div class="wrap others">
     <p class="eyebrow" data-reveal data-i18n="others">Other options in the city</p>
@@ -658,7 +686,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ KIDS & TRANSFERS ═════════ -->
 <section class="kids" id="kids">
@@ -684,30 +712,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
-
-<!-- ═════════ ROME ═════════ -->
-<section class="rome" id="rome">
-  <div class="bgv" aria-hidden="true"><div class="still"></div><video data-src="media/v-tiber" muted loop playsinline preload="none"></video></div>
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow" data-reveal data-i18n="rome_eyebrow">Make the Most of Your Trip</p>
-      <h2 class="h-lg" data-lines data-i18n="rome_title">Things to See<br>in Rome</h2>
-    </div>
-    <div class="zig">
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+City" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">I</span><h4 data-i18n="s1">Vatican City</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+Museums" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">II</span><h4 data-i18n="s2">Vatican Museums</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Colosseum+Rome" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">III</span><h4 data-i18n="s3">Colosseum</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Roman+Forum" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">IV</span><h4 data-i18n="s4">Roman &amp; Imperial Forums</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-    </div>
-    <div class="extra" data-reveal>
-      <p class="script s-md" data-i18n="extra_title">If you have extra time, here are our picks</p>
-      <p class="list"><span data-i18n="x1">Pantheon</span> <i>·</i> <span data-i18n="x2">Trevi Fountain &amp; Piazza Navona</span> <i>·</i> <span data-i18n="x3">Villa Borghese &amp; Borghese Gallery</span> <i>·</i> <span>Trastevere</span> <i>·</i> <span data-i18n="x5">Castel Sant'Angelo</span> <i>·</i> <span data-i18n="x6">Baths of Caracalla</span> <i>·</i> <span data-i18n="x7">Appian Way</span> <i>·</i> <span data-i18n="x8">Day Trip to Tivoli or Ostia Antica</span></p>
-    </div>
-  </div>
-</section>
-
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ WHERE TO EAT: hand-drawn map ═════════ -->
 <section class="eat" id="eat">
@@ -716,7 +721,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <p class="eyebrow" data-reveal data-i18n="eat_eyebrow">Our Favorite Spots</p>
       <h2 class="h-lg" data-lines data-i18n="eat_title">Where to Eat in Rome</h2>
       <p class="lead" data-reveal data-i18n="eat_p">We've put our favorite restaurants in the city on one map.</p>
-      <div style="margin-top:28px" data-reveal><a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 210 58" preserveAspectRatio="none"><ellipse cx="105" cy="29" rx="104" ry="28"/><ellipse class="o2" pathLength="1" cx="105" cy="29" rx="102" ry="26" transform="rotate(-2 105 29)"/></svg><span data-i18n="btn_map">Open the Map</span></a><br><span class="todo">Google Maps list to add</span></div>
+      <div style="margin-top:28px" data-reveal><a class="oval" id="map-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_map">Open the restaurant map</span></a><br><span class="todo">Google Maps list to add</span></div>
     </div>
     <div class="mapbox archbox" data-outline style="--ry:14%">
       <div class="arch" data-arch><svg class="rmap" viewBox="0 0 1000 877" role="img" aria-label="Hand-drawn map of central Rome with our favourite restaurants"><defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="7" stroke="#8a5a3c" stroke-width=".7" opacity=".45"/></pattern></defs><g class="washes"><path d="M191 207 Q191 207 200 214 Q209 221 217 231 Q225 241 220 249 Q215 256 209 264 Q204 271 194 275 Q184 278 174 281 Q165 283 158 291 Q152 299 141 297 Q129 294 120 287 Q111 280 104 278 Q96 275 90 272 Q83 269 73 273 Q62 277 49 278 Q37 279 33 271 Q30 263 22 258 Q15 253 8 246 Q1 240 -3 232 Q-7 224 -13 216 Q-19 207 -9 199 Q2 191 15 187 Q28 182 30 176 Q33 170 38 165 Q43 161 46 153 Q49 146 54 140 Q60 134 70 136 Q80 138 87 131 Q93 124 102 116 Q111 107 122 107 Q133 106 144 106 Q155 107 161 117 Q167 128 169 138 Q172 147 181 150 Q191 152 194 159 Q197 166 197 174 Q198 181 199 188 Q200 194 195 201Z" fill="#e9c39b" opacity="0.22"/><path d="M194 206 Q194 206 194 212 Q193 218 187 222 Q181 227 173 229 Q165 231 167 238 Q170 246 169 254 Q168 262 164 268 Q159 273 152 279 Q146 284 137 282 Q127 279 119 280 Q111 281 102 284 Q94 288 87 282 Q80 277 75 271 Q69 265 67 258 Q65 251 64 245 Q64 238 54 238 Q44 238 37 234 Q30 230 29 224 Q29 218 25 212 Q21 206 23 199 Q24 193 22 186 Q19 178 17 169 Q15 160 27 158 Q38 155 48 154 Q58 153 65 152 Q73 151 80 151 Q87 152 92 146 Q97 140 104 140 Q111 140 117 144 Q123 149 131 147 Q139 144 147 143 Q156 143 166 143 Q176 143 186 145 Q196 148 194 157 Q193 167 192 174 Q192 182 195 187 Q198 193 196 199Z" fill="#e9c39b" opacity="0.28"/><path d="M167 206 Q167 206 167 210 Q166 215 160 218 Q153 221 150 224 Q147 227 150 234 Q154 240 152 246 Q149 251 146 256 Q142 261 136 263 Q130 266 123 264 Q115 261 109 264 Q103 268 97 268 Q90 269 85 263 Q80 258 76 254 Q72 250 71 244 Q70 238 67 236 Q64 233 55 233 Q46 233 43 229 Q41 225 39 220 Q37 215 35 211 Q32 206 33 201 Q34 196 30 189 Q27 183 29 177 Q31 171 41 171 Q51 170 57 168 Q63 166 69 166 Q75 165 79 164 Q84 162 88 157 Q92 153 98 155 Q103 157 108 159 Q113 160 120 157 Q126 155 133 154 Q140 154 148 154 Q157 154 162 158 Q167 162 165 170 Q163 178 165 182 Q167 187 168 192 Q170 196 168 201Z" fill="#e9c39b" opacity="0.34"/><path d="M314 437 Q314 437 314 444 Q313 452 307 458 Q301 464 299 470 Q296 477 291 482 Q285 487 272 485 Q259 483 254 486 Q249 489 245 495 Q241 502 235 507 Q228 512 220 519 Q212 527 203 524 Q194 522 187 517 Q179 512 168 514 Q157 515 150 510 Q142 506 137 499 Q132 493 130 485 Q129 477 137 467 Q144 458 141 453 Q138 448 131 442 Q124 437 125 431 Q126 425 124 418 Q123 410 127 405 Q132 399 136 393 Q140 387 139 376 Q137 364 146 359 Q154 354 165 355 Q176 355 186 357 Q195 358 204 365 Q212 371 220 370 Q227 368 236 367 Q244 366 248 373 Q252 380 258 383 Q264 387 271 389 Q277 392 286 396 Q294 399 308 401 Q323 404 324 413 Q326 421 320 429Z" fill="#cfd2a4" opacity="0.22"/><path d="M266 454 Q266 454 263 459 Q259 464 252 467 Q246 470 249 476 Q253 483 255 490 Q257 498 252 504 Q248 509 244 514 Q239 520 230 519 Q221 519 214 519 Q207 520 200 525 Q193 529 185 525 Q178 521 173 516 Q168 510 164 505 Q160 500 158 495 Q156 490 148 490 Q139 491 131 489 Q123 487 122 482 Q121 476 117 471 Q112 466 111 460 Q110 454 108 448 Q106 442 103 434 Q99 426 108 423 Q118 419 127 417 Q137 416 143 414 Q148 411 155 410 Q161 409 164 404 Q168 399 174 396 Q180 394 186 398 Q193 402 199 399 Q205 396 213 393 Q221 390 230 390 Q238 390 247 391 Q257 392 257 400 Q258 409 258 416 Q258 423 262 428 Q267 432 267 438 Q266 444 266 449Z" fill="#cfd2a4" opacity="0.28"/><path d="M240 458 Q240 458 247 463 Q255 468 257 473 Q259 479 255 483 Q251 487 248 491 Q245 495 238 497 Q232 498 228 501 Q223 504 219 508 Q215 511 208 508 Q201 504 196 502 Q191 499 187 498 Q183 497 179 497 Q175 496 167 500 Q160 503 154 501 Q149 500 147 495 Q145 491 139 488 Q134 486 130 482 Q127 478 124 473 Q121 469 119 464 Q118 458 127 454 Q135 450 140 447 Q144 444 145 441 Q146 437 149 434 Q152 431 152 426 Q153 422 158 420 Q163 418 168 418 Q173 418 177 412 Q180 406 186 403 Q191 399 198 399 Q204 399 210 401 Q216 402 218 410 Q221 417 224 420 Q227 423 232 425 Q238 427 238 431 Q239 436 240 440 Q241 443 241 447 Q240 451 240 455Z" fill="#cfd2a4" opacity="0.34"/><path d="M874 633 Q874 633 867 642 Q860 651 857 659 Q853 668 845 674 Q836 680 831 686 Q826 693 820 700 Q815 708 800 704 Q786 700 777 699 Q768 698 761 702 Q755 707 747 710 Q739 713 729 722 Q718 730 707 729 Q697 728 690 721 Q683 713 672 712 Q660 711 651 706 Q642 700 636 693 Q630 685 627 676 Q624 668 635 657 Q647 647 651 640 Q654 633 649 626 Q643 620 645 613 Q647 606 646 598 Q646 589 652 583 Q657 577 665 573 Q674 569 675 557 Q676 544 684 536 Q692 528 704 529 Q717 529 728 531 Q739 533 748 543 Q756 553 764 556 Q772 559 783 558 Q793 556 797 564 Q801 573 806 579 Q810 584 815 590 Q820 595 826 600 Q831 606 847 611 Q863 615 869 624Z" fill="#efb9a8" opacity="0.22"/><path d="M826 631 Q826 631 827 639 Q827 647 822 653 Q816 660 812 666 Q808 673 800 676 Q791 679 787 686 Q783 692 776 696 Q770 700 758 695 Q747 690 740 689 Q733 688 727 690 Q721 691 714 693 Q707 695 697 702 Q687 708 680 704 Q672 701 667 695 Q662 689 653 687 Q643 685 638 679 Q632 673 627 667 Q622 661 622 653 Q622 646 634 638 Q645 631 648 626 Q650 621 648 615 Q647 609 649 604 Q652 599 652 591 Q653 584 660 581 Q667 578 673 575 Q679 572 682 561 Q685 551 694 547 Q702 543 712 543 Q721 543 730 546 Q739 550 744 559 Q749 569 756 571 Q762 573 770 574 Q778 576 780 583 Q781 590 785 595 Q788 600 790 605 Q791 610 795 615 Q800 620 813 626Z" fill="#efb9a8" opacity="0.28"/><path d="M803 624 Q803 624 806 630 Q810 637 805 642 Q801 647 798 652 Q795 657 788 660 Q782 663 777 667 Q773 670 769 675 Q765 680 756 677 Q748 674 742 671 Q736 669 731 670 Q726 671 721 671 Q716 672 708 677 Q701 681 694 681 Q687 680 684 674 Q680 669 674 667 Q667 665 662 661 Q656 657 653 652 Q649 647 647 642 Q645 636 653 630 Q662 624 666 620 Q671 616 670 612 Q669 607 671 603 Q673 599 674 594 Q674 589 678 585 Q683 582 689 581 Q695 580 697 573 Q700 565 705 560 Q711 555 719 555 Q726 555 733 557 Q740 558 745 565 Q749 573 753 576 Q757 580 764 580 Q771 581 773 586 Q775 591 776 595 Q778 600 780 604 Q781 608 782 612 Q783 616 793 620Z" fill="#efb9a8" opacity="0.34"/><path d="M758 136 Q758 136 755 141 Q751 147 762 156 Q772 165 774 175 Q776 185 770 192 Q764 199 758 206 Q751 212 739 213 Q727 213 719 218 Q711 222 702 228 Q694 233 683 226 Q672 219 665 214 Q657 208 651 204 Q644 199 638 196 Q632 193 619 197 Q605 201 596 198 Q587 194 585 186 Q582 179 574 173 Q566 167 563 160 Q559 152 554 144 Q548 136 546 126 Q544 117 560 112 Q575 106 584 103 Q594 99 599 93 Q603 88 610 84 Q616 80 619 72 Q622 64 631 62 Q639 60 648 62 Q657 64 665 56 Q672 47 683 43 Q693 39 705 38 Q716 37 727 41 Q737 44 739 57 Q740 69 744 77 Q748 84 756 88 Q764 92 764 101 Q763 109 765 115 Q766 122 762 129Z" fill="#f3d49b" opacity="0.22"/><path d="M762 140 Q762 140 759 146 Q756 152 755 158 Q754 164 745 167 Q735 169 728 171 Q722 173 723 182 Q724 190 721 196 Q718 202 712 209 Q707 215 699 218 Q691 221 683 217 Q674 213 666 215 Q657 218 648 218 Q639 219 634 212 Q628 205 624 200 Q619 194 620 185 Q621 177 620 172 Q619 166 609 165 Q598 163 595 158 Q592 152 591 146 Q590 140 588 134 Q586 128 589 122 Q592 116 589 107 Q586 99 588 91 Q590 83 602 82 Q614 82 623 81 Q631 80 640 81 Q648 83 655 83 Q662 82 668 77 Q674 72 681 75 Q687 78 693 82 Q698 86 706 84 Q714 83 722 84 Q730 86 742 86 Q753 86 761 91 Q768 96 764 105 Q760 115 761 121 Q761 128 762 134Z" fill="#f3d49b" opacity="0.28"/><path d="M752 136 Q752 136 751 141 Q750 146 746 151 Q742 155 740 160 Q737 164 734 168 Q732 173 723 172 Q714 171 708 171 Q703 172 700 176 Q698 181 693 184 Q689 187 684 192 Q678 198 671 198 Q665 198 660 193 Q655 189 647 189 Q640 190 634 188 Q628 185 624 180 Q621 176 618 170 Q616 165 621 158 Q627 151 627 147 Q628 143 623 140 Q617 136 617 132 Q617 127 617 122 Q616 118 618 113 Q620 109 625 105 Q629 102 628 94 Q627 86 632 81 Q636 76 644 77 Q652 77 659 78 Q666 78 672 83 Q678 88 683 88 Q688 89 694 87 Q701 85 704 90 Q707 94 711 98 Q714 101 719 103 Q724 105 728 107 Q733 110 743 112 Q753 114 757 119 Q760 124 756 130Z" fill="#f3d49b" opacity="0.34"/><path d="M602 396 Q602 396 598 402 Q593 409 605 419 Q617 429 619 441 Q622 452 615 460 Q609 468 601 476 Q594 483 580 484 Q566 484 557 489 Q547 494 538 501 Q528 508 516 500 Q504 492 495 485 Q486 479 479 474 Q471 469 465 465 Q458 461 443 466 Q427 470 417 467 Q406 463 403 454 Q400 445 391 438 Q382 432 378 423 Q374 414 368 405 Q362 396 360 385 Q357 374 374 368 Q391 362 403 358 Q414 353 419 347 Q425 341 432 337 Q439 333 443 323 Q446 314 456 312 Q465 309 476 312 Q486 314 495 304 Q504 295 516 290 Q528 285 541 284 Q553 284 566 287 Q578 290 580 305 Q582 320 586 328 Q590 336 599 341 Q608 346 608 355 Q608 365 609 372 Q611 380 606 388Z" fill="#f4cfb0" opacity="0.22"/><path d="M609 379 Q609 379 605 387 Q601 395 597 402 Q594 409 587 414 Q580 419 578 427 Q576 435 565 436 Q555 437 544 434 Q532 431 528 436 Q523 441 517 445 Q511 449 503 456 Q496 462 486 467 Q476 472 468 465 Q461 458 452 456 Q443 454 432 453 Q421 452 416 445 Q410 438 405 431 Q400 425 404 415 Q409 405 416 398 Q424 390 418 385 Q412 379 410 373 Q407 367 408 360 Q409 353 409 346 Q410 339 418 335 Q425 331 427 322 Q428 314 431 303 Q434 292 445 290 Q456 289 466 290 Q476 290 486 295 Q496 301 503 307 Q510 313 519 310 Q528 307 535 310 Q542 314 545 321 Q548 328 554 331 Q561 334 566 339 Q570 344 582 347 Q594 350 606 356 Q618 362 613 371Z" fill="#f4cfb0" opacity="0.28"/><path d="M554 373 Q554 373 548 378 Q541 382 542 386 Q542 391 548 399 Q554 407 552 413 Q549 419 545 424 Q541 430 534 432 Q527 435 519 434 Q511 434 505 439 Q499 444 491 444 Q484 444 478 438 Q471 432 466 428 Q461 424 458 419 Q455 414 449 414 Q444 413 433 414 Q423 415 420 410 Q417 405 414 400 Q411 395 406 390 Q402 385 401 379 Q400 373 395 367 Q390 360 394 354 Q398 348 410 346 Q421 344 427 341 Q432 338 437 335 Q443 333 447 330 Q451 326 454 321 Q458 315 465 317 Q472 320 478 319 Q484 318 491 313 Q498 308 506 307 Q514 306 523 306 Q532 305 537 311 Q542 316 541 325 Q541 335 545 338 Q550 342 552 347 Q555 352 554 358 Q553 363 553 368Z" fill="#f4cfb0" opacity="0.34"/><path d="M949 337 Q949 337 947 343 Q945 349 942 354 Q939 359 937 365 Q935 371 925 371 Q915 372 908 373 Q902 374 901 381 Q900 387 895 392 Q891 397 886 403 Q880 410 872 411 Q865 413 857 408 Q850 403 842 405 Q834 406 826 405 Q818 404 813 398 Q808 392 805 386 Q801 381 805 372 Q808 364 809 359 Q809 354 800 351 Q792 348 791 343 Q789 337 788 332 Q787 326 788 320 Q788 315 792 310 Q797 305 794 296 Q792 288 796 281 Q799 274 810 274 Q820 274 828 274 Q836 274 844 277 Q852 281 858 281 Q865 282 871 278 Q878 274 883 279 Q889 283 893 287 Q898 290 904 291 Q911 292 918 294 Q924 296 936 297 Q947 298 953 304 Q959 309 954 317 Q950 325 949 331Z" fill="#e8c7c0" opacity="0.22"/><path d="M946 337 Q946 337 952 343 Q958 349 954 354 Q951 358 948 363 Q945 368 939 371 Q934 374 928 377 Q923 379 920 384 Q917 390 909 388 Q902 387 896 383 Q889 380 885 380 Q880 380 876 380 Q871 380 865 383 Q858 387 851 388 Q843 390 840 384 Q837 379 832 377 Q826 374 821 371 Q815 368 812 363 Q809 358 806 354 Q802 349 809 343 Q815 337 822 334 Q829 330 828 326 Q828 322 829 318 Q831 314 832 310 Q833 305 836 301 Q839 297 845 297 Q851 296 854 291 Q857 286 862 280 Q866 274 873 273 Q880 273 887 273 Q894 274 898 280 Q903 286 906 291 Q909 296 915 297 Q922 297 924 301 Q927 305 928 310 Q929 314 931 318 Q933 322 932 326 Q932 330 939 334Z" fill="#e8c7c0" opacity="0.28"/><path d="M912 339 Q912 339 910 342 Q908 346 908 350 Q907 353 903 355 Q898 357 893 358 Q887 358 887 362 Q887 366 886 370 Q884 375 881 378 Q878 382 874 385 Q870 388 864 385 Q859 383 854 383 Q850 383 844 384 Q838 386 835 382 Q831 379 828 375 Q826 372 825 367 Q825 362 826 358 Q827 354 822 353 Q817 352 813 349 Q810 346 810 342 Q810 339 809 335 Q807 331 809 328 Q811 325 810 320 Q810 315 809 310 Q809 304 815 303 Q822 302 827 302 Q833 302 838 302 Q843 303 848 304 Q852 305 856 302 Q859 299 863 300 Q867 300 870 304 Q873 307 878 306 Q882 306 887 307 Q891 307 898 308 Q904 308 910 310 Q916 312 915 317 Q913 323 912 327 Q911 331 912 335Z" fill="#e8c7c0" opacity="0.34"/><path d="M690 765 Q690 765 689 772 Q689 779 684 785 Q679 790 676 796 Q672 801 664 805 Q657 808 654 813 Q650 819 644 822 Q637 825 627 820 Q617 816 612 816 Q606 816 601 817 Q595 818 589 821 Q582 824 573 829 Q564 834 558 830 Q552 826 547 821 Q542 817 534 815 Q525 813 521 808 Q516 803 511 797 Q507 792 508 785 Q510 778 520 771 Q530 765 530 761 Q531 756 530 751 Q529 746 531 741 Q533 736 534 730 Q534 723 541 721 Q548 719 552 715 Q557 711 560 702 Q563 692 570 690 Q578 687 587 687 Q595 687 603 691 Q610 695 615 703 Q619 711 626 712 Q632 712 639 714 Q645 716 646 723 Q648 729 651 733 Q655 737 656 742 Q657 747 662 751 Q667 755 679 760Z" fill="#d9cfa2" opacity="0.22"/><path d="M657 774 Q657 774 656 779 Q655 785 652 789 Q648 793 645 797 Q642 801 640 806 Q638 811 629 810 Q621 809 615 809 Q609 809 607 813 Q604 817 600 820 Q596 823 590 829 Q585 834 579 834 Q572 835 567 830 Q562 826 555 826 Q549 826 542 824 Q536 823 532 818 Q529 813 527 808 Q524 803 529 797 Q534 790 535 786 Q537 781 532 778 Q526 774 526 770 Q526 766 526 761 Q525 756 527 752 Q529 748 533 745 Q537 742 537 734 Q536 727 540 721 Q544 716 552 716 Q559 716 566 717 Q573 717 579 722 Q585 726 590 728 Q595 729 601 727 Q607 725 611 729 Q614 733 617 737 Q620 740 625 742 Q629 744 634 747 Q638 750 647 751 Q657 753 662 758 Q666 763 662 769Z" fill="#d9cfa2" opacity="0.28"/><path d="M611 764 Q611 764 617 768 Q623 771 625 776 Q627 781 624 784 Q621 788 618 791 Q615 795 610 796 Q604 797 601 800 Q597 802 593 805 Q590 808 584 805 Q578 802 574 800 Q570 798 567 797 Q563 796 560 796 Q556 795 550 798 Q544 801 539 800 Q534 799 533 795 Q531 791 526 789 Q521 787 519 783 Q516 780 513 776 Q511 772 510 768 Q508 764 516 760 Q523 757 527 754 Q530 752 531 749 Q532 746 534 743 Q537 741 537 737 Q538 733 542 731 Q546 729 550 729 Q555 729 558 724 Q561 719 565 717 Q570 714 575 714 Q581 714 586 715 Q591 716 593 722 Q595 728 598 731 Q600 734 605 735 Q609 737 610 741 Q610 745 611 748 Q612 751 612 754 Q611 758 611 761Z" fill="#d9cfa2" opacity="0.34"/></g><g class="winds" stroke="#8a5a3c" stroke-width=".6" opacity=".55" fill="none"><line x1="500.0" y1="438.5" x2="500" y2="-462" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="676" y2="-444" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="844" y2="-393" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1000" y2="-310" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1136" y2="-198" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="1248" y2="-62" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1331" y2="94" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1383" y2="263" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1400" y2="438" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="1383" y2="614" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1331" y2="783" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1248" y2="939" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="1136" y2="1075" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="1000" y2="1187" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="844" y2="1270" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="676" y2="1321" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="500" y2="1338" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="324" y2="1321" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="156" y2="1270" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-0" y2="1187" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-136" y2="1075" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="-248" y2="939" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-331" y2="783" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-383" y2="614" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-400" y2="439" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="-383" y2="263" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-331" y2="94" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-248" y2="-62" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="-136" y2="-198" stroke-dasharray="" opacity="1"/><line x1="500.0" y1="438.5" x2="-0" y2="-310" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="156" y2="-393" stroke-dasharray="2 5" opacity="0.55"/><line x1="500.0" y1="438.5" x2="324" y2="-444" stroke-dasharray="2 5" opacity="0.55"/><circle cx="500.0" cy="438.5" r="412" stroke-width="1.1"/><circle cx="500.0" cy="438.5" r="406"/></g><g class="blocks" fill="none" stroke="#6b4a33" stroke-width=".7" opacity=".42"><rect x="737" y="134" width="9" height="6" transform="rotate(0 737 134)"/><rect x="468" y="428" width="14" height="6" transform="rotate(35 468 428)"/><rect x="215" y="623" width="8" height="10" transform="rotate(0 215 623)"/><rect x="594" y="500" width="7" height="6" transform="rotate(-20 594 500)"/><rect x="278" y="656" width="10" height="7" transform="rotate(0 278 656)"/><rect x="379" y="536" width="8" height="9" transform="rotate(35 379 536)"/><rect x="165" y="348" width="13" height="7" transform="rotate(0 165 348)"/><rect x="792" y="239" width="9" height="10" transform="rotate(35 792 239)"/><rect x="852" y="521" width="11" height="6" transform="rotate(0 852 521)"/><rect x="511" y="243" width="14" height="8" transform="rotate(-20 511 243)"/><rect x="798" y="515" width="10" height="6" transform="rotate(90 798 515)"/><rect x="481" y="561" width="13" height="6" transform="rotate(0 481 561)"/><rect x="202" y="334" width="13" height="6" transform="rotate(15 202 334)"/><rect x="344" y="624" width="12" height="12" transform="rotate(35 344 624)"/><rect x="625" y="424" width="14" height="7" transform="rotate(0 625 424)"/><rect x="718" y="757" width="14" height="10" transform="rotate(15 718 757)"/><rect x="364" y="586" width="16" height="11" transform="rotate(-20 364 586)"/><rect x="649" y="342" width="7" height="6" transform="rotate(0 649 342)"/><rect x="397" y="626" width="13" height="8" transform="rotate(35 397 626)"/><rect x="482" y="223" width="14" height="8" transform="rotate(35 482 223)"/><rect x="647" y="428" width="16" height="8" transform="rotate(0 647 428)"/><rect x="664" y="201" width="9" height="11" transform="rotate(90 664 201)"/><rect x="262" y="363" width="10" height="9" transform="rotate(0 262 363)"/><rect x="850" y="346" width="13" height="7" transform="rotate(0 850 346)"/><rect x="164" y="320" width="16" height="5" transform="rotate(0 164 320)"/><rect x="421" y="539" width="12" height="7" transform="rotate(35 421 539)"/><rect x="565" y="286" width="15" height="5" transform="rotate(0 565 286)"/><rect x="748" y="252" width="15" height="11" transform="rotate(90 748 252)"/><rect x="379" y="102" width="9" height="11" transform="rotate(15 379 102)"/><rect x="474" y="609" width="9" height="7" transform="rotate(15 474 609)"/><rect x="537" y="795" width="12" height="12" transform="rotate(0 537 795)"/><rect x="402" y="671" width="16" height="6" transform="rotate(90 402 671)"/><rect x="640" y="441" width="15" height="7" transform="rotate(15 640 441)"/><rect x="639" y="203" width="14" height="11" transform="rotate(90 639 203)"/><rect x="263" y="351" width="8" height="7" transform="rotate(15 263 351)"/><rect x="281" y="612" width="7" height="9" transform="rotate(0 281 612)"/><rect x="747" y="428" width="7" height="11" transform="rotate(0 747 428)"/><rect x="435" y="68" width="12" height="10" transform="rotate(0 435 68)"/><rect x="869" y="453" width="14" height="8" transform="rotate(-20 869 453)"/><rect x="737" y="390" width="13" height="11" transform="rotate(35 737 390)"/><rect x="628" y="457" width="15" height="9" transform="rotate(15 628 457)"/><rect x="840" y="526" width="10" height="6" transform="rotate(35 840 526)"/><rect x="515" y="359" width="15" height="9" transform="rotate(-20 515 359)"/><rect x="412" y="236" width="12" height="7" transform="rotate(-20 412 236)"/><rect x="523" y="127" width="11" height="5" transform="rotate(15 523 127)"/><rect x="249" y="588" width="10" height="7" transform="rotate(35 249 588)"/><rect x="499" y="438" width="13" height="11" transform="rotate(35 499 438)"/><rect x="271" y="198" width="12" height="8" transform="rotate(-20 271 198)"/><rect x="622" y="698" width="13" height="9" transform="rotate(90 622 698)"/><rect x="531" y="214" width="9" height="9" transform="rotate(35 531 214)"/><rect x="722" y="686" width="16" height="7" transform="rotate(15 722 686)"/><rect x="756" y="195" width="8" height="11" transform="rotate(0 756 195)"/><rect x="708" y="247" width="8" height="11" transform="rotate(-20 708 247)"/><rect x="540" y="602" width="9" height="9" transform="rotate(0 540 602)"/><rect x="128" y="494" width="11" height="11" transform="rotate(15 128 494)"/><rect x="738" y="441" width="14" height="6" transform="rotate(0 738 441)"/><rect x="741" y="529" width="16" height="8" transform="rotate(0 741 529)"/><rect x="210" y="203" width="15" height="12" transform="rotate(90 210 203)"/><rect x="744" y="300" width="12" height="9" transform="rotate(-20 744 300)"/><rect x="233" y="337" width="13" height="5" transform="rotate(0 233 337)"/><rect x="720" y="363" width="9" height="6" transform="rotate(35 720 363)"/><rect x="769" y="298" width="8" height="11" transform="rotate(90 769 298)"/><rect x="216" y="506" width="10" height="10" transform="rotate(15 216 506)"/><rect x="756" y="689" width="11" height="11" transform="rotate(35 756 689)"/><rect x="679" y="652" width="15" height="8" transform="rotate(90 679 652)"/><rect x="210" y="675" width="10" height="6" transform="rotate(15 210 675)"/><rect x="239" y="364" width="9" height="6" transform="rotate(35 239 364)"/><rect x="685" y="647" width="17" height="5" transform="rotate(35 685 647)"/><rect x="740" y="556" width="7" height="7" transform="rotate(15 740 556)"/><rect x="873" y="478" width="12" height="12" transform="rotate(35 873 478)"/><rect x="449" y="554" width="12" height="10" transform="rotate(0 449 554)"/><rect x="396" y="788" width="11" height="12" transform="rotate(-20 396 788)"/><rect x="327" y="463" width="12" height="7" transform="rotate(15 327 463)"/><rect x="651" y="636" width="7" height="10" transform="rotate(35 651 636)"/><rect x="734" y="351" width="16" height="10" transform="rotate(0 734 351)"/><rect x="334" y="676" width="9" height="10" transform="rotate(15 334 676)"/><rect x="521" y="787" width="14" height="8" transform="rotate(0 521 787)"/><rect x="595" y="132" width="13" height="8" transform="rotate(0 595 132)"/><rect x="832" y="324" width="9" height="8" transform="rotate(0 832 324)"/><rect x="654" y="403" width="10" height="9" transform="rotate(-20 654 403)"/><rect x="375" y="633" width="15" height="6" transform="rotate(15 375 633)"/><rect x="716" y="230" width="8" height="11" transform="rotate(35 716 230)"/><rect x="615" y="326" width="10" height="10" transform="rotate(35 615 326)"/><rect x="683" y="191" width="10" height="7" transform="rotate(0 683 191)"/><rect x="502" y="560" width="9" height="10" transform="rotate(90 502 560)"/><rect x="431" y="537" width="8" height="9" transform="rotate(0 431 537)"/><rect x="188" y="227" width="17" height="8" transform="rotate(15 188 227)"/><rect x="234" y="314" width="14" height="11" transform="rotate(0 234 314)"/><rect x="778" y="397" width="15" height="11" transform="rotate(0 778 397)"/><rect x="449" y="636" width="11" height="6" transform="rotate(0 449 636)"/><rect x="339" y="477" width="14" height="11" transform="rotate(-20 339 477)"/><rect x="642" y="503" width="12" height="7" transform="rotate(35 642 503)"/><rect x="116" y="490" width="12" height="10" transform="rotate(15 116 490)"/><rect x="325" y="766" width="13" height="10" transform="rotate(-20 325 766)"/><rect x="707" y="593" width="10" height="6" transform="rotate(15 707 593)"/><rect x="645" y="301" width="16" height="7" transform="rotate(-20 645 301)"/><rect x="564" y="772" width="16" height="11" transform="rotate(-20 564 772)"/><rect x="462" y="216" width="17" height="10" transform="rotate(35 462 216)"/><rect x="376" y="330" width="11" height="8" transform="rotate(0 376 330)"/><rect x="720" y="333" width="11" height="6" transform="rotate(35 720 333)"/><rect x="558" y="181" width="15" height="11" transform="rotate(15 558 181)"/><rect x="787" y="216" width="8" height="6" transform="rotate(15 787 216)"/><rect x="718" y="757" width="8" height="9" transform="rotate(0 718 757)"/><rect x="428" y="608" width="12" height="11" transform="rotate(15 428 608)"/><rect x="744" y="354" width="10" height="12" transform="rotate(90 744 354)"/><rect x="609" y="77" width="15" height="12" transform="rotate(15 609 77)"/><rect x="522" y="606" width="15" height="8" transform="rotate(-20 522 606)"/><rect x="189" y="546" width="14" height="7" transform="rotate(-20 189 546)"/><rect x="431" y="273" width="17" height="5" transform="rotate(15 431 273)"/><rect x="712" y="282" width="9" height="11" transform="rotate(0 712 282)"/><rect x="483" y="678" width="10" height="6" transform="rotate(15 483 678)"/><rect x="240" y="228" width="14" height="9" transform="rotate(0 240 228)"/><rect x="410" y="766" width="16" height="9" transform="rotate(35 410 766)"/><rect x="481" y="248" width="16" height="11" transform="rotate(15 481 248)"/><rect x="647" y="655" width="8" height="11" transform="rotate(-20 647 655)"/><rect x="777" y="347" width="12" height="9" transform="rotate(15 777 347)"/><rect x="454" y="237" width="11" height="11" transform="rotate(-20 454 237)"/><rect x="184" y="296" width="10" height="11" transform="rotate(35 184 296)"/><rect x="610" y="451" width="8" height="9" transform="rotate(0 610 451)"/><rect x="699" y="117" width="12" height="8" transform="rotate(90 699 117)"/><rect x="580" y="723" width="10" height="11" transform="rotate(-20 580 723)"/><rect x="218" y="584" width="15" height="8" transform="rotate(0 218 584)"/><rect x="540" y="459" width="9" height="11" transform="rotate(15 540 459)"/><rect x="654" y="93" width="8" height="6" transform="rotate(90 654 93)"/><rect x="387" y="606" width="9" height="9" transform="rotate(-20 387 606)"/><rect x="750" y="722" width="15" height="10" transform="rotate(35 750 722)"/><rect x="180" y="540" width="16" height="10" transform="rotate(15 180 540)"/><rect x="735" y="483" width="8" height="6" transform="rotate(-20 735 483)"/><rect x="713" y="303" width="16" height="9" transform="rotate(90 713 303)"/><rect x="629" y="396" width="11" height="6" transform="rotate(35 629 396)"/><rect x="692" y="183" width="11" height="11" transform="rotate(35 692 183)"/><rect x="688" y="120" width="7" height="12" transform="rotate(-20 688 120)"/><rect x="414" y="98" width="16" height="8" transform="rotate(35 414 98)"/><rect x="176" y="591" width="12" height="11" transform="rotate(35 176 591)"/><rect x="766" y="566" width="13" height="5" transform="rotate(15 766 566)"/><rect x="214" y="285" width="11" height="9" transform="rotate(0 214 285)"/><rect x="799" y="527" width="9" height="10" transform="rotate(15 799 527)"/><rect x="544" y="321" width="12" height="6" transform="rotate(90 544 321)"/><rect x="754" y="149" width="12" height="8" transform="rotate(15 754 149)"/><rect x="343" y="780" width="11" height="8" transform="rotate(0 343 780)"/><rect x="456" y="622" width="9" height="9" transform="rotate(35 456 622)"/><rect x="556" y="487" width="10" height="11" transform="rotate(15 556 487)"/><rect x="593" y="138" width="15" height="7" transform="rotate(15 593 138)"/><rect x="262" y="497" width="15" height="6" transform="rotate(35 262 497)"/><rect x="786" y="402" width="11" height="10" transform="rotate(90 786 402)"/><rect x="742" y="166" width="11" height="5" transform="rotate(35 742 166)"/><rect x="395" y="494" width="9" height="9" transform="rotate(15 395 494)"/><rect x="704" y="668" width="11" height="8" transform="rotate(0 704 668)"/><rect x="472" y="368" width="13" height="10" transform="rotate(-20 472 368)"/><rect x="732" y="427" width="17" height="11" transform="rotate(90 732 427)"/><rect x="416" y="386" width="13" height="11" transform="rotate(35 416 386)"/><rect x="344" y="455" width="11" height="5" transform="rotate(0 344 455)"/><rect x="312" y="531" width="11" height="8" transform="rotate(15 312 531)"/><rect x="732" y="283" width="13" height="5" transform="rotate(0 732 283)"/><rect x="817" y="233" width="16" height="12" transform="rotate(-20 817 233)"/><rect x="679" y="459" width="9" height="7" transform="rotate(-20 679 459)"/><rect x="842" y="334" width="12" height="9" transform="rotate(0 842 334)"/><rect x="244" y="635" width="13" height="11" transform="rotate(0 244 635)"/><rect x="518" y="144" width="16" height="9" transform="rotate(-20 518 144)"/><rect x="790" y="357" width="11" height="9" transform="rotate(0 790 357)"/><rect x="322" y="403" width="10" height="7" transform="rotate(0 322 403)"/><rect x="475" y="205" width="10" height="11" transform="rotate(0 475 205)"/><rect x="622" y="193" width="16" height="5" transform="rotate(0 622 193)"/><rect x="322" y="692" width="17" height="7" transform="rotate(-20 322 692)"/><rect x="696" y="147" width="14" height="12" transform="rotate(-20 696 147)"/><rect x="676" y="254" width="14" height="9" transform="rotate(15 676 254)"/><rect x="767" y="337" width="14" height="11" transform="rotate(35 767 337)"/><rect x="515" y="819" width="16" height="6" transform="rotate(0 515 819)"/><rect x="295" y="550" width="8" height="12" transform="rotate(-20 295 550)"/><rect x="580" y="468" width="11" height="9" transform="rotate(0 580 468)"/><rect x="302" y="642" width="9" height="7" transform="rotate(35 302 642)"/><rect x="612" y="770" width="13" height="5" transform="rotate(-20 612 770)"/><rect x="335" y="425" width="7" height="7" transform="rotate(90 335 425)"/><rect x="670" y="455" width="17" height="6" transform="rotate(0 670 455)"/><rect x="655" y="477" width="10" height="10" transform="rotate(90 655 477)"/><rect x="244" y="502" width="12" height="5" transform="rotate(35 244 502)"/><rect x="453" y="742" width="10" height="9" transform="rotate(35 453 742)"/><rect x="496" y="386" width="11" height="7" transform="rotate(0 496 386)"/><rect x="563" y="473" width="15" height="7" transform="rotate(0 563 473)"/><rect x="680" y="693" width="14" height="10" transform="rotate(35 680 693)"/><rect x="498" y="558" width="12" height="8" transform="rotate(0 498 558)"/><rect x="187" y="590" width="15" height="11" transform="rotate(0 187 590)"/><rect x="331" y="412" width="14" height="10" transform="rotate(0 331 412)"/><rect x="593" y="147" width="14" height="9" transform="rotate(0 593 147)"/><rect x="524" y="113" width="13" height="8" transform="rotate(0 524 113)"/><rect x="603" y="276" width="8" height="11" transform="rotate(-20 603 276)"/><rect x="375" y="309" width="17" height="9" transform="rotate(0 375 309)"/><rect x="562" y="767" width="16" height="11" transform="rotate(0 562 767)"/><rect x="466" y="353" width="15" height="8" transform="rotate(0 466 353)"/><rect x="238" y="317" width="9" height="9" transform="rotate(0 238 317)"/><rect x="482" y="359" width="13" height="10" transform="rotate(-20 482 359)"/><rect x="665" y="728" width="9" height="8" transform="rotate(0 665 728)"/><rect x="517" y="631" width="12" height="9" transform="rotate(90 517 631)"/><rect x="698" y="254" width="11" height="6" transform="rotate(15 698 254)"/><rect x="454" y="721" width="11" height="7" transform="rotate(35 454 721)"/><rect x="656" y="281" width="13" height="8" transform="rotate(0 656 281)"/><rect x="179" y="515" width="7" height="7" transform="rotate(-20 179 515)"/><rect x="480" y="593" width="12" height="9" transform="rotate(15 480 593)"/><rect x="707" y="571" width="8" height="6" transform="rotate(15 707 571)"/><rect x="532" y="398" width="8" height="9" transform="rotate(15 532 398)"/><rect x="248" y="273" width="10" height="7" transform="rotate(0 248 273)"/><rect x="820" y="635" width="12" height="5" transform="rotate(90 820 635)"/><rect x="314" y="574" width="16" height="7" transform="rotate(90 314 574)"/><rect x="365" y="137" width="15" height="8" transform="rotate(90 365 137)"/><rect x="279" y="677" width="8" height="8" transform="rotate(-20 279 677)"/><rect x="393" y="302" width="12" height="7" transform="rotate(0 393 302)"/><rect x="747" y="320" width="14" height="9" transform="rotate(90 747 320)"/><rect x="685" y="481" width="14" height="5" transform="rotate(-20 685 481)"/><rect x="387" y="715" width="10" height="10" transform="rotate(15 387 715)"/><rect x="314" y="690" width="16" height="9" transform="rotate(-20 314 690)"/><rect x="606" y="801" width="11" height="9" transform="rotate(0 606 801)"/><rect x="750" y="540" width="13" height="8" transform="rotate(-20 750 540)"/><rect x="467" y="398" width="17" height="8" transform="rotate(0 467 398)"/><rect x="669" y="257" width="12" height="8" transform="rotate(0 669 257)"/><rect x="250" y="582" width="9" height="5" transform="rotate(35 250 582)"/><rect x="676" y="675" width="10" height="6" transform="rotate(0 676 675)"/><rect x="328" y="611" width="14" height="10" transform="rotate(0 328 611)"/><rect x="612" y="431" width="13" height="8" transform="rotate(15 612 431)"/><rect x="378" y="572" width="12" height="10" transform="rotate(15 378 572)"/><rect x="513" y="140" width="8" height="5" transform="rotate(0 513 140)"/><rect x="855" y="287" width="15" height="9" transform="rotate(90 855 287)"/><rect x="482" y="170" width="16" height="11" transform="rotate(0 482 170)"/><rect x="720" y="593" width="10" height="9" transform="rotate(15 720 593)"/><rect x="698" y="301" width="10" height="10" transform="rotate(35 698 301)"/><rect x="802" y="492" width="11" height="10" transform="rotate(35 802 492)"/><rect x="721" y="254" width="9" height="6" transform="rotate(35 721 254)"/><rect x="656" y="224" width="9" height="5" transform="rotate(35 656 224)"/><rect x="678" y="670" width="16" height="7" transform="rotate(15 678 670)"/><rect x="426" y="543" width="11" height="12" transform="rotate(0 426 543)"/><rect x="303" y="623" width="17" height="6" transform="rotate(15 303 623)"/><rect x="840" y="558" width="9" height="10" transform="rotate(-20 840 558)"/><rect x="398" y="593" width="12" height="11" transform="rotate(0 398 593)"/><rect x="447" y="705" width="13" height="11" transform="rotate(-20 447 705)"/><rect x="563" y="258" width="11" height="7" transform="rotate(0 563 258)"/><rect x="484" y="332" width="10" height="5" transform="rotate(0 484 332)"/><rect x="349" y="151" width="15" height="12" transform="rotate(-20 349 151)"/><rect x="486" y="370" width="15" height="8" transform="rotate(0 486 370)"/><rect x="238" y="532" width="15" height="7" transform="rotate(0 238 532)"/><rect x="807" y="618" width="9" height="5" transform="rotate(0 807 618)"/><rect x="536" y="578" width="10" height="5" transform="rotate(35 536 578)"/><rect x="325" y="450" width="7" height="6" transform="rotate(15 325 450)"/><rect x="785" y="671" width="14" height="8" transform="rotate(35 785 671)"/><rect x="801" y="652" width="17" height="6" transform="rotate(-20 801 652)"/><rect x="410" y="602" width="10" height="11" transform="rotate(0 410 602)"/><rect x="338" y="617" width="12" height="7" transform="rotate(15 338 617)"/><rect x="617" y="398" width="10" height="5" transform="rotate(90 617 398)"/><rect x="336" y="115" width="10" height="10" transform="rotate(0 336 115)"/><rect x="582" y="501" width="10" height="8" transform="rotate(0 582 501)"/><rect x="499" y="662" width="16" height="11" transform="rotate(0 499 662)"/><rect x="176" y="546" width="11" height="10" transform="rotate(0 176 546)"/><rect x="607" y="315" width="11" height="10" transform="rotate(-20 607 315)"/><rect x="675" y="401" width="14" height="8" transform="rotate(-20 675 401)"/><rect x="501" y="339" width="12" height="5" transform="rotate(0 501 339)"/><rect x="526" y="400" width="10" height="5" transform="rotate(0 526 400)"/><rect x="719" y="289" width="14" height="12" transform="rotate(-20 719 289)"/><rect x="281" y="187" width="7" height="7" transform="rotate(35 281 187)"/><rect x="783" y="402" width="12" height="11" transform="rotate(0 783 402)"/><rect x="490" y="807" width="9" height="6" transform="rotate(-20 490 807)"/><rect x="764" y="431" width="9" height="11" transform="rotate(0 764 431)"/><rect x="749" y="478" width="16" height="11" transform="rotate(0 749 478)"/><rect x="787" y="182" width="10" height="12" transform="rotate(0 787 182)"/><rect x="207" y="350" width="15" height="9" transform="rotate(-20 207 350)"/><rect x="230" y="541" width="16" height="10" transform="rotate(0 230 541)"/><rect x="388" y="691" width="14" height="11" transform="rotate(15 388 691)"/><rect x="646" y="206" width="9" height="10" transform="rotate(0 646 206)"/><rect x="678" y="412" width="8" height="6" transform="rotate(15 678 412)"/><rect x="601" y="325" width="9" height="12" transform="rotate(90 601 325)"/><rect x="229" y="612" width="16" height="10" transform="rotate(0 229 612)"/><rect x="175" y="543" width="11" height="11" transform="rotate(-20 175 543)"/><rect x="297" y="147" width="8" height="6" transform="rotate(35 297 147)"/><rect x="687" y="227" width="13" height="7" transform="rotate(15 687 227)"/><rect x="636" y="220" width="12" height="6" transform="rotate(-20 636 220)"/><rect x="593" y="397" width="8" height="8" transform="rotate(15 593 397)"/><rect x="286" y="567" width="7" height="9" transform="rotate(0 286 567)"/><rect x="427" y="312" width="15" height="11" transform="rotate(35 427 312)"/><rect x="136" y="564" width="12" height="6" transform="rotate(15 136 564)"/><rect x="843" y="572" width="9" height="6" transform="rotate(0 843 572)"/><rect x="468" y="292" width="14" height="9" transform="rotate(0 468 292)"/><rect x="404" y="700" width="13" height="10" transform="rotate(0 404 700)"/><rect x="409" y="563" width="9" height="12" transform="rotate(0 409 563)"/><rect x="514" y="116" width="15" height="5" transform="rotate(90 514 116)"/><rect x="680" y="667" width="16" height="10" transform="rotate(90 680 667)"/><rect x="381" y="332" width="15" height="11" transform="rotate(0 381 332)"/><rect x="363" y="467" width="12" height="6" transform="rotate(0 363 467)"/><rect x="317" y="444" width="8" height="9" transform="rotate(0 317 444)"/><rect x="650" y="446" width="10" height="7" transform="rotate(0 650 446)"/><rect x="267" y="370" width="8" height="7" transform="rotate(-20 267 370)"/><rect x="785" y="441" width="8" height="9" transform="rotate(0 785 441)"/><rect x="414" y="528" width="16" height="12" transform="rotate(-20 414 528)"/><rect x="796" y="222" width="15" height="6" transform="rotate(90 796 222)"/><rect x="696" y="165" width="12" height="5" transform="rotate(0 696 165)"/><rect x="754" y="351" width="10" height="7" transform="rotate(35 754 351)"/><rect x="342" y="430" width="14" height="11" transform="rotate(0 342 430)"/><rect x="562" y="439" width="16" height="8" transform="rotate(15 562 439)"/><rect x="286" y="518" width="9" height="6" transform="rotate(-20 286 518)"/><rect x="394" y="557" width="10" height="6" transform="rotate(15 394 557)"/><rect x="526" y="476" width="11" height="7" transform="rotate(0 526 476)"/><rect x="371" y="798" width="12" height="9" transform="rotate(90 371 798)"/><rect x="586" y="806" width="11" height="9" transform="rotate(15 586 806)"/><rect x="738" y="315" width="16" height="6" transform="rotate(35 738 315)"/><rect x="289" y="674" width="11" height="11" transform="rotate(-20 289 674)"/><rect x="123" y="496" width="8" height="8" transform="rotate(0 123 496)"/><rect x="805" y="302" width="10" height="11" transform="rotate(15 805 302)"/><rect x="631" y="85" width="15" height="5" transform="rotate(35 631 85)"/><rect x="353" y="612" width="13" height="10" transform="rotate(0 353 612)"/><rect x="718" y="373" width="14" height="12" transform="rotate(0 718 373)"/><rect x="671" y="152" width="15" height="10" transform="rotate(0 671 152)"/><rect x="709" y="706" width="17" height="7" transform="rotate(35 709 706)"/><rect x="695" y="600" width="11" height="10" transform="rotate(90 695 600)"/><rect x="555" y="775" width="9" height="8" transform="rotate(35 555 775)"/><rect x="183" y="258" width="11" height="11" transform="rotate(-20 183 258)"/><rect x="224" y="600" width="12" height="8" transform="rotate(-20 224 600)"/><rect x="511" y="424" width="12" height="11" transform="rotate(35 511 424)"/><rect x="797" y="559" width="11" height="11" transform="rotate(90 797 559)"/><rect x="397" y="498" width="15" height="8" transform="rotate(35 397 498)"/><rect x="176" y="601" width="11" height="6" transform="rotate(-20 176 601)"/><rect x="255" y="248" width="14" height="9" transform="rotate(15 255 248)"/><rect x="211" y="534" width="14" height="9" transform="rotate(0 211 534)"/><rect x="563" y="480" width="10" height="6" transform="rotate(15 563 480)"/><rect x="761" y="214" width="9" height="9" transform="rotate(35 761 214)"/><rect x="338" y="127" width="15" height="11" transform="rotate(35 338 127)"/><rect x="829" y="619" width="10" height="7" transform="rotate(0 829 619)"/><rect x="654" y="268" width="13" height="7" transform="rotate(0 654 268)"/><rect x="295" y="446" width="16" height="6" transform="rotate(35 295 446)"/><rect x="826" y="526" width="12" height="10" transform="rotate(35 826 526)"/><rect x="730" y="600" width="13" height="9" transform="rotate(15 730 600)"/><rect x="374" y="667" width="9" height="8" transform="rotate(15 374 667)"/><rect x="629" y="256" width="14" height="11" transform="rotate(0 629 256)"/><rect x="134" y="491" width="8" height="12" transform="rotate(15 134 491)"/><rect x="169" y="369" width="8" height="11" transform="rotate(35 169 369)"/><rect x="539" y="388" width="14" height="6" transform="rotate(90 539 388)"/><rect x="222" y="602" width="11" height="8" transform="rotate(0 222 602)"/><rect x="276" y="215" width="10" height="6" transform="rotate(35 276 215)"/><rect x="518" y="805" width="7" height="6" transform="rotate(15 518 805)"/><rect x="673" y="454" width="13" height="10" transform="rotate(0 673 454)"/><rect x="807" y="365" width="10" height="7" transform="rotate(0 807 365)"/><rect x="705" y="455" width="11" height="10" transform="rotate(-20 705 455)"/><rect x="273" y="422" width="15" height="7" transform="rotate(0 273 422)"/><rect x="664" y="526" width="13" height="9" transform="rotate(35 664 526)"/><rect x="254" y="280" width="10" height="10" transform="rotate(90 254 280)"/><rect x="503" y="392" width="7" height="9" transform="rotate(0 503 392)"/><rect x="381" y="324" width="16" height="12" transform="rotate(-20 381 324)"/><rect x="657" y="225" width="17" height="6" transform="rotate(15 657 225)"/><rect x="557" y="792" width="8" height="12" transform="rotate(0 557 792)"/><rect x="248" y="294" width="8" height="6" transform="rotate(90 248 294)"/><rect x="258" y="599" width="9" height="11" transform="rotate(90 258 599)"/><rect x="457" y="337" width="8" height="7" transform="rotate(0 457 337)"/><rect x="662" y="138" width="10" height="9" transform="rotate(15 662 138)"/><rect x="525" y="471" width="13" height="10" transform="rotate(35 525 471)"/><rect x="627" y="124" width="12" height="11" transform="rotate(35 627 124)"/><rect x="818" y="411" width="9" height="12" transform="rotate(90 818 411)"/><rect x="408" y="81" width="9" height="6" transform="rotate(90 408 81)"/><rect x="820" y="488" width="14" height="7" transform="rotate(90 820 488)"/><rect x="853" y="503" width="11" height="9" transform="rotate(-20 853 503)"/><rect x="492" y="580" width="13" height="11" transform="rotate(90 492 580)"/><rect x="197" y="617" width="9" height="9" transform="rotate(0 197 617)"/><rect x="686" y="311" width="13" height="9" transform="rotate(0 686 311)"/><rect x="359" y="486" width="12" height="11" transform="rotate(35 359 486)"/><rect x="639" y="586" width="14" height="8" transform="rotate(-20 639 586)"/><rect x="498" y="424" width="13" height="12" transform="rotate(15 498 424)"/><rect x="535" y="80" width="10" height="5" transform="rotate(35 535 80)"/><rect x="803" y="676" width="10" height="11" transform="rotate(35 803 676)"/><rect x="134" y="321" width="8" height="6" transform="rotate(-20 134 321)"/><rect x="179" y="292" width="14" height="9" transform="rotate(0 179 292)"/><rect x="635" y="590" width="11" height="7" transform="rotate(90 635 590)"/><rect x="774" y="607" width="15" height="11" transform="rotate(0 774 607)"/><rect x="645" y="415" width="13" height="10" transform="rotate(-20 645 415)"/><rect x="842" y="288" width="9" height="10" transform="rotate(15 842 288)"/><rect x="747" y="666" width="16" height="9" transform="rotate(-20 747 666)"/><rect x="628" y="432" width="11" height="7" transform="rotate(0 628 432)"/><rect x="853" y="438" width="17" height="7" transform="rotate(35 853 438)"/><rect x="753" y="593" width="12" height="7" transform="rotate(15 753 593)"/><rect x="286" y="655" width="8" height="7" transform="rotate(0 286 655)"/><rect x="347" y="263" width="12" height="8" transform="rotate(0 347 263)"/><rect x="524" y="270" width="16" height="8" transform="rotate(-20 524 270)"/><rect x="341" y="96" width="8" height="7" transform="rotate(35 341 96)"/><rect x="529" y="212" width="16" height="11" transform="rotate(0 529 212)"/><rect x="671" y="648" width="13" height="9" transform="rotate(35 671 648)"/><rect x="526" y="191" width="15" height="5" transform="rotate(0 526 191)"/><rect x="764" y="506" width="16" height="7" transform="rotate(90 764 506)"/><rect x="468" y="530" width="16" height="12" transform="rotate(-20 468 530)"/><rect x="411" y="558" width="14" height="9" transform="rotate(0 411 558)"/><rect x="120" y="489" width="9" height="9" transform="rotate(-20 120 489)"/><rect x="824" y="428" width="13" height="7" transform="rotate(90 824 428)"/><rect x="150" y="282" width="9" height="11" transform="rotate(35 150 282)"/><rect x="286" y="205" width="14" height="6" transform="rotate(-20 286 205)"/><rect x="330" y="537" width="11" height="7" transform="rotate(0 330 537)"/><rect x="459" y="417" width="16" height="8" transform="rotate(-20 459 417)"/><rect x="664" y="442" width="15" height="12" transform="rotate(90 664 442)"/><rect x="250" y="522" width="13" height="12" transform="rotate(-20 250 522)"/><rect x="440" y="561" width="9" height="10" transform="rotate(35 440 561)"/><rect x="558" y="352" width="15" height="7" transform="rotate(-20 558 352)"/><rect x="279" y="529" width="9" height="8" transform="rotate(0 279 529)"/><rect x="728" y="386" width="12" height="5" transform="rotate(0 728 386)"/><rect x="810" y="352" width="13" height="10" transform="rotate(15 810 352)"/><rect x="727" y="501" width="10" height="10" transform="rotate(35 727 501)"/><rect x="578" y="685" width="12" height="5" transform="rotate(35 578 685)"/><rect x="341" y="775" width="15" height="8" transform="rotate(-20 341 775)"/><rect x="306" y="682" width="11" height="6" transform="rotate(35 306 682)"/><rect x="553" y="390" width="7" height="7" transform="rotate(-20 553 390)"/><rect x="316" y="591" width="14" height="11" transform="rotate(-20 316 591)"/><rect x="689" y="157" width="13" height="9" transform="rotate(35 689 157)"/><rect x="385" y="564" width="8" height="7" transform="rotate(35 385 564)"/><rect x="270" y="182" width="8" height="6" transform="rotate(0 270 182)"/><rect x="720" y="251" width="12" height="10" transform="rotate(0 720 251)"/><rect x="652" y="272" width="10" height="9" transform="rotate(15 652 272)"/><rect x="683" y="309" width="16" height="7" transform="rotate(-20 683 309)"/><rect x="299" y="443" width="11" height="9" transform="rotate(35 299 443)"/><rect x="610" y="160" width="17" height="7" transform="rotate(-20 610 160)"/><rect x="208" y="512" width="15" height="8" transform="rotate(35 208 512)"/><rect x="690" y="212" width="16" height="11" transform="rotate(0 690 212)"/><rect x="494" y="573" width="16" height="10" transform="rotate(90 494 573)"/><rect x="592" y="727" width="8" height="6" transform="rotate(0 592 727)"/><rect x="876" y="530" width="13" height="5" transform="rotate(0 876 530)"/><rect x="680" y="297" width="12" height="7" transform="rotate(35 680 297)"/><rect x="663" y="191" width="12" height="11" transform="rotate(35 663 191)"/><rect x="776" y="394" width="14" height="7" transform="rotate(-20 776 394)"/><rect x="373" y="252" width="11" height="9" transform="rotate(0 373 252)"/><rect x="400" y="556" width="7" height="8" transform="rotate(35 400 556)"/><rect x="809" y="585" width="14" height="10" transform="rotate(-20 809 585)"/><rect x="248" y="502" width="14" height="11" transform="rotate(0 248 502)"/><rect x="514" y="287" width="16" height="9" transform="rotate(0 514 287)"/><rect x="529" y="130" width="16" height="11" transform="rotate(90 529 130)"/><rect x="628" y="128" width="13" height="12" transform="rotate(-20 628 128)"/><rect x="584" y="476" width="8" height="10" transform="rotate(0 584 476)"/><rect x="660" y="213" width="11" height="9" transform="rotate(15 660 213)"/><rect x="596" y="233" width="10" height="6" transform="rotate(35 596 233)"/><rect x="521" y="818" width="9" height="6" transform="rotate(90 521 818)"/><rect x="246" y="172" width="10" height="10" transform="rotate(90 246 172)"/><rect x="624" y="530" width="16" height="5" transform="rotate(35 624 530)"/><rect x="320" y="741" width="14" height="8" transform="rotate(90 320 741)"/><rect x="661" y="93" width="9" height="7" transform="rotate(15 661 93)"/><rect x="150" y="545" width="14" height="10" transform="rotate(90 150 545)"/><rect x="418" y="509" width="8" height="7" transform="rotate(0 418 509)"/><rect x="382" y="303" width="8" height="9" transform="rotate(35 382 303)"/><rect x="500" y="650" width="13" height="7" transform="rotate(0 500 650)"/><rect x="539" y="806" width="8" height="8" transform="rotate(0 539 806)"/><rect x="816" y="534" width="14" height="10" transform="rotate(90 816 534)"/><rect x="845" y="320" width="8" height="7" transform="rotate(35 845 320)"/><rect x="847" y="344" width="8" height="5" transform="rotate(15 847 344)"/><rect x="593" y="770" width="7" height="6" transform="rotate(15 593 770)"/><rect x="442" y="99" width="12" height="5" transform="rotate(35 442 99)"/><rect x="768" y="367" width="11" height="10" transform="rotate(0 768 367)"/><rect x="218" y="308" width="7" height="11" transform="rotate(35 218 308)"/><rect x="824" y="271" width="10" height="10" transform="rotate(0 824 271)"/><rect x="393" y="604" width="11" height="10" transform="rotate(90 393 604)"/><rect x="309" y="638" width="15" height="10" transform="rotate(90 309 638)"/><rect x="211" y="354" width="16" height="10" transform="rotate(0 211 354)"/><rect x="553" y="136" width="11" height="10" transform="rotate(35 553 136)"/><rect x="597" y="804" width="16" height="9" transform="rotate(15 597 804)"/><rect x="172" y="362" width="13" height="6" transform="rotate(90 172 362)"/><rect x="598" y="193" width="11" height="11" transform="rotate(0 598 193)"/><rect x="678" y="191" width="15" height="6" transform="rotate(35 678 191)"/><rect x="146" y="588" width="13" height="9" transform="rotate(-20 146 588)"/><rect x="705" y="723" width="16" height="8" transform="rotate(15 705 723)"/><rect x="557" y="232" width="14" height="10" transform="rotate(35 557 232)"/><rect x="671" y="161" width="15" height="12" transform="rotate(0 671 161)"/><rect x="156" y="517" width="14" height="8" transform="rotate(0 156 517)"/><rect x="542" y="195" width="14" height="8" transform="rotate(90 542 195)"/><rect x="799" y="585" width="12" height="11" transform="rotate(15 799 585)"/><rect x="636" y="419" width="8" height="9" transform="rotate(0 636 419)"/><rect x="187" y="318" width="8" height="10" transform="rotate(15 187 318)"/><rect x="638" y="336" width="11" height="9" transform="rotate(0 638 336)"/><rect x="834" y="580" width="17" height="7" transform="rotate(15 834 580)"/><rect x="622" y="413" width="7" height="8" transform="rotate(15 622 413)"/><rect x="184" y="252" width="12" height="8" transform="rotate(15 184 252)"/><rect x="769" y="271" width="12" height="9" transform="rotate(15 769 271)"/><rect x="403" y="774" width="12" height="8" transform="rotate(-20 403 774)"/><rect x="148" y="599" width="12" height="12" transform="rotate(0 148 599)"/><rect x="176" y="558" width="10" height="8" transform="rotate(0 176 558)"/><rect x="561" y="163" width="10" height="6" transform="rotate(0 561 163)"/><rect x="689" y="379" width="8" height="9" transform="rotate(90 689 379)"/><rect x="461" y="184" width="8" height="8" transform="rotate(0 461 184)"/><rect x="791" y="230" width="15" height="9" transform="rotate(35 791 230)"/><rect x="548" y="293" width="9" height="10" transform="rotate(0 548 293)"/><rect x="681" y="620" width="12" height="6" transform="rotate(0 681 620)"/><rect x="253" y="234" width="11" height="11" transform="rotate(-20 253 234)"/><rect x="375" y="334" width="9" height="12" transform="rotate(35 375 334)"/><rect x="505" y="454" width="17" height="11" transform="rotate(-20 505 454)"/><rect x="414" y="557" width="11" height="8" transform="rotate(15 414 557)"/><rect x="287" y="589" width="9" height="7" transform="rotate(90 287 589)"/><rect x="631" y="240" width="10" height="6" transform="rotate(0 631 240)"/><rect x="388" y="133" width="8" height="9" transform="rotate(90 388 133)"/><rect x="738" y="220" width="16" height="7" transform="rotate(-20 738 220)"/><rect x="321" y="422" width="9" height="9" transform="rotate(15 321 422)"/><rect x="426" y="106" width="14" height="9" transform="rotate(0 426 106)"/><rect x="427" y="322" width="17" height="8" transform="rotate(90 427 322)"/><rect x="568" y="140" width="15" height="6" transform="rotate(35 568 140)"/><rect x="644" y="442" width="9" height="9" transform="rotate(15 644 442)"/><rect x="737" y="555" width="12" height="10" transform="rotate(90 737 555)"/><rect x="725" y="754" width="13" height="11" transform="rotate(-20 725 754)"/><rect x="444" y="411" width="13" height="7" transform="rotate(35 444 411)"/><rect x="345" y="714" width="15" height="5" transform="rotate(35 345 714)"/><rect x="388" y="761" width="9" height="7" transform="rotate(90 388 761)"/><rect x="747" y="511" width="14" height="8" transform="rotate(35 747 511)"/><rect x="642" y="381" width="7" height="5" transform="rotate(-20 642 381)"/><rect x="204" y="643" width="15" height="12" transform="rotate(0 204 643)"/><rect x="634" y="331" width="11" height="11" transform="rotate(0 634 331)"/><rect x="877" y="418" width="8" height="7" transform="rotate(0 877 418)"/><rect x="302" y="715" width="12" height="7" transform="rotate(-20 302 715)"/><rect x="770" y="443" width="17" height="11" transform="rotate(35 770 443)"/><rect x="682" y="163" width="12" height="9" transform="rotate(0 682 163)"/><rect x="546" y="753" width="14" height="7" transform="rotate(15 546 753)"/><rect x="379" y="288" width="8" height="9" transform="rotate(35 379 288)"/><rect x="744" y="224" width="14" height="11" transform="rotate(0 744 224)"/><rect x="224" y="342" width="12" height="6" transform="rotate(15 224 342)"/><rect x="356" y="463" width="8" height="11" transform="rotate(15 356 463)"/><rect x="225" y="681" width="8" height="7" transform="rotate(-20 225 681)"/><rect x="333" y="110" width="11" height="11" transform="rotate(0 333 110)"/><rect x="266" y="623" width="10" height="7" transform="rotate(0 266 623)"/><rect x="753" y="285" width="10" height="7" transform="rotate(35 753 285)"/><rect x="535" y="334" width="12" height="5" transform="rotate(35 535 334)"/><rect x="492" y="341" width="10" height="5" transform="rotate(15 492 341)"/><rect x="738" y="165" width="9" height="11" transform="rotate(35 738 165)"/><rect x="524" y="59" width="8" height="10" transform="rotate(35 524 59)"/><rect x="641" y="117" width="11" height="7" transform="rotate(-20 641 117)"/><rect x="769" y="706" width="16" height="10" transform="rotate(90 769 706)"/><rect x="800" y="468" width="13" height="11" transform="rotate(35 800 468)"/><rect x="477" y="339" width="16" height="6" transform="rotate(35 477 339)"/><rect x="288" y="755" width="15" height="6" transform="rotate(90 288 755)"/></g><g><ellipse cx="189.8" cy="438.7" rx="70" ry="120" fill="url(#hatch)"/><ellipse cx="744.9" cy="567.5" rx="60" ry="40" fill="url(#hatch)"/><ellipse cx="602.0" cy="712.8" rx="70" ry="45" fill="url(#hatch)"/><path d="M398.0 -82.2 Q442.9 -13.7 464.3 24.7 Q485.7 63.1 480.6 93.2 Q475.5 123.4 444.9 142.6 Q414.3 161.8 377.6 183.7 Q340.8 205.6 316.3 230.3 Q291.8 255.0 295.9 287.9 Q300.0 320.8 325.5 349.6 Q351.0 378.3 374.5 408.5 Q398.0 438.7 426.6 462.0 Q455.1 485.3 487.8 499.0 Q520.4 512.7 551.0 526.4 Q581.6 540.1 586.7 567.5 Q591.8 594.9 564.2 636.0 Q536.7 677.2 510.2 718.3 Q483.7 759.4 453.0 797.8 Q422.4 836.2 400.0 877.3 L377.6 918.4" fill="none" stroke="#b9cfdc" stroke-width="40" stroke-linecap="round" opacity=".85"/><path d="M398.0 -82.2 Q442.9 -13.7 464.3 24.7 Q485.7 63.1 480.6 93.2 Q475.5 123.4 444.9 142.6 Q414.3 161.8 377.6 183.7 Q340.8 205.6 316.3 230.3 Q291.8 255.0 295.9 287.9 Q300.0 320.8 325.5 349.6 Q351.0 378.3 374.5 408.5 Q398.0 438.7 426.6 462.0 Q455.1 485.3 487.8 499.0 Q520.4 512.7 551.0 526.4 Q581.6 540.1 586.7 567.5 Q591.8 594.9 564.2 636.0 Q536.7 677.2 510.2 718.3 Q483.7 759.4 453.0 797.8 Q422.4 836.2 400.0 877.3 L377.6 918.4" fill="none" stroke="#9fbccf" stroke-width="22" stroke-linecap="round" opacity=".5"/><path d="M398.0 -82.2 Q442.9 -13.7 464.3 24.7 Q485.7 63.1 480.6 93.2 Q475.5 123.4 444.9 142.6 Q414.3 161.8 377.6 183.7 Q340.8 205.6 316.3 230.3 Q291.8 255.0 295.9 287.9 Q300.0 320.8 325.5 349.6 Q351.0 378.3 374.5 408.5 Q398.0 438.7 426.6 462.0 Q455.1 485.3 487.8 499.0 Q520.4 512.7 551.0 526.4 Q581.6 540.1 586.7 567.5 Q591.8 594.9 564.2 636.0 Q536.7 677.2 510.2 718.3 Q483.7 759.4 453.0 797.8 Q422.4 836.2 400.0 877.3 L377.6 918.4" fill="none" stroke="#5e3a26" stroke-width="1.3" transform="translate(-14 -5)"/><path d="M398.0 -82.2 Q442.9 -13.7 464.3 24.7 Q485.7 63.1 480.6 93.2 Q475.5 123.4 444.9 142.6 Q414.3 161.8 377.6 183.7 Q340.8 205.6 316.3 230.3 Q291.8 255.0 295.9 287.9 Q300.0 320.8 325.5 349.6 Q351.0 378.3 374.5 408.5 Q398.0 438.7 426.6 462.0 Q455.1 485.3 487.8 499.0 Q520.4 512.7 551.0 526.4 Q581.6 540.1 586.7 567.5 Q591.8 594.9 564.2 636.0 Q536.7 677.2 510.2 718.3 Q483.7 759.4 453.0 797.8 Q422.4 836.2 400.0 877.3 L377.6 918.4" fill="none" stroke="#5e3a26" stroke-width="1.3" transform="translate(14 5)"/><path d="M398.0 -82.2 Q442.9 -13.7 464.3 24.7 Q485.7 63.1 480.6 93.2 Q475.5 123.4 444.9 142.6 Q414.3 161.8 377.6 183.7 Q340.8 205.6 316.3 230.3 Q291.8 255.0 295.9 287.9 Q300.0 320.8 325.5 349.6 Q351.0 378.3 374.5 408.5 Q398.0 438.7 426.6 462.0 Q455.1 485.3 487.8 499.0 Q520.4 512.7 551.0 526.4 Q581.6 540.1 586.7 567.5 Q591.8 594.9 564.2 636.0 Q536.7 677.2 510.2 718.3 Q483.7 759.4 453.0 797.8 Q422.4 836.2 400.0 877.3 L377.6 918.4" fill="none" stroke="#557a96" stroke-width=".8" stroke-dasharray="6 14" opacity=".6"/><ellipse cx="553.1" cy="523.7" rx="17" ry="7" transform="rotate(-25 553.1 523.7)" fill="#f3e6cf" stroke="#5e3a26" stroke-width="1.1"/><g fill="#f4e8d3" stroke="#5e3a26" stroke-width="1.3"><path d="M60 206 h18 M62 206 v-4 a7 7 0 0 1 14 0 v4 M69 195 v-4"/><circle cx="322" cy="176" r="8"/><circle cx="322" cy="176" r="4"/><ellipse cx="461" cy="282" rx="11" ry="5"/><path d="M530 305 h18 M532 305 v-4 a7 7 0 0 1 14 0 v4 M539 294 v-4"/><circle cx="669" cy="236" r="3"/><circle cx="649" cy="101" r="3"/><circle cx="659" cy="444" r="3"/><ellipse cx="851" cy="529" rx="13" ry="10"/><ellipse cx="851" cy="529" rx="7" ry="5"/><ellipse cx="706" cy="642" rx="11" ry="5"/><path d="M548 491 h18 M550 491 v-4 a7 7 0 0 1 14 0 v4 M557 480 v-4"/></g><text class="lm" x="69.4" y="225.1" text-anchor="middle">San Pietro</text><text class="lm" x="322.4" y="200.5" text-anchor="middle">Castel S. Angelo</text><text class="lm" x="461.2" y="307.4" text-anchor="middle">Piazza Navona</text><text class="lm" x="538.8" y="323.8" text-anchor="middle">Pantheon</text><text class="lm" x="669.4" y="260.8" text-anchor="middle">Fontana di Trevi</text><text class="lm" x="649.0" y="126.4" text-anchor="middle">Piazza di Spagna</text><text class="lm" x="659.2" y="469.1" text-anchor="middle">Campidoglio</text><text class="lm" x="851.0" y="554.1" text-anchor="middle">Colosseo</text><text class="lm" x="706.1" y="666.5" text-anchor="middle">Circo Massimo</text><text class="lm" x="557.1" y="510.3" text-anchor="middle">Tempio Maggiore</text><text class="area" x="340.8" y="575.7" text-anchor="middle">Trastevere</text><text class="area" x="193.9" y="438.7" text-anchor="middle">Gianicolo</text><text class="area" x="867.3" y="383.8" text-anchor="middle">Monti</text><text class="area" x="602.0" y="726.5" text-anchor="middle">Aventino</text><text class="area river" x="422.4" y="96.0" transform="rotate(62 422.4 96.0)">Tevere</text><text class="wind" x="500" y="12" text-anchor="middle" dominant-baseline="middle" transform="rotate(0 500 12)">TRAMONTANA</text><text class="wind" x="802" y="137" text-anchor="middle" dominant-baseline="middle" transform="rotate(45 802 137)">GRECALE</text><text class="wind" x="926" y="438" text-anchor="middle" dominant-baseline="middle" transform="rotate(90 926 438)">LEVANTE</text><text class="wind" x="802" y="740" text-anchor="middle" dominant-baseline="middle" transform="rotate(135 802 740)">SCIROCCO</text><text class="wind" x="500" y="865" text-anchor="middle" dominant-baseline="middle" transform="rotate(180 500 865)">OSTRO</text><text class="wind" x="198" y="740" text-anchor="middle" dominant-baseline="middle" transform="rotate(225 198 740)">LIBECCIO</text><text class="wind" x="74" y="439" text-anchor="middle" dominant-baseline="middle" transform="rotate(270 74 439)">PONENTE</text><text class="wind" x="198" y="137" text-anchor="middle" dominant-baseline="middle" transform="rotate(315 198 137)">MAESTRALE</text><g class="rose" transform="translate(500.0 438.5) scale(.62)" fill="none" stroke="#5e3a26" stroke-width="1"><circle r="30" fill="#f4e8d3"/><circle r="22" stroke-dasharray="2 3"/><path d="M0 -44 L6 0 L0 44 L-6 0Z M-44 0 L0 5 L44 0 L0 -5Z" fill="#f3e6cf"/><path d="M0 -44 L6 0 L-6 0Z" fill="#9E2F1E" stroke="none"/></g><g transform="translate(60 841)" stroke="#5e3a26" fill="none"><path d="M0 0 h120 M0 -5 v10 M60 -4 v8 M120 -5 v10"/><text class="lm" x="60" y="-10" text-anchor="middle" stroke="none" fill="#5e3a26">500 passi</text></g></g><g class="pins"><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Armando+al+Pantheon+Salita+de%27+Crescenzi+31+Roma" target="_blank" rel="noopener" style="--d:0.12s"><g transform="translate(526.5 287.9)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">1</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Armando al Pantheon</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Roscioli+Via+dei+Giubbonari+21+Roma" target="_blank" rel="noopener" style="--d:0.24s"><g transform="translate(469.4 430.4)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">2</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Roscioli</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+da+Fortunata+Via+del+Pellegrino+11+Roma" target="_blank" rel="noopener" style="--d:0.36s"><g transform="translate(414.3 348.2)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">3</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Osteria da Fortunata</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Piperno+Monte+de%27+Cenci+9+Roma" target="_blank" rel="noopener" style="--d:0.48s"><g transform="translate(510.2 455.1)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">4</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Piperno</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Nonna+Betta+Via+del+Portico+d%27Ottavia+16+Roma" target="_blank" rel="noopener" style="--d:0.60s"><g transform="translate(573.5 460.6)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">5</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Nonna Betta</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Da+Enzo+al+29+Via+dei+Vascellari+29+Roma" target="_blank" rel="noopener" style="--d:0.72s"><g transform="translate(532.7 594.9)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">6</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Da Enzo al 29</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Checco+er+Carettiere+Via+Benedetta+10+Roma" target="_blank" rel="noopener" style="--d:0.84s"><g transform="translate(373.5 499.0)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">7</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Checco er Carettiere</text></g></g></a><a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query=Da+Francesco+Piazza+del+Fico+29+Roma" target="_blank" rel="noopener" style="--d:0.96s"><g transform="translate(422.4 263.2)"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">8</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">Da Francesco</text></g></g></a></g></svg></div>
@@ -725,7 +730,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ USEFUL INFO ═════════ -->
 <section class="info" id="info">
@@ -760,10 +765,10 @@ footer .langs{justify-content:center;margin-top:30px}
 </main>
 
 <footer>
-  <div class="garl" aria-hidden="true"></div>
+  <div class="skyline" aria-hidden="true"></div>
   <p class="script s-lg">Emily &amp; Alexandre</p>
   <p style="margin-top:10px;font:400 18px/1.3 var(--serif);text-transform:uppercase;letter-spacing:.12em" data-i18n="footer_date">June 26–27, 2027 · Rome, Italy</p>
-  <p class="tag">#EMILYALEXANDRE2027</p>
+  <p class="tag">#theRomilys</p>
   <div class="remind">
     <p data-i18n="remind">Haven't replied yet? It only takes a minute.</p>
     <a class="oval" href="#rsvp"><svg viewBox="0 0 210 58" preserveAspectRatio="none"><ellipse cx="105" cy="29" rx="104" ry="28"/><ellipse class="o2" pathLength="1" cx="105" cy="29" rx="102" ry="26" transform="rotate(-2 105 29)"/></svg><span data-i18n="remind_btn">Reply to the RSVP</span></a>
@@ -787,18 +792,16 @@ const I18N = {
   "open_aria": "Break the seal to open the invitation",
   "nav_schedule": "Schedule",
   "nav_dress": "Dress Code",
-  "nav_stay": "Travel &amp; Stay",
-  "nav_rome": "Rome",
-  "nav_extra": "Extra",
+  "nav_stay": "Where to Stay",
   "nav_kids": "Kids &amp; Transfers",
   "nav_eat": "Where to Eat",
   "nav_info": "Useful Info",
   "hero_eyebrow": "We're getting married",
   "hero_place": "Rome",
   "arch_cap": "Rome, the Eternal City",
-  "intro_eyebrow": "June 26 – 27, 2027 · Rome",
+  "intro_eyebrow": "June 26 – 27, 2027 · Rome, Italy",
   "intro_title": "Two days, three special places in the Eternal City",
-  "intro_p": "A welcome evening on the Capitoline Hill, a ceremony at the Great Synagogue of Rome, and a reception by the sea at a fifteenth-century castle. Here is everything you need to know.",
+  "intro_p": "Two days, three special places. Here's what to expect.",
   "btn_weekend": "The Weekend",
   "cel_eyebrow": "The Weekend",
   "cel_title": "The Celebration",
@@ -819,21 +822,13 @@ const I18N = {
   "blacktie": "Black Tie Elegant",
   "blacktie_p": "Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.",
   "rsvp_eyebrow": "Let us know you're coming",
-  "rsvp_p": "Filling out the form will help us plan every detail. Here's what we'll ask you:",
-  "ask1": "Full name",
-  "ask2": "Email address",
-  "ask3": "Home address",
-  "ask4": "Attendance at each event",
-  "ask5": "Whether you need the transfer",
-  "ask6": "Allergies or intolerances",
-  "ask7": "Which hotel you'll be staying at",
-  "btn_form": "Fill out the form",
+  "rsvp_p": "Filling out the form will help us plan every detail.",
   "respond_by": "Please respond by",
   "tbd": "date to be decided",
   "stay_eyebrow": "Where to Stay",
   "stay_title": "Recommended Hotels",
   "stay_p": "These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.",
-  "near": "Near the Temple",
+  "near": "Recommended · Near the Temple",
   "steps": "Just steps from the Great Synagogue of Rome (Tempio Maggiore).",
   "citizen": "Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).",
   "visit": "Visit website",
@@ -845,36 +840,22 @@ const I18N = {
   "childcare_p": "Babysitting service provided by Orienta Family. For all arrangements, please contact Francesca directly.",
   "transfers": "Private Transfers",
   "transfers_p": "To book a private car at any time.",
-  "rome_eyebrow": "Make the Most of Your Trip",
-  "rome_title": "Things to See<br>in Rome",
-  "s1": "Vatican City",
-  "s2": "Vatican Museums",
-  "s3": "Colosseum",
-  "s4": "Roman &amp; Imperial Forums",
-  "extra_title": "If you have extra time, here are our picks",
-  "x1": "Pantheon",
-  "x2": "Trevi Fountain &amp; Piazza Navona",
-  "x3": "Villa Borghese &amp; Borghese Gallery",
-  "x5": "Castel Sant'Angelo",
-  "x6": "Baths of Caracalla",
-  "x7": "Appian Way",
-  "x8": "Day Trip to Tivoli or Ostia Antica",
   "eat_eyebrow": "Our Favorite Spots",
   "eat_title": "Where to Eat in Rome",
   "eat_p": "We've put our favorite restaurants in the city on one map.",
-  "btn_map": "Open the Map",
+  "btn_map": "Open the restaurant map",
   "info_eyebrow": "A Few Last Things",
   "info_title": "Useful Information",
   "q_weather": "What the weather's like",
   "a_weather": "Late June in Rome is warm (82–91°F / 28–33°C). Light fabrics, a fan, and sunscreen are your best friends.",
   "q_getting": "Getting there",
-  "a_getting": "The main airports are Fiumicino (FCO) and Ciampino (CIA). For a private airport transfer, see the number under <a href=\"#kids\">Private Transfers</a>. On Sunday a round-trip shuttle will run between the Tempio Maggiore and Castello Odescalchi (see <a href=\"#schedule\">Schedule</a>).",
+  "a_getting": "The main airports are Fiumicino (FCO) and Ciampino (CIA). For a private airport transfer, see the number under <a href=\"#kids\">“Private Transfers”</a>. Also note that on Sunday a round-trip shuttle will run between the Tempio Maggiore and Castello Odescalchi (see <a href=\"#schedule\">“Schedule”</a>).",
   "q_kids": "Kids",
-  "a_kids": "If you need a nanny for the events, you'll find everything in the <a href=\"#kids\">Kids &amp; Private Transfers</a> section.",
+  "a_kids": "If you need a nanny for the events, you’ll find everything in the <a href=\"#kids\">“Kids &amp; Private Transfers”</a> section.",
   "q_gifts": "Gifts",
-  "a_gifts": "Having you with us in Rome is the greatest gift. If you'd still like to give something, we'll share details closer to the date.",
+  "a_gifts": "Having you with us in Rome is the greatest gift. If you’d still like to give something, we’ll share details closer to the date.",
   "q_contact": "Contact",
-  "a_contact": "For any questions, feel free to reach out at",
+  "a_contact": "For any questions, feel free to reach out to Alessia at",
   "count_title": "Let the<br>countdown begin",
   "count_p": "We can't wait to celebrate with you in Rome.",
   "u_days": "Days",
@@ -883,9 +864,46 @@ const I18N = {
   "u_sec": "Seconds",
   "footer_date": "June 26–27, 2027 · Rome, Italy",
   "hero_date": "26th &amp; 27th of June 2027",
-  "open_maps": "Open in Maps",
   "remind": "Haven't replied yet? It only takes a minute.",
-  "remind_btn": "Reply to the RSVP"
+  "remind_btn": "Reply to the RSVP",
+  "btn_moodboard": "View the Pinterest moodboard",
+  "code_47": "Code TheRomilys · 10% off",
+  "code_rh": "15% off",
+  "note_rh": "",
+  "f_first": "First name",
+  "f_last": "Last name",
+  "f_email": "Email address",
+  "f_phone": "Phone number",
+  "f_address": "Home address",
+  "f_attend": "Attendance at each event",
+  "f_transfer": "Shuttle from the Tempio Maggiore to the Castle",
+  "f_transfer_q": "Will you use the shuttle?",
+  "yes": "Yes",
+  "no": "No",
+  "f_diet": "Allergies or intolerances",
+  "d_none": "No restrictions",
+  "d_veg": "Vegetarian",
+  "d_vegan": "Vegan",
+  "d_pesc": "Pescatarian",
+  "d_gluten": "Gluten-free / coeliac",
+  "d_lact": "Lactose-free",
+  "d_nuts": "Nut allergy",
+  "d_shell": "Shellfish allergy",
+  "d_kosher": "Kosher",
+  "d_halal": "Halal",
+  "d_other": "Other",
+  "f_diet_notes": "Anything we should know? (e.g. a severe allergy, a child’s meal)",
+  "f_hotel": "Which hotel you’ll be staying at",
+  "h_choose": "Choose…",
+  "h_other": "Another hotel in Rome",
+  "h_undecided": "Not decided yet",
+  "f_msg": "A note for Emily &amp; Alexandre (optional)",
+  "btn_send": "Send my RSVP",
+  "f_missing": "Please fill in your name, a valid email and answer each event.",
+  "f_sending": "Sending…",
+  "f_thanks": "Thank you — we can’t wait to see you in Rome!",
+  "f_error": "Something went wrong. Please try again in a moment.",
+  "f_offline": "The form will be live very soon — please come back to reply."
  },
  "fr": {
   "skip": "Passer",
@@ -895,18 +913,16 @@ const I18N = {
   "open_aria": "Brisez le sceau pour ouvrir l'invitation",
   "nav_schedule": "Programme",
   "nav_dress": "Tenue",
-  "nav_stay": "Voyage &amp; séjour",
-  "nav_rome": "Rome",
-  "nav_extra": "Plus",
+  "nav_stay": "Où séjourner",
   "nav_kids": "Enfants &amp; transferts",
   "nav_eat": "Où manger",
   "nav_info": "Infos pratiques",
   "hero_eyebrow": "Nous nous marions",
   "hero_place": "Rome",
   "arch_cap": "Rome, la Ville éternelle",
-  "intro_eyebrow": "26 – 27 juin 2027 · Rome",
+  "intro_eyebrow": "26 – 27 juin 2027 · Rome, Italie",
   "intro_title": "Deux jours, trois lieux d'exception dans la Ville éternelle",
-  "intro_p": "Une soirée de bienvenue sur le Capitole, une cérémonie à la Grande Synagogue de Rome et une réception au bord de la mer dans un château du XVe siècle. Voici tout ce qu'il faut savoir.",
+  "intro_p": "Deux jours, trois lieux d’exception. Voici ce qui vous attend.",
   "btn_weekend": "Le week-end",
   "cel_eyebrow": "Le week-end",
   "cel_title": "La Célébration",
@@ -927,21 +943,13 @@ const I18N = {
   "blacktie": "Black Tie élégant",
   "blacktie_p": "La réception aura lieu dans un jardin — tenue de soirée, avec des chaussures adaptées à la pelouse.",
   "rsvp_eyebrow": "Dites-nous si vous venez",
-  "rsvp_p": "Remplir le formulaire nous aidera à préparer chaque détail. Voici ce que nous vous demanderons :",
-  "ask1": "Nom complet",
-  "ask2": "Adresse e-mail",
-  "ask3": "Adresse postale",
-  "ask4": "Présence à chaque événement",
-  "ask5": "Si vous avez besoin de la navette",
-  "ask6": "Allergies ou intolérances",
-  "ask7": "Votre hôtel",
-  "btn_form": "Remplir le formulaire",
+  "rsvp_p": "Remplir le formulaire nous aidera à préparer chaque détail.",
   "respond_by": "Merci de répondre avant le",
   "tbd": "date à confirmer",
   "stay_eyebrow": "Où séjourner",
   "stay_title": "Hôtels recommandés",
   "stay_p": "Ces quatre hôtels sont les plus proches du Tempio Maggiore — point de départ de la navette pour le Château — avec des styles et des budgets variés.",
-  "near": "Près du Temple",
+  "near": "Recommandé · Près du Temple",
   "steps": "À deux pas de la Grande Synagogue de Rome (Tempio Maggiore).",
   "citizen": "Design moderne, juste en face de la Grande Synagogue de Rome (Tempio Maggiore).",
   "visit": "Voir le site",
@@ -953,36 +961,22 @@ const I18N = {
   "childcare_p": "Service de baby-sitting assuré par Orienta Family. Pour toute organisation, contactez directement Francesca.",
   "transfers": "Transferts privés",
   "transfers_p": "Pour réserver une voiture privée à tout moment.",
-  "rome_eyebrow": "Profitez pleinement de votre séjour",
-  "rome_title": "À voir<br>à Rome",
-  "s1": "Cité du Vatican",
-  "s2": "Musées du Vatican",
-  "s3": "Colisée",
-  "s4": "Forums romain &amp; impériaux",
-  "extra_title": "Si vous avez du temps, voici nos coups de cœur",
-  "x1": "Panthéon",
-  "x2": "Fontaine de Trevi &amp; Piazza Navona",
-  "x3": "Villa Borghèse &amp; Galerie Borghèse",
-  "x5": "Château Saint-Ange",
-  "x6": "Thermes de Caracalla",
-  "x7": "Voie Appienne",
-  "x8": "Excursion à Tivoli ou Ostia Antica",
   "eat_eyebrow": "Nos adresses préférées",
   "eat_title": "Où manger à Rome",
   "eat_p": "Nous avons réuni nos restaurants préférés sur une seule carte.",
-  "btn_map": "Ouvrir la carte",
+  "btn_map": "Ouvrir la carte des restaurants",
   "info_eyebrow": "Quelques derniers détails",
   "info_title": "Informations utiles",
   "q_weather": "La météo",
-  "a_weather": "Fin juin, il fait chaud à Rome (28–33 °C). Tissus légers, éventail et crème solaire seront vos meilleurs alliés.",
+  "a_weather": "Fin juin, il fait chaud à Rome (28–33 °C / 82–91 °F). Tissus légers, éventail et crème solaire seront vos meilleurs alliés.",
   "q_getting": "Comment venir",
-  "a_getting": "Les principaux aéroports sont Fiumicino (FCO) et Ciampino (CIA). Pour un transfert privé depuis l’aéroport, voir le numéro dans <a href=\"#kids\">Transferts privés</a>. Le dimanche, une navette aller-retour reliera le Tempio Maggiore au Castello Odescalchi (voir <a href=\"#schedule\">Programme</a>).",
+  "a_getting": "Les principaux aéroports sont Fiumicino (FCO) et Ciampino (CIA). Pour un transfert privé depuis l’aéroport, voir le numéro dans <a href=\"#kids\">« Transferts privés »</a>. Notez aussi que le dimanche, une navette aller-retour reliera le Tempio Maggiore au Castello Odescalchi (voir <a href=\"#schedule\">« Programme »</a>).",
   "q_kids": "Enfants",
   "a_kids": "Si vous avez besoin d’une nounou pendant les événements, vous trouverez tout dans la section <a href=\"#kids\">Enfants &amp; transferts privés</a>.",
   "q_gifts": "Cadeaux",
   "a_gifts": "Votre présence à Rome est le plus beau des cadeaux. Si vous souhaitez tout de même offrir quelque chose, nous partagerons les détails à l’approche de la date.",
   "q_contact": "Contact",
-  "a_contact": "Pour toute question, n’hésitez pas à nous écrire au",
+  "a_contact": "Pour toute question, n’hésitez pas à contacter Alessia au",
   "count_title": "Que le compte<br>à rebours commence",
   "count_p": "Nous avons hâte de célébrer avec vous à Rome.",
   "u_days": "Jours",
@@ -991,9 +985,46 @@ const I18N = {
   "u_sec": "Secondes",
   "footer_date": "26–27 juin 2027 · Rome, Italie",
   "hero_date": "26 &amp; 27 juin 2027",
-  "open_maps": "Ouvrir dans Maps",
   "remind": "Vous n'avez pas encore répondu ? Cela ne prend qu'une minute.",
-  "remind_btn": "Répondre au RSVP"
+  "remind_btn": "Répondre au RSVP",
+  "btn_moodboard": "Voir le moodboard Pinterest",
+  "code_47": "Code TheRomilys · -10 %",
+  "code_rh": "-15 %",
+  "note_rh": "",
+  "f_first": "Prénom",
+  "f_last": "Nom",
+  "f_email": "Adresse e-mail",
+  "f_phone": "Téléphone",
+  "f_address": "Adresse postale",
+  "f_attend": "Présence à chaque événement",
+  "f_transfer": "Navette du Tempio Maggiore au Château",
+  "f_transfer_q": "Prendrez-vous la navette ?",
+  "yes": "Oui",
+  "no": "Non",
+  "f_diet": "Allergies ou intolérances",
+  "d_none": "Aucune restriction",
+  "d_veg": "Végétarien",
+  "d_vegan": "Végan",
+  "d_pesc": "Pescétarien",
+  "d_gluten": "Sans gluten / cœliaque",
+  "d_lact": "Sans lactose",
+  "d_nuts": "Allergie aux fruits à coque",
+  "d_shell": "Allergie aux crustacés",
+  "d_kosher": "Casher",
+  "d_halal": "Halal",
+  "d_other": "Autre",
+  "f_diet_notes": "Quelque chose à nous signaler ? (allergie sévère, repas enfant…)",
+  "f_hotel": "Votre hôtel",
+  "h_choose": "Choisir…",
+  "h_other": "Un autre hôtel à Rome",
+  "h_undecided": "Pas encore décidé",
+  "f_msg": "Un mot pour Emily &amp; Alexandre (facultatif)",
+  "btn_send": "Envoyer ma réponse",
+  "f_missing": "Merci d’indiquer votre nom, une adresse e-mail valide et de répondre pour chaque événement.",
+  "f_sending": "Envoi…",
+  "f_thanks": "Merci — nous avons hâte de vous voir à Rome !",
+  "f_error": "Une erreur est survenue. Merci de réessayer dans un instant.",
+  "f_offline": "Le formulaire sera bientôt disponible — revenez pour répondre."
  },
  "it": {
   "skip": "Salta",
@@ -1003,18 +1034,16 @@ const I18N = {
   "open_aria": "Rompi il sigillo per aprire l'invito",
   "nav_schedule": "Programma",
   "nav_dress": "Dress code",
-  "nav_stay": "Viaggio &amp; alloggio",
-  "nav_rome": "Roma",
-  "nav_extra": "Altro",
+  "nav_stay": "Dove alloggiare",
   "nav_kids": "Bambini &amp; transfer",
   "nav_eat": "Dove mangiare",
   "nav_info": "Info utili",
   "hero_eyebrow": "Ci sposiamo",
   "hero_place": "Roma",
   "arch_cap": "Roma, la Città Eterna",
-  "intro_eyebrow": "26 – 27 giugno 2027 · Roma",
+  "intro_eyebrow": "26 – 27 giugno 2027 · Roma, Italia",
   "intro_title": "Due giorni, tre luoghi speciali nella Città Eterna",
-  "intro_p": "Una serata di benvenuto sul Campidoglio, una cerimonia al Tempio Maggiore di Roma e un ricevimento sul mare in un castello del Quattrocento. Ecco tutto quello che c’è da sapere.",
+  "intro_p": "Due giorni, tre luoghi speciali. Ecco cosa vi aspetta.",
   "btn_weekend": "Il weekend",
   "cel_eyebrow": "Il weekend",
   "cel_title": "La Celebrazione",
@@ -1035,21 +1064,13 @@ const I18N = {
   "blacktie": "Black Tie elegante",
   "blacktie_p": "L’evento si terrà in giardino — abito da sera, con scarpe adatte al prato.",
   "rsvp_eyebrow": "Facci sapere se ci sarai",
-  "rsvp_p": "Compilare il modulo ci aiuterà a curare ogni dettaglio. Ecco cosa ti chiederemo:",
-  "ask1": "Nome e cognome",
-  "ask2": "Indirizzo e-mail",
-  "ask3": "Indirizzo di casa",
-  "ask4": "Partecipazione a ogni evento",
-  "ask5": "Se ti serve la navetta",
-  "ask6": "Allergie o intolleranze",
-  "ask7": "In quale hotel alloggerai",
-  "btn_form": "Compila il modulo",
+  "rsvp_p": "Compilare il modulo ci aiuterà a curare ogni dettaglio.",
   "respond_by": "Rispondi entro il",
   "tbd": "data da definire",
   "stay_eyebrow": "Dove alloggiare",
   "stay_title": "Hotel consigliati",
   "stay_p": "Questi quattro hotel sono i più vicini al Tempio Maggiore — punto di partenza della navetta per il Castello — con stili e prezzi diversi.",
-  "near": "Vicino al Tempio",
+  "near": "Consigliato · Vicino al Tempio",
   "steps": "A pochi passi dal Tempio Maggiore di Roma.",
   "citizen": "Design moderno, proprio di fronte al Tempio Maggiore di Roma.",
   "visit": "Visita il sito",
@@ -1061,36 +1082,22 @@ const I18N = {
   "childcare_p": "Servizio di baby-sitting a cura di Orienta Family. Per ogni accordo, contatta direttamente Francesca.",
   "transfers": "Transfer privati",
   "transfers_p": "Per prenotare un’auto privata in qualsiasi momento.",
-  "rome_eyebrow": "Goditi al meglio il viaggio",
-  "rome_title": "Cosa vedere<br>a Roma",
-  "s1": "Città del Vaticano",
-  "s2": "Musei Vaticani",
-  "s3": "Colosseo",
-  "s4": "Fori Romani &amp; Imperiali",
-  "extra_title": "Se avete tempo in più, ecco i nostri consigli",
-  "x1": "Pantheon",
-  "x2": "Fontana di Trevi &amp; Piazza Navona",
-  "x3": "Villa Borghese &amp; Galleria Borghese",
-  "x5": "Castel Sant'Angelo",
-  "x6": "Terme di Caracalla",
-  "x7": "Via Appia Antica",
-  "x8": "Gita a Tivoli o Ostia Antica",
   "eat_eyebrow": "I nostri posti preferiti",
   "eat_title": "Dove mangiare a Roma",
   "eat_p": "Abbiamo raccolto i nostri ristoranti preferiti in un’unica mappa.",
-  "btn_map": "Apri la mappa",
+  "btn_map": "Apri la mappa dei ristoranti",
   "info_eyebrow": "Ultime cose",
   "info_title": "Informazioni utili",
   "q_weather": "Che tempo fa",
-  "a_weather": "A fine giugno a Roma fa caldo (28–33 °C). Tessuti leggeri, un ventaglio e la crema solare saranno i vostri migliori amici.",
+  "a_weather": "A fine giugno a Roma fa caldo (28–33 °C / 82–91 °F). Tessuti leggeri, un ventaglio e la crema solare saranno i vostri migliori amici.",
   "q_getting": "Come arrivare",
-  "a_getting": "Gli aeroporti principali sono Fiumicino (FCO) e Ciampino (CIA). Per un transfer privato dall’aeroporto, vedi il numero in <a href=\"#kids\">Transfer privati</a>. La domenica una navetta andata e ritorno collegherà il Tempio Maggiore al Castello Odescalchi (vedi <a href=\"#schedule\">Programma</a>).",
+  "a_getting": "Gli aeroporti principali sono Fiumicino (FCO) e Ciampino (CIA). Per un transfer privato dall’aeroporto, vedi il numero in <a href=\"#kids\">“Transfer privati”</a>. La domenica una navetta andata e ritorno collegherà il Tempio Maggiore al Castello Odescalchi (vedi <a href=\"#schedule\">“Programma”</a>).",
   "q_kids": "Bambini",
   "a_kids": "Se vi serve una tata durante gli eventi, trovate tutto nella sezione <a href=\"#kids\">Bambini &amp; transfer privati</a>.",
   "q_gifts": "Regali",
   "a_gifts": "Avervi con noi a Roma è il regalo più bello. Se desiderate comunque farci un pensiero, condivideremo i dettagli più avanti.",
   "q_contact": "Contatti",
-  "a_contact": "Per qualsiasi domanda, scriveteci al",
+  "a_contact": "Per qualsiasi domanda, contattate Alessia al",
   "count_title": "Che il conto alla<br>rovescia abbia inizio",
   "count_p": "Non vediamo l’ora di festeggiare con voi a Roma.",
   "u_days": "Giorni",
@@ -1099,9 +1106,46 @@ const I18N = {
   "u_sec": "Secondi",
   "footer_date": "26–27 giugno 2027 · Roma, Italia",
   "hero_date": "26 &amp; 27 giugno 2027",
-  "open_maps": "Apri in Maps",
   "remind": "Non hai ancora risposto? Ci vuole solo un minuto.",
-  "remind_btn": "Rispondi all'RSVP"
+  "remind_btn": "Rispondi all'RSVP",
+  "btn_moodboard": "Vedi il moodboard su Pinterest",
+  "code_47": "Codice TheRomilys · 10% di sconto",
+  "code_rh": "15% di sconto",
+  "note_rh": "",
+  "f_first": "Nome",
+  "f_last": "Cognome",
+  "f_email": "Indirizzo e-mail",
+  "f_phone": "Telefono",
+  "f_address": "Indirizzo di casa",
+  "f_attend": "Partecipazione a ogni evento",
+  "f_transfer": "Navetta dal Tempio Maggiore al Castello",
+  "f_transfer_q": "Userai la navetta?",
+  "yes": "Sì",
+  "no": "No",
+  "f_diet": "Allergie o intolleranze",
+  "d_none": "Nessuna restrizione",
+  "d_veg": "Vegetariano",
+  "d_vegan": "Vegano",
+  "d_pesc": "Pescetariano",
+  "d_gluten": "Senza glutine / celiachia",
+  "d_lact": "Senza lattosio",
+  "d_nuts": "Allergia alla frutta a guscio",
+  "d_shell": "Allergia ai crostacei",
+  "d_kosher": "Kosher",
+  "d_halal": "Halal",
+  "d_other": "Altro",
+  "f_diet_notes": "Qualcosa che dovremmo sapere? (allergia grave, menù bambini…)",
+  "f_hotel": "In quale hotel alloggerai",
+  "h_choose": "Scegli…",
+  "h_other": "Un altro hotel a Roma",
+  "h_undecided": "Non ancora deciso",
+  "f_msg": "Un pensiero per Emily &amp; Alexandre (facoltativo)",
+  "btn_send": "Invia la mia risposta",
+  "f_missing": "Inserisci nome, cognome, un’e-mail valida e rispondi per ogni evento.",
+  "f_sending": "Invio…",
+  "f_thanks": "Grazie — non vediamo l’ora di vederti a Roma!",
+  "f_error": "Qualcosa è andato storto. Riprova tra un momento.",
+  "f_offline": "Il modulo sarà attivo a breve — torna per rispondere."
  }
 };
 
@@ -1137,7 +1181,6 @@ const I18N = {
     $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
     $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
     $$('[data-lines]').forEach(buildLines);
-    $$('.hero .date, .hero .place').forEach(splitChars);
   };
   const setLang = next => {
     if (next === lang || !I18N[next]) return;
@@ -1153,7 +1196,7 @@ const I18N = {
   document.addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (b) setLang(b.dataset.lang); });
   const nameChars = splitChars($('.hero h1'));
   applyText();
-  const heroTargets = () => [...$$('.hero .date .ch'), ...nameChars, ...$$('.hero .place .ch')];
+  const heroTargets = () => nameChars;
 
   /* ═════════ Header / menu / back-to-top seal ═════════ */
   const hdr = $('#hdr'); let lastY = 0;
@@ -1325,6 +1368,38 @@ const I18N = {
   });
   addEventListener('resize', () => outlines.forEach(o => o.draw()));
 
+  /* ═════════ Links and the RSVP endpoint, set in one place ═════════ */
+  const CONFIG = {
+    rsvpEndpoint: '',      // Google Apps Script web-app URL (see build/rsvp-apps-script.gs)
+    restaurantMap: '',     // Emily's shared Google Maps list
+  };
+  if (CONFIG.restaurantMap) $('#map-link').href = CONFIG.restaurantMap;
+
+  /* ═════════ RSVP form → one row in the Google Sheet ═════════ */
+  const form = $('#rsvp-form'), status = $('.fstatus', form);
+  const flag = (el, bad) => el.classList.toggle('bad', bad);
+  form.addEventListener('input', e => { const y = e.target.closest('.yn'); flag(y || e.target, false); });
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    let ok = true;
+    ['first', 'last', 'email'].forEach(n => { const el = form.elements[n]; const bad = !el.value.trim() || (n === 'email' && !el.checkValidity()); flag(el, bad); ok = ok && !bad; });
+    ['welcome', 'ceremony', 'reception', 'shuttle'].forEach(n => { const bad = !fd.get(n); flag(form.querySelector(`[name="${n}"]`).closest('.yn'), bad); ok = ok && !bad; });
+    if (!ok) { status.className = 'fstatus'; status.textContent = t('f_missing'); return; }
+    const row = {
+      first: fd.get('first').trim(), last: fd.get('last').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim(), address: fd.get('address').trim(),
+      welcome: fd.get('welcome'), ceremony: fd.get('ceremony'), reception: fd.get('reception'), shuttle: fd.get('shuttle'),
+      diet: fd.getAll('diet').join(', '), diet_notes: fd.get('diet_notes').trim(), hotel: fd.get('hotel'), message: fd.get('message').trim(),
+      language: lang.toUpperCase(), submitted: new Date().toISOString()
+    };
+    if (!CONFIG.rsvpEndpoint) { status.className = 'fstatus'; status.textContent = t('f_offline'); return; }
+    status.className = 'fstatus'; status.textContent = t('f_sending');
+    try {
+      await fetch(CONFIG.rsvpEndpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(row) });
+      form.reset(); status.className = 'fstatus ok'; status.textContent = t('f_thanks');
+    } catch { status.className = 'fstatus'; status.textContent = t('f_error'); }
+  });
+
   /* ═════════ Pins drop onto the map ═════════ */
   new IntersectionObserver(([e], ob) => { if (e.isIntersecting) { $('.pins').classList.add('in'); ob.disconnect(); } }, { threshold: .3 }).observe($('.rmap'));
 
@@ -1360,11 +1435,13 @@ const I18N = {
   /* ═════════ Intro: three taps crack the seal, then a match cut into the hero ═════════ */
   const seal = $('.seal'), stage = $('.stage');
   gsap.set(heroTargets(), { opacity: 0 });
-  gsap.set('.hero .eyebrow, .cue, .hdr', { opacity: 0 });
+  gsap.set('.hero .eyebrow, .cue, .hdr', { opacity: 0 }); gsap.set('.hero .date, .hero .place', { clipPath: 'inset(-30% 100% -30% -5%)' });
   const heroIn = () => {
     gsap.timeline()
       .fromTo(heroTargets(), { yPercent: 115, rotateX: -80, opacity: 0, filter: 'blur(10px)' }, { yPercent: 0, rotateX: 0, opacity: 1, filter: 'blur(0px)', stagger: .026, duration: 1.5, ease: 'expo.out' })
-      .fromTo('.hero .eyebrow', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.2 }, '<.2')
+      .fromTo('.hero .date', { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.6, ease: 'power2.inOut' }, '<.1')
+      .fromTo('.hero .place', { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.3, ease: 'power2.inOut' }, '<.9')
+      .fromTo('.hero .eyebrow', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.2 }, '<-.6')
       .fromTo('.cue, .hdr', { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 1.2, stagger: .1, clearProps: 'transform' }, '<.6');
   };
   let finished = false;
@@ -1398,7 +1475,7 @@ const I18N = {
   };
   seal.addEventListener('click', tap);
   $('.skip').addEventListener('click', () => gsap.to(intro, { opacity: 0, duration: .6, onComplete: finish }));
-  gsap.from(stage, { y: 50, opacity: 0, duration: 1.6, ease: 'expo.out', delay: .2 });
+  gsap.from(stage, { y: 40, opacity: 0, duration: 1.6, ease: 'expo.out', delay: .2 });
   gsap.from('.intro-hint, .intro-top', { opacity: 0, duration: 1.4, delay: .8 });
 
   /* ═════════ Hero: the painting folds into a Roman arch ═════════ */
@@ -1427,87 +1504,23 @@ const I18N = {
     gsap.to($$('.ln', el), { yPercent: 0, rotate: 0, duration: 1.5, stagger: .12, ease: 'expo.out' });
   }}));
   $$('[data-reveal]').forEach(el => gsap.fromTo(el, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
-  gsap.fromTo('footer .garl', { clipPath: 'inset(0 50% 0 50%)' }, { clipPath: 'inset(0 0% 0 0%)', duration: 2.4, ease: 'expo.inOut', scrollTrigger: { trigger: 'footer', start: 'top 90%' } });
 
-  /* ═════════ Hotels: pinned, three photographs each, the hotel in view lights up ═════════ */
-  ScrollTrigger.matchMedia({
-    '(min-width: 901px)': () => {
-      const imgs = $$('.hpics img'), hs = $$('.hotel'), cap = $('.hcap-name'), capN = $('.hcap-n');
-      const names = hs.map(h => $('h4', h).textContent);
-      let cur = 0, z = 2;
-      imgs.forEach((im, i) => { im.style.zIndex = i === 0 ? 2 : 1; im.style.clipPath = i === 0 ? 'inset(0% 0% 0% 0% round 0px)' : 'inset(100% 0% 0% 0% round 0px)'; });
-      const show = i => {
-        if (i === cur) return;
-        const im = imgs[i]; cur = i; im.style.zIndex = ++z;
-        gsap.fromTo(im, { clipPath: 'inset(58% 22% 0% 22% round 999px 999px 0px 0px)', scale: 1.15 }, { clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0px 0px)', scale: 1, duration: 1.1, ease: 'expo.out', overwrite: true });
-        const hi = Math.floor(i / 3);
-        hs.forEach((h, k) => h.classList.toggle('on', k === hi));
-        cap.textContent = names[hi]; capN.textContent = `${i % 3 + 1} / 3`;
-      };
-      ScrollTrigger.create({ trigger: '.hstage', start: 'top top', end: () => '+=' + innerHeight * .55 * 11, pin: true, anticipatePin: 1, invalidateOnRefresh: true,
-        onUpdate: s => show(Math.min(11, Math.floor(s.progress * 12))) });
-      return () => { hs.forEach((h, k) => h.classList.toggle('on', k === 0)); };
-    }
+  /* ═════════ Small arches between chapters draw themselves ═════════ */
+  $$('.join').forEach(j => {
+    const ps = $$('path', j);
+    gsap.timeline({ scrollTrigger: { trigger: j, start: 'top 85%', end: 'bottom 45%', scrub: 1 } })
+      .fromTo(ps[0], { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: 'none' })
+      .fromTo(ps[1], { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: 'none' }, .25)
+      .fromTo($('circle', j), { opacity: 0, scale: 0, transformOrigin: '50% 50%' }, { opacity: .8, scale: 1, ease: 'none', duration: .3 }, .7);
   });
 
-  /* ═════════ One pencil line draws the whole page, sketching an arch between chapters ═════════ */
-  const main = $('#canvas'), pencil = $('#pencil'), lead = $('#pencil .lead'), smudge = $('#pencil .smudge'), tipEl = $('#pencil .tip');
-  let L = 0, lens = [], ymax = [];
-  const buildPencil = () => {
-    const mr = main.getBoundingClientRect(), W = main.clientWidth;
-    const top = el => el.getBoundingClientRect().top - mr.top, bot = el => el.getBoundingClientRect().bottom - mr.top;
-    const mob = W < 820, g = mob ? 8 : Math.max(26, (W - 1180) / 2 - 30), cx = W / 2, aw = mob ? 44 : 68, ah = aw * 1.25;
-    let d = '', P = null;
-    const curveTo = (x, y) => { const k = Math.max(20, (y - P[1]) * .55); d += ` C${P[0]} ${P[1] + k} ${x} ${y - k} ${x} ${y}`; P = [x, y]; };
-    const run = (x, y1) => {
-      let y = P[1], s = 1; const amp = mob ? 3 : 12;
-      while (y1 - y > 30) { const ny = Math.min(y1, y + 380); d += ` C${x + amp * s} ${y + (ny - y) * .33} ${x - amp * s} ${y + (ny - y) * .66} ${x} ${ny}`; y = ny; s = -s; }
-      P = [x, y];
-    };
-    const arch = (j) => {
-      const base = bot(j) - 18, spring = base - ah + aw / 2, fromLeft = P[0] <= cx;
-      const a = fromLeft ? cx - aw / 2 : cx + aw / 2, b = fromLeft ? cx + aw / 2 : cx - aw / 2;
-      curveTo(a, base);
-      d += ` L${a} ${spring} A${aw / 2} ${aw / 2} 0 0 ${fromLeft ? 1 : 0} ${b} ${spring} L${b} ${base} l${fromLeft ? 8 : -8} 0`;
-      P = [b + (fromLeft ? 8 : -8), base];
-    };
-    const items = $$(':scope > section, :scope > .join', main);
-    items.forEach((it, i) => {
-      if (it.classList.contains('join')) {
-        if (!P) { d = `M${cx} ${top(it)}`; P = [cx - 1, top(it)]; }
-        arch(it); return;
-      }
-      if (it.id === 'countdown') { curveTo(cx, top(it) + 30); return; }
-      const x = P[0] < cx ? g : W - g;
-      curveTo(x, top(it) + 40);
-      const np = $('[data-nopath]', it);
-      if (np && getComputedStyle(np).display !== 'none' && innerWidth > 900) { run(x, top(np) - 10); d += ` M${x} ${bot(np) + 10}`; P = [x, bot(np) + 10]; }
-      run(x, bot(it) - 40);
-    });
-    const H = main.scrollHeight;
-    pencil.setAttribute('viewBox', `0 0 ${W} ${H}`); pencil.style.height = H + 'px';
-    lead.setAttribute('d', d); smudge.setAttribute('d', d);
-    L = lead.getTotalLength(); lens = []; ymax = [];
-    let m = -1e9;
-    for (let l = 0; l <= L; l += 5) { const pt = lead.getPointAtLength(l); m = Math.max(m, pt.y); lens.push(l); ymax.push(m); }
-    [lead, smudge].forEach(p => p.style.strokeDasharray = `${L} ${L + 10}`);
-    drawPencil();
-  };
-  const drawPencil = () => {
-    if (!L) return;
-    const mt = main.getBoundingClientRect().top;
-    const yT = -mt + innerHeight * .64;
-    let lo = 0, hi = ymax.length - 1;
-    while (lo < hi) { const mid = (lo + hi) >> 1; if (ymax[mid] < yT) lo = mid + 1; else hi = mid; }
-    const len = yT <= 0 ? 0 : lens[lo];
-    [lead, smudge].forEach(p => p.style.strokeDashoffset = L - len);
-    const a = lead.getPointAtLength(len), b = lead.getPointAtLength(Math.max(0, len - 4));
-    const ang = Math.atan2(a.y - b.y, a.x - b.x) * 180 / Math.PI + 180;
-    tipEl.setAttribute('transform', `translate(${a.x} ${a.y}) rotate(${ang})`);
-    tipEl.style.opacity = len > 2 && len < L - 2 ? 1 : 0;
-  };
-  ScrollTrigger.addEventListener('refresh', buildPencil);
-  gsap.ticker.add(drawPencil);
+  /* ═════════ Script lines are written left to right, never split into letters ═════════ */
+  $$('main .script, footer .script').forEach(el => gsap.fromTo(el, { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.8, ease: 'power2.inOut',
+    scrollTrigger: { trigger: el, start: 'top 88%' } }));
+
+  /* ═════════ Photos inside the arches drift gently ═════════ */
+  $$('.plate .arch img').forEach(img => gsap.fromTo(img, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: img.closest('.plate'), start: 'top bottom', end: 'bottom top', scrub: true } }));
+  gsap.fromTo('footer .skyline', { clipPath: 'inset(0 50% 0 50%)' }, { clipPath: 'inset(0 0% 0 0%)', duration: 2.6, ease: 'expo.inOut', scrollTrigger: { trigger: 'footer', start: 'top 85%' } });
 
   addEventListener('load', () => ScrollTrigger.refresh());
   document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());

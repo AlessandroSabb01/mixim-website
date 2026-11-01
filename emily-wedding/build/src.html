@@ -11,12 +11,12 @@
 <meta property="og:image" content="img/sky.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Ms+Madi&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Great+Vibes&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/sky.webp">
 <link rel="preload" as="image" href="img/seal.webp">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js')</script>
 <style>
-/* Layout: one long watercolour canvas. A pencil line draws itself down the page, sketching a Roman arch between chapters; content opens through arch-shaped masks. */
+/* Layout: one long watercolour canvas. Chapters are separated by small drawn Roman arches; content opens through arch-shaped masks. */
 :root{
   color-scheme:light;
   /* Rome-sunset palette from the brief */
@@ -35,7 +35,7 @@
   --on-dark:#FBF3E6;
 
   --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --script:'Ms Madi','Snell Roundhand','Apple Chancery',cursive;
+  --script:'Great Vibes','Snell Roundhand','Apple Chancery',cursive;
   --sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
 
   --ease:cubic-bezier(.22,.8,.16,1);
@@ -66,8 +66,8 @@ button{font:inherit;color:inherit}
 .h-xl{font-size:clamp(50px,9.4vw,152px)}
 .h-lg{font-size:clamp(40px,5.4vw,84px)}
 .script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;line-height:1.05}
-.s-lg{font-size:clamp(44px,4.8vw,72px);color:var(--ink)}
-.s-md{font-size:clamp(32px,3vw,44px);color:var(--ink)}
+.s-lg{font-size:clamp(40px,4.2vw,64px);color:var(--ink)}
+.s-md{font-size:clamp(30px,2.7vw,40px);color:var(--ink)}
 .eyebrow{font:400 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--sunset)}
 .lead{max-width:52ch;margin-inline:auto;font-size:15px;text-align:center}
 .center{text-align:center}
@@ -75,7 +75,7 @@ button{font:inherit;color:inherit}
 .ln{display:block;will-change:transform}
 
 /* pen-drawn oval button: only the second stroke draws on hover */
-.oval{position:relative;display:inline-grid;place-items:center;min-width:190px;height:58px;padding:0 34px;font:400 26px/1 var(--script);color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer}
+.oval{position:relative;display:inline-grid;place-items:center;min-width:190px;height:58px;padding:0 34px;font:400 24px/1 var(--script);color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer}
 .oval svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .oval ellipse{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}
 .oval .o2{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--ease)}
@@ -170,10 +170,11 @@ button{font:inherit;color:inherit}
 .hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 40% at 50% 46%,rgba(250,245,236,.78),rgba(250,245,236,.35) 60%,transparent 100%)}
 .hero-in{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 var(--gutter)}
 .hero .eyebrow{margin-bottom:18px}
-.hero .date{font:400 clamp(30px,3.2vw,50px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
+.hero .date{font:400 clamp(28px,2.9vw,46px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
 .hero .h-xl{perspective:800px}
-.hero .place{font:400 clamp(38px,4vw,62px)/1 var(--script);margin-top:.18em;color:var(--ink)}
+.hero .place{font:400 clamp(36px,3.6vw,56px)/1 var(--script);margin-top:.18em;color:var(--ink)}
 .split .w{display:inline-block;white-space:nowrap}
+.hero .date,.hero .place{display:inline-block;padding:.1em .3em}
 .split .ch{display:inline-block;will-change:transform;transform-origin:50% 100%}
 .arch-cap{position:absolute;left:0;right:0;bottom:3.5%;z-index:3;text-align:center;opacity:0;pointer-events:none}
 .arch-cap .script{font-size:clamp(34px,3.6vw,56px);color:var(--ink)}
@@ -181,22 +182,20 @@ button{font:inherit;color:inherit}
 .cue i{width:1px;height:54px;background:linear-gradient(var(--ink),transparent);transform-origin:top;animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* ───────── The canvas: chapters, joins and the pencil ───────── */
+/* ───────── The canvas: chapters and the arches between them ───────── */
 main{position:relative}
-#pencil{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:1;overflow:visible}
-#pencil path{fill:none;stroke-linecap:round;stroke-linejoin:round}
-#pencil .smudge{stroke:rgba(94,42,28,.07);stroke-width:4}
-#pencil .lead{stroke:var(--graphite);stroke-width:1.25}
-#pencil .tip{transition:opacity .4s}
 section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-right,0px)) clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-left,0px))}
-.join{height:clamp(130px,15vw,200px)}
+.join{height:clamp(110px,12vw,170px);display:grid;place-items:center}
+.join svg{width:44px;height:56px;overflow:visible}
+.join path{fill:none;stroke:var(--sunset);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke;opacity:.7}
+.join circle{fill:var(--sunset);opacity:0}
 .wrap{position:relative;max-width:1100px;margin-inline:auto}
 .narrow{max-width:760px}
 .head{text-align:center;margin-bottom:clamp(40px,5vw,70px)}
 .head .h-lg{margin-top:20px}
 .head .lead{margin-top:22px}
 
-/* arch-shaped surfaces with a pencil outline */
+/* arch-shaped surfaces with a drawn outline */
 .archbox{position:relative}
 .archbox>.arch{position:relative;border-radius:50% 50% 0 0/var(--ry,16%) var(--ry,16%) 0 0;overflow:hidden}
 .archbox>.outline{position:absolute;inset:-7px;width:calc(100% + 14px);height:calc(100% + 14px);overflow:visible;pointer-events:none;z-index:3}
@@ -205,7 +204,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .archbox.circ>.arch{border-radius:999px 999px 0 0}
 
 /* welcome */
-.welcome p{max-width:56ch;margin:26px auto 0;font-size:16px;text-align:center}
+.welcome p{max-width:46ch;margin:22px auto 0;font-size:16px;text-align:center}
 .welcome .oval{margin-top:34px}
 
 /* celebration */
@@ -213,7 +212,11 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .days{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:clamp(40px,5vw,60px) auto 0;max-width:760px}
 .days ul{list-style:none;margin-top:22px;display:grid;gap:16px;font-size:14px}
 .days ul b{display:block;font-weight:400;letter-spacing:.12em;font-family:var(--serif);font-size:24px;color:var(--sunset)}
-.shuttle{max-width:540px;margin:46px auto 0;font-size:14px;padding-top:30px;border-top:1px solid rgba(94,42,28,.18)}
+.days .ev{display:block;font:400 19px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-top:4px}
+.days .pl{display:block;font-size:14px;margin-top:2px}
+.days .ad{display:inline-block;font-size:13px;opacity:.8;text-decoration:none;border-bottom:1px solid rgba(94,42,28,.25)}
+.days .ad:hover{color:var(--sunset);border-color:var(--sunset)}
+.days li.shuttle{font-size:13px;font-style:italic;padding:14px 10px;border-block:1px dashed rgba(94,42,28,.22);max-width:340px;margin-inline:auto}
 @media(max-width:620px){.days{grid-template-columns:1fr}}
 
 /* venues */
@@ -222,8 +225,14 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .row.flip>.plate{order:2}
 .row .txt{text-align:center;max-width:390px;justify-self:center;min-width:0}
 .plate{position:relative;min-width:0}
-.plate .arch{border-radius:999px 999px 0 0;background:var(--veil)}
-.plate img{width:100%;mix-blend-mode:multiply;padding:12% 4% 3%}
+.plate .arch{border-radius:999px 999px 0 0;aspect-ratio:4/4.7;background:#efe3d0}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 58%}
+.plate[data-zoom] img{scale:var(--z,1.3)}
+.ph-empty{position:absolute;inset:0;display:grid;place-items:center;background:repeating-linear-gradient(45deg,rgba(94,42,28,.04) 0 10px,transparent 10px 20px)}
+.welcome-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.welcome .txt{text-align:center}
+.welcome-grid .plate{width:min(420px,100%);justify-self:center}
+@media(max-width:820px){.welcome-grid{grid-template-columns:1fr}}
 .time{display:block;font:400 clamp(44px,4vw,62px)/1 var(--serif);color:var(--sunset);margin:14px 0 4px;font-variant-numeric:tabular-nums}
 .venue{font:400 22px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-top:10px}
 .addr{font-size:14px;margin-top:6px}
@@ -249,63 +258,53 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .asks li{break-inside:avoid;padding:8px 0;border-bottom:1px solid rgba(94,42,28,.15)}
 @media(max-width:560px){.asks{columns:1}}
 
-/* hotels: pinned gallery */
-.hstage{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;max-width:1180px;margin-inline:auto;min-height:100svh;padding-block:90px 40px}
-.hpics{position:relative;height:min(72svh,660px);border-radius:999px 999px 0 0;overflow:hidden;background:rgba(94,42,28,.08);box-shadow:0 30px 60px -40px rgba(94,42,28,.6)}
-.hpics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0)}
-.hpics img.first{clip-path:inset(0)}
-.hcap{position:absolute;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-between;padding:18px 24px;color:#fff;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;background:linear-gradient(transparent,rgba(30,14,8,.45))}
-.hlist{list-style:none;display:grid;gap:clamp(18px,2.4vh,30px);min-width:0}
-.hotel{position:relative;padding-left:28px;opacity:.42;transition:opacity .7s var(--ease)}
-.hotel::before{content:"";position:absolute;left:0;top:.9em;width:16px;height:1px;background:var(--sunset);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
-.hotel.on{opacity:1}
-.hotel.on::before{transform:scaleX(1)}
-.hotel h4{font:400 clamp(24px,2.2vw,30px)/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-top:8px}
-.hotel p{font-size:14px;margin-top:6px}
-.hotel .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:10px}
-.hotel .meta a{font:400 22px/1 var(--script);text-decoration:none;color:var(--sunset)}
+/* hotels: alternating cards, like the venues */
+.hotels .row{margin-top:clamp(60px,8vw,120px)}
+.hotels .row:first-child{margin-top:0}
+.plate.photo .arch{aspect-ratio:4/4.8}
+.hotel{text-align:center}
+.hotel h4{font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-top:12px}
+.hotel .addr{font-size:13px;opacity:.85}
+.hotel p{font-size:15px;margin-top:10px}
+.hotel .hnote{font-size:13px;font-style:italic;max-width:36ch;margin:14px auto 0;padding:10px 14px;border:1px dashed rgba(94,42,28,.25)}
+.hotel .hnote:empty{display:none}
+.hotel .meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:18px}
+.hotel .meta a{font:400 26px/1 var(--script);text-decoration:none;color:var(--sunset)}
 .code{font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--sunset);color:var(--sunset)}
-.hcar{display:none}
-.others{margin-top:clamp(50px,6vw,80px);text-align:center}
+.others{margin-top:clamp(60px,7vw,100px);text-align:center}
 .others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:24px;font:400 clamp(22px,2.2vw,32px)/1.5 var(--serif);text-transform:uppercase}
 .others li:not(:last-child)::after{content:"·";margin:0 .55em;color:var(--sunset)}
 .others a{text-decoration:none;transition:color .4s}
 .others a:hover{color:var(--magenta)}
-@media(max-width:900px){
-  .hstage{grid-template-columns:1fr;min-height:0;padding-block:0}
-  .hpics{display:none}
-  .hotel{opacity:1;padding-left:0}
-  .hotel::before{display:none}
-  .hcar{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 16px;scrollbar-width:none}
-  .hcar::-webkit-scrollbar{display:none}
-  .hcar img{flex:none;width:82%;aspect-ratio:4/3.3;object-fit:cover;scroll-snap-align:start}
-  .hcar img:first-child{border-radius:999px 999px 0 0}
-  .hlist{gap:56px}
-}
+
+/* rsvp form */
+.rform{max-width:640px;margin:34px auto 0;text-align:left}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.wide{grid-column:1/-1}
+.f>span,.rform legend{font:400 10px/1.3 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset)}
+.rform input:not([type=radio]):not([type=checkbox]),.rform select,.rform textarea{width:100%;font:300 16px/1.4 var(--sans);color:var(--ink);background:rgba(255,252,246,.7);border:0;border-bottom:1px solid rgba(94,42,28,.3);padding:10px 4px;border-radius:0;outline:none;transition:border-color .4s,background .4s}
+.rform input:focus,.rform select:focus,.rform textarea:focus{border-color:var(--sunset);background:rgba(255,252,246,.95)}
+.rform .bad{border-color:var(--wax)!important;background:rgba(222,69,121,.06)!important}
+.rform fieldset{border:0;margin-top:30px}
+.rform legend{margin-bottom:12px}
+.yn{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid rgba(94,42,28,.12);font:400 19px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.yn.bad{background:rgba(222,69,121,.06)}
+.pills{display:flex;gap:8px;flex:none}
+.pills label,.chip{position:relative;cursor:pointer}
+.pills input,.chip input{position:absolute;opacity:0;pointer-events:none}
+.pills i,.chip i{display:inline-block;font:400 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;font-style:normal;padding:9px 16px;border:1px solid rgba(94,42,28,.3);border-radius:999px;color:var(--ink);transition:background .3s,color .3s,border-color .3s}
+.pills input:checked+i,.chip input:checked+i{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pills input:focus-visible+i,.chip input:focus-visible+i{outline:1px solid var(--sunset);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip i{text-transform:none;letter-spacing:.02em;font-size:13px;padding:8px 14px}
+.fsend{text-align:center;margin-top:34px}
+.fstatus{min-height:1.6em;margin-top:14px;font-size:14px}
+.fstatus.ok{font:400 30px/1.2 var(--script);color:var(--sunset)}
+@media(max-width:600px){.fgrid{grid-template-columns:1fr}.yn{font-size:16px}}
 
 /* kids */
 .kids .cols h3{margin-bottom:4px}
-
-/* Rome: zig-zag of arches over a living watercolour of the Tiber */
-.rome{overflow:hidden}
-.rome .bgv{position:absolute;inset:0;z-index:0;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);opacity:.6}
-.rome .bgv video,.rome .bgv .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
-.rome .bgv .still{background:url(img/tiber-wc.webp) center/cover}
-.rome>.wrap{z-index:2}
-.zig{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(30px,8vw,140px);row-gap:clamp(30px,4vw,60px);max-width:980px;margin:0 auto}
-.sight{width:min(380px,100%);text-decoration:none;color:var(--ink);display:block}
-.zig .sight:nth-child(even){justify-self:end;margin-top:clamp(120px,18vw,260px)}
-.zig .sight:nth-child(odd){justify-self:start}
-.zig .sight:nth-child(3){margin-top:calc(clamp(120px,18vw,260px) * -.2)}
-.sight .arch{aspect-ratio:3/3.6;background:var(--veil);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 20px 34px}
-.sight .n{font:400 clamp(70px,8vw,120px)/1 var(--serif);color:var(--sunset)}
-.sight h4{font:400 clamp(20px,1.9vw,26px)/1.15 var(--serif);text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
-.sight .go{margin-top:14px;font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset);opacity:.8;transition:letter-spacing .6s var(--ease)}
-.sight:hover .go{letter-spacing:.34em}
-.extra{margin:clamp(70px,9vw,120px) auto 0;max-width:820px;text-align:center;background:var(--veil);padding:40px clamp(20px,4vw,50px);border-radius:999px/120px}
-.extra p.list{font:400 clamp(19px,1.8vw,25px)/1.7 var(--serif);text-transform:uppercase;margin-top:16px;color:var(--ink)}
-.extra p.list i{font-style:normal;color:var(--sunset);margin:0 .4em}
-@media(max-width:700px){.zig{grid-template-columns:1fr;row-gap:40px}.zig .sight:nth-child(n){margin-top:0;width:78%}.zig .sight:nth-child(even){justify-self:end}.extra{border-radius:40px}}
 
 /* eat: a hand-drawn map */
 .mapbox .arch{background:#f4e8d3;padding:clamp(70px,10vw,140px) clamp(10px,3vw,40px) 20px}
@@ -347,25 +346,23 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .faq .ans{overflow:hidden}
 .faq .ans p{padding:0 0 28px;max-width:60ch;font-size:15px}
 
-/* countdown band */
-.count{background:linear-gradient(180deg,rgba(164,85,59,0),var(--dusk) 22%,var(--dusk));color:var(--on-dark);text-align:center;padding-top:clamp(120px,14vw,200px)}
-.count::before{content:"";position:absolute;inset:0;background:url(img/tiber-wc.webp) center/cover;opacity:.16;mix-blend-mode:soft-light;-webkit-mask-image:linear-gradient(transparent,#000 30%);mask-image:linear-gradient(transparent,#000 30%)}
-.count .h-lg{color:var(--on-dark)}
-.count .oval{color:var(--on-dark)}
-.timer{display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px)}
-.timer>div{padding:0 clamp(12px,3vw,40px);border-left:1px solid rgba(251,243,230,.4);min-width:0}
+/* countdown and footer sit on the same watercolour canvas */
+.count{text-align:center}
+.count .h-lg{color:var(--ink)}
+.timer{display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px);color:var(--ink)}
+.timer>div{padding:0 clamp(12px,3vw,40px);border-left:1px solid rgba(94,42,28,.25);min-width:0}
 .timer>div:first-child{border:0}
 .timer b{display:block;position:relative;font:400 clamp(42px,7vw,108px)/1 var(--serif);font-variant-numeric:tabular-nums;overflow:hidden;height:1.02em}
 .timer b span{display:block}
-.timer em{font:400 clamp(20px,2vw,30px)/1 var(--script);font-style:normal}
+.timer em{font:400 clamp(20px,2vw,30px)/1 var(--script);font-style:normal;color:var(--sunset)}
 
-footer{background:var(--dusk);color:var(--on-dark);text-align:center;padding:70px max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px));position:relative}
-footer .garl{width:min(640px,92%);aspect-ratio:1316/407;margin:0 auto 30px;background:var(--gold);-webkit-mask:url(img/garland.svg) center/contain no-repeat;mask:url(img/garland.svg) center/contain no-repeat;opacity:.8}
-footer .s-lg{color:var(--gold)}
-footer .tag{margin-top:22px;font:400 11px/1 var(--sans);letter-spacing:.4em;color:var(--gold);opacity:.8}
-footer .remind{margin:44px auto 0;padding-top:34px;border-top:1px solid rgba(251,243,230,.25);max-width:520px}
+footer{position:relative;text-align:center;color:var(--ink);padding:clamp(60px,8vw,110px) max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px))}
+footer .skyline{width:min(860px,96%);aspect-ratio:1400/494;margin:0 auto 26px;background:var(--sunset);-webkit-mask:url(img/skyline.webp) center/contain no-repeat;mask:url(img/skyline.webp) center/contain no-repeat;opacity:.85}
+footer .s-lg{color:var(--ink)}
+footer .tag{margin-top:20px;font:400 12px/1 var(--sans);letter-spacing:.3em;color:var(--sunset)}
+footer .remind{margin:40px auto 0;padding-top:30px;border-top:1px solid rgba(94,42,28,.18);max-width:520px}
 footer .remind p{font-size:14px}
-footer .remind .oval{color:var(--on-dark);margin-top:16px}
+footer .remind .oval{margin-top:16px}
 footer .langs{justify-content:center;margin-top:30px}
 
 /* scroll seal (progress + back to top) */
@@ -426,15 +423,10 @@ footer .langs{justify-content:center;margin-top:30px}
   <ul class="nav">
     <li><a href="#schedule" data-i18n="nav_schedule">Schedule</a></li>
     <li><a href="#dress" data-i18n="nav_dress">Dress Code</a></li>
-    <li><a href="#stay" data-i18n="nav_stay">Travel &amp; Stay</a></li>
-    <li><a href="#rome" data-i18n="nav_rome">Rome</a></li>
-    <li class="folder"><button type="button" aria-haspopup="true" data-i18n="nav_extra">Extra</button>
-      <ul>
-        <li><a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a></li>
-        <li><a href="#eat" data-i18n="nav_eat">Where to Eat</a></li>
-        <li><a href="#info" data-i18n="nav_info">Useful Info</a></li>
-      </ul>
-    </li>
+    <li><a href="#stay" data-i18n="nav_stay">Where to Stay</a></li>
+    <li><a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a></li>
+    <li><a href="#eat" data-i18n="nav_eat">Where to Eat</a></li>
+    <li><a href="#info" data-i18n="nav_info">Useful Info</a></li>
   </ul>
   <div class="hdr-end">
     <div class="langs" data-langs></div>
@@ -448,7 +440,6 @@ footer .langs{justify-content:center;margin-top:30px}
   <a href="#dress" data-i18n="nav_dress">Dress Code</a>
   <a href="#stay" data-i18n="nav_stay">Travel &amp; Stay</a>
   <a href="#kids" data-i18n="nav_kids">Kids &amp; Transfers</a>
-  <a href="#rome" data-i18n="nav_rome">Rome</a>
   <a href="#eat" data-i18n="nav_eat">Where to Eat</a>
   <a href="#info" data-i18n="nav_info">Useful Info</a>
   <a class="script" href="#rsvp">Rsvp</a>
@@ -464,9 +455,9 @@ footer .langs{justify-content:center;margin-top:30px}
   <div class="hero-in">
     <div>
       <p class="eyebrow" data-i18n="hero_eyebrow">We're getting married</p>
-      <p class="date split" data-i18n="hero_date">26th &amp; 27th of June 2027</p>
+      <p class="date" data-i18n="hero_date">26th &amp; 27th of June 2027</p>
       <h1 class="h-xl split">Emily &amp; Alexandre</h1>
-      <p class="place split" data-i18n="hero_place">Rome</p>
+      <p class="place" data-i18n="hero_place">Rome</p>
     </div>
   </div>
   <div class="arch-cap"><p class="script" data-i18n="arch_cap">Rome, the Eternal City</p></div>
@@ -474,21 +465,23 @@ footer .langs{justify-content:center;margin-top:30px}
 </section>
 
 <main id="canvas">
-<svg id="pencil" aria-hidden="true"><path class="smudge"/><path class="lead"/><g class="tip"><path d="M0 0 L7 -3 L30 -3 L30 3 L7 3 Z" fill="#f3e3c8" stroke="#5e3a26" stroke-width=".8"/><path d="M0 0 L7 -3 L7 3 Z" fill="#5e3a26"/><rect x="30" y="-3" width="5" height="6" fill="#c97a6a"/></g></svg>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ WELCOME ═════════ -->
 <section class="welcome" id="welcome">
-  <div class="wrap narrow center">
-    <p class="eyebrow" data-reveal data-i18n="intro_eyebrow">June 26 – 27, 2027 · Rome</p>
-    <h2 class="h-lg" data-lines data-i18n="intro_title" style="margin-top:22px">Two days, three special places in the Eternal City</h2>
-    <p data-reveal data-i18n="intro_p">A welcome evening on the Capitoline Hill, a ceremony at the Great Synagogue of Rome, and a reception by the sea at a fifteenth-century castle. Here is everything you need to know.</p>
-    <a class="oval" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span data-i18n="btn_weekend">The Weekend</span></a>
+  <div class="wrap welcome-grid">
+    <div class="txt">
+      <p class="eyebrow" data-reveal data-i18n="intro_eyebrow">June 26 – 27, 2027 · Rome, Italy</p>
+      <h2 class="h-lg" data-lines data-i18n="intro_title" style="margin-top:22px">Two days, three special places in the Eternal City</h2>
+      <p data-reveal data-i18n="intro_p">Two days, three special places. Here's what to expect.</p>
+      <a class="oval" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span data-i18n="btn_weekend">The Weekend</span></a>
+    </div>
+    <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><div class="ph-empty"><span class="todo">Photo of Emily &amp; Alex to add</span></div><!--COUPLE--></div></div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ CELEBRATION ═════════ -->
 <section class="celebration" id="schedule">
@@ -499,26 +492,31 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="days">
         <div data-reveal>
           <p class="script s-md" data-i18n="sat">Saturday<br>June 26th</p>
-          <ul><li><b>19:00</b><span data-i18n="ev_welcome">Welcome Party</span> · Terrazza Caffarelli</li></ul>
+          <ul>
+            <li><b>19:00</b><span class="ev" data-i18n="ev_welcome">Welcome Party</span><span class="pl">Terrazza Caffarelli</span><a class="ad" href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></li>
+          </ul>
         </div>
         <div data-reveal>
           <p class="script s-md" data-i18n="sun">Sunday<br>June 27th</p>
-          <ul><li><b>15:30</b><span data-i18n="ev_ceremony">Ceremony</span> · Tempio Maggiore</li><li><b>18:00</b><span data-i18n="ev_reception">Reception</span> · Castello Odescalchi</li></ul>
+          <ul>
+            <li><b>15:30</b><span class="ev" data-i18n="ev_ceremony">Ceremony</span><span class="pl">Tempio Maggiore di Roma</span><a class="ad" href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></li>
+            <li class="shuttle" data-i18n="shuttle">Shuttle transfer · about 45 minutes each way to the Castle.</li>
+            <li><b>18:00</b><span class="ev" data-i18n="ev_reception">Reception</span><span class="pl">Castello Odescalchi di Palo Laziale</span><a class="ad" href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></li>
+          </ul>
         </div>
       </div>
-      <p class="shuttle" data-reveal data-i18n="shuttle">Shuttle transfer · about 45 minutes each way to the Castle.</p>
       <div style="margin-top:36px" data-reveal><a class="oval" href="#rsvp"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_confirm">Confirm Your Presence</span></a></div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ VENUES: Emily's three watercolours ═════════ -->
 <section class="venues" id="venues">
   <div class="wrap">
     <div class="row">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.32"><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day1">Day 1 · June 26</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_welcome">Welcome Party</h3>
@@ -528,7 +526,7 @@ footer .langs{justify-content:center;margin-top:30px}
       </div>
     </div>
     <div class="row flip">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.22"><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_ceremony">Ceremony</h3>
@@ -538,19 +536,19 @@ footer .langs{justify-content:center;margin-top:30px}
       </div>
     </div>
     <div class="row">
-      <div class="plate archbox circ" data-outline><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
+      <div class="plate archbox circ" data-outline data-zoom style="--z:1.3"><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_reception">Reception</h3>
         <span class="time">18:00</span>
-        <p class="venue">Castello Odescalchi</p>
+        <p class="venue">Castello Odescalchi di Palo Laziale</p>
         <p class="addr"><a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ DRESS CODE ═════════ -->
 <section class="dress" id="dress">
@@ -564,7 +562,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style — think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         <span class="todo">Pinterest link to add</span>
       </div>
       <div class="rule" aria-hidden="true"></div>
@@ -572,14 +570,14 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span>Moodboard</span></a><br>
+        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         <span class="todo">Pinterest link to add</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ RSVP ═════════ -->
 <section class="rsvp" id="rsvp">
@@ -589,19 +587,38 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="inner">
         <p class="eyebrow" data-reveal data-i18n="rsvp_eyebrow">Let us know you're coming</p>
         <h2 class="h-lg" data-lines style="margin-top:20px">Rsvp</h2>
-        <p class="lead" data-reveal data-i18n="rsvp_p" style="margin-top:22px">Filling out the form will help us plan every detail. Here's what we'll ask you:</p>
-        <ul class="asks" data-reveal>
-          <li data-i18n="ask1">Full name</li><li data-i18n="ask2">Email address</li><li data-i18n="ask3">Home address</li><li data-i18n="ask4">Attendance at each event</li>
-          <li data-i18n="ask5">Whether you need the transfer</li><li data-i18n="ask6">Allergies or intolerances</li><li data-i18n="ask7">Which hotel you'll be staying at</li>
-        </ul>
-        <div style="margin-top:44px" data-reveal><a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 260 58" preserveAspectRatio="none"><ellipse cx="130" cy="29" rx="129" ry="28"/><ellipse class="o2" pathLength="1" cx="130" cy="29" rx="127" ry="26" transform="rotate(-1.5 130 29)"/></svg><span data-i18n="btn_form">Fill out the form</span></a><br><span class="todo">Google Form link to add</span></div>
+        <p class="lead" data-reveal data-i18n="rsvp_p" style="margin-top:22px">Filling out the form will help us plan every detail.</p>
+        <form class="rform" id="rsvp-form" novalidate data-reveal>
+          <div class="fgrid">
+            <label class="f"><span data-i18n="f_first">First name</span><input id="rf-first" name="first" required autocomplete="given-name"></label>
+            <label class="f"><span data-i18n="f_last">Last name</span><input id="rf-last" name="last" required autocomplete="family-name"></label>
+            <label class="f"><span data-i18n="f_email">Email address</span><input id="rf-email" name="email" type="email" required autocomplete="email"></label>
+            <label class="f"><span data-i18n="f_phone">Phone number</span><input id="rf-phone" name="phone" type="tel" autocomplete="tel"></label>
+            <label class="f wide"><span data-i18n="f_address">Home address</span><input id="rf-address" name="address" autocomplete="street-address"></label>
+          </div>
+          <fieldset><legend data-i18n="f_attend">Attendance at each event</legend>
+            <div class="yn"><span data-i18n="ev_welcome">Welcome Party</span><span class="pills"><label><input type="radio" name="welcome" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="welcome" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_ceremony">Ceremony</span><span class="pills"><label><input type="radio" name="ceremony" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="ceremony" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_reception">Reception</span><span class="pills"><label><input type="radio" name="reception" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="reception" value="No"><i data-i18n="no">No</i></label></span></div>
+          </fieldset>
+          <fieldset><legend data-i18n="f_transfer">Shuttle from the Tempio Maggiore to the Castle</legend>
+            <div class="yn"><span data-i18n="f_transfer_q">Will you use the shuttle?</span><span class="pills"><label><input type="radio" name="shuttle" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="shuttle" value="No"><i data-i18n="no">No</i></label></span></div>
+          </fieldset>
+          <fieldset><legend data-i18n="f_diet">Allergies or intolerances</legend>
+            <div class="chips"><label class="chip"><input type="checkbox" name="diet" value="none"><i data-i18n="d_none">No restrictions</i></label><label class="chip"><input type="checkbox" name="diet" value="vegetarian"><i data-i18n="d_veg">Vegetarian</i></label><label class="chip"><input type="checkbox" name="diet" value="vegan"><i data-i18n="d_vegan">Vegan</i></label><label class="chip"><input type="checkbox" name="diet" value="pescatarian"><i data-i18n="d_pesc">Pescatarian</i></label><label class="chip"><input type="checkbox" name="diet" value="gluten"><i data-i18n="d_gluten">Gluten-free / coeliac</i></label><label class="chip"><input type="checkbox" name="diet" value="lactose"><i data-i18n="d_lact">Lactose-free</i></label><label class="chip"><input type="checkbox" name="diet" value="nuts"><i data-i18n="d_nuts">Nut allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="shellfish"><i data-i18n="d_shell">Shellfish allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="kosher"><i data-i18n="d_kosher">Kosher</i></label><label class="chip"><input type="checkbox" name="diet" value="halal"><i data-i18n="d_halal">Halal</i></label><label class="chip"><input type="checkbox" name="diet" value="other"><i data-i18n="d_other">Other</i></label></div>
+            <label class="f wide" style="margin-top:14px"><span data-i18n="f_diet_notes">Anything we should know? (e.g. severe allergy, child's meal)</span><input id="rf-diet" name="diet_notes"></label>
+          </fieldset>
+          <div class="fgrid">
+            <label class="f wide"><span data-i18n="f_hotel">Which hotel you'll be staying at</span><select id="rf-hotel" name="hotel"><option value="" data-i18n="h_choose">Choose…</option><option>Hotel 47 Rome</option><option>Rhinoceros Rome</option><option>Palazzo Velabro</option><option>citizenM Isola Tiberina</option><option value="Other hotel" data-i18n="h_other">Another hotel in Rome</option><option value="Not decided yet" data-i18n="h_undecided">Not decided yet</option></select></label>
+            <label class="f wide"><span data-i18n="f_msg">A note for Emily &amp; Alexandre (optional)</span><textarea id="rf-msg" name="message" rows="3"></textarea></label>
+          </div>
+          <div class="fsend"><button class="oval" type="submit"><svg viewBox="0 0 220 58" preserveAspectRatio="none"><ellipse cx="110" cy="29" rx="109" ry="28"/><ellipse class="o2" pathLength="1" cx="110" cy="29" rx="107" ry="26" transform="rotate(-1.5 110 29)"/></svg><span data-i18n="btn_send">Send my RSVP</span></button><p class="fstatus" role="status" aria-live="polite"></p></div>
+        </form>
         <p data-reveal style="margin-top:24px;font-size:14px"><span data-i18n="respond_by">Please respond by</span> <span class="todo" style="margin:0" data-i18n="tbd">date to be decided</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ TRAVEL & STAY: pinned hotel gallery ═════════ -->
 <section class="stay" id="stay">
@@ -609,39 +626,50 @@ footer .langs{justify-content:center;margin-top:30px}
     <div class="head" style="margin-bottom:0">
       <p class="eyebrow" data-reveal data-i18n="stay_eyebrow">Where to Stay</p>
       <h2 class="h-lg" data-lines data-i18n="stay_title" style="max-width:14ch;margin-inline:auto">Recommended Hotels</h2>
-      <p class="lead" data-reveal data-i18n="stay_p">These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
+      <p class="lead" data-reveal data-i18n="stay_p" style="margin-bottom:clamp(50px,6vw,90px)">These four hotels are closest to the Tempio Maggiore — the departure point for the shuttle to the Castle — with a mix of styles and price ranges.</p>
     </div>
   </div>
-  <div class="hstage" data-nopath>
-    <div class="hpics" aria-hidden="true">
-      <img class="first" src="img/hotels/h47-1.webp" alt=""><img src="img/hotels/h47-2.webp" alt="" loading="lazy"><img src="img/hotels/h47-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/rh-1.webp" alt="" loading="lazy"><img src="img/hotels/rh-2.webp" alt="" loading="lazy"><img src="img/hotels/rh-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/vel-1.webp" alt="" loading="lazy"><img src="img/hotels/vel-2.webp" alt="" loading="lazy"><img src="img/hotels/vel-3.webp" alt="" loading="lazy">
-      <img src="img/hotels/cz-1.webp" alt="" loading="lazy"><img src="img/hotels/cz-2.webp" alt="" loading="lazy"><img src="img/hotels/cz-3.webp" alt="" loading="lazy">
-      <div class="hcap"><span class="hcap-name">Hotel 47 Rome</span><span class="hcap-n">1 / 3</span></div>
+  <div class="wrap hotels">
+    <div class="row">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/h47-1.webp" alt="Hotel 47 Rome" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Hotel 47 Rome</h4>
+        <p class="addr">Via Luigi Petroselli 47, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.fortysevenhotel.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_47">Code</span></div>
+      </div>
     </div>
-    <ol class="hlist">
-      <li class="hotel on">
-        <div class="hcar"><img src="img/hotels/h47-1.webp" alt="Hotel 47 Rome rooftop terrace" loading="lazy"><img src="img/hotels/h47-2.webp" alt="View from Hotel 47 Rome" loading="lazy"><img src="img/hotels/h47-3.webp" alt="Room at Hotel 47 Rome" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Hotel 47 Rome</h4><p>Via Luigi Petroselli 47, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.fortysevenhotel.com" target="_blank" rel="noopener" data-i18n="visit">Visit website</a><span class="code" data-i18n="code">Code TheRomilys · 10% off</span></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/rh-1.webp" alt="Rhinoceros rooftop terrace" loading="lazy"><img src="img/hotels/rh-2.webp" alt="Arched windows at Rhinoceros" loading="lazy"><img src="img/hotels/rh-3.webp" alt="Rhinoceros building at night" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Rhinoceros Rome</h4><p>Via del Velabro 9, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://rhinocerosroma.com" target="_blank" rel="noopener" data-i18n="visit">Visit website</a><span class="code" data-i18n="code">Code TheRomilys · 10% off</span></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/vel-1.webp" alt="Palazzo Velabro at sunset" loading="lazy"><img src="img/hotels/vel-2.webp" alt="Room at Palazzo Velabro" loading="lazy"><img src="img/hotels/vel-3.webp" alt="Suite at Palazzo Velabro" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>Palazzo Velabro</h4><p>Via del Velabro 16, Rome (RM). <span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.palazzovelabro.it" target="_blank" rel="noopener" data-i18n="visit">Visit website</a></div>
-      </li>
-      <li class="hotel">
-        <div class="hcar"><img src="img/hotels/cz-1.webp" alt="citizenM Isola Tiberina rooftop" loading="lazy"><img src="img/hotels/cz-2.webp" alt="citizenM Isola Tiberina living room" loading="lazy"><img src="img/hotels/cz-3.webp" alt="Room at citizenM Isola Tiberina" loading="lazy"></div>
-        <p class="eyebrow" data-i18n="near">Near the Temple</p><h4>CitizenM Isola Tiberina</h4><p>Lungotevere de' Cenci 5–8, Rome (RM). <span data-i18n="citizen">Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
-        <div class="meta"><a href="https://www.google.com/search?q=citizenM+Rome+Isola+Tiberina" target="_blank" rel="noopener" data-i18n="visit">Visit website</a></div>
-      </li>
-    </ol>
+    <div class="row flip">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/rh-1.webp" alt="Rhinoceros Rome" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Rhinoceros Rome</h4>
+        <p class="addr">Via del Velabro 9, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <p class="hnote" data-i18n="note_rh"></p><div class="meta"><a href="https://rhinocerosroma.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_rh">Code</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/vel-1.webp" alt="Palazzo Velabro" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>Palazzo Velabro</h4>
+        <p class="addr">Via del Velabro 16, Rome (RM)</p>
+        <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.palazzovelabro.it" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
+      </div>
+    </div>
+    <div class="row flip">
+      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/cz-1.webp" alt="CitizenM Isola Tiberina" loading="lazy"></div></div>
+      <div class="txt hotel" data-reveal>
+        <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
+        <h4>CitizenM Isola Tiberina</h4>
+        <p class="addr">Lungotevere de' Cenci 5–8, Rome (RM)</p>
+        <p><span data-i18n="citizen">Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
+        <div class="meta"><a href="https://www.citizenm.com/hotels/europe/rome/rome-isola-tiberina-hotel" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
+      </div>
+    </div>
   </div>
   <div class="wrap others">
     <p class="eyebrow" data-reveal data-i18n="others">Other options in the city</p>
@@ -658,7 +686,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ KIDS & TRANSFERS ═════════ -->
 <section class="kids" id="kids">
@@ -684,30 +712,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
-
-<!-- ═════════ ROME ═════════ -->
-<section class="rome" id="rome">
-  <div class="bgv" aria-hidden="true"><div class="still"></div><video data-src="media/v-tiber" muted loop playsinline preload="none"></video></div>
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow" data-reveal data-i18n="rome_eyebrow">Make the Most of Your Trip</p>
-      <h2 class="h-lg" data-lines data-i18n="rome_title">Things to See<br>in Rome</h2>
-    </div>
-    <div class="zig">
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+City" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">I</span><h4 data-i18n="s1">Vatican City</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Vatican+Museums" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">II</span><h4 data-i18n="s2">Vatican Museums</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Colosseum+Rome" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">III</span><h4 data-i18n="s3">Colosseum</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-      <a class="sight archbox circ" data-outline href="https://www.google.com/maps/search/?api=1&amp;query=Roman+Forum" target="_blank" rel="noopener"><div class="arch" data-arch><span class="n">IV</span><h4 data-i18n="s4">Roman &amp; Imperial Forums</h4><span class="go" data-i18n="open_maps">Open in Maps</span></div></a>
-    </div>
-    <div class="extra" data-reveal>
-      <p class="script s-md" data-i18n="extra_title">If you have extra time, here are our picks</p>
-      <p class="list"><span data-i18n="x1">Pantheon</span> <i>·</i> <span data-i18n="x2">Trevi Fountain &amp; Piazza Navona</span> <i>·</i> <span data-i18n="x3">Villa Borghese &amp; Borghese Gallery</span> <i>·</i> <span>Trastevere</span> <i>·</i> <span data-i18n="x5">Castel Sant'Angelo</span> <i>·</i> <span data-i18n="x6">Baths of Caracalla</span> <i>·</i> <span data-i18n="x7">Appian Way</span> <i>·</i> <span data-i18n="x8">Day Trip to Tivoli or Ostia Antica</span></p>
-    </div>
-  </div>
-</section>
-
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ WHERE TO EAT: hand-drawn map ═════════ -->
 <section class="eat" id="eat">
@@ -716,7 +721,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <p class="eyebrow" data-reveal data-i18n="eat_eyebrow">Our Favorite Spots</p>
       <h2 class="h-lg" data-lines data-i18n="eat_title">Where to Eat in Rome</h2>
       <p class="lead" data-reveal data-i18n="eat_p">We've put our favorite restaurants in the city on one map.</p>
-      <div style="margin-top:28px" data-reveal><a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 210 58" preserveAspectRatio="none"><ellipse cx="105" cy="29" rx="104" ry="28"/><ellipse class="o2" pathLength="1" cx="105" cy="29" rx="102" ry="26" transform="rotate(-2 105 29)"/></svg><span data-i18n="btn_map">Open the Map</span></a><br><span class="todo">Google Maps list to add</span></div>
+      <div style="margin-top:28px" data-reveal><a class="oval" id="map-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_map">Open the restaurant map</span></a><br><span class="todo">Google Maps list to add</span></div>
     </div>
     <div class="mapbox archbox" data-outline style="--ry:14%">
       <div class="arch" data-arch><!--MAP--></div>
@@ -725,7 +730,7 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </section>
 
-<div class="join"></div>
+<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
 <!-- ═════════ USEFUL INFO ═════════ -->
 <section class="info" id="info">
@@ -760,10 +765,10 @@ footer .langs{justify-content:center;margin-top:30px}
 </main>
 
 <footer>
-  <div class="garl" aria-hidden="true"></div>
+  <div class="skyline" aria-hidden="true"></div>
   <p class="script s-lg">Emily &amp; Alexandre</p>
   <p style="margin-top:10px;font:400 18px/1.3 var(--serif);text-transform:uppercase;letter-spacing:.12em" data-i18n="footer_date">June 26–27, 2027 · Rome, Italy</p>
-  <p class="tag">#EMILYALEXANDRE2027</p>
+  <p class="tag">#theRomilys</p>
   <div class="remind">
     <p data-i18n="remind">Haven't replied yet? It only takes a minute.</p>
     <a class="oval" href="#rsvp"><svg viewBox="0 0 210 58" preserveAspectRatio="none"><ellipse cx="105" cy="29" rx="104" ry="28"/><ellipse class="o2" pathLength="1" cx="105" cy="29" rx="102" ry="26" transform="rotate(-2 105 29)"/></svg><span data-i18n="remind_btn">Reply to the RSVP</span></a>
@@ -810,7 +815,6 @@ footer .langs{justify-content:center;margin-top:30px}
     $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
     $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
     $$('[data-lines]').forEach(buildLines);
-    $$('.hero .date, .hero .place').forEach(splitChars);
   };
   const setLang = next => {
     if (next === lang || !I18N[next]) return;
@@ -826,7 +830,7 @@ footer .langs{justify-content:center;margin-top:30px}
   document.addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (b) setLang(b.dataset.lang); });
   const nameChars = splitChars($('.hero h1'));
   applyText();
-  const heroTargets = () => [...$$('.hero .date .ch'), ...nameChars, ...$$('.hero .place .ch')];
+  const heroTargets = () => nameChars;
 
   /* ═════════ Header / menu / back-to-top seal ═════════ */
   const hdr = $('#hdr'); let lastY = 0;
@@ -998,6 +1002,38 @@ footer .langs{justify-content:center;margin-top:30px}
   });
   addEventListener('resize', () => outlines.forEach(o => o.draw()));
 
+  /* ═════════ Links and the RSVP endpoint, set in one place ═════════ */
+  const CONFIG = {
+    rsvpEndpoint: '',      // Google Apps Script web-app URL (see build/rsvp-apps-script.gs)
+    restaurantMap: '',     // Emily's shared Google Maps list
+  };
+  if (CONFIG.restaurantMap) $('#map-link').href = CONFIG.restaurantMap;
+
+  /* ═════════ RSVP form → one row in the Google Sheet ═════════ */
+  const form = $('#rsvp-form'), status = $('.fstatus', form);
+  const flag = (el, bad) => el.classList.toggle('bad', bad);
+  form.addEventListener('input', e => { const y = e.target.closest('.yn'); flag(y || e.target, false); });
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    let ok = true;
+    ['first', 'last', 'email'].forEach(n => { const el = form.elements[n]; const bad = !el.value.trim() || (n === 'email' && !el.checkValidity()); flag(el, bad); ok = ok && !bad; });
+    ['welcome', 'ceremony', 'reception', 'shuttle'].forEach(n => { const bad = !fd.get(n); flag(form.querySelector(`[name="${n}"]`).closest('.yn'), bad); ok = ok && !bad; });
+    if (!ok) { status.className = 'fstatus'; status.textContent = t('f_missing'); return; }
+    const row = {
+      first: fd.get('first').trim(), last: fd.get('last').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim(), address: fd.get('address').trim(),
+      welcome: fd.get('welcome'), ceremony: fd.get('ceremony'), reception: fd.get('reception'), shuttle: fd.get('shuttle'),
+      diet: fd.getAll('diet').join(', '), diet_notes: fd.get('diet_notes').trim(), hotel: fd.get('hotel'), message: fd.get('message').trim(),
+      language: lang.toUpperCase(), submitted: new Date().toISOString()
+    };
+    if (!CONFIG.rsvpEndpoint) { status.className = 'fstatus'; status.textContent = t('f_offline'); return; }
+    status.className = 'fstatus'; status.textContent = t('f_sending');
+    try {
+      await fetch(CONFIG.rsvpEndpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(row) });
+      form.reset(); status.className = 'fstatus ok'; status.textContent = t('f_thanks');
+    } catch { status.className = 'fstatus'; status.textContent = t('f_error'); }
+  });
+
   /* ═════════ Pins drop onto the map ═════════ */
   new IntersectionObserver(([e], ob) => { if (e.isIntersecting) { $('.pins').classList.add('in'); ob.disconnect(); } }, { threshold: .3 }).observe($('.rmap'));
 
@@ -1033,11 +1069,13 @@ footer .langs{justify-content:center;margin-top:30px}
   /* ═════════ Intro: three taps crack the seal, then a match cut into the hero ═════════ */
   const seal = $('.seal'), stage = $('.stage');
   gsap.set(heroTargets(), { opacity: 0 });
-  gsap.set('.hero .eyebrow, .cue, .hdr', { opacity: 0 });
+  gsap.set('.hero .eyebrow, .cue, .hdr', { opacity: 0 }); gsap.set('.hero .date, .hero .place', { clipPath: 'inset(-30% 100% -30% -5%)' });
   const heroIn = () => {
     gsap.timeline()
       .fromTo(heroTargets(), { yPercent: 115, rotateX: -80, opacity: 0, filter: 'blur(10px)' }, { yPercent: 0, rotateX: 0, opacity: 1, filter: 'blur(0px)', stagger: .026, duration: 1.5, ease: 'expo.out' })
-      .fromTo('.hero .eyebrow', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.2 }, '<.2')
+      .fromTo('.hero .date', { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.6, ease: 'power2.inOut' }, '<.1')
+      .fromTo('.hero .place', { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.3, ease: 'power2.inOut' }, '<.9')
+      .fromTo('.hero .eyebrow', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.2 }, '<-.6')
       .fromTo('.cue, .hdr', { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 1.2, stagger: .1, clearProps: 'transform' }, '<.6');
   };
   let finished = false;
@@ -1071,7 +1109,7 @@ footer .langs{justify-content:center;margin-top:30px}
   };
   seal.addEventListener('click', tap);
   $('.skip').addEventListener('click', () => gsap.to(intro, { opacity: 0, duration: .6, onComplete: finish }));
-  gsap.from(stage, { y: 50, opacity: 0, duration: 1.6, ease: 'expo.out', delay: .2 });
+  gsap.from(stage, { y: 40, opacity: 0, duration: 1.6, ease: 'expo.out', delay: .2 });
   gsap.from('.intro-hint, .intro-top', { opacity: 0, duration: 1.4, delay: .8 });
 
   /* ═════════ Hero: the painting folds into a Roman arch ═════════ */
@@ -1100,87 +1138,23 @@ footer .langs{justify-content:center;margin-top:30px}
     gsap.to($$('.ln', el), { yPercent: 0, rotate: 0, duration: 1.5, stagger: .12, ease: 'expo.out' });
   }}));
   $$('[data-reveal]').forEach(el => gsap.fromTo(el, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
-  gsap.fromTo('footer .garl', { clipPath: 'inset(0 50% 0 50%)' }, { clipPath: 'inset(0 0% 0 0%)', duration: 2.4, ease: 'expo.inOut', scrollTrigger: { trigger: 'footer', start: 'top 90%' } });
 
-  /* ═════════ Hotels: pinned, three photographs each, the hotel in view lights up ═════════ */
-  ScrollTrigger.matchMedia({
-    '(min-width: 901px)': () => {
-      const imgs = $$('.hpics img'), hs = $$('.hotel'), cap = $('.hcap-name'), capN = $('.hcap-n');
-      const names = hs.map(h => $('h4', h).textContent);
-      let cur = 0, z = 2;
-      imgs.forEach((im, i) => { im.style.zIndex = i === 0 ? 2 : 1; im.style.clipPath = i === 0 ? 'inset(0% 0% 0% 0% round 0px)' : 'inset(100% 0% 0% 0% round 0px)'; });
-      const show = i => {
-        if (i === cur) return;
-        const im = imgs[i]; cur = i; im.style.zIndex = ++z;
-        gsap.fromTo(im, { clipPath: 'inset(58% 22% 0% 22% round 999px 999px 0px 0px)', scale: 1.15 }, { clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0px 0px)', scale: 1, duration: 1.1, ease: 'expo.out', overwrite: true });
-        const hi = Math.floor(i / 3);
-        hs.forEach((h, k) => h.classList.toggle('on', k === hi));
-        cap.textContent = names[hi]; capN.textContent = `${i % 3 + 1} / 3`;
-      };
-      ScrollTrigger.create({ trigger: '.hstage', start: 'top top', end: () => '+=' + innerHeight * .55 * 11, pin: true, anticipatePin: 1, invalidateOnRefresh: true,
-        onUpdate: s => show(Math.min(11, Math.floor(s.progress * 12))) });
-      return () => { hs.forEach((h, k) => h.classList.toggle('on', k === 0)); };
-    }
+  /* ═════════ Small arches between chapters draw themselves ═════════ */
+  $$('.join').forEach(j => {
+    const ps = $$('path', j);
+    gsap.timeline({ scrollTrigger: { trigger: j, start: 'top 85%', end: 'bottom 45%', scrub: 1 } })
+      .fromTo(ps[0], { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: 'none' })
+      .fromTo(ps[1], { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: 'none' }, .25)
+      .fromTo($('circle', j), { opacity: 0, scale: 0, transformOrigin: '50% 50%' }, { opacity: .8, scale: 1, ease: 'none', duration: .3 }, .7);
   });
 
-  /* ═════════ One pencil line draws the whole page, sketching an arch between chapters ═════════ */
-  const main = $('#canvas'), pencil = $('#pencil'), lead = $('#pencil .lead'), smudge = $('#pencil .smudge'), tipEl = $('#pencil .tip');
-  let L = 0, lens = [], ymax = [];
-  const buildPencil = () => {
-    const mr = main.getBoundingClientRect(), W = main.clientWidth;
-    const top = el => el.getBoundingClientRect().top - mr.top, bot = el => el.getBoundingClientRect().bottom - mr.top;
-    const mob = W < 820, g = mob ? 8 : Math.max(26, (W - 1180) / 2 - 30), cx = W / 2, aw = mob ? 44 : 68, ah = aw * 1.25;
-    let d = '', P = null;
-    const curveTo = (x, y) => { const k = Math.max(20, (y - P[1]) * .55); d += ` C${P[0]} ${P[1] + k} ${x} ${y - k} ${x} ${y}`; P = [x, y]; };
-    const run = (x, y1) => {
-      let y = P[1], s = 1; const amp = mob ? 3 : 12;
-      while (y1 - y > 30) { const ny = Math.min(y1, y + 380); d += ` C${x + amp * s} ${y + (ny - y) * .33} ${x - amp * s} ${y + (ny - y) * .66} ${x} ${ny}`; y = ny; s = -s; }
-      P = [x, y];
-    };
-    const arch = (j) => {
-      const base = bot(j) - 18, spring = base - ah + aw / 2, fromLeft = P[0] <= cx;
-      const a = fromLeft ? cx - aw / 2 : cx + aw / 2, b = fromLeft ? cx + aw / 2 : cx - aw / 2;
-      curveTo(a, base);
-      d += ` L${a} ${spring} A${aw / 2} ${aw / 2} 0 0 ${fromLeft ? 1 : 0} ${b} ${spring} L${b} ${base} l${fromLeft ? 8 : -8} 0`;
-      P = [b + (fromLeft ? 8 : -8), base];
-    };
-    const items = $$(':scope > section, :scope > .join', main);
-    items.forEach((it, i) => {
-      if (it.classList.contains('join')) {
-        if (!P) { d = `M${cx} ${top(it)}`; P = [cx - 1, top(it)]; }
-        arch(it); return;
-      }
-      if (it.id === 'countdown') { curveTo(cx, top(it) + 30); return; }
-      const x = P[0] < cx ? g : W - g;
-      curveTo(x, top(it) + 40);
-      const np = $('[data-nopath]', it);
-      if (np && getComputedStyle(np).display !== 'none' && innerWidth > 900) { run(x, top(np) - 10); d += ` M${x} ${bot(np) + 10}`; P = [x, bot(np) + 10]; }
-      run(x, bot(it) - 40);
-    });
-    const H = main.scrollHeight;
-    pencil.setAttribute('viewBox', `0 0 ${W} ${H}`); pencil.style.height = H + 'px';
-    lead.setAttribute('d', d); smudge.setAttribute('d', d);
-    L = lead.getTotalLength(); lens = []; ymax = [];
-    let m = -1e9;
-    for (let l = 0; l <= L; l += 5) { const pt = lead.getPointAtLength(l); m = Math.max(m, pt.y); lens.push(l); ymax.push(m); }
-    [lead, smudge].forEach(p => p.style.strokeDasharray = `${L} ${L + 10}`);
-    drawPencil();
-  };
-  const drawPencil = () => {
-    if (!L) return;
-    const mt = main.getBoundingClientRect().top;
-    const yT = -mt + innerHeight * .64;
-    let lo = 0, hi = ymax.length - 1;
-    while (lo < hi) { const mid = (lo + hi) >> 1; if (ymax[mid] < yT) lo = mid + 1; else hi = mid; }
-    const len = yT <= 0 ? 0 : lens[lo];
-    [lead, smudge].forEach(p => p.style.strokeDashoffset = L - len);
-    const a = lead.getPointAtLength(len), b = lead.getPointAtLength(Math.max(0, len - 4));
-    const ang = Math.atan2(a.y - b.y, a.x - b.x) * 180 / Math.PI + 180;
-    tipEl.setAttribute('transform', `translate(${a.x} ${a.y}) rotate(${ang})`);
-    tipEl.style.opacity = len > 2 && len < L - 2 ? 1 : 0;
-  };
-  ScrollTrigger.addEventListener('refresh', buildPencil);
-  gsap.ticker.add(drawPencil);
+  /* ═════════ Script lines are written left to right, never split into letters ═════════ */
+  $$('main .script, footer .script').forEach(el => gsap.fromTo(el, { clipPath: 'inset(-30% 100% -30% -5%)' }, { clipPath: 'inset(-30% -5% -30% -5%)', duration: 1.8, ease: 'power2.inOut',
+    scrollTrigger: { trigger: el, start: 'top 88%' } }));
+
+  /* ═════════ Photos inside the arches drift gently ═════════ */
+  $$('.plate .arch img').forEach(img => gsap.fromTo(img, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: img.closest('.plate'), start: 'top bottom', end: 'bottom top', scrub: true } }));
+  gsap.fromTo('footer .skyline', { clipPath: 'inset(0 50% 0 50%)' }, { clipPath: 'inset(0 0% 0 0%)', duration: 2.6, ease: 'expo.inOut', scrollTrigger: { trigger: 'footer', start: 'top 85%' } });
 
   addEventListener('load', () => ScrollTrigger.refresh());
   document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
