@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Emily &amp; Alexandre</title>
 <meta name="description" content="Emily & Alexandre · June 26–27, 2027 · Rome, Italy">
 <meta name="theme-color" content="#f6efe4">
@@ -42,7 +42,7 @@
   --gutter:max(16px,4vw);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;touch-action:manipulation}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
@@ -106,7 +106,7 @@ button{font:inherit;color:inherit}
 .env .addr .script{font-size:clamp(18px,3.1vw,34px)}
 .env .addr .eyebrow{font-size:clamp(7px,1vw,9px);margin-top:2px}
 .postmark{position:absolute;right:6%;top:8%;width:clamp(46px,14%,96px);aspect-ratio:1;color:var(--wax);opacity:.35;transform:rotate(-14deg)}
-.seal{position:absolute;left:50%;top:50%;width:clamp(58px,16%,106px);aspect-ratio:1;translate:-50% -50%;z-index:6;border:0;background:none;cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.seal{position:absolute;left:50%;top:50%;width:clamp(58px,16%,106px);aspect-ratio:1;translate:-50% -50%;z-index:6;border:0;background:none;cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent;touch-action:manipulation;user-select:none;-webkit-user-select:none}
 .seal .half{position:absolute;inset:0;background:url(img/seal.webp) center/contain no-repeat;display:grid;place-items:center}
 .seal .h1,.seal .h2{opacity:0}
 .seal .h1{clip-path:polygon(0 0,52% 0,47% 18%,55% 34%,46% 52%,54% 68%,48% 84%,52% 100%,0 100%)}
@@ -832,14 +832,17 @@ footer .langs{justify-content:center;margin-top:30px}
   applyText();
   const heroTargets = () => nameChars;
 
+  /* ═════════ No zoom on phones (iOS ignores user-scalable=no) ═════════ */
+  ['gesturestart', 'gesturechange'].forEach(ev => document.addEventListener(ev, e => e.preventDefault(), { passive: false }));
+  let lastTouch = 0;
+  document.addEventListener('touchend', e => { if (e.target.closest('a,button,input,label,select,textarea,summary')) return; const now = Date.now(); if (now - lastTouch < 350) e.preventDefault(); lastTouch = now; }, { passive: false });
+
   /* ═════════ Header / menu / back-to-top seal ═════════ */
   const hdr = $('#hdr'); let lastY = 0;
   const sealBtn = $('.sealprog'), sealPg = $('.sealprog .pg');
   const onScroll = y => {
     scrollPos = y;
     hdr.classList.toggle('scrolled', y > innerHeight * 1.6);
-    if (y > lastY + 2 && y > innerHeight * 1.6) hdr.classList.add('hide');
-    if (y < lastY - 2) hdr.classList.remove('hide');
     lastY = y;
     const max = document.documentElement.scrollHeight - innerHeight;
     sealPg.style.strokeDashoffset = 1 - Math.min(1, y / max);
