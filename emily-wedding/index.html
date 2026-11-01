@@ -3,12 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<title>Emily &amp; Alexandre</title>
-<meta name="description" content="Emily & Alexandre · June 26–27, 2027 · Rome, Italy">
+<title>Emily &amp; Alexandre’s Wedding</title>
+<meta name="description" content="June 26-27, 2027 · Rome, Italy">
 <meta name="theme-color" content="#f6efe4">
-<meta property="og:title" content="Emily & Alexandre · Rome 2027">
-<meta property="og:description" content="June 26–27, 2027 · Rome, Italy">
-<meta property="og:image" content="img/sky.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theromilys.com/">
+<meta property="og:site_name" content="Emily &amp; Alexandre">
+<meta property="og:title" content="Emily &amp; Alexandre’s Wedding">
+<meta property="og:description" content="June 26-27, 2027 · Rome, Italy">
+<meta property="og:image" content="https://theromilys.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Watercolour of Rome at sunset with the E&amp;A monogram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emily &amp; Alexandre’s Wedding">
+<meta name="twitter:description" content="June 26-27, 2027 · Rome, Italy">
+<meta name="twitter:image" content="https://theromilys.com/img/og.jpg">
+<link rel="icon" href="img/seal.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Great+Vibes&family=Hanken+Grotesk:wght@200;300;400&display=swap" rel="stylesheet">
@@ -40,6 +51,8 @@
 
   --ease:cubic-bezier(.22,.8,.16,1);
   --gutter:max(16px,4vw);
+  /* spacing scale: every gap on the page uses one of these */
+  --s1:8px;--s2:16px;--s3:24px;--s4:clamp(32px,3.5vw,44px);--s5:clamp(48px,5.5vw,72px);--s6:clamp(72px,8vw,112px);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;touch-action:manipulation}
@@ -182,6 +195,12 @@ button{font:inherit;color:inherit}
 @media (max-aspect-ratio:4/5){.hero-media .poster{background-image:url(img/sky-portrait.webp)}}
 .hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 40% at 50% 46%,rgba(250,245,236,.78),rgba(250,245,236,.35) 60%,transparent 100%)}
 .hero-in{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 var(--gutter)}
+.hero-in>div:first-child{will-change:transform}
+.hero-mono{position:absolute;left:50%;top:46%;width:1.6em;height:1.5em;translate:-50% -50%;font:400 clamp(120px,13vw,190px)/.8 var(--serif);color:var(--ink);opacity:0;pointer-events:none}
+.hero-mono span{position:absolute}
+.hero-mono .a{left:0;top:0}
+.hero-mono .b{left:.56em;top:.46em}
+.hero-mono .amp{left:.53em;top:.3em;font:400 .55em/1 var(--script);color:var(--sunset)}
 .hero .eyebrow{margin-bottom:18px}
 .hero .date{font:400 clamp(28px,2.9vw,46px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
 .hero .h-xl{perspective:800px}
@@ -198,16 +217,18 @@ main>.join:first-child{height:auto;padding-top:10px;place-items:start center}
 
 /* ───────── The canvas: chapters and the arches between them ───────── */
 main{position:relative}
-section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-right,0px)) clamp(30px,5vw,70px) max(var(--gutter),env(safe-area-inset-left,0px))}
-.join{height:clamp(110px,12vw,170px);display:grid;place-items:center}
+section{position:relative;z-index:2;padding:var(--s5) max(var(--gutter),env(safe-area-inset-right,0px)) var(--s5) max(var(--gutter),env(safe-area-inset-left,0px))}
+.join{height:var(--s6);display:grid;place-items:center}
 .join svg{width:44px;height:56px;overflow:visible}
 .join path{fill:none;stroke:var(--sunset);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke;opacity:.7}
 .join circle{fill:var(--sunset);opacity:0}
 .wrap{position:relative;max-width:1100px;margin-inline:auto}
 .narrow{max-width:760px}
-.head{text-align:center;margin-bottom:clamp(40px,5vw,70px)}
-.head .h-lg{margin-top:20px}
-.head .lead{margin-top:22px}
+.head{text-align:center;margin-bottom:var(--s5)}
+.head .h-lg,.welcome .h-lg,.rsvp .h-lg{margin-top:var(--s2)}
+.head .lead,.rsvp .lead{margin-top:var(--s3)}
+.txt .eyebrow+.script{margin-top:var(--s2)}
+.cols .eyebrow+.script{margin-top:var(--s2)}
 
 /* arch-shaped surfaces with a drawn outline */
 .archbox{position:relative}
@@ -234,18 +255,20 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 @media(max-width:620px){.days{grid-template-columns:1fr}}
 
 /* venues */
-.row{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:clamp(30px,6vw,100px);margin-top:clamp(70px,9vw,130px)}
+.row{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s6);margin-top:var(--s6);max-width:960px;margin-inline:auto}
 .row:first-child{margin-top:0}
 .row.flip>.plate{order:2}
-.row .txt{text-align:center;max-width:390px;justify-self:center;min-width:0}
+.row .txt{text-align:center;max-width:380px;justify-self:center;min-width:0}
+.row>.plate{width:min(400px,100%);justify-self:center}
 .plate{position:relative;min-width:0}
 .plate .arch{border-radius:999px 999px 0 0;aspect-ratio:4/4.7;background:#efe3d0}
 .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 58%}
 .plate[data-zoom] img{scale:var(--z,1.3)}
 .ph-empty{position:absolute;inset:0;display:grid;place-items:center;background:repeating-linear-gradient(45deg,rgba(94,42,28,.04) 0 10px,transparent 10px 20px)}
-.welcome-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.welcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:center;max-width:960px;margin-inline:auto}
 .welcome .txt{text-align:center}
-.welcome-grid .plate{width:min(420px,100%);justify-self:center}
+.welcome .h-lg{font-size:clamp(36px,4vw,60px)}
+.welcome-grid .plate{width:min(400px,100%);justify-self:center}
 @media(max-width:820px){.welcome-grid{grid-template-columns:1fr}}
 .time{display:block;font:400 clamp(44px,4vw,62px)/1 var(--serif);color:var(--sunset);margin:14px 0 4px;font-variant-numeric:tabular-nums}
 .venue{font:400 22px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-top:10px}
@@ -256,14 +279,14 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 @media(max-width:820px){.row{grid-template-columns:1fr}.row.flip>.plate{order:0}.plate{width:min(440px,100%);margin-inline:auto}}
 
 /* dress code */
-.cols{display:grid;grid-template-columns:1fr 1px 1fr;gap:clamp(30px,5vw,70px);align-items:start;text-align:center}
+.cols{display:grid;grid-template-columns:1fr 1px 1fr;gap:var(--s5);max-width:960px;margin-inline:auto;align-items:start;text-align:center}
 .cols .rule{background:linear-gradient(transparent,rgba(94,42,28,.25),transparent);align-self:stretch}
 .cols p{font-size:15px;margin:16px auto 0;max-width:36ch}
 .cols .oval{margin-top:26px}
 @media(max-width:720px){.cols{grid-template-columns:1fr}.cols .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(94,42,28,.25),transparent)}}
 
 /* rsvp: a window onto the painting, barely breathing */
-.rsvp .arch{min-height:clamp(560px,62vw,760px);display:grid;place-items:center;text-align:center;padding:clamp(140px,16vw,220px) clamp(20px,5vw,60px) clamp(50px,6vw,80px)}
+.rsvp .arch{display:grid;place-items:center;text-align:center;padding:clamp(120px,14vw,190px) clamp(20px,5vw,60px) var(--s5)}
 .rsvp .paint{position:absolute;inset:0}
 .rsvp .paint .still,.rsvp .paint canvas{position:absolute;inset:0;width:100%;height:100%}
 .rsvp .paint .still{background:url(img/sky.webp) center 70%/cover}
@@ -275,7 +298,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 @media(max-width:699px){.rsvp .archbox>.arch{border-radius:25px 25px 0 0}.rsvp .arch{padding-top:56px}}
 
 /* hotels: alternating cards, like the venues */
-.hotels .row{margin-top:clamp(60px,8vw,120px)}
+.hotels .row{margin-top:var(--s6)}
 .hotels .row:first-child{margin-top:0}
 .plate.photo .arch{aspect-ratio:4/4.8}
 .hotel{text-align:center}
@@ -287,7 +310,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .hotel .meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:18px}
 .hotel .meta a{font:400 26px/1 var(--script);text-decoration:none;color:var(--sunset)}
 .code{font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--sunset);color:var(--sunset)}
-.others{margin-top:clamp(60px,7vw,100px);text-align:center}
+.others{margin-top:var(--s6);text-align:center}
 .others ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:24px;font:400 clamp(22px,2.2vw,32px)/1.5 var(--serif);text-transform:uppercase}
 .others li:not(:last-child)::after{content:"·";margin:0 .55em;color:var(--sunset)}
 .others a{text-decoration:none;transition:color .4s}
@@ -323,7 +346,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .kids .cols h3{margin-bottom:4px}
 
 /* eat: a hand-drawn map */
-.mapbox .arch{background:#f4e8d3;padding:clamp(70px,10vw,140px) clamp(10px,3vw,40px) 20px}
+.mapbox .arch{background:#f4e8d3;padding:clamp(70px,10vw,140px) clamp(10px,3vw,40px) var(--s3)}
 .rmap{width:100%;height:auto;overflow:visible}
 .rmap .lm{font:italic 400 15px var(--serif);fill:#4a2c1c;letter-spacing:.02em;paint-order:stroke;stroke:#f4e8d3;stroke-width:4px}
 .rmap .wind{font:400 10px var(--serif);letter-spacing:.4em;fill:#8a5a3c;opacity:.75}
@@ -338,6 +361,10 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .pin-l{font:400 13px var(--serif);fill:#fbeee0}
 .pin:hover .pin-tip,.pin:focus .pin-tip{opacity:1}
 .pin:hover{position:relative;z-index:9}
+.addr.contact{margin-top:var(--s2)}
+.respond,.count-p{margin-top:var(--s3);font-size:14px}
+.fdate{margin-top:var(--s1);font:400 18px/1.3 var(--serif);text-transform:uppercase;letter-spacing:.12em}
+.head .h-lg{max-width:16ch;margin-inline:auto}
 .mapnote{text-align:center;font-size:13px;margin-top:18px;opacity:.8}
 .pin>g{transform-box:fill-box}
 .js .pins .pin{opacity:0;transition:opacity .5s var(--d),transform .8s var(--ease) var(--d)}
@@ -375,7 +402,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .timer b span{display:block}
 .timer em{font:400 clamp(20px,2vw,30px)/1 var(--script);font-style:normal;color:var(--sunset)}
 
-footer{position:relative;text-align:center;color:var(--ink);padding:clamp(60px,8vw,110px) max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px))}
+footer{position:relative;text-align:center;color:var(--ink);padding:var(--s6) max(var(--gutter),env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(var(--gutter),env(safe-area-inset-left,0px))}
 footer .s-lg{color:var(--ink)}
 footer .tag{margin-top:20px;font:400 12px/1 var(--sans);letter-spacing:.3em;color:var(--sunset)}
 footer .remind{margin:40px auto 0;padding-top:30px;border-top:1px solid rgba(94,42,28,.18);max-width:520px}
@@ -484,6 +511,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <h1 class="h-xl split">Emily &amp; Alexandre</h1>
       <p class="place" data-i18n="hero_place">Rome</p>
     </div>
+    <div class="hero-mono" aria-hidden="true"><span class="a">E</span><span class="amp">&amp;</span><span class="b">A</span></div>
   </div>
   </div>
   <div class="arch-cap"><p class="script" data-i18n="arch_cap">Rome, the Eternal City</p></div>
@@ -499,7 +527,7 @@ footer .langs{justify-content:center;margin-top:30px}
   <div class="wrap welcome-grid">
     <div class="txt">
       <p class="eyebrow" data-reveal data-i18n="intro_eyebrow">June 26-27, 2027 · Rome, Italy</p>
-      <h2 class="h-lg" data-lines data-i18n="intro_title" style="margin-top:22px">Two days, three special places in the Eternal City</h2>
+      <h2 class="h-lg" data-lines data-i18n="intro_title">Two days, three special places in the Eternal City</h2>
     </div>
     <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/couple.webp" alt="Emily and Alexandre dancing" style="object-position:50% 40%"></div></div>
   </div>
@@ -514,7 +542,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.32"><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day1">Day 1 · Saturday, June 26</p>
-        <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_welcome">Welcome Party</h3>
+        <h3 class="script s-lg" data-i18n="ev_welcome">Welcome Party</h3>
         <span class="time">19:00</span>
         <p class="venue">Terrazza Caffarelli</p>
         <p class="addr"><a href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></p>
@@ -524,7 +552,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.22"><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · Sunday, June 27</p>
-        <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_ceremony">Ceremony</h3>
+        <h3 class="script s-lg" data-i18n="ev_ceremony">Ceremony</h3>
         <span class="time">15:00</span>
         <p class="venue">Tempio Maggiore di Roma</p>
         <p class="addr"><a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
@@ -535,7 +563,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.3"><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
       <div class="txt" data-reveal>
         <p class="eyebrow" data-i18n="day2">Day 2 · Sunday, June 27</p>
-        <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_reception">Reception</h3>
+        <h3 class="script s-lg" data-i18n="ev_reception">Reception</h3>
         <span class="time">18:00</span>
         <p class="venue">Castello Odescalchi di Palo Laziale</p>
         <p class="addr"><a href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></p>
@@ -556,14 +584,14 @@ footer .langs{justify-content:center;margin-top:30px}
     <div class="cols">
       <div data-reveal>
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
-        <h3 class="script s-lg" style="margin-top:14px" data-i18n="dolce">Italian Dolce Vita</h3>
+        <h3 class="script s-lg" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style, think vibrant colors, light fabrics and relaxed elegance.</p>
         <a class="oval" href="https://pin.it/5NXvnLWg6" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
-        <h3 class="script s-lg" style="margin-top:14px" data-i18n="blacktie">Black Tie Elegant</h3>
+        <h3 class="script s-lg" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden, black tie attire, with shoes that can handle the lawn.</p>
         <a class="oval" href="https://pin.it/2gJVSAhl3" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         
@@ -581,8 +609,8 @@ footer .langs{justify-content:center;margin-top:30px}
       <div class="paint" aria-hidden="true"><div class="still"></div><canvas id="oil"></canvas></div>
       <div class="inner">
         <p class="eyebrow" data-reveal data-i18n="rsvp_eyebrow">Let us know you're coming</p>
-        <h2 class="h-lg" data-lines style="margin-top:20px">Rsvp</h2>
-        <p class="lead" data-reveal data-i18n="rsvp_p" style="margin-top:22px">Filling out the form will help us plan every detail.</p>
+        <h2 class="h-lg" data-lines>Rsvp</h2>
+        <p class="lead" data-reveal data-i18n="rsvp_p">Filling out the form will help us plan every detail.</p>
         <form class="rform" id="rsvp-form" novalidate data-reveal>
           <div class="fgrid">
             <label class="f"><span data-i18n="f_first">First name</span><input id="rf-first" name="first" required autocomplete="given-name"></label>
@@ -607,7 +635,7 @@ footer .langs{justify-content:center;margin-top:30px}
           </div>
           <div class="fsend"><button class="oval" type="submit"><svg viewBox="0 0 220 58" preserveAspectRatio="none"><ellipse cx="110" cy="29" rx="109" ry="28"/><ellipse class="o2" pathLength="1" cx="110" cy="29" rx="107" ry="26" transform="rotate(-1.5 110 29)"/></svg><span data-i18n="btn_send">Send my RSVP</span></button><p class="fstatus" role="status" aria-live="polite"></p></div>
         </form>
-        <p data-reveal style="margin-top:24px;font-size:14px"><span data-i18n="respond_by">Please respond by</span> <span data-i18n="tbd">the 1st of February 2027</span></p>
+        <p class="respond" data-reveal><span data-i18n="respond_by">Please respond by</span> <span data-i18n="tbd">the 1st of February 2027</span></p>
       </div>
     </div>
   </div>
@@ -618,10 +646,10 @@ footer .langs{justify-content:center;margin-top:30px}
 <!-- ═════════ TRAVEL & STAY: pinned hotel gallery ═════════ -->
 <section class="stay" id="stay">
   <div class="wrap">
-    <div class="head" style="margin-bottom:0">
+    <div class="head">
       <p class="eyebrow" data-reveal data-i18n="stay_eyebrow">Where to Stay</p>
-      <h2 class="h-lg" data-lines data-i18n="stay_title" style="max-width:14ch;margin-inline:auto">Recommended Hotels</h2>
-      <p class="lead" data-reveal data-i18n="stay_p" style="margin-bottom:clamp(50px,6vw,90px)">These four hotels are closest to the Tempio Maggiore, the departure point for the shuttle to the Castle, with a mix of styles and price ranges.</p>
+      <h2 class="h-lg" data-lines data-i18n="stay_title">Recommended Hotels</h2>
+      <p class="lead" data-reveal data-i18n="stay_p">These four hotels are closest to the Tempio Maggiore, the departure point for the shuttle to the Castle, with a mix of styles and price ranges.</p>
     </div>
   </div>
   <div class="wrap hotels">
@@ -693,19 +721,19 @@ footer .langs{justify-content:center;margin-top:30px}
   <div class="wrap">
     <div class="head">
       <p class="eyebrow" data-reveal data-i18n="kids_eyebrow">For Peace of Mind</p>
-      <h2 class="h-lg" data-lines data-i18n="kids_title" style="max-width:14ch;margin-inline:auto">Kids &amp; Private Transfers</h2>
+      <h2 class="h-lg" data-lines data-i18n="kids_title">Kids &amp; Private Transfers</h2>
     </div>
     <div class="cols">
       <div data-reveal>
         <h3 class="script s-lg" data-i18n="childcare">Childcare</h3>
         <p data-i18n="childcare_p">Babysitting service provided by Orienta Family. For all arrangements, please contact Francesca directly.</p>
-        <p class="addr" style="margin-top:14px"><a href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br>info@orientafamily.com</p>
+        <p class="addr contact"><a href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br>info@orientafamily.com</p>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
         <h3 class="script s-lg" data-i18n="transfers">Private Transfers</h3>
         <p data-i18n="transfers_p">To book a private car at any time.</p>
-        <p class="addr" style="margin-top:14px">+39 000 000 0000</p>
+        <p class="addr contact">+39 000 000 0000</p>
         <span class="todo">Phone number to add</span>
       </div>
     </div>
@@ -753,7 +781,7 @@ footer .langs{justify-content:center;margin-top:30px}
 <section class="count" id="countdown">
   <div class="wrap">
     <h2 class="h-lg" data-lines data-i18n="count_title">Let the<br>countdown begin</h2>
-    <p data-reveal data-i18n="count_p" style="margin-top:24px;font-size:14px">We can't wait to celebrate with you in Rome.</p>
+    <p class="count-p" data-reveal data-i18n="count_p">We can't wait to celebrate with you in Rome.</p>
     <div class="timer" data-reveal>
       <div><b id="cd-d"><span>000</span></b><em data-i18n="u_days">Days</em></div>
       <div><b id="cd-h"><span>00</span></b><em data-i18n="u_hours">Hours</em></div>
@@ -766,7 +794,7 @@ footer .langs{justify-content:center;margin-top:30px}
 
 <footer>
   <p class="script s-lg">Emily &amp; Alexandre</p>
-  <p style="margin-top:10px;font:400 18px/1.3 var(--serif);text-transform:uppercase;letter-spacing:.12em" data-i18n="footer_date">June 26-27, 2027 · Rome, Italy</p>
+  <p class="fdate" data-i18n="footer_date">June 26-27, 2027 · Rome, Italy</p>
   <p class="tag">#THEROMILYS</p>
   <div class="remind">
     <p data-i18n="remind">Haven't replied yet? It only takes a minute.</p>
@@ -1532,7 +1560,10 @@ const I18N = {
   gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=60%', scrub: 1, pin: true, anticipatePin: 1, invalidateOnRefresh: true } })
     .fromTo('.hero-media', { clipPath: 'inset(0px 0px 0px 0px round 0px 0px 0px 0px)' }, { clipPath: archShape, ease: 'none' })
     .to('.hero-media video, .hero-media .poster', { scale: 1.08, ease: 'none' }, 0)
-    .to('.hero-in', { scale: .9, ease: 'none' }, 0)
+    // the names shrink so they always fit inside the arch, then fold into the E&A monogram
+    .to('.hero-in>div:first-child', { scale: () => { const n = $('.hero h1'), s = innerWidth < 700 ? innerWidth * .14 : innerWidth * .31; return Math.min(1, (innerWidth - 2 * s) * .86 / n.offsetWidth); }, ease: 'none', duration: .5 }, 0)
+    .to('.hero-in>div:first-child', { opacity: 0, filter: 'blur(6px)', ease: 'none', duration: .25 }, .45)
+    .fromTo('.hero-mono', { opacity: 0, scale: .55 }, { opacity: 1, scale: 1, ease: 'none', duration: .3 }, .55)
     .to('.cue', { opacity: 0, ease: 'none', duration: .2 }, 0)
     .to('.arch-cap', { opacity: 1, ease: 'none', duration: .3 }, .7);
 
