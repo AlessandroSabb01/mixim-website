@@ -236,6 +236,7 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .addr{font-size:14px;margin-top:6px}
 .addr a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .6s var(--ease)}
 .addr a:hover{background-size:100% 1px}
+.vshuttle{font-size:13px;font-style:italic;margin:18px auto 0;padding:12px 10px;border-block:1px dashed rgba(94,42,28,.22);max-width:340px}
 @media(max-width:820px){.row{grid-template-columns:1fr}.row.flip>.plate{order:0}.plate{width:min(440px,100%);margin-inline:auto}}
 
 /* dress code */
@@ -481,42 +482,13 @@ footer .langs{justify-content:center;margin-top:30px}
 
 <div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
 
-<!-- ═════════ CELEBRATION ═════════ -->
-<section class="celebration" id="schedule">
-  <div class="wrap archbox" data-outline>
-    <div class="arch" data-arch>
-      <p class="eyebrow" data-reveal data-i18n="cel_eyebrow">The Weekend</p>
-      <h2 class="h-lg" data-lines data-i18n="cel_title" style="margin-top:20px">The Celebration</h2>
-      <div class="days">
-        <div data-reveal>
-          <p class="script s-md" data-i18n="sat">Saturday<br>June 26th</p>
-          <ul>
-            <li><b>19:00</b><span class="ev" data-i18n="ev_welcome">Welcome Party</span><span class="pl">Terrazza Caffarelli</span><a class="ad" href="https://maps.google.com/?q=Piazzale+Caffarelli+4+Roma" target="_blank" rel="noopener">Piazzale Caffarelli, 4, Rome (RM)</a></li>
-          </ul>
-        </div>
-        <div data-reveal>
-          <p class="script s-md" data-i18n="sun">Sunday<br>June 27th</p>
-          <ul>
-            <li><b>15:30</b><span class="ev" data-i18n="ev_ceremony">Ceremony</span><span class="pl">Tempio Maggiore di Roma</span><a class="ad" href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></li>
-            <li class="shuttle" data-i18n="shuttle">Shuttle transfer · about 45 minutes each way to the Castle.</li>
-            <li><b>18:00</b><span class="ev" data-i18n="ev_reception">Reception</span><span class="pl">Castello Odescalchi di Palo Laziale</span><a class="ad" href="https://maps.google.com/?q=Castello+Odescalchi+Palo+Laziale" target="_blank" rel="noopener">Palo Laziale, Ladispoli (RM)</a></li>
-          </ul>
-        </div>
-      </div>
-      <div style="margin-top:36px" data-reveal><a class="oval" href="#rsvp"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_confirm">Confirm Your Presence</span></a></div>
-    </div>
-  </div>
-</section>
-
-<div class="join" aria-hidden="true"><svg viewBox="0 0 80 100"><path pathLength="1" d="M6 98 L6 44 A34 34 0 0 1 74 44 L74 98"/><path pathLength="1" d="M20 98 L20 46 A20 20 0 0 1 60 46 L60 98"/><circle cx="40" cy="4" r="2.6"/></svg></div>
-
 <!-- ═════════ VENUES: Emily's three watercolours ═════════ -->
-<section class="venues" id="venues">
+<section class="venues" id="schedule">
   <div class="wrap">
     <div class="row">
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.32"><div class="arch" data-arch><img src="img/terrazza.webp" alt="Watercolour of Terrazza Caffarelli overlooking Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
-        <p class="eyebrow" data-i18n="day1">Day 1 · June 26</p>
+        <p class="eyebrow" data-i18n="day1">Day 1 · Saturday, June 26</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_welcome">Welcome Party</h3>
         <span class="time">19:00</span>
         <p class="venue">Terrazza Caffarelli</p>
@@ -526,17 +498,18 @@ footer .langs{justify-content:center;margin-top:30px}
     <div class="row flip">
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.22"><div class="arch" data-arch><img src="img/synagogue.webp" alt="Watercolour of the Great Synagogue of Rome" loading="lazy"></div></div>
       <div class="txt" data-reveal>
-        <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
+        <p class="eyebrow" data-i18n="day2">Day 2 · Sunday, June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_ceremony">Ceremony</h3>
         <span class="time">15:30</span>
         <p class="venue">Tempio Maggiore di Roma</p>
         <p class="addr"><a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
+        <p class="vshuttle" data-i18n="shuttle">Shuttle transfer</p>
       </div>
     </div>
     <div class="row">
       <div class="plate archbox circ" data-outline data-zoom style="--z:1.3"><div class="arch" data-arch><img src="img/castello.webp" alt="Watercolour of Castello Odescalchi at sunset by the sea" loading="lazy"></div></div>
       <div class="txt" data-reveal>
-        <p class="eyebrow" data-i18n="day2">Day 2 · June 27</p>
+        <p class="eyebrow" data-i18n="day2">Day 2 · Sunday, June 27</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="ev_reception">Reception</h3>
         <span class="time">18:00</span>
         <p class="venue">Castello Odescalchi di Palo Laziale</p>
@@ -560,8 +533,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style — think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
-        <span class="todo">Pinterest link to add</span>
+        <a class="oval" href="https://pin.it/5NXvnLWg6" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
@@ -610,7 +582,7 @@ footer .langs{justify-content:center;margin-top:30px}
           </div>
           <div class="fsend"><button class="oval" type="submit"><svg viewBox="0 0 220 58" preserveAspectRatio="none"><ellipse cx="110" cy="29" rx="109" ry="28"/><ellipse class="o2" pathLength="1" cx="110" cy="29" rx="107" ry="26" transform="rotate(-1.5 110 29)"/></svg><span data-i18n="btn_send">Send my RSVP</span></button><p class="fstatus" role="status" aria-live="polite"></p></div>
         </form>
-        <p data-reveal style="margin-top:24px;font-size:14px"><span data-i18n="respond_by">Please respond by</span> <span class="todo" style="margin:0" data-i18n="tbd">date to be decided</span></p>
+        <p data-reveal style="margin-top:24px;font-size:14px"><span data-i18n="respond_by">Please respond by</span> <span data-i18n="tbd">the 1st of February 2027</span></p>
       </div>
     </div>
   </div>
@@ -940,10 +912,10 @@ footer .langs{justify-content:center;margin-top:30px}
       void main(){
         vec2 uv=v;uv.y=1.-uv.y;
         float ra=R.x/R.y, ia=I.x/I.y; vec2 sc=ra>ia?vec2(1.,ia/ra):vec2(ra/ia,1.);
-        uv=(uv-.5)*sc+vec2(.5,.62);
+        vec2 ce=vec2(.5,clamp(.62,sc.y*.5,1.-sc.y*.5));uv=(uv-.5)*sc+ce;
         vec2 w=vec2(fb(uv*3.+t*.03),fb(uv*3.+vec2(5.2,1.3)-t*.025));
         uv+=(w-.5)*.005;
-        vec2 m=(M-.5)*sc+vec2(.5,.62);
+        vec2 m=(M-.5)*sc+ce;
         float dd=distance(uv*vec2(ra,1.),m*vec2(ra,1.));
         uv+=normalize(uv-m+1e-4)*sin(dd*30.-t*2.)*exp(-dd*9.)*.0025;
         gl_FragColor=vec4(texture2D(T,clamp(uv,0.,1.)).rgb,1.);
