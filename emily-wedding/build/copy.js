@@ -120,7 +120,12 @@ const I18N = {
   "f_thanks": "Thank you, we can’t wait to see you in Rome!",
   "f_error": "Something went wrong. Please try again in a moment.",
   "f_offline": "The form will be live very soon, please come back to reply.",
-  "map_note": "Every pin is one of our favourite places, tap it to open it in Google Maps."
+  "map_note": "Every pin is one of our favourite places, tap it to open it in Google Maps.",
+  "g_eyebrow": "Private invitation",
+  "g_label": "Enter your invitation password to access",
+  "g_ph": "Password",
+  "g_go": "Enter",
+  "g_wrong": "That password isn't right. Please check your invitation."
  },
  "fr": {
   "skip": "Passer",
@@ -242,7 +247,12 @@ const I18N = {
   "f_thanks": "Merci, nous avons hâte de vous voir à Rome !",
   "f_error": "Une erreur est survenue. Merci de réessayer dans un instant.",
   "f_offline": "Le formulaire sera bientôt disponible, revenez pour répondre.",
-  "map_note": "Chaque repère est l’une de nos adresses préférées, touchez-le pour l’ouvrir dans Google Maps."
+  "map_note": "Chaque repère est l’une de nos adresses préférées, touchez-le pour l’ouvrir dans Google Maps.",
+  "g_eyebrow": "Invitation privée",
+  "g_label": "Saisissez le mot de passe de votre invitation pour accéder au site",
+  "g_ph": "Mot de passe",
+  "g_go": "Entrer",
+  "g_wrong": "Ce mot de passe n'est pas correct. Vérifiez votre invitation."
  },
  "it": {
   "skip": "Salta",
@@ -364,6 +374,11 @@ const I18N = {
   "f_thanks": "Grazie, non vediamo l’ora di vederti a Roma!",
   "f_error": "Qualcosa è andato storto. Riprova tra un momento.",
   "f_offline": "Il modulo sarà attivo a breve, torna per rispondere.",
-  "map_note": "Ogni segnaposto è uno dei nostri posti preferiti, toccalo per aprirlo in Google Maps."
+  "map_note": "Ogni segnaposto è uno dei nostri posti preferiti, toccalo per aprirlo in Google Maps.",
+  "g_eyebrow": "Invito privato",
+  "g_label": "Inserisci la password del tuo invito per accedere",
+  "g_ph": "Password",
+  "g_go": "Entra",
+  "g_wrong": "La password non è corretta. Controlla il tuo invito."
  }
 };
