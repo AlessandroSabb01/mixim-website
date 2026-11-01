@@ -1,14 +1,14 @@
 # Generates the hand-drawn map of central Rome as inline SVG (sepia ink, watercolour washes).
 # Positions are projected from real lat/lon so pins sit roughly where the places are.
 import math, json
-LON0, LON1, LAT0, LAT1 = 12.4505, 12.4995, 41.8775, 41.9095
+LON0, LON1, LAT0, LAT1 = 12.4540, 12.5000, 41.8740, 41.9120
 W = 1000
 K = W / ((LON1 - LON0) * math.cos(math.radians(41.894)))
 H = round((LAT1 - LAT0) * K)
 def P(lat, lon):
     return round((lon - LON0) * math.cos(math.radians(41.894)) * K, 1), round((LAT1 - lat) * K, 1)
 
-tiber = [(41.9125,12.4700),(41.9100,12.4722),(41.9072,12.4743),(41.9050,12.4738),(41.9036,12.4708),(41.9020,12.4672),(41.9002,12.4648),(41.8978,12.4652),(41.8957,12.4677),(41.8935,12.4700),(41.8918,12.4728),(41.8908,12.4760),(41.8898,12.4790),(41.8878,12.4795),(41.8848,12.4768),(41.8818,12.4742),(41.8790,12.4712),(41.8760,12.4690)]
+tiber = [(41.9125,12.4700),(41.9100,12.4722),(41.9072,12.4743),(41.9050,12.4738),(41.9036,12.4708),(41.9020,12.4672),(41.9002,12.4648),(41.8978,12.4652),(41.8957,12.4677),(41.8935,12.4700),(41.8918,12.4728),(41.8908,12.4760),(41.8898,12.4790),(41.8878,12.4795),(41.8848,12.4768),(41.8818,12.4742),(41.8790,12.4712),(41.8760,12.4690),(41.8728,12.4672)]
 def smooth(pts):
     pts = [P(*p) for p in pts]
     d = f"M{pts[0][0]} {pts[0][1]}"
@@ -27,16 +27,11 @@ landmarks = [
  ("Circo Massimo", 41.8861, 12.4851, "oval"), ("Tempio Maggiore", 41.8918, 12.4778, "dome"),
 ]
 areas = [("Trastevere", 41.8885, 12.4672), ("Gianicolo", 41.8935, 12.4600), ("Monti", 41.8955, 12.4930), ("Aventino", 41.8830, 12.4800)]
-restaurants = [
- ("Armando al Pantheon", "Salita de' Crescenzi 31", 41.8990, 12.4763),
- ("Roscioli", "Via dei Giubbonari 21", 41.8938, 12.4735),
- ("Osteria da Fortunata", "Via del Pellegrino 11", 41.8968, 12.4708),
- ("Piperno", "Monte de' Cenci 9", 41.8929, 12.4755),
- ("Nonna Betta", "Via del Portico d'Ottavia 16", 41.8927, 12.4786),
- ("Da Enzo al 29", "Via dei Vascellari 29", 41.8878, 12.4766),
- ("Checco er Carettiere", "Via Benedetta 10", 41.8913, 12.4688),
- ("Da Francesco", "Piazza del Fico 29", 41.8999, 12.4712),
-]
+# Emily's own Google Maps list "Roma" (build/emily-places.json); hotels and places outside the drawn centre are left to the full list
+HOTELS = ("Hotel", "H10 ", "Villa Agrippina", "Palazzo Talìa", "Rhinoceros Roma", "Casa Monti", "Sanctuary")
+restaurants = [(p["name"].split(" - ")[0].split(" | ")[0].replace("\n", " ").strip(), p["addr"].replace(", Italia", ""), p["lat"], p["lon"])
+               for p in json.load(open(__file__.replace("map.py", "emily-places.json")))
+               if LAT0 + .001 < p["lat"] < LAT1 - .001 and LON0 + .001 < p["lon"] < LON1 - .001 and not any(h in p["name"] for h in HOTELS)]
 
 def icon(kind, x, y):
     x, y = round(x), round(y)
@@ -130,12 +125,13 @@ o.append(f'<g transform="translate(60 {H-36})" stroke="#5e3a26" fill="none"><pat
 o.append('</g>')
 # pins
 o.append('<g class="pins">')
-for i, (n, a, lat, lon) in enumerate(restaurants, 1):
+for i, (n, a, lat, lon) in enumerate(restaurants):
     x, y = P(lat, lon)
-    q = (n + " " + a + " Roma").replace(" ", "+").replace("'", "%27")
-    o.append(f'<a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener" style="--d:{i*0.12:.2f}s"><g transform="translate({x} {y})"><path class="pin-drop" d="M0 0 C-10 -14 -14 -20 -14 -27 a14 14 0 0 1 28 0 c0 7 -4 13 -14 27Z"/><text class="pin-n" y="-23" text-anchor="middle">{i}</text><g class="pin-tip"><rect x="-4" y="-66" rx="3" height="22"/><text class="pin-l" y="-51" text-anchor="middle">{n}</text></g></g></a>')
+    q = (n + " " + a).replace("&", "and").replace(" ", "+").replace("'", "%27")
+    lw = max(60, len(n) * 7.2 + 16)
+    o.append(f'<a class="pin" href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener" style="--d:{(i % 24) * 0.04:.2f}s" aria-label="{n}"><g transform="translate({x} {y})"><circle class="pin-dot" r="6.5"/><circle class="pin-core" r="2.4"/><g class="pin-tip"><rect x="{-lw/2:.0f}" y="-40" width="{lw:.0f}" rx="3" height="24"/><text class="pin-l" y="-23" text-anchor="middle">{n}</text></g></g></a>')
 o.append('</g></svg>')
 svg = "".join(o)
-legend = "".join(f'<li><a href="https://www.google.com/maps/search/?api=1&amp;query={(n+" "+a+" Roma").replace(" ","+").replace(chr(39),"%27")}" target="_blank" rel="noopener"><b>{i}</b><span>{n}<small>{a}</small></span></a></li>' for i, (n, a, la, lo) in enumerate(restaurants, 1))
+legend = ""  # the full list lives behind "Open the restaurant map"
 json.dump({"svg": svg, "legend": legend, "w": W, "h": H}, open(__file__.replace("map.py", "map.json"), "w"))
 print(W, H, len(svg))

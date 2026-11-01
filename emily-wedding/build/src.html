@@ -97,18 +97,16 @@ button{font:inherit;color:inherit}
 .skip:hover{opacity:1}
 .stage{position:relative;z-index:3;width:min(600px,84vw);aspect-ratio:3/2}
 .env{position:absolute;inset:0;filter:drop-shadow(0 30px 40px rgba(94,42,28,.28)) drop-shadow(0 6px 10px rgba(94,42,28,.18))}
-.env i{position:absolute;inset:0;background:url(img/paper.webp) center/cover,#f5ecdc}
-.env .pb0{border-radius:3px}
-.env .pl{clip-path:polygon(0 0,52% 56%,0 100%);filter:brightness(.97)}
-.env .pr{clip-path:polygon(100% 0,48% 56%,100% 100%);filter:brightness(.95)}
-.env .pb{clip-path:polygon(0 100%,50% 44%,100% 100%);filter:brightness(1.02)}
-.env .ff{clip-path:polygon(0 0,100% 0,50% 60%);filter:brightness(1.04)}
-.env .ff::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(60,25,10,.14),transparent 30%)}
+.env .paper{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 125%,rgba(246,201,168,.55),transparent 60%),radial-gradient(ellipse at -10% -10%,rgba(235,179,169,.45),transparent 50%),radial-gradient(ellipse at 110% 0%,rgba(247,216,154,.5),transparent 50%),url(img/paper.webp) center/cover,#f6eedf;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400' preserveAspectRatio='none'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='9'/%3E%3C/filter%3E%3Crect x='6' y='6' width='588' height='388' filter='url(%23d)'/%3E%3C/svg%3E") center/100% 100%;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400' preserveAspectRatio='none'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='9'/%3E%3C/filter%3E%3Crect x='6' y='6' width='588' height='388' filter='url(%23d)'/%3E%3C/svg%3E") center/100% 100%}
+.env .folds{position:absolute;inset:0;width:100%;height:100%}
+.env .folds path{fill:none;stroke:rgba(94,42,28,.36);stroke-width:1;vector-effect:non-scaling-stroke}
 .env .addr{position:absolute;left:0;right:0;bottom:9%;text-align:center;color:var(--ink)}
-.env .addr .script{font-size:clamp(17px,3.2vw,34px)}
-.env .addr .eyebrow{font-size:9px;margin-top:4px}
-.postmark{position:absolute;right:5%;bottom:7%;width:clamp(56px,19%,124px);aspect-ratio:1;color:var(--wax);opacity:.4;transform:rotate(-14deg)}
-.seal{position:absolute;left:50%;top:58%;width:clamp(66px,17%,112px);aspect-ratio:1;translate:-50% -50%;z-index:6;border:0;background:none;cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.env .addr .script{font-size:clamp(18px,3.1vw,34px)}
+.env .addr .eyebrow{font-size:clamp(7px,1vw,9px);margin-top:2px}
+.postmark{position:absolute;right:6%;top:8%;width:clamp(46px,14%,96px);aspect-ratio:1;color:var(--wax);opacity:.35;transform:rotate(-14deg)}
+.seal{position:absolute;left:50%;top:50%;width:clamp(58px,16%,106px);aspect-ratio:1;translate:-50% -50%;z-index:6;border:0;background:none;cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent}
 .seal .half{position:absolute;inset:0;background:url(img/seal.webp) center/contain no-repeat;display:grid;place-items:center}
 .seal .h1,.seal .h2{opacity:0}
 .seal .h1{clip-path:polygon(0 0,52% 0,47% 18%,55% 34%,46% 52%,54% 68%,48% 84%,52% 100%,0 100%)}
@@ -314,12 +312,15 @@ section{position:relative;z-index:2;padding:clamp(30px,5vw,70px) max(var(--gutte
 .rmap .area{font:400 26px var(--script);fill:#8a5a3c;opacity:.85}
 .rmap .river{font-size:26px;fill:#557a96}
 .pin{cursor:pointer}
-.pin-drop{fill:var(--wax);stroke:#f4e8d3;stroke-width:1.5}
-.pin-n{font:400 15px var(--serif);fill:#fbeee0}
-.pin-tip{opacity:0;transition:opacity .3s}
+.pin-dot{fill:var(--wax);stroke:#f4e8d3;stroke-width:1.6;transition:r .3s}
+.pin-core{fill:#f4e8d3}
+.pin:hover .pin-dot,.pin:focus .pin-dot{r:9px;fill:var(--sunset)}
+.pin-tip{opacity:0;transition:opacity .25s;pointer-events:none}
 .pin-tip rect{fill:var(--ink)}
 .pin-l{font:400 13px var(--serif);fill:#fbeee0}
 .pin:hover .pin-tip,.pin:focus .pin-tip{opacity:1}
+.pin:hover{position:relative;z-index:9}
+.mapnote{text-align:center;font-size:13px;margin-top:18px;opacity:.8}
 .pin>g{transform-box:fill-box}
 .js .pins .pin{opacity:0;transition:opacity .5s var(--d),transform .8s var(--ease) var(--d)}
 .js .pins .pin{transform:translateY(-20px)}
@@ -395,10 +396,10 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
   <div class="stage">
     <div class="env">
-      <i class="pb0"></i><i class="pl"></i><i class="pr"></i><i class="pb"></i>
-      <div class="addr"><p class="script" data-i18n="to_guests">To our dearest guests</p><p class="eyebrow">Roma · MMXXVII</p></div>
+      <div class="paper"></div>
+      <svg class="folds" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><path d="M10 10 L300 214 L590 10 M10 392 L300 186 M590 392 L300 186"/></svg>
       <svg class="postmark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="50" cy="50" r="31" fill="none" stroke="currentColor" stroke-width="1"/><path id="pmc" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0" fill="none"/><text font-family="Georgia,serif" font-size="9.4" letter-spacing="2.4" fill="currentColor"><textPath href="#pmc">ROMA · CENTRO · ROMA · CENTRO ·</textPath></text><text x="50" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="currentColor">26 VI</text><text x="50" y="61" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="currentColor">2027</text></svg>
-      <i class="ff"></i>
+      <div class="addr"><p class="script" data-i18n="to_guests">To our dearest guests</p><p class="eyebrow">Roma · XXVI–XXVII · VI · MMXXVII</p></div>
     </div>
     <button class="seal" type="button" data-i18n-aria="open_aria" aria-label="Break the seal to open the invitation">
       <span class="glow"></span>
@@ -476,7 +477,7 @@ footer .langs{justify-content:center;margin-top:30px}
       <p data-reveal data-i18n="intro_p">Two days, three special places. Here's what to expect.</p>
       <a class="oval" href="#schedule" data-reveal><svg viewBox="0 0 190 58" preserveAspectRatio="none"><ellipse cx="95" cy="29" rx="94" ry="28"/><ellipse class="o2" pathLength="1" cx="95" cy="29" rx="92" ry="26" transform="rotate(-2 95 29)"/></svg><span data-i18n="btn_weekend">The Weekend</span></a>
     </div>
-    <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><div class="ph-empty"><span class="todo">Photo of Emily &amp; Alex to add</span></div><!--COUPLE--></div></div>
+    <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/couple.webp" alt="Emily and Alexandre dancing" style="object-position:50% 40%"></div></div>
   </div>
 </section>
 
@@ -569,8 +570,8 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" style="margin-top:14px" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden — black tie attire, with shoes that can handle the lawn.</p>
-        <a class="oval" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
-        <span class="todo">Pinterest link to add</span>
+        <a class="oval" href="https://pin.it/2gJVSAhl3" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
+        
       </div>
     </div>
   </div>
@@ -720,12 +721,12 @@ footer .langs{justify-content:center;margin-top:30px}
       <p class="eyebrow" data-reveal data-i18n="eat_eyebrow">Our Favorite Spots</p>
       <h2 class="h-lg" data-lines data-i18n="eat_title">Where to Eat in Rome</h2>
       <p class="lead" data-reveal data-i18n="eat_p">We've put our favorite restaurants in the city on one map.</p>
-      <div style="margin-top:28px" data-reveal><a class="oval" id="map-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_map">Open the restaurant map</span></a><br><span class="todo">Google Maps list to add</span></div>
+      <div style="margin-top:28px" data-reveal><a class="oval" id="map-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 270 58" preserveAspectRatio="none"><ellipse cx="135" cy="29" rx="134" ry="28"/><ellipse class="o2" pathLength="1" cx="135" cy="29" rx="132" ry="26" transform="rotate(-1.5 135 29)"/></svg><span data-i18n="btn_map">Open the restaurant map</span></a></div>
     </div>
     <div class="mapbox archbox" data-outline style="--ry:14%">
       <div class="arch" data-arch><!--MAP--></div>
     </div>
-    <ol class="legend" data-reveal><!--LEGEND--></ol>
+    <p class="mapnote" data-reveal data-i18n="map_note">Every pin is one of our favourite places — tap it to open it in Google Maps.</p><!--LEGEND-->
   </div>
 </section>
 
@@ -1003,7 +1004,7 @@ footer .langs{justify-content:center;margin-top:30px}
   /* ═════════ Links and the RSVP endpoint, set in one place ═════════ */
   const CONFIG = {
     rsvpEndpoint: '',      // Google Apps Script web-app URL (see build/rsvp-apps-script.gs)
-    restaurantMap: '',     // Emily's shared Google Maps list
+    restaurantMap: 'https://maps.app.goo.gl/ZXibJQbzVdHvwhns6',  // Emily's shared Google Maps list
   };
   if (CONFIG.restaurantMap) $('#map-link').href = CONFIG.restaurantMap;
 

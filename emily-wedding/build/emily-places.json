@@ -1,0 +1,810 @@
+[
+ {
+  "name": "Pierre's Restaurant",
+  "addr": "81600 Overseas Hwy, Islamorada, FL 33036, Stati Uniti",
+  "lat": 24.9163241,
+  "lon": -80.6384629,
+  "full": "Pierre's Restaurant, 81600 Overseas Hwy, Islamorada, FL 33036, Stati Uniti",
+  "fid": "/g/1tsykzxq"
+ },
+ {
+  "name": "Il Corallo",
+  "addr": "Via del Corallo, 10-11, 00186 Roma RM, Italia",
+  "lat": 41.899070099999996,
+  "lon": 12.4699463,
+  "full": "Il Corallo, Via del Corallo, 10-11, 00186 Roma RM, Italia",
+  "fid": "/g/1td2qjhl"
+ },
+ {
+  "name": "Da Francesco",
+  "addr": "Piazza del Fico, 29, 00186 Roma RM, Italia",
+  "lat": 41.8993349,
+  "lon": 12.470391699999999,
+  "full": "Da Francesco, Piazza del Fico, 29, 00186 Roma RM, Italia",
+  "fid": "/g/1tg3d6zm"
+ },
+ {
+  "name": "Pizzeria Ai Marmi - Antico forno a legna dal 1931",
+  "addr": "Viale di Trastevere, 53-59, 00153 Roma RM, Italia",
+  "lat": 41.888251,
+  "lon": 12.4737127,
+  "full": "Pizzeria Ai Marmi - Antico forno a legna dal 1931, Viale di Trastevere, 53-59, 00153 Roma RM, Italia",
+  "fid": "/g/1td8vg2z"
+ },
+ {
+  "name": "Le Levain",
+  "addr": "Via Luigi Santini, 22, 00153 Roma RM, Italia",
+  "lat": 41.8871433,
+  "lon": 12.4687212,
+  "full": "Le Levain, Via Luigi Santini, 22, 00153 Roma RM, Italia",
+  "fid": "/g/11b7c2p5pf"
+ },
+ {
+  "name": "Antica Pesa",
+  "addr": "Via Garibaldi, 18, 00153 Roma RM, Italia",
+  "lat": 41.8905605,
+  "lon": 12.4664612,
+  "full": "Antica Pesa, Via Garibaldi, 18, 00153 Roma RM, Italia",
+  "fid": "/g/1thv2321"
+ },
+ {
+  "name": "Salotto42",
+  "addr": "P.za di Pietra, 42, 00186 Roma RM, Italia",
+  "lat": 41.900121,
+  "lon": 12.479312,
+  "full": "Salotto42, P.za di Pietra, 42, 00186 Roma RM, Italia",
+  "fid": "/g/1vypf1sm"
+ },
+ {
+  "name": "Stvrni",
+  "addr": "Largo della Fontanella di Borghese, 75, 00186 Roma RM, Italia",
+  "lat": 41.9037246,
+  "lon": 12.47715,
+  "full": "Stvrni, Largo della Fontanella di Borghese, 75, 00186 Roma RM, Italia",
+  "fid": "/g/11j3vc8639"
+ },
+ {
+  "name": "Ginger - Corte Laica",
+  "addr": "V. del Corso, 173, 00187 Roma RM, Italia",
+  "lat": 41.9027858,
+  "lon": 12.4797292,
+  "full": "Ginger - Corte Laica, V. del Corso, 173, 00187 Roma RM, Italia",
+  "fid": "/g/11k3p2pj25"
+ },
+ {
+  "name": "All'Arancio d'Oro da Cialfi",
+  "addr": "Via di Monte d'Oro, 17, 00186 Roma RM, Italia",
+  "lat": 41.9043314,
+  "lon": 12.477044699999999,
+  "full": "All'Arancio d'Oro da Cialfi, Via di Monte d'Oro, 17, 00186 Roma RM, Italia",
+  "fid": "/g/1vq89gzr"
+ },
+ {
+  "name": "Hotel Vilòn",
+  "addr": "Via dell'Arancio, 69, 00186 Roma RM, Italia",
+  "lat": 41.904466,
+  "lon": 12.476546599999999,
+  "full": "Hotel Vilòn, Via dell'Arancio, 69, 00186 Roma RM, Italia",
+  "fid": "/g/11f3y2h1sn"
+ },
+ {
+  "name": "Schostal",
+  "addr": "Via della Fontanella di Borghese, 29, 00186 Roma RM, Italia",
+  "lat": 41.9040904,
+  "lon": 12.4774409,
+  "full": "Schostal, Via della Fontanella di Borghese, 29, 00186 Roma RM, Italia",
+  "fid": "/g/1td8nzfg"
+ },
+ {
+  "name": "Antico Cafè Ruschena",
+  "addr": "Lungotevere dei Mellini, 1, 00193 Roma RM, Italia",
+  "lat": 41.905212,
+  "lon": 12.4732919,
+  "full": "Antico Cafè Ruschena, Lungotevere dei Mellini, 1, 00193 Roma RM, Italia",
+  "fid": "/g/1trl7_q7"
+ },
+ {
+  "name": "Trattoria della Barchetta dal 1924",
+  "addr": "Via Giovanni Pierluigi da Palestrina, 35, 00193 Roma RM, Italia",
+  "lat": 41.906087799999995,
+  "lon": 12.471496499999999,
+  "full": "Trattoria della Barchetta dal 1924, Via Giovanni Pierluigi da Palestrina, 35, 00193 Roma RM, Italia",
+  "fid": "/g/1vttzwd1"
+ },
+ {
+  "name": "L'Oratorio Trastevere",
+  "addr": "Lungotevere Ripa, 3, 00153 Roma RM, Italia",
+  "lat": 41.8874801,
+  "lon": 12.4785168,
+  "full": "L'Oratorio Trastevere, Lungotevere Ripa, 3, 00153 Roma RM, Italia",
+  "fid": "/g/11xgyqbnw1"
+ },
+ {
+  "name": "Cecilia Santa Cucina - Cecilia Bistrot",
+  "addr": "Via dei Vascellari 48 Via dei Vascellari 46 - Bistrò, Via dei Vascellari, 48, 00153 Roma RM, Italia",
+  "lat": 41.8877355,
+  "lon": 12.477527199999999,
+  "full": "Cecilia Santa Cucina - Cecilia Bistrot, Via dei Vascellari 48 Via dei Vascellari 46 - Bistrò, Via dei Vascellari, 48, 00153 Roma RM, Italia",
+  "fid": "/g/11j1ms8sv5"
+ },
+ {
+  "name": "Rhinoceros Roma",
+  "addr": "Via del Velabro, 9, 00186 Roma RM, Italia",
+  "lat": 41.8890939,
+  "lon": 12.4826009,
+  "full": "Rhinoceros Roma, Via del Velabro, 9, 00186 Roma RM, Italia",
+  "fid": "/g/11h77qcxr_"
+ },
+ {
+  "name": "47 Boutique Hotel - Comfort, stile ed eleganza situati nel cuore di Roma",
+  "addr": "Via Luigi Petroselli, 47, 00186 Roma RM, Italia",
+  "lat": 41.88972,
+  "lon": 12.4813052,
+  "full": "47 Boutique Hotel - Comfort, stile ed eleganza situati nel cuore di Roma, Via Luigi Petroselli, 47, 00186 Roma RM, Italia",
+  "fid": "/g/1thn7n8x"
+ },
+ {
+  "name": "Hotel Casa Monti Roma",
+  "addr": "Via Panisperna, 210/212, 00184 Roma RM, Italia",
+  "lat": 41.8965983,
+  "lon": 12.4922702,
+  "full": "Hotel Casa Monti Roma, Via Panisperna, 210/212, 00184 Roma RM, Italia",
+  "fid": "/g/11vbjb19dp"
+ },
+ {
+  "name": "H10 Palazzo Galla",
+  "addr": "Via Quattro Novembre, 102, 00187 Roma RM, Italia",
+  "lat": 41.8965567,
+  "lon": 12.4852606,
+  "full": "H10 Palazzo Galla, Via Quattro Novembre, 102, 00187 Roma RM, Italia",
+  "fid": "/g/11sgz1tm47"
+ },
+ {
+  "name": "Villa Agrippina Gran Meliá - The Leading Hotels of the World",
+  "addr": "Via del Gianicolo, 3, 00165 Roma RM, Italia",
+  "lat": 41.899069999999995,
+  "lon": 12.460569999999999,
+  "full": "Villa Agrippina Gran Meliá - The Leading Hotels of the World, Via del Gianicolo, 3, 00165 Roma RM, Italia",
+  "fid": "/g/1jglw5tbk"
+ },
+ {
+  "name": "Sant'Eustachio Caffè",
+  "addr": "Piazza di S. Eustachio, 82, 00186 Roma RM, Italia",
+  "lat": 41.8982749,
+  "lon": 12.475425399999999,
+  "full": "Sant'Eustachio Caffè, Piazza di S. Eustachio, 82, 00186 Roma RM, Italia",
+  "fid": "/g/120_f_sq"
+ },
+ {
+  "name": "Caffè Palombini",
+  "addr": "P.le Konrad Adenauer, 12, 00144 Roma RM, Italia",
+  "lat": 41.8365331,
+  "lon": 12.467667599999999,
+  "full": "Caffè Palombini, P.le Konrad Adenauer, 12, 00144 Roma RM, Italia",
+  "fid": "/g/1thzxhxy"
+ },
+ {
+  "name": "Il Goccetto",
+  "addr": "Via dei Banchi Vecchi, 14, 00186 Roma RM, Italia",
+  "lat": 41.8977936,
+  "lon": 12.4673106,
+  "full": "Il Goccetto, Via dei Banchi Vecchi, 14, 00186 Roma RM, Italia",
+  "fid": "/g/1thzxv90"
+ },
+ {
+  "name": "Pianostrada",
+  "addr": "Via della Luce, 65, 00153 Roma RM, Italia",
+  "lat": 41.8887888,
+  "lon": 12.475271699999999,
+  "full": "Pianostrada, Via della Luce, 65, 00153 Roma RM, Italia",
+  "fid": "/g/11b6pw5285"
+ },
+ {
+  "name": "Taverna Trilussa Trastevere",
+  "addr": "Via del Politeama, 23/25, 00153 Roma RM, Italia",
+  "lat": 41.8907138,
+  "lon": 12.4711584,
+  "full": "Taverna Trilussa Trastevere, Via del Politeama, 23/25, 00153 Roma RM, Italia",
+  "fid": "/g/1tfdvt3n"
+ },
+ {
+  "name": "Pescheria Rossini",
+  "addr": "Viale Gioacchino Rossini, 48, 00198 Roma RM, Italia",
+  "lat": 41.921631,
+  "lon": 12.4925409,
+  "full": "Pescheria Rossini, Viale Gioacchino Rossini, 48, 00198 Roma RM, Italia",
+  "fid": "/g/1td_7y3z"
+ },
+ {
+  "name": "Taverna Rossini",
+  "addr": "Viale Gioacchino Rossini, 54, 00198 Roma RM, Italia",
+  "lat": 41.9217861,
+  "lon": 12.4925116,
+  "full": "Taverna Rossini, Viale Gioacchino Rossini, 54, 00198 Roma RM, Italia",
+  "fid": "/g/1tgv9wj3"
+ },
+ {
+  "name": "Singita Miracle Beach",
+  "addr": "Via Silvi Marina, 223/a, 00054 Fregene RM, Italia",
+  "lat": 41.8678992,
+  "lon": 12.183233099999999,
+  "full": "Singita Miracle Beach, Via Silvi Marina, 223/a, 00054 Fregene RM, Italia",
+  "fid": "/g/1vz85yny"
+ },
+ {
+  "name": "Controvento Fregene",
+  "addr": "Via Silvi Marina, 37/C, 00054 Fregene RM, Italia",
+  "lat": 41.8630511,
+  "lon": 12.1854601,
+  "full": "Controvento Fregene, Via Silvi Marina, 37/C, 00054 Fregene RM, Italia",
+  "fid": "/g/1tfdtw6w"
+ },
+ {
+  "name": "Sogno del Mare",
+  "addr": "Lungomare di Ponente, 25, 00054 Fregene RM, Italia",
+  "lat": 41.8557154,
+  "lon": 12.1912296,
+  "full": "Sogno del Mare, Lungomare di Ponente, 25, 00054 Fregene RM, Italia",
+  "fid": "/g/1td0k77z"
+ },
+ {
+  "name": "La Baia di Fregene",
+  "addr": "Via Silvi Marina, 00054 Fregene RM, Italia",
+  "lat": 41.8613457,
+  "lon": 12.1876746,
+  "full": "La Baia di Fregene, Via Silvi Marina, 00054 Fregene RM, Italia",
+  "fid": "/g/1tfh1l4w"
+ },
+ {
+  "name": "Bagno Saint Tropez • Fregene",
+  "addr": "Lungomare di Levante, 244, 00054 Fregene RM, Italia",
+  "lat": 41.8389234,
+  "lon": 12.200742199999999,
+  "full": "Bagno Saint Tropez • Fregene, Lungomare di Levante, 244, 00054 Fregene RM, Italia",
+  "fid": "/g/1vnnfm33"
+ },
+ {
+  "name": "Fatamorgana",
+  "addr": "Via Roma Libera, 11, 00153 Roma RM, Italia",
+  "lat": 41.886505899999996,
+  "lon": 12.469171399999999,
+  "full": "Fatamorgana, Via Roma Libera, 11, 00153 Roma RM, Italia",
+  "fid": "/g/11xlyzt_2"
+ },
+ {
+  "name": "Supplì Roma",
+  "addr": "Via di S. Francesco a Ripa, 137, 00153 Roma RM, Italia",
+  "lat": 41.8871415,
+  "lon": 12.4717319,
+  "full": "Supplì Roma, Via di S. Francesco a Ripa, 137, 00153 Roma RM, Italia",
+  "fid": "/g/1tdtyms1"
+ },
+ {
+  "name": "Rione 13 Ristorante",
+  "addr": "Via Roma Libera, 19, 00153 Roma RM, Italia",
+  "lat": 41.8867462,
+  "lon": 12.469165199999999,
+  "full": "Rione 13 Ristorante, Via Roma Libera, 19, 00153 Roma RM, Italia",
+  "fid": "/g/11c713gf_3"
+ },
+ {
+  "name": "Gelateria La Romana dal 1947",
+  "addr": "Via Cola di Rienzo, 2, 00193 Roma RM, Italia",
+  "lat": 41.909182699999995,
+  "lon": 12.4706133,
+  "full": "Gelateria La Romana dal 1947, Via Cola di Rienzo, 2, 00193 Roma RM, Italia",
+  "fid": "/g/11btxjtz6p"
+ },
+ {
+  "name": "Giulio, Passami l'Olio - Osteria Storica a Roma",
+  "addr": "Via di Monte Giordano, 28, 00186 Roma RM, Italia",
+  "lat": 41.8997035,
+  "lon": 12.468236099999999,
+  "full": "Giulio, Passami l'Olio - Osteria Storica a Roma, Via di Monte Giordano, 28, 00186 Roma RM, Italia",
+  "fid": "/g/1tdjfcgt"
+ },
+ {
+  "name": "Ristorante Camponeschi",
+  "addr": "Piazza Farnese, 50/50a, 00186 Roma RM, Italia",
+  "lat": 41.8947383,
+  "lon": 12.471369699999999,
+  "full": "Ristorante Camponeschi, Piazza Farnese, 50/50a, 00186 Roma RM, Italia",
+  "fid": "/g/12jlzr1p6"
+ },
+ {
+  "name": "La Dolceroma",
+  "addr": "Via del Portico d'Ottavia, 20/b, 00186 Roma RM, Italia",
+  "lat": 41.892702199999995,
+  "lon": 12.4782777,
+  "full": "La Dolceroma, Via del Portico d'Ottavia, 20/b, 00186 Roma RM, Italia",
+  "fid": "/g/1thzxjj0"
+ },
+ {
+  "name": "Giggetto",
+  "addr": "Via del Portico d`Ottavia, 21/a, 00186 Roma RM, Italia",
+  "lat": 41.892732099999996,
+  "lon": 12.4783831,
+  "full": "Giggetto, Via del Portico d`Ottavia, 21/a, 00186 Roma RM, Italia",
+  "fid": "/g/1tct5zfs"
+ },
+ {
+  "name": "Cremeria Monteforte",
+  "addr": "Via della Rotonda, 22, 00186 Roma RM, Italia",
+  "lat": 41.8987452,
+  "lon": 12.4763526,
+  "full": "Cremeria Monteforte, Via della Rotonda, 22, 00186 Roma RM, Italia",
+  "fid": "/g/1v9d4_pr"
+ },
+ {
+  "name": "Boccione",
+  "addr": "Via del Portico d'Ottavia, 1, 00186 Roma RM, Italia",
+  "lat": 41.8931951,
+  "lon": 12.4769811,
+  "full": "Boccione, Via del Portico d'Ottavia, 1, 00186 Roma RM, Italia",
+  "fid": "/g/11c20b9d2j"
+ },
+ {
+  "name": "BellaCarne Kosher Restaurant",
+  "addr": "Via del Portico d'Ottavia, 51, 00186 Roma RM, Italia",
+  "lat": 41.8926757,
+  "lon": 12.477886699999999,
+  "full": "BellaCarne Kosher Restaurant, Via del Portico d'Ottavia, 51, 00186 Roma RM, Italia",
+  "fid": "/g/1q5bkzqdz"
+ },
+ {
+  "name": "Freni e Frizioni",
+  "addr": "Via del Politeama, 4, 00153 Roma RM, Italia",
+  "lat": 41.8913492,
+  "lon": 12.4707561,
+  "full": "Freni e Frizioni, Via del Politeama, 4, 00153 Roma RM, Italia",
+  "fid": "/g/1thlkb14"
+ },
+ {
+  "name": "Ristorante Angelina a Testaccio",
+  "addr": "Via Galvani, 24a, 00153 Roma RM, Italia",
+  "lat": 41.8769911,
+  "lon": 12.475074,
+  "full": "Ristorante Angelina a Testaccio, Via Galvani, 24a, 00153 Roma RM, Italia",
+  "fid": "/g/1tgqfnwx"
+ },
+ {
+  "name": "angelineria",
+  "addr": "Via Galvani, 24, 00153 Roma RM, Italia",
+  "lat": 41.876930099999996,
+  "lon": 12.4751189,
+  "full": "angelineria, Via Galvani, 24, 00153 Roma RM, Italia",
+  "fid": "/g/11vr9r3vwt"
+ },
+ {
+  "name": "The Sanctuary Eco Retreat",
+  "addr": "Via delle Terme di Traiano, 4A, 00184 Roma RM, Italia",
+  "lat": 41.8934119,
+  "lon": 12.498391699999999,
+  "full": "The Sanctuary Eco Retreat, Via delle Terme di Traiano, 4A, 00184 Roma RM, Italia",
+  "fid": "/g/11gcls626t"
+ },
+ {
+  "name": "Mr Barry",
+  "addr": "Piazza dei Ponziani, 8/c, 00153 Roma RM, Italia",
+  "lat": 41.8885484,
+  "lon": 12.4775806,
+  "full": "Mr Barry, Piazza dei Ponziani, 8/c, 00153 Roma RM, Italia",
+  "fid": "/g/11fj4c3c67"
+ },
+ {
+  "name": "Drink Kong",
+  "addr": "Piazza di S. Martino Ai Monti, 8, 00184 Roma RM, Italia",
+  "lat": 41.8951597,
+  "lon": 12.497848399999999,
+  "full": "Drink Kong, Piazza di S. Martino Ai Monti, 8, 00184 Roma RM, Italia",
+  "fid": "/g/11f7146pvt"
+ },
+ {
+  "name": "Bar della Pace (Ristorante specializzato in cucina romana e carne alla \nbrace)",
+  "addr": "Via della Pace, 3, 00186 Roma RM, Italia",
+  "lat": 41.8994022,
+  "lon": 12.4711912,
+  "full": "Bar della Pace (Ristorante specializzato in cucina romana e carne alla brace), Via della Pace, 3, 00186 Roma RM, Italia",
+  "fid": "/g/11w8yzbd3d"
+ },
+ {
+  "name": "Bar del Fico Ristorante",
+  "addr": "Via della Pace, 34, 00186 Roma RM, Italia",
+  "lat": 41.899373999999995,
+  "lon": 12.470899,
+  "full": "Bar del Fico Ristorante, Via della Pace, 34, 00186 Roma RM, Italia",
+  "fid": "/g/1tgtzl6r"
+ },
+ {
+  "name": "Cul De Sac",
+  "addr": "Piazza di Pasquino, 73, 00186 Roma RM, Italia",
+  "lat": 41.8977325,
+  "lon": 12.4720917,
+  "full": "Cul De Sac, Piazza di Pasquino, 73, 00186 Roma RM, Italia",
+  "fid": "/g/1tdv96v8"
+ },
+ {
+  "name": "Stravinskij Bar",
+  "addr": "Via del Babuino, 9, 00187 Roma RM, Italia",
+  "lat": 41.910058299999996,
+  "lon": 12.477676599999999,
+  "full": "Stravinskij Bar, Via del Babuino, 9, 00187 Roma RM, Italia",
+  "fid": "/g/1tmsn2pv"
+ },
+ {
+  "name": "Bulgari Hotel Roma",
+  "addr": "Piazza Augusto Imperatore, 10, 00186 Roma RM, Italia",
+  "lat": 41.9067821,
+  "lon": 12.4762188,
+  "full": "Bulgari Hotel Roma, Piazza Augusto Imperatore, 10, 00186 Roma RM, Italia",
+  "fid": "/g/11sk1khwzy"
+ },
+ {
+  "name": "Palazzo Talìa",
+  "addr": "Via del Nazareno, 25, 00187 Roma RM, Italia",
+  "lat": 41.9028956,
+  "lon": 12.4835823,
+  "full": "Palazzo Talìa, Via del Nazareno, 25, 00187 Roma RM, Italia",
+  "fid": "/g/11ld8xqbyj"
+ },
+ {
+  "name": "Terrazza Borromini",
+  "addr": "Via di Santa Maria dell'Anima, 30, 00186 Roma RM, Italia",
+  "lat": 41.8989145,
+  "lon": 12.472403199999999,
+  "full": "Terrazza Borromini, Via di Santa Maria dell'Anima, 30, 00186 Roma RM, Italia",
+  "fid": "/g/11f263vf0x"
+ },
+ {
+  "name": "La Ménagère",
+  "addr": "Via Mario de' Fiori, 98, 00187 Roma RM, Italia",
+  "lat": 41.9036374,
+  "lon": 12.4826135,
+  "full": "La Ménagère, Via Mario de' Fiori, 98, 00187 Roma RM, Italia",
+  "fid": "/g/11wfpm0vgw"
+ },
+ {
+  "name": "Forno Campo de' Fiori Roma",
+  "addr": "Campo de' Fiori, 22, 00186 Roma RM, Italia",
+  "lat": 41.8958558,
+  "lon": 12.471563399999999,
+  "full": "Forno Campo de' Fiori Roma, Campo de' Fiori, 22, 00186 Roma RM, Italia",
+  "fid": "/g/1tyh4mg7"
+ },
+ {
+  "name": "Supplizio",
+  "addr": "Via dei Banchi Vecchi, 143, 00186 Roma RM, Italia",
+  "lat": 41.897487,
+  "lon": 12.467910999999999,
+  "full": "Supplizio, Via dei Banchi Vecchi, 143, 00186 Roma RM, Italia",
+  "fid": "/g/1q67hq8hb"
+ },
+ {
+  "name": "Frigidarium",
+  "addr": "V. del Governo Vecchio, 112, 00186 Roma RM, Italia",
+  "lat": 41.8982333,
+  "lon": 12.470454799999999,
+  "full": "Frigidarium, V. del Governo Vecchio, 112, 00186 Roma RM, Italia",
+  "fid": "/g/11h094xf3"
+ },
+ {
+  "name": "Pizzeria Da Baffetto",
+  "addr": "V. del Governo Vecchio, 114, 00186 Roma RM, Italia",
+  "lat": 41.8983208,
+  "lon": 12.4703105,
+  "full": "Pizzeria Da Baffetto, V. del Governo Vecchio, 114, 00186 Roma RM, Italia",
+  "fid": "/g/1vp5_4kl"
+ },
+ {
+  "name": "Emma",
+  "addr": "Via del Monte della Farina, 28, 00186 Roma RM, Italia",
+  "lat": 41.894799299999995,
+  "lon": 12.475224599999999,
+  "full": "Emma, Via del Monte della Farina, 28, 00186 Roma RM, Italia",
+  "fid": "/g/11b5ymdx6x"
+ },
+ {
+  "name": "Gigi Rigolatto Roma",
+  "addr": "Piazza della Minerva, 69, 00186 Roma RM, Italia",
+  "lat": 41.8976864,
+  "lon": 12.477604999999999,
+  "full": "Gigi Rigolatto Roma, Piazza della Minerva, 69, 00186 Roma RM, Italia",
+  "fid": "/g/11x61vtxwh"
+ },
+ {
+  "name": "Trattoria Da Enzo",
+  "addr": "Via dei Vascellari, 29, 00153 Roma RM, Italia",
+  "lat": 41.8880847,
+  "lon": 12.4778554,
+  "full": "Trattoria Da Enzo, Via dei Vascellari, 29, 00153 Roma RM, Italia",
+  "fid": "/g/1hg4xpgmj"
+ },
+ {
+  "name": "Checco Er Carettiere",
+  "addr": "Via Benedetta, 10, 00153 Roma RM, Italia",
+  "lat": 41.8915921,
+  "lon": 12.469397299999999,
+  "full": "Checco Er Carettiere, Via Benedetta, 10, 00153 Roma RM, Italia",
+  "fid": "/g/1tkhf7_8"
+ },
+ {
+  "name": "Gallo Ristorante di pesce",
+  "addr": "V. Santa Croce in Gerusalemme, 29, 00185 Roma RM, Italia",
+  "lat": 41.889536199999995,
+  "lon": 12.513068299999999,
+  "full": "Gallo Ristorante di pesce, V. Santa Croce in Gerusalemme, 29, 00185 Roma RM, Italia",
+  "fid": "/g/11vwtg27cp"
+ },
+ {
+  "name": "Kilo Restaurant",
+  "addr": "Via Tirso, 30, 00198 Roma RM, Italia",
+  "lat": 41.918347499999996,
+  "lon": 12.4984235,
+  "full": "Kilo Restaurant, Via Tirso, 30, 00198 Roma RM, Italia",
+  "fid": "/g/1hg5185q0"
+ },
+ {
+  "name": "Catering Pasticceria Natalizi",
+  "addr": "V. Po, 124, 00198 Roma RM, Italia",
+  "lat": 41.9171474,
+  "lon": 12.498955599999999,
+  "full": "Catering Pasticceria Natalizi, V. Po, 124, 00198 Roma RM, Italia",
+  "fid": "/g/1tgqfnyd"
+ },
+ {
+  "name": "Tiberino Ristorante",
+  "addr": "V. di Ponte Quattro Capi, 18, 00186 Roma RM, Italia",
+  "lat": 41.890724,
+  "lon": 12.477898999999999,
+  "full": "Tiberino Ristorante, V. di Ponte Quattro Capi, 18, 00186 Roma RM, Italia",
+  "fid": "/g/1x5cwn_d"
+ },
+ {
+  "name": "Pierluigi",
+  "addr": "Piazza de' Ricci, 144, 00186 Roma RM, Italia",
+  "lat": 41.896789899999995,
+  "lon": 12.468655,
+  "full": "Pierluigi, Piazza de' Ricci, 144, 00186 Roma RM, Italia",
+  "fid": "/g/12lrm5nht"
+ },
+ {
+  "name": "RETROBOTTEGA",
+  "addr": "Via del Velabro, 9, 00186 Roma RM, Italia",
+  "lat": 41.889053,
+  "lon": 12.4825134,
+  "full": "RETROBOTTEGA, Via del Velabro, 9, 00186 Roma RM, Italia",
+  "fid": "/g/11bx8lx9sx"
+ },
+ {
+  "name": "Ristorante Il Cortile dal 1929",
+  "addr": "Ristorante Il Cortile, Via Alberto Mario, 26, 00152 Roma RM, Italia",
+  "lat": 41.8801902,
+  "lon": 12.4623086,
+  "full": "Ristorante Il Cortile dal 1929, Ristorante Il Cortile, Via Alberto Mario, 26, 00152 Roma RM, Italia",
+  "fid": "/g/1ttxf13v"
+ },
+ {
+  "name": "Ristorante Dal Toscano",
+  "addr": "Via Germanico, 58-60, 00192 Roma RM, Italia",
+  "lat": 41.907733,
+  "lon": 12.457437299999999,
+  "full": "Ristorante Dal Toscano, Via Germanico, 58-60, 00192 Roma RM, Italia",
+  "fid": "/g/1tjjrj0r"
+ },
+ {
+  "name": "Cacio e Pepe",
+  "addr": "Via Giuseppe Avezzana, 11, 00195 Roma RM, Italia",
+  "lat": 41.915311599999995,
+  "lon": 12.4667587,
+  "full": "Cacio e Pepe, Via Giuseppe Avezzana, 11, 00195 Roma RM, Italia",
+  "fid": "/g/1v387519"
+ },
+ {
+  "name": "Flavio al Velavevodetto - Testaccio",
+  "addr": "Via di Monte Testaccio, 97, 00153 Roma RM, Italia",
+  "lat": 41.876546,
+  "lon": 12.475987,
+  "full": "Flavio al Velavevodetto - Testaccio, Via di Monte Testaccio, 97, 00153 Roma RM, Italia",
+  "fid": "/g/1pxy05ltb"
+ },
+ {
+  "name": "Osteria La Quercia",
+  "addr": "Piazza della Quercia, 23, 00186 Roma RM, Italia",
+  "lat": 41.8945897,
+  "lon": 12.471692,
+  "full": "Osteria La Quercia, Piazza della Quercia, 23, 00186 Roma RM, Italia",
+  "fid": "/g/1th547kx"
+ },
+ {
+  "name": "La Zanzara",
+  "addr": "Via Crescenzio, 84, 00195 Roma RM, Italia",
+  "lat": 41.906101,
+  "lon": 12.4601136,
+  "full": "La Zanzara, Via Crescenzio, 84, 00195 Roma RM, Italia",
+  "fid": "/g/1pzr1fw9n"
+ },
+ {
+  "name": "Il Sorpasso",
+  "addr": "Via Properzio, 31/33, 00193 Roma RM, Italia",
+  "lat": 41.9055126,
+  "lon": 12.4613313,
+  "full": "Il Sorpasso, Via Properzio, 31/33, 00193 Roma RM, Italia",
+  "fid": "/g/1hhhfm02_"
+ },
+ {
+  "name": "Hostaria Da Pietro",
+  "addr": "Via di Gesù e Maria, 18, 00187 Roma RM, Italia",
+  "lat": 41.908345399999995,
+  "lon": 12.47823,
+  "full": "Hostaria Da Pietro, Via di Gesù e Maria, 18, 00187 Roma RM, Italia",
+  "fid": "/g/1tf5sbzb"
+ },
+ {
+  "name": "Ristorante Alfredo alla Scrofa",
+  "addr": "Via della Scrofa, 104/a, 00186 Roma RM, Italia",
+  "lat": 41.902263999999995,
+  "lon": 12.4748032,
+  "full": "Ristorante Alfredo alla Scrofa, Via della Scrofa, 104/a, 00186 Roma RM, Italia",
+  "fid": "/g/1v6k2l24"
+ },
+ {
+  "name": "Roscioli Caffè Pasticceria",
+  "addr": "Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italia",
+  "lat": 41.894145699999996,
+  "lon": 12.4744403,
+  "full": "Roscioli Caffè Pasticceria, Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italia",
+  "fid": "/g/11cjpf5_63"
+ },
+ {
+  "name": "Roscioli Salumeria con Cucina",
+  "addr": "Via dei Giubbonari, 21, 00186 Roma RM, Italia",
+  "lat": 41.894256,
+  "lon": 12.4742417,
+  "full": "Roscioli Salumeria con Cucina, Via dei Giubbonari, 21, 00186 Roma RM, Italia",
+  "fid": "/g/1hc2sl98t"
+ },
+ {
+  "name": "Osteria delle Coppelle",
+  "addr": "Piazza delle Coppelle, 54/55/56, 00186 Roma RM, Italia",
+  "lat": 41.900948199999995,
+  "lon": 12.476064899999999,
+  "full": "Osteria delle Coppelle, Piazza delle Coppelle, 54/55/56, 00186 Roma RM, Italia",
+  "fid": "/g/11b6hrrr4w"
+ },
+ {
+  "name": "Rimessa Roscioli",
+  "addr": "Via del Conservatorio, 58, 00186 Roma RM, Italia",
+  "lat": 41.892712499999995,
+  "lon": 12.472769999999999,
+  "full": "Rimessa Roscioli, Via del Conservatorio, 58, 00186 Roma RM, Italia",
+  "fid": "/g/1hhhm7_41"
+ },
+ {
+  "name": "Casa Manfredi",
+  "addr": "Viale Aventino, 91/93, 00153 Roma RM, Italia",
+  "lat": 41.8809537,
+  "lon": 12.485142699999999,
+  "full": "Casa Manfredi, Viale Aventino, 91/93, 00153 Roma RM, Italia",
+  "fid": "/g/11ckz8hxz9"
+ },
+ {
+  "name": "Trattoria Al Moro | Ristorante Fontana di Trevi Roma",
+  "addr": "Vicolo delle Bollette, 13, 00187 Roma RM, Italia",
+  "lat": 41.9005611,
+  "lon": 12.4822028,
+  "full": "Trattoria Al Moro | Ristorante Fontana di Trevi Roma, Vicolo delle Bollette, 13, 00187 Roma RM, Italia",
+  "fid": "/g/1t_ryqq9"
+ },
+ {
+  "name": "Il Matriciano",
+  "addr": "Via dei Gracchi, 55, 00192 Roma RM, Italia",
+  "lat": 41.9073662,
+  "lon": 12.4602478,
+  "full": "Il Matriciano, Via dei Gracchi, 55, 00192 Roma RM, Italia",
+  "fid": "/g/1tfy4z1w"
+ },
+ {
+  "name": "L'Oasi della Birra",
+  "addr": "Piazza Testaccio, 39, 00153 Roma RM, Italia",
+  "lat": 41.879721599999996,
+  "lon": 12.477478399999999,
+  "full": "L'Oasi della Birra, Piazza Testaccio, 39, 00153 Roma RM, Italia",
+  "fid": "/g/1tfthg77"
+ },
+ {
+  "name": "Il Grottino a Testaccio",
+  "addr": "Via Marmorata, 165, 00153 Roma RM, Italia",
+  "lat": 41.8820197,
+  "lon": 12.476612,
+  "full": "Il Grottino a Testaccio, Via Marmorata, 165, 00153 Roma RM, Italia",
+  "fid": "/g/1td6jltj"
+ },
+ {
+  "name": "Mercato di Testaccio",
+  "addr": "Via Aldo Manuzio, 66b, 00153 Roma RM, Italia",
+  "lat": 41.8776845,
+  "lon": 12.4738455,
+  "full": "Mercato di Testaccio, Via Aldo Manuzio, 66b, 00153 Roma RM, Italia",
+  "fid": "/g/12hlrx2kd"
+ },
+ {
+  "name": "Trattoria Perilli",
+  "addr": "Via Marmorata, 39, 00153 Roma RM, Italia",
+  "lat": 41.878841,
+  "lon": 12.478822,
+  "full": "Trattoria Perilli, Via Marmorata, 39, 00153 Roma RM, Italia",
+  "fid": "/g/1vsmv4xn"
+ },
+ {
+  "name": "Ristorante Pecorino",
+  "addr": "Via Galvani, 64, 00153 Roma RM, Italia",
+  "lat": 41.8765575,
+  "lon": 12.4739883,
+  "full": "Ristorante Pecorino, Via Galvani, 64, 00153 Roma RM, Italia",
+  "fid": "/g/1tyh4mg1"
+ },
+ {
+  "name": "Pasticceria Barberini",
+  "addr": "Via Marmorata, 41, 00153 Roma RM, Italia",
+  "lat": 41.8789789,
+  "lon": 12.478733,
+  "full": "Pasticceria Barberini, Via Marmorata, 41, 00153 Roma RM, Italia",
+  "fid": "/g/1ptx9vxgv"
+ },
+ {
+  "name": "Salumeria Volpetti",
+  "addr": "Via Marmorata, 47, 00153 Roma RM, Italia",
+  "lat": 41.8790835,
+  "lon": 12.4786412,
+  "full": "Salumeria Volpetti, Via Marmorata, 47, 00153 Roma RM, Italia",
+  "fid": "/g/1tcvfb86"
+ },
+ {
+  "name": "Ristoro degli Angeli",
+  "addr": "Via Luigi Orlando, 2, 00154 Roma RM, Italia",
+  "lat": 41.862674299999995,
+  "lon": 12.4848143,
+  "full": "Ristoro degli Angeli, Via Luigi Orlando, 2, 00154 Roma RM, Italia",
+  "fid": "/g/1tfx_fnm"
+ },
+ {
+  "name": "Felice a Testaccio | ROMA",
+  "addr": "Via Mastro Giorgio, 29, 00153 Roma RM, Italia",
+  "lat": 41.8785303,
+  "lon": 12.477432499999999,
+  "full": "Felice a Testaccio | ROMA, Via Mastro Giorgio, 29, 00153 Roma RM, Italia",
+  "fid": "/g/11bydl3sq8"
+ },
+ {
+  "name": "Giolitti",
+  "addr": "Via degli Uffici del Vicario, 40, 00186 Roma RM, Italia",
+  "lat": 41.9010245,
+  "lon": 12.4772026,
+  "full": "Giolitti, Via degli Uffici del Vicario, 40, 00186 Roma RM, Italia",
+  "fid": "/g/11b7r_pys_"
+ },
+ {
+  "name": "Laganà",
+  "addr": "Via dell'Orso, 44, 00186 Roma RM, Italia",
+  "lat": 41.9018458,
+  "lon": 12.474135299999999,
+  "full": "Laganà, Via dell'Orso, 44, 00186 Roma RM, Italia",
+  "fid": "/g/1tg_0b0x"
+ },
+ {
+  "name": "Ciampini Roma",
+  "addr": "Piazza di S. Lorenzo in Lucina, 29, 00186 Roma RM, Italia",
+  "lat": 41.9037442,
+  "lon": 12.4780424,
+  "full": "Ciampini Roma, Piazza di S. Lorenzo in Lucina, 29, 00186 Roma RM, Italia",
+  "fid": "/g/1vgrcj45"
+ },
+ {
+  "name": "Matricianella",
+  "addr": "Via del Leone, 4, 00186 Roma RM, Italia",
+  "lat": 41.9037351,
+  "lon": 12.477405,
+  "full": "Matricianella, Via del Leone, 4, 00186 Roma RM, Italia",
+  "fid": "/g/1tg_178s"
+ }
+]

@@ -85,7 +85,7 @@ const I18N = {
   "btn_moodboard": "View the Pinterest moodboard",
   "code_47": "Code TheRomilys · 10% off",
   "code_rh": "15% off",
-  "note_rh": "",
+  "note_rh": "Contact <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> and say that you are coming for our wedding, you will get 15% off.",
   "f_first": "First name",
   "f_last": "Last name",
   "f_email": "Email address",
@@ -119,7 +119,8 @@ const I18N = {
   "f_sending": "Sending…",
   "f_thanks": "Thank you — we can’t wait to see you in Rome!",
   "f_error": "Something went wrong. Please try again in a moment.",
-  "f_offline": "The form will be live very soon — please come back to reply."
+  "f_offline": "The form will be live very soon — please come back to reply.",
+  "map_note": "Every pin is one of our favourite places — tap it to open it in Google Maps."
  },
  "fr": {
   "skip": "Passer",
@@ -206,7 +207,7 @@ const I18N = {
   "btn_moodboard": "Voir le moodboard Pinterest",
   "code_47": "Code TheRomilys · -10 %",
   "code_rh": "-15 %",
-  "note_rh": "",
+  "note_rh": "Écrivez à <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> en précisant que vous venez pour notre mariage : vous bénéficierez de 15 % de réduction.",
   "f_first": "Prénom",
   "f_last": "Nom",
   "f_email": "Adresse e-mail",
@@ -240,7 +241,8 @@ const I18N = {
   "f_sending": "Envoi…",
   "f_thanks": "Merci — nous avons hâte de vous voir à Rome !",
   "f_error": "Une erreur est survenue. Merci de réessayer dans un instant.",
-  "f_offline": "Le formulaire sera bientôt disponible — revenez pour répondre."
+  "f_offline": "Le formulaire sera bientôt disponible — revenez pour répondre.",
+  "map_note": "Chaque repère est l’une de nos adresses préférées — touchez-le pour l’ouvrir dans Google Maps."
  },
  "it": {
   "skip": "Salta",
@@ -327,7 +329,7 @@ const I18N = {
   "btn_moodboard": "Vedi il moodboard su Pinterest",
   "code_47": "Codice TheRomilys · 10% di sconto",
   "code_rh": "15% di sconto",
-  "note_rh": "",
+  "note_rh": "Scrivete a <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> dicendo che venite per il nostro matrimonio: avrete il 15% di sconto.",
   "f_first": "Nome",
   "f_last": "Cognome",
   "f_email": "Indirizzo e-mail",
@@ -361,6 +363,7 @@ const I18N = {
   "f_sending": "Invio…",
   "f_thanks": "Grazie — non vediamo l’ora di vederti a Roma!",
   "f_error": "Qualcosa è andato storto. Riprova tra un momento.",
-  "f_offline": "Il modulo sarà attivo a breve — torna per rispondere."
+  "f_offline": "Il modulo sarà attivo a breve — torna per rispondere.",
+  "map_note": "Ogni segnaposto è uno dei nostri posti preferiti — toccalo per aprirlo in Google Maps."
  }
 };
