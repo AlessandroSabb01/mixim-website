@@ -273,7 +273,7 @@ section{position:relative;z-index:2;padding:var(--s5) max(var(--gutter),env(safe
 .addr a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .6s var(--ease)}
 .addr a:hover{background-size:100% 1px}
 .vshuttle{font-size:13px;font-style:italic;margin:18px auto 0;padding:12px 10px;border-block:1px dashed rgba(94,42,28,.22);max-width:340px}
-@media(max-width:820px){.row{grid-template-columns:1fr}.row.flip>.plate{order:0}.plate{width:min(440px,100%);margin-inline:auto}}
+@media(max-width:820px){.row{grid-template-columns:1fr}.row.flip>.plate{order:0}.venues .row>.plate{order:2}.plate{width:min(440px,100%);margin-inline:auto}}
 
 /* dress code */
 .cols{display:grid;grid-template-columns:1fr 1px 1fr;gap:var(--s5);max-width:960px;margin-inline:auto;align-items:start;text-align:center}
@@ -613,7 +613,7 @@ footer .langs{justify-content:center;margin-top:30px}
             <label class="f"><span data-i18n="f_last">Last name</span><input id="rf-last" name="last" required autocomplete="family-name"></label>
             <label class="f"><span data-i18n="f_email">Email address</span><input id="rf-email" name="email" type="email" required autocomplete="email"></label>
             <label class="f"><span data-i18n="f_phone">Phone number</span><input id="rf-phone" name="phone" type="tel" autocomplete="tel"></label>
-            <label class="f wide"><span data-i18n="f_address">Home address</span><input id="rf-address" name="address" autocomplete="street-address"></label>
+            <label class="f wide"><span data-i18n="f_address">Home address (street, postcode, city, country)</span><input id="rf-address" name="address" autocomplete="street-address"></label>
           </div>
           <fieldset><legend data-i18n="f_attend">Attendance at each event</legend>
             <div class="yn"><span data-i18n="ev_welcome">Welcome Party</span><span class="pills"><label><input type="radio" name="welcome" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="welcome" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_ceremony">Ceremony</span><span class="pills"><label><input type="radio" name="ceremony" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="ceremony" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_reception">Reception</span><span class="pills"><label><input type="radio" name="reception" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="reception" value="No"><i data-i18n="no">No</i></label></span></div>
@@ -722,8 +722,8 @@ footer .langs{justify-content:center;margin-top:30px}
     <div class="cols">
       <div data-reveal>
         <h3 class="script s-lg" data-i18n="childcare">Childcare</h3>
-        <p data-i18n="childcare_p">Babysitting service provided by Orienta Family. For all arrangements, please contact Francesca directly.</p>
-        <p class="addr contact"><a href="https://orientafamily.com/cicogne" target="_blank" rel="noopener">orientafamily.com/cicogne</a><br>info@orientafamily.com</p>
+        <p data-i18n="childcare_p">Babysitting service provided by Family Express. For all arrangements, please contact Simone directly.</p>
+        <p class="addr contact"><a href="https://www.familyexpress.it/en/home-en/" target="_blank" rel="noopener">familyexpress.it</a><br><a href="mailto:info@familyexpress.it">info@familyexpress.it</a><br><a href="tel:+393661301884">+39 366 130 1884</a></p>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
