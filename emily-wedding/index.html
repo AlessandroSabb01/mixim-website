@@ -166,7 +166,7 @@ button{font:inherit;color:inherit}
 .mono-link .amp{position:absolute;left:21px;top:12px;font-family:var(--script);font-size:22px;opacity:.8}
 .nav{display:flex;gap:clamp(16px,2.4vw,40px);list-style:none}
 .nav>li{position:relative}
-.nav a,.nav button{font:400 15px/1 var(--serif);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;background:none;border:0;color:inherit;cursor:pointer;padding:8px 0;transition:opacity .4s}
+.nav a,.nav button{white-space:nowrap;font:400 15px/1 var(--serif);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;background:none;border:0;color:inherit;cursor:pointer;padding:8px 0;transition:opacity .4s}
 .nav:hover>li>a,.nav:hover>li>button{opacity:.45}
 .nav>li:hover>a,.nav>li:hover>button{opacity:1}
 .folder ul{position:absolute;top:100%;left:50%;translate:-50% 8px;list-style:none;padding:16px 26px;background:var(--paper);color:var(--ink);white-space:nowrap;opacity:0;pointer-events:none;transition:.4s var(--ease);box-shadow:0 20px 40px -24px rgba(94,42,28,.35)}
@@ -185,7 +185,7 @@ button{font:inherit;color:inherit}
 .mmenu a.script{font-family:var(--script);text-transform:none;font-size:40px;color:var(--sunset)}
 .mmenu .langs{margin-top:22px;font-size:16px}
 .menu-open .mmenu{clip-path:circle(150% at 100% 0)}
-@media(max-width:1060px){.nav,.hdr-end .oval,.hdr-end .langs{display:none}.burger{display:block}.hdr{grid-template-columns:1fr 1fr}}
+@media(max-width:1240px){.nav,.hdr-end .oval,.hdr-end .langs{display:none}.burger{display:block}.hdr{grid-template-columns:1fr 1fr}}
 
 /* ───────── Hero: Emily's watercolour, alive, folding into a Roman arch ───────── */
 .hero{position:relative;height:100svh;min-height:600px;overflow:hidden}
@@ -195,12 +195,7 @@ button{font:inherit;color:inherit}
 @media (max-aspect-ratio:4/5){.hero-media .poster{background-image:url(img/sky-portrait.webp)}}
 .hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 40% at 50% 46%,rgba(250,245,236,.78),rgba(250,245,236,.35) 60%,transparent 100%)}
 .hero-in{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 var(--gutter)}
-.hero-in>div:first-child{will-change:transform}
-.hero-mono{position:absolute;left:50%;top:46%;width:1.6em;height:1.5em;translate:-50% -50%;font:400 clamp(120px,13vw,190px)/.8 var(--serif);color:var(--ink);opacity:0;pointer-events:none}
-.hero-mono span{position:absolute}
-.hero-mono .a{left:0;top:0}
-.hero-mono .b{left:.56em;top:.46em}
-.hero-mono .amp{left:.53em;top:.3em;font:400 .55em/1 var(--script);color:var(--sunset)}
+.hero h1{will-change:transform}
 .hero .eyebrow{margin-bottom:18px}
 .hero .date{font:400 clamp(28px,2.9vw,46px)/1.1 var(--script);color:var(--sunset);margin-bottom:.12em}
 .hero .h-xl{perspective:800px}
@@ -511,7 +506,6 @@ footer .langs{justify-content:center;margin-top:30px}
       <h1 class="h-xl split">Emily &amp; Alexandre</h1>
       <p class="place" data-i18n="hero_place">Rome</p>
     </div>
-    <div class="hero-mono" aria-hidden="true"><span class="a">E</span><span class="amp">&amp;</span><span class="b">A</span></div>
   </div>
   </div>
   <div class="arch-cap"><p class="script" data-i18n="arch_cap">Rome, the Eternal City</p></div>
@@ -671,7 +665,9 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="addr">Lungotevere de' Cenci 5-8, Rome (RM)</p>
         <p><span data-i18n="citizen">Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
         <div class="meta"><a href="https://www.citizenm.com/hotels/europe/rome/rome-isola-tiberina-hotel" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
-        <div class="row">
+      </div>
+    </div>
+    <div class="row">
       <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/rh-1.webp" alt="Rhinoceros Rome" loading="lazy"></div></div>
       <div class="txt hotel" data-reveal>
         <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
@@ -690,8 +686,6 @@ footer .langs{justify-content:center;margin-top:30px}
         <p><span data-i18n="steps">Just steps from the Great Synagogue of Rome (Tempio Maggiore).</span></p>
         <div class="meta"><a href="https://www.palazzovelabro.it" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
       </div>
-    </div>
-  </div>
     </div>
   </div>
   <div class="wrap others">
@@ -1560,10 +1554,8 @@ const I18N = {
   gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=60%', scrub: 1, pin: true, anticipatePin: 1, invalidateOnRefresh: true } })
     .fromTo('.hero-media', { clipPath: 'inset(0px 0px 0px 0px round 0px 0px 0px 0px)' }, { clipPath: archShape, ease: 'none' })
     .to('.hero-media video, .hero-media .poster', { scale: 1.08, ease: 'none' }, 0)
-    // the names shrink so they always fit inside the arch, then fold into the E&A monogram
-    .to('.hero-in>div:first-child', { scale: () => { const n = $('.hero h1'), s = innerWidth < 700 ? innerWidth * .14 : innerWidth * .31; return Math.min(1, (innerWidth - 2 * s) * .86 / n.offsetWidth); }, ease: 'none', duration: .5 }, 0)
-    .to('.hero-in>div:first-child', { opacity: 0, filter: 'blur(6px)', ease: 'none', duration: .25 }, .45)
-    .fromTo('.hero-mono', { opacity: 0, scale: .55 }, { opacity: 1, scale: 1, ease: 'none', duration: .3 }, .55)
+    // only the names shrink, so they always fit inside the closing arch; every other line keeps its size
+    .to('.hero h1', { scale: () => { const n = $('.hero h1'), s = innerWidth < 700 ? innerWidth * .14 : innerWidth * .31; return Math.min(1, (innerWidth - 2 * s) * .88 / n.offsetWidth); }, ease: 'none' }, 0)
     .to('.cue', { opacity: 0, ease: 'none', duration: .2 }, 0)
     .to('.arch-cap', { opacity: 1, ease: 'none', duration: .3 }, .7);
 
