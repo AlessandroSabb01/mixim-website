@@ -83,7 +83,7 @@ button{font:inherit;color:inherit}
 .script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;line-height:1.05}
 .s-lg{font-size:clamp(40px,4.2vw,64px);color:var(--ink)}
 .s-md{font-size:clamp(30px,2.7vw,40px);color:var(--ink)}
-.eyebrow{font:400 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--sunset)}
+.eyebrow{font:600 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:#9A4A00}
 .lead{max-width:52ch;margin-inline:auto;font-size:15px;text-align:center}
 .center{text-align:center}
 .ln-wrap{display:block;clip-path:inset(-8% -100vw -4% -100vw);padding-bottom:.04em}
@@ -102,9 +102,9 @@ button{font:inherit;color:inherit}
 #intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;color:var(--ink)}
 #intro .veil{position:absolute;inset:0;background:rgba(248,241,230,.5);backdrop-filter:blur(9px) saturate(1.05);-webkit-backdrop-filter:blur(9px) saturate(1.05)}
 #intro .intro-top{position:absolute;top:max(22px,env(safe-area-inset-top,0px));left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:0 max(var(--gutter),env(safe-area-inset-right,0px)) 0 max(var(--gutter),env(safe-area-inset-left,0px));z-index:5}
-#intro .intro-hint{position:absolute;left:0;right:0;bottom:max(30px,calc(env(safe-area-inset-bottom,0px) + 20px));text-align:center;z-index:5}
-#intro .intro-hint .script{font-size:clamp(28px,3vw,38px);color:var(--ink)}
-#intro .intro-hint .eyebrow{margin-top:6px}
+#intro .intro-hint{position:absolute;left:0;right:0;top:calc(50% + min(200px,28vw) + 26px);text-align:center;z-index:5}
+#intro .intro-hint .script{font-size:clamp(34px,3.4vw,44px);color:var(--ink)}
+#intro .intro-hint .eyebrow{margin-top:8px;font-size:12px;font-weight:600;color:#9A4A00}
 .taps{display:flex;gap:10px;justify-content:center;margin-top:14px}
 .taps i{width:7px;height:7px;border-radius:50%;border:1px solid var(--wax);transition:background .4s,transform .4s var(--ease)}
 .taps i.on{background:var(--wax);transform:scale(1.2)}
@@ -318,7 +318,7 @@ section{position:relative;z-index:2;padding:var(--s5) max(var(--gutter),env(safe
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
 .f{display:flex;flex-direction:column;gap:6px;min-width:0}
 .f.wide{grid-column:1/-1}
-.f>span,.rform legend{font:400 10px/1.3 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset)}
+.tel{display:flex;gap:8px}.rform .tel select{width:auto;flex:0 0 auto}.f>label>span{display:block}.f>label>span,.f>span,.rform legend{font:400 10px/1.3 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sunset)}
 .rform input:not([type=radio]):not([type=checkbox]),.rform select,.rform textarea{width:100%;font:300 16px/1.4 var(--sans);color:var(--ink);background:rgba(255,252,246,.7);border:0;border-bottom:1px solid rgba(94,42,28,.3);padding:10px 4px;border-radius:0;outline:none;transition:border-color .4s,background .4s}
 .rform input:focus,.rform select:focus,.rform textarea:focus{border-color:var(--sunset);background:rgba(255,252,246,.95)}
 .rform .bad{border-color:var(--wax)!important;background:rgba(222,69,121,.06)!important}
@@ -552,7 +552,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <span class="time">15:00</span>
         <p class="venue">Tempio Maggiore di Roma</p>
         <p class="addr"><a href="https://maps.google.com/?q=Tempio+Maggiore+di+Roma" target="_blank" rel="noopener">Lungotevere de' Cenci, Rome (RM)</a></p>
-        <p class="vshuttle" data-i18n="shuttle">Shuttle transfer</p>
+        <p class="vshuttle" data-i18n="shuttle"><b>Shuttle Service</b><br>For our guests’ comfort, a round-trip shuttle will depart at 16:30 from the Tempio Maggiore di Roma to Castello Odescalchi di Palo Laziale.<br>The shuttle will also be available for the return at the end of the celebrations.</p>
       </div>
     </div>
     <div class="row">
@@ -582,14 +582,14 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style, think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="oval" href="https://pin.it/5NXvnLWg6" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
+        <a class="oval" href="https://pin.it/nuo5X9XCH" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden, black tie attire, with shoes that can handle the lawn.</p>
-        <a class="oval" href="https://pin.it/2gJVSAhl3" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
+        <a class="oval" href="https://pin.it/3baWWxGk0" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         
       </div>
     </div>
@@ -612,8 +612,11 @@ footer .langs{justify-content:center;margin-top:30px}
             <label class="f"><span data-i18n="f_first">First name</span><input id="rf-first" name="first" required autocomplete="given-name"></label>
             <label class="f"><span data-i18n="f_last">Last name</span><input id="rf-last" name="last" required autocomplete="family-name"></label>
             <label class="f"><span data-i18n="f_email">Email address</span><input id="rf-email" name="email" type="email" required autocomplete="email"></label>
-            <label class="f"><span data-i18n="f_phone">Phone number</span><input id="rf-phone" name="phone" type="tel" autocomplete="tel"></label>
-            <label class="f wide"><span data-i18n="f_address">Home address (street, postcode, city, country)</span><input id="rf-address" name="address" autocomplete="street-address"></label>
+            <div class="f"><label for="rf-phone"><span data-i18n="f_phone">Phone number</span></label><div class="tel"><select id="rf-prefix" name="prefix" aria-label="Country code" autocomplete="tel-country-code"><option value="+39">🇮🇹 +39</option><option value="+33">🇫🇷 +33</option><option value="+41">🇨🇭 +41</option><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 🇨🇦 +1</option><option value="+32">🇧🇪 +32</option><option value="+352">🇱🇺 +352</option><option value="+377">🇲🇨 +377</option><option value="+49">🇩🇪 +49</option><option value="+34">🇪🇸 +34</option><option value="+351">🇵🇹 +351</option><option value="+31">🇳🇱 +31</option><option value="+43">🇦🇹 +43</option><option value="+353">🇮🇪 +353</option><option value="+46">🇸🇪 +46</option><option value="+47">🇳🇴 +47</option><option value="+45">🇩🇰 +45</option><option value="+358">🇫🇮 +358</option><option value="+48">🇵🇱 +48</option><option value="+30">🇬🇷 +30</option><option value="+972">🇮🇱 +972</option><option value="+971">🇦🇪 +971</option><option value="+212">🇲🇦 +212</option><option value="+216">🇹🇳 +216</option><option value="+27">🇿🇦 +27</option><option value="+55">🇧🇷 +55</option><option value="+54">🇦🇷 +54</option><option value="+52">🇲🇽 +52</option><option value="+61">🇦🇺 +61</option><option value="+81">🇯🇵 +81</option><option value="+86">🇨🇳 +86</option><option value="+91">🇮🇳 +91</option><option value="+65">🇸🇬 +65</option><option value="+7">🇷🇺 +7</option></select><input id="rf-phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel"></div></div>
+            <label class="f wide"><span data-i18n="f_street">Street and number</span><input id="rf-street" name="street" autocomplete="address-line1"></label>
+            <label class="f"><span data-i18n="f_zip">Postcode</span><input id="rf-zip" name="zip" autocomplete="postal-code"></label>
+            <label class="f"><span data-i18n="f_city">City</span><input id="rf-city" name="city" autocomplete="address-level2"></label>
+            <label class="f wide"><span data-i18n="f_country">Country</span><input id="rf-country" name="country" autocomplete="country-name"></label>
           </div>
           <fieldset><legend data-i18n="f_attend">Attendance at each event</legend>
             <div class="yn"><span data-i18n="ev_welcome">Welcome Party</span><span class="pills"><label><input type="radio" name="welcome" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="welcome" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_ceremony">Ceremony</span><span class="pills"><label><input type="radio" name="ceremony" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="ceremony" value="No"><i data-i18n="no">No</i></label></span></div><div class="yn"><span data-i18n="ev_reception">Reception</span><span class="pills"><label><input type="radio" name="reception" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="reception" value="No"><i data-i18n="no">No</i></label></span></div>
@@ -622,7 +625,7 @@ footer .langs{justify-content:center;margin-top:30px}
             <div class="yn"><span data-i18n="f_transfer_q">Will you use the shuttle?</span><span class="pills"><label><input type="radio" name="shuttle" value="Yes" required><i data-i18n="yes">Yes</i></label><label><input type="radio" name="shuttle" value="No"><i data-i18n="no">No</i></label></span></div>
           </fieldset>
           <fieldset><legend data-i18n="f_diet">Allergies or intolerances</legend>
-            <div class="chips"><label class="chip"><input type="checkbox" name="diet" value="none"><i data-i18n="d_none">No restrictions</i></label><label class="chip"><input type="checkbox" name="diet" value="vegetarian"><i data-i18n="d_veg">Vegetarian</i></label><label class="chip"><input type="checkbox" name="diet" value="vegan"><i data-i18n="d_vegan">Vegan</i></label><label class="chip"><input type="checkbox" name="diet" value="pescatarian"><i data-i18n="d_pesc">Pescatarian</i></label><label class="chip"><input type="checkbox" name="diet" value="gluten"><i data-i18n="d_gluten">Gluten-free / coeliac</i></label><label class="chip"><input type="checkbox" name="diet" value="lactose"><i data-i18n="d_lact">Lactose-free</i></label><label class="chip"><input type="checkbox" name="diet" value="nuts"><i data-i18n="d_nuts">Nut allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="shellfish"><i data-i18n="d_shell">Shellfish allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="kosher"><i data-i18n="d_kosher">Kosher</i></label><label class="chip"><input type="checkbox" name="diet" value="halal"><i data-i18n="d_halal">Halal</i></label><label class="chip"><input type="checkbox" name="diet" value="other"><i data-i18n="d_other">Other</i></label></div>
+            <div class="chips"><label class="chip"><input type="checkbox" name="diet" value="none"><i data-i18n="d_none">No restrictions</i></label><label class="chip"><input type="checkbox" name="diet" value="vegetarian"><i data-i18n="d_veg">Vegetarian</i></label><label class="chip"><input type="checkbox" name="diet" value="vegan"><i data-i18n="d_vegan">Vegan</i></label><label class="chip"><input type="checkbox" name="diet" value="pescatarian"><i data-i18n="d_pesc">Pescatarian</i></label><label class="chip"><input type="checkbox" name="diet" value="gluten"><i data-i18n="d_gluten">Gluten-free / coeliac</i></label><label class="chip"><input type="checkbox" name="diet" value="lactose"><i data-i18n="d_lact">Lactose-free</i></label><label class="chip"><input type="checkbox" name="diet" value="nuts"><i data-i18n="d_nuts">Nut allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="shellfish"><i data-i18n="d_shell">Shellfish allergy</i></label><label class="chip"><input type="checkbox" name="diet" value="kosher"><i data-i18n="d_kosher">Kosher</i></label><label class="chip"><input type="checkbox" name="diet" value="other"><i data-i18n="d_other">Other</i></label></div>
             <label class="f wide" style="margin-top:14px"><span data-i18n="f_diet_notes">Anything we should know? (e.g. a severe allergy)</span><input id="rf-diet" name="diet_notes"></label>
           </fieldset>
           <div class="fgrid">
@@ -832,7 +835,7 @@ const I18N = {
   "ev_welcome": "Welcome Party",
   "ev_ceremony": "Ceremony",
   "ev_reception": "Reception",
-  "shuttle": "Shuttle transfer · about 45 minutes each way to the Castle. Departing from the Tempio Maggiore only. Let us know if you'd like to use it when you fill out your RSVP.",
+  "shuttle": "<b>Shuttle Service</b><br>For our guests’ comfort, a round-trip shuttle will depart at 16:30 from the Tempio Maggiore di Roma to Castello Odescalchi di Palo Laziale.<br>The shuttle will also be available for the return at the end of the celebrations.",
   "btn_confirm": "Confirm Your Presence",
   "day1": "Day 1 · Saturday, June 26",
   "day2": "Day 2 · Sunday, June 27",
@@ -897,6 +900,10 @@ const I18N = {
   "f_email": "Email address",
   "f_phone": "Phone number",
   "f_address": "Home address (street, postcode, city, country)",
+  "f_street": "Home address · street and number",
+  "f_zip": "Postcode",
+  "f_city": "City",
+  "f_country": "Country",
   "f_attend": "Attendance at each event",
   "f_transfer": "Shuttle from the Tempio Maggiore to the Castle",
   "f_transfer_q": "Will you use the shuttle?",
@@ -959,7 +966,7 @@ const I18N = {
   "ev_welcome": "Soirée de bienvenue",
   "ev_ceremony": "Cérémonie",
   "ev_reception": "Réception",
-  "shuttle": "Navette · environ 45 minutes pour rejoindre le Château, à l'aller comme au retour. Départ uniquement du Tempio Maggiore. Indiquez-nous si vous souhaitez l'utiliser en remplissant votre RSVP.",
+  "shuttle": "<b>Service de navette</b><br>Pour le confort de nos invités, une navette aller-retour partira à 16h30 du Tempio Maggiore de Rome en direction du Castello Odescalchi de Palo Laziale.<br>La navette sera également disponible pour le retour à la fin des festivités.",
   "btn_confirm": "Confirmez votre présence",
   "day1": "Jour 1 · Samedi 26 juin",
   "day2": "Jour 2 · Dimanche 27 juin",
@@ -1024,6 +1031,10 @@ const I18N = {
   "f_email": "Adresse e-mail",
   "f_phone": "Téléphone",
   "f_address": "Adresse postale (rue, code postal, ville, pays)",
+  "f_street": "Adresse postale · rue et numéro",
+  "f_zip": "Code postal",
+  "f_city": "Ville",
+  "f_country": "Pays",
   "f_attend": "Présence à chaque événement",
   "f_transfer": "Navette du Tempio Maggiore au Château",
   "f_transfer_q": "Prendrez-vous la navette ?",
@@ -1063,9 +1074,9 @@ const I18N = {
  "it": {
   "skip": "Salta",
   "to_guests": "Ai nostri cari ospiti",
-  "tap": "Rompi il sigillo",
-  "tap_sub": "Toccalo tre volte",
-  "open_aria": "Rompi il sigillo per aprire l'invito",
+  "tap": "Rompete il sigillo",
+  "tap_sub": "Toccatelo tre volte",
+  "open_aria": "Rompete il sigillo per aprire l'invito",
   "nav_schedule": "Programma",
   "nav_dress": "Dress code",
   "nav_stay": "Dove alloggiare",
@@ -1086,8 +1097,8 @@ const I18N = {
   "ev_welcome": "Festa di benvenuto",
   "ev_ceremony": "Cerimonia",
   "ev_reception": "Ricevimento",
-  "shuttle": "Navetta · circa 45 minuti per tratta fino al Castello. Partenza solo dal Tempio Maggiore. Facci sapere se vuoi usarla quando compili l’RSVP.",
-  "btn_confirm": "Conferma la tua presenza",
+  "shuttle": "<b>Servizio Navetta</b><br>Per il comfort dei nostri ospiti, sarà a disposizione un servizio navetta di andata e ritorno, con partenza alle ore 16:30 dal Tempio Maggiore di Roma in direzione del Castello Odescalchi di Palo Laziale.<br>Il servizio sarà disponibile anche per il rientro al termine dei festeggiamenti.",
+  "btn_confirm": "Confermate la vostra presenza",
   "day1": "Giorno 1 · Sabato 26 giugno",
   "day2": "Giorno 2 · Domenica 27 giugno",
   "dress_eyebrow": "Cosa indossare",
@@ -1097,9 +1108,9 @@ const I18N = {
   "wedding_day": "Giorno del matrimonio",
   "blacktie": "Black Tie elegante",
   "blacktie_p": "L’evento si terrà in giardino, abito da sera, con scarpe adatte al prato.",
-  "rsvp_eyebrow": "Facci sapere se ci sarai",
+  "rsvp_eyebrow": "Fateci sapere se ci sarete",
   "rsvp_p": "Compilare il modulo ci aiuterà a curare ogni dettaglio.",
-  "respond_by": "Rispondi entro il",
+  "respond_by": "Rispondete entro il",
   "tbd": "1° febbraio 2027",
   "stay_eyebrow": "Dove alloggiare",
   "stay_title": "Hotel consigliati",
@@ -1107,25 +1118,25 @@ const I18N = {
   "near": "Consigliato · Vicino al Tempio",
   "steps": "A pochi passi dal Tempio Maggiore di Roma.",
   "citizen": "Design moderno, proprio di fronte al Tempio Maggiore di Roma.",
-  "visit": "Visita il sito",
+  "visit": "Visitate il sito",
   "code": "Codice TheRomilys · 10% di sconto",
   "others": "Altre opzioni in città",
   "kids_eyebrow": "Per la vostra tranquillità",
   "kids_title": "Bambini &amp; transfer privati",
   "childcare": "Baby-sitting",
-  "childcare_p": "Servizio di baby-sitting a cura di Family Express. Per ogni accordo, contatta direttamente Simone.",
+  "childcare_p": "Servizio di baby-sitting a cura di Family Express. Per ogni accordo, contattate direttamente Simone.",
   "transfers": "Transfer privati",
   "transfers_p": "Per prenotare un’auto privata in qualsiasi momento, scrivete a Elysium Exclusive specificando che è per il matrimonio di Emily &amp; Alexandre.",
   "eat_eyebrow": "I nostri posti preferiti",
   "eat_title": "Dove mangiare a Roma",
   "eat_p": "Abbiamo raccolto i nostri ristoranti preferiti in un’unica mappa.",
-  "btn_map": "Apri la mappa dei ristoranti",
+  "btn_map": "Aprite la mappa dei ristoranti",
   "info_eyebrow": "Ultime cose",
   "info_title": "Informazioni utili",
   "q_weather": "Che tempo fa",
   "a_weather": "A fine giugno a Roma fa caldo (28-33 °C / 82-91 °F). Tessuti leggeri, un ventaglio e la crema solare saranno i vostri migliori amici.",
   "q_getting": "Come arrivare",
-  "a_getting": "Gli aeroporti principali sono Fiumicino (FCO) e Ciampino (CIA). Per un transfer privato dall’aeroporto, vedi il contatto in <a href=\"#kids\">“Transfer privati”</a>. La domenica una navetta andata e ritorno collegherà il Tempio Maggiore al Castello Odescalchi (vedi <a href=\"#schedule\">“Programma”</a>).",
+  "a_getting": "Gli aeroporti principali sono Fiumicino (FCO) e Ciampino (CIA). Per un transfer privato dall’aeroporto, vedete il contatto in <a href=\"#kids\">“Transfer privati”</a>. La domenica una navetta andata e ritorno collegherà il Tempio Maggiore al Castello Odescalchi (vedete <a href=\"#schedule\">“Programma”</a>).",
   "q_kids": "Bambini",
   "a_kids": "Se vi serve una tata durante gli eventi, trovate tutto nella sezione <a href=\"#kids\">Bambini &amp; transfer privati</a>.",
   "q_gifts": "Regali",
@@ -1140,9 +1151,9 @@ const I18N = {
   "u_sec": "Secondi",
   "footer_date": "26-27 giugno 2027 · Roma, Italia",
   "hero_date": "26 &amp; 27 giugno 2027",
-  "remind": "Non hai ancora risposto? Ci vuole solo un minuto.",
-  "remind_btn": "Rispondi all'RSVP",
-  "btn_moodboard": "Vedi il moodboard su Pinterest",
+  "remind": "Non avete ancora risposto? Ci vuole solo un minuto.",
+  "remind_btn": "Rispondete all'RSVP",
+  "btn_moodboard": "Guardate il moodboard su Pinterest",
   "code_47": "Codice TheRomilys · 10% di sconto",
   "code_rh": "15% di sconto",
   "note_rh": "Scrivete a <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> dicendo che venite per il nostro matrimonio: avrete il 15% di sconto.",
@@ -1151,9 +1162,13 @@ const I18N = {
   "f_email": "Indirizzo e-mail",
   "f_phone": "Telefono",
   "f_address": "Indirizzo di casa (via, CAP, città, paese)",
+  "f_street": "Indirizzo di casa · via e numero civico",
+  "f_zip": "CAP",
+  "f_city": "Città",
+  "f_country": "Paese",
   "f_attend": "Partecipazione a ogni evento",
   "f_transfer": "Navetta dal Tempio Maggiore al Castello",
-  "f_transfer_q": "Userai la navetta?",
+  "f_transfer_q": "Userete la navetta?",
   "yes": "Sì",
   "no": "No",
   "f_diet": "Allergie o intolleranze",
@@ -1169,23 +1184,23 @@ const I18N = {
   "d_halal": "Halal",
   "d_other": "Altro",
   "f_diet_notes": "Qualcosa che dovremmo sapere? (allergia grave…)",
-  "f_hotel": "In quale hotel alloggerai",
-  "h_choose": "Scegli…",
+  "f_hotel": "In quale hotel alloggerete",
+  "h_choose": "Scegliete…",
   "h_other": "Un altro hotel a Roma",
   "h_undecided": "Non ancora deciso",
   "f_msg": "Un pensiero per Emily &amp; Alexandre (facoltativo)",
   "btn_send": "Invia la mia risposta",
-  "f_missing": "Inserisci nome, cognome, un’e-mail valida e rispondi per ogni evento.",
+  "f_missing": "Inserite nome, cognome, un’e-mail valida e rispondete per ogni evento.",
   "f_sending": "Invio…",
-  "f_thanks": "Grazie, non vediamo l’ora di vederti a Roma!",
-  "f_error": "Qualcosa è andato storto. Riprova tra un momento.",
-  "f_offline": "Il modulo sarà attivo a breve, torna per rispondere.",
-  "map_note": "Ogni segnaposto è uno dei nostri posti preferiti, toccalo per aprirlo in Google Maps.",
+  "f_thanks": "Grazie, non vediamo l’ora di vedervi a Roma!",
+  "f_error": "Qualcosa è andato storto. Riprovate tra un momento.",
+  "f_offline": "Il modulo sarà attivo a breve, tornate per rispondere.",
+  "map_note": "Ogni segnaposto è uno dei nostri posti preferiti, toccatelo per aprirlo in Google Maps.",
   "g_eyebrow": "Invito privato",
-  "g_label": "Inserisci la password del tuo invito per accedere",
+  "g_label": "Inserite la password del vostro invito per accedere",
   "g_ph": "Password",
-  "g_go": "Entra",
-  "g_wrong": "La password non è corretta. Controlla il tuo invito."
+  "g_go": "Entrate",
+  "g_wrong": "La password non è corretta. Controllate il vostro invito."
  }
 };
 
@@ -1432,7 +1447,7 @@ const I18N = {
     ['welcome', 'ceremony', 'reception', 'shuttle'].forEach(n => { const bad = !fd.get(n); flag(form.querySelector(`[name="${n}"]`).closest('.yn'), bad); ok = ok && !bad; });
     if (!ok) { status.className = 'fstatus'; status.textContent = t('f_missing'); return; }
     const row = {
-      first: fd.get('first').trim(), last: fd.get('last').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim(), address: fd.get('address').trim(),
+      first: fd.get('first').trim(), last: fd.get('last').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim() ? fd.get('prefix') + ' ' + fd.get('phone').trim() : '', address: ['street', 'zip', 'city', 'country'].map(k => fd.get(k).trim()).filter(Boolean).join(', '),
       welcome: fd.get('welcome'), ceremony: fd.get('ceremony'), reception: fd.get('reception'), shuttle: fd.get('shuttle'),
       diet: fd.getAll('diet').join(', '), diet_notes: fd.get('diet_notes').trim(), hotel: fd.get('hotel'), message: fd.get('message').trim(),
       language: lang.toUpperCase(), submitted: new Date().toISOString()
