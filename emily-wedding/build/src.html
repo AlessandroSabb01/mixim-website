@@ -296,8 +296,9 @@ section{position:relative;z-index:2;padding:var(--s5) max(var(--gutter),env(safe
 @media(max-width:699px){.rsvp .archbox>.arch{border-radius:25px 25px 0 0}.rsvp .arch{padding-top:56px}}
 
 /* hotels: alternating cards, like the venues */
-.hotels .row{margin-top:var(--s6)}
-.hotels .row:first-child{margin-top:0}
+.hotels{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4) var(--s5);max-width:960px;margin-inline:auto}
+.hotels .hcard{display:flex;justify-content:center;padding:28px 18px;border-top:1px solid rgba(94,42,28,.18)}
+@media(max-width:820px){.hotels{grid-template-columns:1fr;gap:0}}
 .plate.photo .arch{aspect-ratio:4/4.8}
 .hotel{text-align:center}
 .hotel h4{font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-top:12px}
@@ -583,14 +584,14 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style, think vibrant colors, light fabrics and relaxed elegance.</p>
-        <a class="oval" href="https://pin.it/nuo5X9XCH" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
+        <a class="oval" href="https://pin.it/3baWWxGk0" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
       </div>
       <div class="rule" aria-hidden="true"></div>
       <div data-reveal>
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden, black tie attire, with shoes that can handle the lawn.</p>
-        <a class="oval" href="https://pin.it/3baWWxGk0" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
+        <a class="oval" href="https://pin.it/nuo5X9XCH" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         
       </div>
     </div>
@@ -653,8 +654,7 @@ footer .langs{justify-content:center;margin-top:30px}
     </div>
   </div>
   <div class="wrap hotels">
-    <div class="row">
-      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/h47-1.webp" alt="Hotel 47 Rome" loading="lazy"></div></div>
+     <div class="hcard">
       <div class="txt hotel" data-reveal>
         <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
         <h4>Hotel 47 Rome</h4>
@@ -663,8 +663,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <div class="meta"><a href="https://www.fortysevenhotel.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_47">Code</span></div>
       </div>
     </div>
-    <div class="row flip">
-      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/cz-1.webp" alt="CitizenM Isola Tiberina" loading="lazy"></div></div>
+     <div class="hcard">
       <div class="txt hotel" data-reveal>
         <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
         <h4>CitizenM Isola Tiberina</h4>
@@ -673,8 +672,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <div class="meta"><a href="https://www.citizenm.com/hotels/europe/rome/rome-isola-tiberina-hotel" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a></div>
       </div>
     </div>
-    <div class="row">
-      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/rh-1.webp" alt="Rhinoceros Rome" loading="lazy"></div></div>
+     <div class="hcard">
       <div class="txt hotel" data-reveal>
         <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
         <h4>Rhinoceros Rome</h4>
@@ -683,8 +681,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="hnote" data-i18n="note_rh"></p><div class="meta"><a href="https://rhinocerosroma.com" target="_blank" rel="noopener"><span data-i18n="visit">Visit website</span> →</a><span class="code" data-i18n="code_rh">Code</span></div>
       </div>
     </div>
-    <div class="row flip">
-      <div class="plate photo archbox circ" data-outline><div class="arch" data-arch><img src="img/hotels/vel-1.webp" alt="Palazzo Velabro" loading="lazy"></div></div>
+     <div class="hcard">
       <div class="txt hotel" data-reveal>
         <p class="eyebrow" data-i18n="near">Recommended · Near the Temple</p>
         <h4>Palazzo Velabro</h4>
