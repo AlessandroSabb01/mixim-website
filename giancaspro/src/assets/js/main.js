@@ -116,10 +116,8 @@
     var bar = $(".action-bar");
     function onScroll() {
       var y = window.scrollY;
-      var heroH = hero ? hero.offsetHeight - 90 : 40;
-      header.classList.toggle("is-scrolled", y > heroH);
-      if (y > 300 && y > lastY + 4 && !doc.classList.contains("menu-open")) header.classList.add("is-hidden");
-      else if (y < lastY - 4 || y < 300) header.classList.remove("is-hidden");
+      // header sempre visibile: l'ombra si intensifica dopo i primi pixel
+      header.classList.toggle("is-scrolled", y > 8);
       if (bar) bar.classList.toggle("is-visible", y > (hero ? hero.offsetHeight * 0.7 : 400));
       lastY = y;
     }
@@ -138,7 +136,8 @@
         doc.classList.toggle("menu-open", open);
         header.classList.remove("is-hidden");
         lockScroll(open);
-        if (open && hasGsap) gsap.from($$(".menu__list li", menu), { y: 60, opacity: 0, stagger: 0.06, duration: 0.9, ease: "expo.out", delay: 0.25 });
+        burger.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+        if (open && hasGsap) gsap.fromTo($$(".menu__list li, .menu__foot > *", menu), { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 0.8, ease: "expo.out", delay: 0.2, clearProps: "transform,opacity" });
       });
       menu.addEventListener("click", function (e) { if (e.target.closest("a")) burger.click(); });
     }
@@ -191,7 +190,7 @@
       var st = { trigger: el, start: "top 90%", once: true };
       if (type === "clip") {
         var img = el.querySelector("img");
-        gsap.to(el, { clipPath: "inset(0% 0% 0% 0% round 36px)", duration: 1.5, ease: "expo.out", delay: delay, scrollTrigger: st });
+        gsap.to(el, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: "expo.out", delay: delay, scrollTrigger: st });
         if (img) gsap.to(img, { scale: 1, duration: 1.8, ease: "expo.out", delay: delay, scrollTrigger: st });
       } else {
         gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: "expo.out", delay: delay, scrollTrigger: st });
@@ -208,6 +207,12 @@
           gsap.to(b, { opacity: 1, y: 0, duration: 1, ease: "expo.out", stagger: 0.08, clearProps: "transform,opacity,transition" });
         }
       });
+    });
+
+    // Sezioni che "si aprono" mentre entrano nello schermo
+    $$("[data-open]").forEach(function (el) {
+      gsap.to(el, { clipPath: "inset(0% 0% 0% 0%)", ease: "none",
+        scrollTrigger: { trigger: el, start: "top 95%", end: "top 35%", scrub: 0.6 } });
     });
 
     $$("[data-parallax]").forEach(function (el) {
@@ -406,6 +411,29 @@
     });
   }
 
+  /* ---------------- Galleria trattamenti ---------------- */
+  function initGalleries() {
+    $$("[data-gallery]").forEach(function (g) {
+      var figs = $$(".tgallery__frame figure", g);
+      var thumbs = $$(".tgallery__thumbs button", g);
+      var count = $(".tgallery__count", g);
+      if (figs.length < 2) return;
+      var i = 0, timer = null, visible = false;
+      function show(n) {
+        i = (n + figs.length) % figs.length;
+        figs.forEach(function (f, k) { f.classList.toggle("is-active", k === i); });
+        thumbs.forEach(function (t, k) { t.setAttribute("aria-current", k === i ? "true" : "false"); });
+        if (count) count.textContent = ("0" + (i + 1)).slice(-2) + " / " + ("0" + figs.length).slice(-2);
+      }
+      function stop() { if (timer) clearInterval(timer); timer = null; }
+      function play() { stop(); if (!reduce && visible) timer = setInterval(function () { show(i + 1); }, 4500); }
+      thumbs.forEach(function (t, k) { t.addEventListener("click", function () { show(k); play(); }); });
+      g.addEventListener("pointerenter", stop);
+      g.addEventListener("pointerleave", play);
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) play(); else stop(); }, { threshold: 0.4 }).observe(g);
+    });
+  }
+
   /* ---------------- Indice trattamenti (scrollspy) ---------------- */
   function initTreatmentIndex() {
     var links = $$(".tr-index__list a");
@@ -469,6 +497,7 @@
     initForms();
     initCarousels();
     initTreatmentIndex();
+    initGalleries();
     initPointer();
     initReveals();
     initAnchors();

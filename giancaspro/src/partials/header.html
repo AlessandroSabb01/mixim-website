@@ -7,8 +7,8 @@
     <ul class="nav__links">{{navLinks}}</ul>
     <div class="nav__actions">
       <a class="btn btn--ghost btn--sm nav__call" href="tel:{{phoneHref}}">{{icon phone}}<span>{{phone}}</span></a>
-      <button type="button" class="btn btn--mint btn--sm" data-book data-magnetic><span>Prenota</span><span class="nav__cta-label-long">Consulenza</span></button>
-      <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span></button>
+      <button type="button" class="btn btn--primary btn--sm" data-book data-magnetic><span>Prenota</span><span class="nav__cta-label-long">Consulenza</span></button>
+      <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </header>
@@ -16,11 +16,11 @@
 <div class="menu" id="menu" aria-hidden="true" inert>
   <ul class="menu__list">{{menuLinks}}</ul>
   <div class="menu__foot">
-    <p>{{address}}</p>
-    <div class="row">
-      <a class="btn btn--mint btn--sm" href="tel:{{phoneHref}}">{{icon phone}} Chiama</a>
-      <a class="btn btn--glass btn--sm" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a>
-      <a class="btn btn--glass btn--sm" href="{{instagramUrl}}" target="_blank" rel="noopener">{{icon instagram}} Instagram</a>
+    <div class="menu__quick">
+      <a class="btn btn--ghost" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a>
+      <a class="btn btn--ghost" href="{{instagramUrl}}" target="_blank" rel="noopener">{{icon instagram}} Instagram</a>
+      <a class="btn btn--ghost" href="{{mapsUrl}}" target="_blank" rel="noopener">{{icon pin}} Maps</a>
     </div>
+    <a class="btn btn--primary btn--block" href="tel:{{phoneHref}}">{{icon phone}} Chiama {{phone}}</a>
   </div>
 </div>
