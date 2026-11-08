@@ -1,0 +1,43 @@
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="/assets/img/logo-white.webp" width="720" height="191" alt="Studio Dentistico Giancaspro" loading="lazy">
+        <p>Eccellenza in odontoiatria estetica e funzionale dal 1994. Tecnologia all’avanguardia e cura personalizzata per ogni paziente.</p>
+        <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="btn btn--mint btn--sm" data-book>{{icon calendar}} Prenota Consulenza</button>
+          <a class="btn btn--glass btn--sm" href="{{instagramUrl}}" target="_blank" rel="noopener">{{icon instagram}} {{instagramHandle}}</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Navigazione</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/trattamenti/">Trattamenti</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/studio/">Studio</a></li>
+          <li><a href="/contatti/">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Contatti</h3>
+        <ul>
+          <li><a href="{{mapsUrl}}" target="_blank" rel="noopener">{{address}}</a></li>
+          <li><a href="tel:{{phoneHref}}">{{phone}}</a></li>
+          <li><a href="mailto:{{email}}">{{email}}</a></li>
+          <li>{{hoursWeek}}<br>{{hoursWeekend}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__wordmark" aria-hidden="true">Giancaspro</div>
+    <div class="footer__bottom">
+      <span>© <span data-year>{{year}}</span> Studio Giancaspro. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy/">Cookie Policy</a>
+        <button type="button" data-cookie-prefs>Preferenze cookie</button>
+      </div>
+      <p class="footer__compliance">Direttore Sanitario: {{medicalDirector}} — {{medicalDirectorRegistration}} · {{vatNumber}}</p>
+    </div>
+  </div>
+</footer>

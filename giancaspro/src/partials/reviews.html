@@ -1,0 +1,54 @@
+<section class="section section--paper" id="recensioni" aria-labelledby="rev-title">
+  <div class="container reviews">
+    <div class="reviews__top">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Recensioni</span>
+        <h2 id="rev-title" data-split>La fiducia dei nostri pazienti è il nostro successo.</h2>
+        <p class="lead">Leggi cosa dicono di noi.</p>
+      </div>
+      <div class="rating" data-reveal>
+        <div class="rating__score">{{googleRating}}</div>
+        <div class="rating__meta">
+          <div class="rating__stars" aria-label="Valutazione 5 su 5">{{stars}}</div>
+          <div class="rating__google"><img src="/assets/img/google-logo.webp" width="184" height="60" alt="Google" loading="lazy"><span>{{googleReviewsLabel}}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews__track" data-stagger>
+      <article class="review">
+        <div>
+          <div class="review__stars" aria-label="5 stelle">{{stars}}</div>
+          <p class="review__text">“Dottori meravigliosi per competenza e umanità, hanno saputo farmi passare la paura del dentista spiegandomi passo per passo tutte le procedure da affrontare. Sono seguita principalmente dalla Dottoressa Silvia Giancaspro, delicatissima ed estremamente precisa, ma l’intera squadra di dottori è sempre impeccabile e utilizza apparecchiature molto all’avanguardia.”</p>
+        </div>
+        <div class="review__author"><span class="review__avatar" aria-hidden="true">C</span><div><h3 class="review__name">Chiara De Angelis</h3><span class="review__date">una settimana fa</span></div></div>
+      </article>
+      <article class="review">
+        <div>
+          <div class="review__stars" aria-label="5 stelle">{{stars}}</div>
+          <p class="review__text">“Mi sono affidata allo studio per il mio percorso con Invisalign e mi sono trovata benissimo! Tutto il team è sempre gentile, disponibile e accogliente. Quello che apprezzo di più è l’attenzione ai dettagli e il perfezionismo con cui seguono ogni caso: ti senti sempre seguita e in ottime mani.”</p>
+        </div>
+        <div class="review__author"><span class="review__avatar" aria-hidden="true">G</span><div><h3 class="review__name">Giulia Riccardi</h3><span class="review__date">1 mese fa</span></div></div>
+      </article>
+      <article class="review">
+        <div>
+          <div class="review__stars" aria-label="5 stelle">{{stars}}</div>
+          <p class="review__text">“Professionalità, competenza e gentilezza sono i tratti distintivi di questo studio dentistico, dove ogni paziente viene seguito con attenzione e cura personalizzata. Tutto il team è altamente qualificato e capace di creare un rapporto di fiducia e serenità fin dal primo incontro.”</p>
+        </div>
+        <div class="review__author"><span class="review__avatar" aria-hidden="true">E</span><div><h3 class="review__name">Elena Bognolo</h3><span class="review__date">1 mese fa</span></div></div>
+      </article>
+    </div>
+
+    <div class="review-cta on-dark" data-reveal>
+      <div class="qr" aria-hidden="false">{{qr}}<span>Inquadra e recensisci</span></div>
+      <div>
+        <h3>Sei un nostro paziente? Raccontaci la tua esperienza.</h3>
+        <p style="margin-top:10px">Bastano 30 secondi: la tua recensione su Google aiuta altre persone a scegliere con fiducia il proprio dentista.</p>
+      </div>
+      <div class="review-cta__actions">
+        <a class="btn btn--mint btn--lg" href="{{googleReviewWriteUrl}}" target="_blank" rel="noopener" data-magnetic>{{icon star}} Lascia una recensione</a>
+        <a class="btn btn--ghost" href="{{googleReviewReadUrl}}" target="_blank" rel="noopener">Leggi tutte le recensioni su Google {{icon arrow-up-right}}</a>
+      </div>
+    </div>
+  </div>
+</section>

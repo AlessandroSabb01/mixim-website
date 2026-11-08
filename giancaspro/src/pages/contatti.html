@@ -1,0 +1,79 @@
+<!--meta {
+  "title": "Contatti – Studio Dentistico Giancaspro",
+  "description": "Siamo qui per il tuo sorriso. Studio Dentistico Giancaspro, Via Basento 52/D, 00198 Roma: telefono e WhatsApp +39 393 306 8462, info@studiogiancaspro.it. Parcheggio disponibile.",
+  "bodyClass": "page-contatti",
+  "headerTheme": "dark"
+} -->
+
+<section class="page-hero" aria-labelledby="ph-title">
+  <div class="page-hero__media">{{img hero-contatti|Quartiere Coppedè, Roma|100vw||eager}}</div>
+  <div class="container page-hero__inner">
+    <ol class="breadcrumb" data-reveal><li><a href="/">Home</a></li><li aria-current="page">Contatti</li></ol>
+    <span class="eyebrow" data-reveal>Contatti</span>
+    <h1 id="ph-title" data-split>Siamo qui per <b>il tuo sorriso</b></h1>
+    <p class="page-hero__sub" data-reveal>Parliamo francese, inglese, italiano e spagnolo.</p>
+    <div class="page-hero__actions" data-reveal>
+      <button type="button" class="btn btn--mint btn--lg" data-book data-magnetic>{{icon calendar}} Richiedi un appuntamento</button>
+      <a class="btn btn--glass btn--lg" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{icon whatsapp}} Scrivici su WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ct-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <h2 id="ct-title" data-split>Come <b class="em">trovarci</b></h2>
+      <p class="lead" data-reveal>Lo studio si trova nel cuore di Roma, a pochi passi da Villa Borghese, facilmente raggiungibile con mezzi pubblici e privati.</p>
+    </div>
+    <div class="contact-cards" data-stagger>
+      <div class="c-card">
+        <div style="display:grid;gap:12px"><span class="info__icon">{{icon pin}}</span><h3>Indirizzo</h3><p class="big">{{address}}</p><p class="small">Parcheggio disponibile</p></div>
+        <a class="link-arrow" href="{{mapsUrl}}" target="_blank" rel="noopener">Apri in Google Maps {{icon arrow-up-right}}</a>
+      </div>
+      <div class="c-card">
+        <div style="display:grid;gap:12px"><span class="info__icon">{{icon phone}}</span><h3>Telefono e WhatsApp</h3><p class="big"><a href="tel:{{phoneHref}}">{{phone}}</a></p><p class="small">Tel. fisso: <a href="tel:{{phoneLandlineHref}}">{{phoneLandline}}</a></p></div>
+        <a class="link-arrow" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Contattaci su WhatsApp {{icon arrow-up-right}}</a>
+      </div>
+      <div class="c-card">
+        <div style="display:grid;gap:12px"><span class="info__icon">{{icon mail}}</span><h3>Email</h3><p class="big" style="word-break:break-word">{{email}}</p></div>
+        <a class="link-arrow" href="mailto:{{email}}">Invia email {{icon arrow}}</a>
+      </div>
+      <div class="c-card c-card--accent">
+        <div style="display:grid;gap:12px"><span class="info__icon" style="background:rgba(94,234,212,.14);color:var(--mint)">{{icon clock}}</span><h3>Orari</h3><p class="big">{{hoursWeek}}</p><p class="small">{{hoursWeekend}}</p></div>
+        <a class="btn btn--mint btn--sm" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener" style="justify-self:start">{{icon whatsapp}} Scrivici su WhatsApp</a>
+        <p class="small" style="margin-top:-6px">Rispondiamo in poche ore</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist" style="padding-top:0;background:linear-gradient(var(--porcelain) 0 20%, var(--mist) 20%)" aria-labelledby="form-title">
+  <div class="container contact-block">
+    <div class="map" data-consent="external" data-embed="maps" data-src="{{mapsEmbedUrl}}" data-title="Mappa: Studio Dentistico Giancaspro, Via Basento 52/D, Roma" data-reveal>
+      <div class="map__placeholder">
+        <span class="map__pin">{{icon pin}}</span>
+        <strong>Studio Giancaspro</strong>
+        <p>{{address}}</p>
+        <p style="font-size:.82rem">Per mostrare la mappa interattiva carichiamo Google Maps, che può impostare cookie di terze parti.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button type="button" class="btn btn--mint btn--sm" data-consent-load>Mostra mappa</button>
+          <a class="btn btn--glass btn--sm" href="{{mapsUrl}}" target="_blank" rel="noopener">Ottieni indicazioni {{icon arrow-up-right}}</a>
+        </div>
+      </div>
+      <div class="map__card">
+        <h3>Studio Giancaspro</h3>
+        <p>{{address}}</p>
+        <a class="link-arrow" href="{{mapsUrl}}" target="_blank" rel="noopener">Ottieni indicazioni {{icon arrow-up-right}}</a>
+      </div>
+    </div>
+    <div class="form-card" data-reveal>
+      <span class="eyebrow">Prenota Consulenza</span>
+      <h3 id="form-title" style="margin-top:14px;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem)">Richiedi un appuntamento</h3>
+      <p class="muted">Compila il form e ti ricontatteremo entro 24 ore.</p>
+      {{> form:c}}
+    </div>
+  </div>
+</section>
+
+{{> reviews}}
+{{> instagram}}

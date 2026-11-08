@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="{{robots}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="theme-color" content="#04121f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="{{name}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{siteUrl}}/assets/img/hero-home-1280.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/logo-blue.png">
+<link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/main.css?v=1">
+<script>
+  (function(d){d.classList.remove("no-js");d.classList.add("js");
+  try{if(sessionStorage.getItem("gc-intro"))d.classList.add("no-intro");}catch(e){}
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("no-intro");})(document.documentElement);
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "@id": "{{siteUrl}}/#studio",
+  "name": "{{name}}",
+  "url": "{{siteUrl}}/",
+  "logo": "{{siteUrl}}/assets/img/logo-blue.png",
+  "image": "{{siteUrl}}/assets/img/hero-home-1280.webp",
+  "telephone": "{{phone}}",
+  "email": "{{email}}",
+  "foundingDate": "1994",
+  "founder": { "@type": "Person", "name": "Francesco Paolo Giancaspro" },
+  "address": { "@type": "PostalAddress", "streetAddress": "Via Basento, 52/D", "postalCode": "00198", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT" },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{geoLat}}, "longitude": {{geoLng}} },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "20:00" }],
+  "knowsLanguage": ["it", "en", "fr", "es"],
+  "sameAs": ["{{instagramUrl}}"],
+  "hasMap": "{{mapsUrl}}"
+}
+</script>
+</head>
+<body class="{{bodyClass}}">
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- Intro: dente che si ricarica da 0 a 100 -->
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Caricamento in corso">
+  <div class="loader__grain"></div>
+  <div class="loader__inner">
+    <div class="loader__tooth">
+      <svg viewBox="0 0 100 118" aria-hidden="true">
+        <defs>
+          <clipPath id="tooth-clip">
+            <path id="tooth-shape" d="M50 12.5C41 6 23 1.5 14.5 11.5 6 21.5 8 39 14 51.5c4.4 9 6.2 19.5 7.6 31.5 1.6 13.4 3.6 29 10.6 29 6.4 0 8-12.8 9.6-21.8 1.4-7.6 3.6-13.6 8.2-13.6s6.8 6 8.2 13.6c1.6 9 3.2 21.8 9.6 21.8 7 0 9-15.6 10.6-29 1.4-12 3.2-22.5 7.6-31.5C92 39 94 21.5 85.5 11.5 77 1.5 59 6 50 12.5Z"/>
+          </clipPath>
+          <linearGradient id="tooth-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#e6f7f4"/>
+          </linearGradient>
+        </defs>
+        <g clip-path="url(#tooth-clip)">
+          <path id="tooth-wave" d="M -10 118 L 110 118 L 110 130 L -10 130 Z" fill="url(#tooth-fill)"/>
+        </g>
+        <use href="#tooth-shape" class="tooth-outline"/>
+        <path class="tooth-shine" d="M24 16c-6 3-8 10-7 18"/>
+      </svg>
+      <span class="loader__spark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path fill="#fff" d="M12 0c.7 6.6 4.4 10.4 12 12-7.6 1.6-11.3 5.4-12 12-.7-6.6-4.4-10.4-12-12 7.6-1.6 11.3-5.4 12-12z"/></svg>
+      </span>
+    </div>
+    <img class="loader__logo" src="/assets/img/logo-white.webp" width="720" height="191" alt="Studio Dentistico Giancaspro">
+    <div class="loader__meta"><span>Il tuo sorriso</span><span class="loader__bar"><i></i></span><span class="loader__pct">0</span></div>
+  </div>
+</div>
+<div class="curtain" aria-hidden="true"></div>
+
+{{> header}}
+
+<main id="main">
+{{content}}
+</main>
+
+{{> footer}}
+{{> booking}}
+{{> cookie}}
+
+<nav class="action-bar" aria-label="Azioni rapide">
+  <a href="tel:{{phoneHref}}" aria-label="Chiama lo studio">{{icon phone}}<span>Chiama</span></a>
+  <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">{{icon whatsapp}}<span>WhatsApp</span></a>
+  <button type="button" class="is-primary" data-book>{{icon calendar}}<span>Prenota</span></button>
+</nav>
+
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/js/consent.js?v=1" defer></script>
+<script src="/assets/js/main.js?v=1" defer></script>
+</body>
+</html>

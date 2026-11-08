@@ -1,0 +1,39 @@
+# Build del sito Studio Giancaspro e pubblicazione del contenuto di dist/
+# sul branch "hostinger-giancaspro": collega quel branch in Hostinger → Git
+# (cartella di installazione: public_html) e attiva l'Auto Deployment.
+name: Giancaspro – build per Hostinger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "giancaspro/**"
+      - ".github/workflows/giancaspro-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: giancaspro
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: node build.mjs
+      - name: Pubblica dist/ sul branch hostinger-giancaspro
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: giancaspro/dist
+          publish_branch: hostinger-giancaspro
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy Studio Giancaspro"

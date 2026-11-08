@@ -1,0 +1,20 @@
+<section class="section section--mist" id="prenota" aria-labelledby="book-title">
+  <div class="container contact-block">
+    <div>
+      <span class="eyebrow">Contatti</span>
+      <h2 id="book-title" data-split style="margin-top:18px">Prenota la tua <b class="em">consulenza</b></h2>
+      <p class="lead" style="margin-top:22px" data-reveal>Il nostro team è a disposizione per rispondere a ogni domanda e guidarti verso il trattamento più adatto alle tue esigenze.</p>
+      <div class="info-list" data-stagger>
+        <a class="info" href="{{mapsUrl}}" target="_blank" rel="noopener"><span class="info__icon">{{icon pin}}</span><div><h3>Indirizzo</h3><p>Via Basento, 52/D, 00198<br>Roma RM</p><small>Parcheggio disponibile</small></div></a>
+        <a class="info" href="tel:{{phoneHref}}"><span class="info__icon">{{icon phone}}</span><div><h3>Telefono</h3><p>{{phone}}</p></div></a>
+        <a class="info" href="mailto:{{email}}"><span class="info__icon">{{icon mail}}</span><div><h3>Email</h3><p>{{email}}</p></div></a>
+        <div class="info"><span class="info__icon">{{icon clock}}</span><div><h3>Orari</h3><p>{{hoursWeek}}</p><p>{{hoursWeekend}}</p></div></div>
+      </div>
+    </div>
+    <div class="form-card" data-reveal>
+      <h3>Richiedi informazioni</h3>
+      <p class="muted">Compila il form e ti ricontatteremo entro 24 ore.</p>
+      {{> form:p}}
+    </div>
+  </div>
+</section>

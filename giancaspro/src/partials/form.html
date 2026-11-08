@@ -1,0 +1,47 @@
+<form class="form" action="/api/contact.php" method="post" data-form data-wa="{{whatsapp}}" novalidate>
+  <div class="form__row">
+    <div class="field">
+      <input id="__P__-nome" name="nome" type="text" autocomplete="given-name" placeholder=" " required>
+      <label for="__P__-nome">Nome*</label>
+    </div>
+    <div class="field">
+      <input id="__P__-cognome" name="cognome" type="text" autocomplete="family-name" placeholder=" " required>
+      <label for="__P__-cognome">Cognome*</label>
+    </div>
+  </div>
+  <div class="form__row">
+    <div class="field">
+      <input id="__P__-email" name="email" type="email" autocomplete="email" placeholder=" " required>
+      <label for="__P__-email">Email*</label>
+    </div>
+    <div class="field">
+      <input id="__P__-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required>
+      <label for="__P__-tel">Telefono*</label>
+    </div>
+  </div>
+  <div class="field">
+    <select id="__P__-tratt" name="trattamento" required>
+      <option value="">Seleziona trattamento</option>
+      <option>Medicina estetica</option>
+      <option>Estetica Dentale</option>
+      <option>Ortodonzia</option>
+      <option>Implantologia</option>
+      <option>Protesi</option>
+      <option>Igiene Dentale</option>
+      <option>Altro</option>
+    </select>
+    <label for="__P__-tratt">Trattamento di interesse*</label>
+  </div>
+  <div class="field">
+    <textarea id="__P__-msg" name="messaggio" rows="4" placeholder=" "></textarea>
+    <label for="__P__-msg">Messaggio</label>
+  </div>
+  <div class="hp" aria-hidden="true"><label for="__P__-web">Lascia vuoto</label><input id="__P__-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+  <label class="consent">
+    <input type="checkbox" name="privacy" value="1" required>
+    <span>Acconsento al trattamento dei miei dati personali secondo la <a href="/privacy-policy/" target="_blank">Privacy Policy</a>*</span>
+  </label>
+  <div class="form__status" role="status" aria-live="polite"></div>
+  <button type="submit" class="btn btn--blue btn--lg btn--block" data-magnetic>Invia Richiesta {{icon arrow}}</button>
+  <p class="form__note">Compila il form e ti ricontatteremo entro 24 ore.</p>
+</form>

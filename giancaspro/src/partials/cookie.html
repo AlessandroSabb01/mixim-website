@@ -1,0 +1,22 @@
+<section class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden>
+  <button type="button" class="cookie__close" data-cookie-reject aria-label="Chiudi e continua senza accettare">{{icon close}}</button>
+  <h2 id="cookie-title">{{icon cookie}} La tua privacy</h2>
+  <p>Usiamo solo cookie tecnici necessari al funzionamento del sito. Con il tuo consenso carichiamo anche contenuti di terze parti (Google Maps e feed Instagram), che possono impostare cookie propri. Puoi modificare la scelta in ogni momento da “Preferenze cookie” nel footer. <a href="/cookie-policy/">Cookie Policy</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+  <div class="cookie__prefs">
+    <div class="pref">
+      <strong>Necessari</strong>
+      <span class="switch"><input type="checkbox" checked disabled aria-label="Cookie necessari, sempre attivi"><span></span></span>
+      <small>Indispensabili per il funzionamento del sito e per ricordare le tue scelte. Sempre attivi.</small>
+    </div>
+    <div class="pref">
+      <strong>Contenuti esterni</strong>
+      <span class="switch"><input type="checkbox" name="external" aria-label="Consenti contenuti esterni"><span></span></span>
+      <small>Mappa di Google Maps e galleria Instagram (Behold). Possono raccogliere dati di navigazione.</small>
+    </div>
+  </div>
+  <div class="cookie__actions">
+    <button type="button" class="btn btn--ghost" data-cookie-reject>Rifiuta</button>
+    <button type="button" class="btn btn--blue" data-cookie-accept>Accetta tutti</button>
+    <button type="button" class="btn btn--ghost btn--sm cookie__more" data-cookie-more aria-expanded="false">Personalizza</button>
+  </div>
+</section>
