@@ -12,6 +12,9 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, "src");
 const DIST = path.join(ROOT, "dist");
 const config = JSON.parse(fs.readFileSync(path.join(SRC, "config.json"), "utf8"));
+// Anteprima: SITE_URL=https://... STAGING=1 node build.mjs  -> noindex ovunque, niente redirect www
+const STAGING = process.env.STAGING === "1";
+if (process.env.SITE_URL) config.siteUrl = process.env.SITE_URL.replace(/\/$/, "");
 const manifestPath = path.join(SRC, "assets/img/manifest.json");
 const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, "utf8")) : {};
 
@@ -111,7 +114,7 @@ for (const p of pages) {
     ...config,
     ...meta,
     canonical: config.siteUrl + (p.path === "/404.html" ? "/" : p.path),
-    robots: p.noindex ? "noindex, follow" : "index, follow",
+    robots: STAGING || p.noindex ? "noindex, nofollow" : "index, follow",
     qr: qrInline,
     headerTheme: meta.headerTheme || "dark",
   };
@@ -142,11 +145,13 @@ for (const f of ["inter-latin-opsz-normal.woff2", "inter-latin-ext-opsz-normal.w
   cp(path.join(NM, "@fontsource-variable/inter/files", f), path.join(DIST, "assets/fonts", f));
 }
 cp(path.join(SRC, "api"), path.join(DIST, "api"));
-fs.copyFileSync(path.join(SRC, "htaccess.txt"), path.join(DIST, ".htaccess"));
+let htaccess = fs.readFileSync(path.join(SRC, "htaccess.txt"), "utf8");
+if (STAGING) htaccess = htaccess.replace("RewriteCond %{HTTPS} off [OR]\n  RewriteCond %{HTTP_HOST} !^www\\. [NC]\n  RewriteCond %{HTTP_HOST} ^(?:www\\.)?(.+)$ [NC]\n  RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]", "RewriteCond %{HTTPS} off\n  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]") + "\nHeader set X-Robots-Tag \"noindex, nofollow\"\n";
+fs.writeFileSync(path.join(DIST, ".htaccess"), htaccess);
 fs.writeFileSync(path.join(DIST, "assets/qr-recensioni-google.svg"), qrSvg);
 await QRCode.toFile(path.join(DIST, "assets/qr-recensioni-google.png"), config.googleReviewWriteUrl, { width: 1200, margin: 2, color: { dark: "#04121f", light: "#ffffff" } });
 
-fs.writeFileSync(path.join(DIST, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${config.siteUrl}/sitemap.xml\n`);
+fs.writeFileSync(path.join(DIST, "robots.txt"), STAGING ? "User-agent: *\nDisallow: /\n" : `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${config.siteUrl}/sitemap.xml\n`);
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
