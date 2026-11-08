@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "site-structure-optimizer": {
+      "source": "aaron-he-zhu/aaron-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "seo-geo/tune/site-structure-optimizer/SKILL.md",
+      "computedHash": "d7aeffe5386bfd7c8389bd68f67fa6b42ac773d615f59ee3656a6906e80ef208"
+    },
+    "web-design-reviewer": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-reviewer/SKILL.md",
+      "computedHash": "4a05e32553a1dc916ee4f68f709d478c17de6b8ce184932f56f2b8646f3d4986"
+    }
+  }
+}
