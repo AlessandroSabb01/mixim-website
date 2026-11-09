@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Converte le foto (originali + versioni HD da Higgsfield) in WebP responsive.
+"""Converte le foto in WebP responsive.
+
+Su richiesta della cliente si usano SOLO le foto originali del vecchio sito,
+senza upscale né ritocchi: passare una cartella_upscale vuota/inesistente.
 
 uso: python3 scripts/images.py <cartella_originali> <cartella_upscale> <upscale.json>
 - cartella_upscale contiene <indice>.png prodotti dall'upscale 2K
@@ -49,12 +52,9 @@ for idx, f in jobs:
     src = up if up and os.path.exists(up) else os.path.join(RAW, f)
     im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
     hd = src == up
-    if not hd:
-        # ritocco leggero per le foto non ingrandite
-        im = im.filter(ImageFilter.UnsharpMask(radius=1.2, percent=40, threshold=3))
     W, H = im.size
     widths = [w for w in WIDTHS if w <= W] or [W]
-    if W > widths[-1] and W < 1920 and W - widths[-1] > 200:
+    if W > widths[-1] and W < 1920 and W - widths[-1] > 100:
         widths.append(W)
     for w in widths:
         h = round(H * w / W)

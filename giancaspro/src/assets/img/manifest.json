@@ -1,1058 +1,903 @@
 {
  "duo-studio": {
-  "w": 2160,
-  "h": 2688,
+  "w": 819,
+  "h": 1024,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   819
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_0b5c23d9b_IMG_0742-1.jpg"
  },
  "team-gruppo": {
-  "w": 3232,
-  "h": 2160,
+  "w": 1024,
+  "h": 681,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_378c14766_IMG_59622.webp"
  },
  "img-0698": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1023,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0698.jpg"
  },
  "img-0700": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0700.jpg"
  },
  "img-0701": {
-  "w": 3248,
-  "h": 2160,
+  "w": 1280,
+  "h": 851,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0701.jpg"
  },
  "img-0703": {
-  "w": 2160,
-  "h": 2672,
+  "w": 1029,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0703.jpg"
  },
  "img-0704": {
-  "w": 2160,
-  "h": 3232,
+  "w": 854,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   854
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0704.jpg"
  },
  "img-0706": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1025,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0706.jpg"
  },
  "img-0708": {
-  "w": 2160,
-  "h": 2672,
+  "w": 1029,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0708.jpg"
  },
  "img-0709": {
-  "w": 2160,
-  "h": 2672,
+  "w": 1029,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0709.jpg"
  },
  "img-0712": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1027,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0712.jpg"
  },
  "img-0715": {
-  "w": 3248,
-  "h": 2160,
+  "w": 1170,
+  "h": 775,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1170
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0715.jpg"
  },
  "img-0718": {
-  "w": 2160,
-  "h": 2656,
+  "w": 1035,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0718.jpg"
  },
  "img-0720": {
-  "w": 2688,
-  "h": 2160,
+  "w": 1170,
+  "h": 939,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1170
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0720.jpg"
  },
  "img-0724": {
-  "w": 2160,
-  "h": 2880,
+  "w": 960,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0724.jpg"
  },
  "img-0728": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0728.jpg"
  },
  "img-0730": {
-  "w": 3232,
-  "h": 2160,
+  "w": 1280,
+  "h": 852,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0730.jpg"
  },
  "img-0732": {
-  "w": 2160,
-  "h": 3488,
+  "w": 790,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   790
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0732.jpg"
  },
  "img-0737": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0737.jpg"
  },
  "invisalign-diamond": {
-  "w": 2160,
-  "h": 3648,
+  "w": 604,
+  "h": 1024,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   604
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0740-e1766053359409.jpg"
  },
  "img-0744": {
-  "w": 3248,
-  "h": 2160,
+  "w": 1280,
+  "h": 851,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0744.jpg"
  },
  "img-0749": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0749.jpg"
  },
  "img-0750": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0750.jpg"
  },
  "img-0751": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0751.jpg"
  },
  "img-0752": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0752.jpg"
  },
  "img-0754": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0754.jpg"
  },
  "img-0755": {
-  "w": 2160,
-  "h": 3232,
+  "w": 854,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   854
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0755.jpg"
  },
  "chirurgia-orale": {
-  "w": 2160,
-  "h": 3800,
+  "w": 518,
+  "h": 910,
   "widths": [
-   480,
-   960,
-   1280,
-   1920
+   480
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0756-e1782622605354.jpg"
  },
  "img-0758": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0758.jpg"
  },
  "img-0761": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_0761.jpg"
  },
  "hero-home": {
-  "w": 3248,
-  "h": 2160,
+  "w": 1280,
+  "h": 851,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_5962-2.jpg"
  },
  "img-9315-copia": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1023,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_9315-copia.jpg"
  },
  "img-9316": {
-  "w": 2160,
-  "h": 2880,
+  "w": 960,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_IMG_9316.jpg"
  },
  "igiene-orale": {
-  "w": 3264,
-  "h": 2160,
+  "w": 1024,
+  "h": 677,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_c34358622_IMG_0726.jpg"
  },
  "itero-scan": {
-  "w": 2160,
-  "h": 2688,
+  "w": 819,
+  "h": 1024,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   819
   ],
-  "hd": true,
+  "hd": false,
   "source": "2025_12_imgi_5_af92f19c6_IMG_0733.jpg"
  },
  "img-2875": {
-  "w": 2384,
-  "h": 2160,
+  "w": 962,
+  "h": 866,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2875.jpg"
  },
  "img-2880": {
-  "w": 2160,
-  "h": 2160,
+  "w": 1079,
+  "h": 1073,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1079
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2880.jpg"
  },
  "img-2881": {
-  "w": 2160,
-  "h": 2160,
+  "w": 1079,
+  "h": 1080,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1079
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2881.jpg"
  },
  "img-2884": {
-  "w": 3232,
-  "h": 2160,
+  "w": 1000,
+  "h": 666,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2884.jpg"
  },
  "img-2885": {
-  "w": 2160,
-  "h": 2160,
+  "w": 1079,
+  "h": 1073,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1079
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2885.jpg"
  },
  "img-2887": {
-  "w": 2160,
-  "h": 2176,
+  "w": 1079,
+  "h": 1091,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1079
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_IMG_2887.jpg"
  },
  "villa-borghese": {
-  "w": 3872,
-  "h": 2160,
+  "w": 1651,
+  "h": 921,
   "widths": [
    480,
    960,
    1280,
-   1920
+   1651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_01_hf_20260117_181558_53e20bd6-caeb-4049-b9bb-6fb431f12258.webp"
  },
  "image11": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image11.png"
  },
  "image12": {
-  "w": 2160,
-  "h": 3232,
+  "w": 553,
+  "h": 830,
   "widths": [
-   480,
-   960,
-   1280,
-   1920
+   480
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image12.jpeg"
  },
  "image14": {
-  "w": 2160,
-  "h": 3232,
+  "w": 852,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   852
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image14.png"
  },
  "image15": {
-  "w": 3296,
-  "h": 2160,
+  "w": 1170,
+  "h": 764,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1170
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image15.png"
  },
  "image16": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image16.png"
  },
  "image17": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image17.png"
  },
  "image19": {
-  "w": 2160,
-  "h": 3240,
+  "w": 330,
+  "h": 495,
   "widths": [
-   480,
-   960,
-   1280,
-   1920
+   330
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image19.jpeg"
  },
  "image22": {
-  "w": 2160,
-  "h": 2672,
+  "w": 1030,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image22.png"
  },
  "image23": {
-  "w": 2160,
-  "h": 3240,
+  "w": 504,
+  "h": 757,
   "widths": [
-   480,
-   960,
-   1280,
-   1920
+   480
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image23.jpeg"
  },
  "image26": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image26.png"
  },
  "image28": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image28.png"
  },
  "image29": {
-  "w": 2688,
-  "h": 2160,
+  "w": 1280,
+  "h": 1024,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image29.png"
  },
  "image30": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1023,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image30.png"
  },
  "image31": {
-  "w": 3280,
-  "h": 2160,
+  "w": 1280,
+  "h": 840,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image31.png"
  },
  "image33-1": {
-  "w": 2160,
-  "h": 3840,
+  "w": 720,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   720
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image33-1.png"
  },
  "image34": {
-  "w": 2160,
-  "h": 3232,
+  "w": 854,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   854
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image34.png"
  },
  "image36-1": {
-  "w": 2160,
-  "h": 2880,
+  "w": 960,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image36-1.png"
  },
  "image6": {
-  "w": 2160,
-  "h": 3139,
+  "w": 346,
+  "h": 502,
   "widths": [
-   480,
-   960,
-   1280,
-   1920
+   346
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_06_image6.jpeg"
  },
  "hero-contatti": {
-  "w": 3824,
-  "h": 2160,
+  "w": 1672,
+  "h": 941,
   "widths": [
    480,
    960,
    1280,
-   1920
+   1672
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_ChatGPT-2.webp"
  },
  "hero-studio": {
-  "w": 3840,
-  "h": 2160,
+  "w": 1337,
+  "h": 752,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1280
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_ChatGPT-3.webp"
  },
  "hero-team": {
-  "w": 3824,
-  "h": 2160,
+  "w": 1672,
+  "h": 941,
   "widths": [
    480,
    960,
    1280,
-   1920
+   1672
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_ChatGPT.webp"
  },
  "esterno-coppede-6": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Esterno-Coppede-6.webp"
  },
  "esterno-coppede-8": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Esterno-Coppede-8.webp"
  },
  "img-0715-2026": {
-  "w": 3344,
-  "h": 2160,
+  "w": 1170,
+  "h": 755,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1170
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_IMG_0715.jpg"
  },
  "img-0742": {
-  "w": 2160,
-  "h": 2688,
+  "w": 1024,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   960
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_IMG_0742.jpg"
  },
  "img-0756": {
-  "w": 2160,
-  "h": 3232,
+  "w": 853,
+  "h": 1280,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   853
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_IMG_0756.jpg"
  },
  "sala-dattesa-e-segreteria-1": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-1.webp"
  },
  "sala-dattesa-e-segreteria-10": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-10.webp"
  },
  "sala-dattesa-e-segreteria-12": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-12.webp"
  },
  "sala-dattesa-e-segreteria-2": {
-  "w": 3824,
-  "h": 2160,
+  "w": 1672,
+  "h": 941,
   "widths": [
    480,
    960,
    1280,
-   1920
+   1672
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-2.png"
  },
  "sala-dattesa-e-segreteria-2-2026": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-2.webp"
  },
  "sala-dattesa-e-segreteria-4": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-4.webp"
  },
  "sala-dattesa-e-segreteria-5": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-5.webp"
  },
  "sala-dattesa-e-segreteria-6": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-6.webp"
  },
  "sala-dattesa-e-segreteria-7": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-7.webp"
  },
  "sala-dattesa-e-segreteria-8": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria-8.webp"
  },
  "sala-dattesa-e-segreteria": {
-  "w": 3824,
-  "h": 2160,
+  "w": 1672,
+  "h": 941,
   "widths": [
    480,
    960,
    1280,
-   1920
+   1672
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Sala-dAttesa-e-segreteria.png"
  },
  "zona-clinica-1": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-1.webp"
  },
  "zona-clinica-2": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-2.webp"
  },
  "zona-clinica-3": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-3.webp"
  },
  "zona-clinica-4": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-4.webp"
  },
  "zona-clinica-5": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-5.webp"
  },
  "zona-clinica-6": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-6.webp"
  },
  "zona-clinica-7": {
-  "w": 2160,
-  "h": 2880,
+  "w": 651,
+  "h": 868,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   651
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_Zona-Clinica-7.webp"
  },
  "laser": {
-  "w": 2160,
-  "h": 2880,
+  "w": 1086,
+  "h": 1448,
   "widths": [
    480,
    960,
-   1280,
-   1920
+   1086
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_ae35b98d-fdb1-4da9-9a43-c5931685eb44.jpg"
  },
  "pedodonzia": {
-  "w": 2160,
-  "h": 3008,
+  "w": 757,
+  "h": 1055,
   "widths": [
    480,
-   960,
-   1280,
-   1920
+   757
   ],
-  "hd": true,
+  "hd": false,
   "source": "2026_07_aef08a42-2f7b-48c5-989d-446270c0685d.jpg"
  },
  "faccette": {
