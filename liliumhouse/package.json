@@ -1,16 +1,18 @@
 {
-  "name": "liliumhouse",
+  "name": "lilium-house",
+  "private": true,
+  "version": "2.0.0",
   "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "build.mjs",
+  "description": "Lilium House 2.0 — static site (EN + IT) for Hostinger",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.mjs",
+    "serve": "node build.mjs && npx --yes serve dist -l 4173"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource/cormorant-garamond": "^5.1.0",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
     "qrcode": "^1.5.4"
   }
 }

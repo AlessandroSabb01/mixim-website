@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="{{lang}}" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="{{robots}}">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang}}
+<meta name="theme-color" content="#1c1917">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{{locale}}">
+<meta property="og:site_name" content="{{name}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{siteUrl}}/assets/img/{{ogImage}}-1100.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/main.css?v={{v}}">
+<script>
+  (function(d){d.classList.remove("no-js");d.classList.add("js");
+  try{if(sessionStorage.getItem("lh-intro"))d.classList.add("no-intro");}catch(e){}
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("no-intro");})(document.documentElement);
+</script>
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="{{bodyClass}}" data-i18n='{{jsI18n}}'>
+<a class="skip-link" href="#main">{{t.skip}}</a>
+
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="{{t.ui.loader}}">
+  <div class="loader__grain"></div>
+  <div class="loader__inner">
+    <div class="loader__lily">
+      <svg viewBox="0 0 100 118" aria-hidden="true">
+        <defs>
+          <clipPath id="lily-clip">
+            <path d="M50 6C61 24 63.5 46 50 71 36.5 46 39 24 50 6Z"/>
+            <path d="M47.6 72C29 70.5 11.5 58.5 6.5 34.5 23.5 38 40.5 50.5 47.6 72Z"/>
+            <path d="M52.4 72C71 70.5 88.5 58.5 93.5 34.5 76.5 38 59.5 50.5 52.4 72Z"/>
+            <path d="M48.7 70h2.6v44h-2.6z"/>
+            <path d="M50.5 101c6.5-9 16.5-12.5 25.5-11-6.5 8.5-15 12.5-25.5 11Z"/>
+          </clipPath>
+          <linearGradient id="lily-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e3a77a"/>
+            <stop offset="1" stop-color="#c47339"/>
+          </linearGradient>
+        </defs>
+        <g clip-path="url(#lily-clip)">
+          <path id="lily-wave" d="M -10 118 L 110 118 L 110 130 L -10 130 Z" fill="url(#lily-fill)"/>
+        </g>
+        <g class="lily-outline">
+          <path d="M50 6C61 24 63.5 46 50 71 36.5 46 39 24 50 6Z"/>
+          <path d="M47.6 72C29 70.5 11.5 58.5 6.5 34.5 23.5 38 40.5 50.5 47.6 72Z"/>
+          <path d="M52.4 72C71 70.5 88.5 58.5 93.5 34.5 76.5 38 59.5 50.5 52.4 72Z"/>
+          <path d="M50 72v42"/>
+          <path d="M50.5 101c6.5-9 16.5-12.5 25.5-11-6.5 8.5-15 12.5-25.5 11Z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="loader__word">Lilium House</div>
+    <div class="loader__meta"><span>{{t.ui.loaderTag}}</span><span class="loader__bar"><i></i></span><span class="loader__pct">0</span></div>
+  </div>
+</div>
+<div class="curtain" aria-hidden="true"><span>Lilium House</span></div>
+
+{{> header}}
+
+<main id="main">
+{{content}}
+</main>
+
+{{> footer}}
+{{> booking}}
+{{> cookie}}
+
+<nav class="action-bar" aria-label="{{t.nav.quick}}">
+  <a href="tel:{{phoneHref}}">{{icon phone}}<span>{{t.ui.call}}</span></a>
+  <a href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}}<span>{{t.ui.whatsapp}}</span></a>
+  <button type="button" class="is-primary" data-book="{{bookHome}}">{{icon calendar}}<span>{{t.ui.book}}</span></button>
+</nav>
+
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/js/consent.js?v={{v}}" defer></script>
+<script src="/assets/js/main.js?v={{v}}" defer></script>
+</body>
+</html>

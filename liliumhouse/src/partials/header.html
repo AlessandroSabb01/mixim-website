@@ -1,0 +1,25 @@
+<header class="site-header" data-theme="{{headerTheme}}">
+  <nav class="nav" aria-label="{{t.nav.main}}">
+    <ul class="nav__links nav__links--left">{{navLeft}}</ul>
+    <a class="nav__logo" href="{{u.home}}" aria-label="Lilium House — {{t.nav.home}}">Lilium House</a>
+    <div class="nav__right">
+      <ul class="nav__links">{{navRight}}</ul>
+      <a class="nav__lang" href="{{altUrl}}" hreflang="{{altLang}}" lang="{{altLang}}" aria-label="{{t.otherLangLabel}}">{{t.otherLangShort}}</a>
+      <button type="button" class="btn btn--line btn--sm nav__book" data-book="{{bookHome}}" data-magnetic>{{t.nav.book}}</button>
+      <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" aria-label="{{t.nav.openMenu}}" data-label-open="{{t.nav.openMenu}}" data-label-close="{{t.nav.closeMenu}}"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <ul class="menu__list">{{menuLinks}}</ul>
+  <div class="menu__foot">
+    <div class="menu__quick">
+      <a class="btn btn--line" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a>
+      <a class="btn btn--line" href="{{romeMapsUrl}}" target="_blank" rel="noopener">{{icon pin}} {{t.nav.rome}}</a>
+      <a class="btn btn--line" href="{{creteMapsUrl}}" target="_blank" rel="noopener">{{icon pin}} {{t.nav.crete}}</a>
+    </div>
+    <a class="btn btn--solid btn--block" href="tel:{{phoneHref}}">{{icon phone}} {{t.ui.call}} {{phone}}</a>
+    <a class="menu__lang" href="{{altUrl}}" hreflang="{{altLang}}" lang="{{altLang}}">{{icon globe}} {{t.otherLangLabel}}</a>
+  </div>
+</div>

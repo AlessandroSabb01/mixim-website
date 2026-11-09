@@ -1,49 +1,87 @@
 <?php
-// Lilium House booking enquiry handler — honeypot + simple rate limit, mail() delivery only.
-header('Content-Type: application/json');
+/**
+ * Lilium House — stay request form.
+ * Works on Hostinger with PHP mail(). Nothing is stored in a database.
+ * Setup (Hostinger -> Email): create the MAIL_FROM mailbox so messages don't land in spam.
+ */
+declare(strict_types=1);
 
-$to = '[[EMAIL_ADDRESS]]';
+const MAIL_TO   = '{{email}}';
+const SITE_HOST = '{{host}}';
+const MAIL_FROM = 'noreply@' . SITE_HOST;
 
-function reply($ok, $msg = '') {
-    echo json_encode(['ok' => $ok, 'message' => $msg]);
+header('Content-Type: application/json; charset=utf-8');
+header('X-Content-Type-Options: nosniff');
+header('Cache-Control: no-store');
+
+function out(bool $ok, string $error = '', int $code = 200): void {
+    http_response_code($code);
+    echo json_encode(['ok' => $ok, 'error' => $error]);
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    reply(false, 'Invalid request method');
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') out(false, 'method', 405);
+if (!filter_var(MAIL_TO, FILTER_VALIDATE_EMAIL)) out(false, 'not-configured', 503);
+
+// Same site only (basic CSRF protection)
+$origin = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
+$host = (string) (parse_url($origin, PHP_URL_HOST) ?: '');
+if ($origin !== '' && stripos($host, 'liliumhouse') === false && stripos($host, 'localhost') === false) {
+    out(false, 'origin', 403);
 }
 
-// Honeypot field, must stay empty
-if (!empty($_POST['website'] ?? '')) {
-    reply(true); // silently accept to not tip off bots
+// Honeypot
+if (!empty($_POST['website'])) out(true);
+
+// Rate limit: 1 request every 30 seconds per IP
+$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+$rl = sys_get_temp_dir() . '/lh_rl_' . md5($ip);
+if (is_file($rl) && (time() - (int) @filemtime($rl)) < 30) out(false, 'rate', 429);
+@touch($rl);
+
+$clean = static function (string $k, int $max = 200): string {
+    $v = trim((string) ($_POST[$k] ?? ''));
+    $v = str_replace(["\r", "\n", "%0a", "%0d"], ' ', $v);
+    return mb_substr(strip_tags($v), 0, $max);
+};
+$nome      = $clean('nome', 80);
+$cognome   = $clean('cognome', 80);
+$email     = filter_var(trim((string) ($_POST['email'] ?? '')), FILTER_VALIDATE_EMAIL) ?: '';
+$telefono  = preg_replace('/[^0-9+ ().-]/', '', $clean('telefono', 30));
+$casa      = ['rome' => 'Rome — Aventino', 'crete' => 'Crete — Palekastro', 'any' => 'Not decided'][$_POST['casa'] ?? ''] ?? '';
+$ospiti    = $clean('ospiti', 4);
+$arrivo    = preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) ($_POST['arrivo'] ?? '')) ? $_POST['arrivo'] : '';
+$partenza  = preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) ($_POST['partenza'] ?? '')) ? $_POST['partenza'] : '';
+$lang      = ($_POST['lang'] ?? '') === 'it' ? 'IT' : 'EN';
+$pagina    = $clean('pagina', 120);
+$messaggio = mb_substr(strip_tags(trim((string) ($_POST['messaggio'] ?? ''))), 0, 3000);
+$privacy   = ($_POST['privacy'] ?? '') === '1';
+
+if ($nome === '' || $cognome === '' || $email === '' || $telefono === '' || $casa === '' || !$privacy) {
+    out(false, 'validation', 422);
 }
 
-// Simple per-IP rate limit (1 submission / 60s) using a tmp file
-$ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-$lockFile = sys_get_temp_dir() . '/lh_contact_' . md5($ip) . '.lock';
-if (file_exists($lockFile) && (time() - filemtime($lockFile)) < 60) {
-    reply(false, 'Please wait a moment before trying again.');
-}
-touch($lockFile);
+$subject = '=?UTF-8?B?' . base64_encode("Stay request – {$casa} – {$nome} {$cognome}") . '?=';
+$body = "New stay request from " . SITE_HOST . "\n\n"
+      . "Name: {$nome} {$cognome}\n"
+      . "Email: {$email}\n"
+      . "Phone / WhatsApp: {$telefono}\n"
+      . "Home: {$casa}\n"
+      . "Check-in: " . ($arrivo ?: '-') . "\n"
+      . "Check-out: " . ($partenza ?: '-') . "\n"
+      . "Guests: {$ospiti}\n"
+      . "Language: {$lang}\n"
+      . "Page: {$pagina}\n\n"
+      . "Message:\n{$messaggio}\n\n"
+      . "Privacy consent: yes — " . date('d/m/Y H:i') . "\n";
 
-$name    = trim($_POST['name'] ?? '');
-$phone   = trim($_POST['phone'] ?? '');
-$email   = trim($_POST['email'] ?? '');
-$reason  = trim($_POST['reason'] ?? '');
-$dates   = trim($_POST['dates'] ?? '');
-$privacy = $_POST['privacy'] ?? '';
+$headers = [
+    'From: Lilium House website <' . MAIL_FROM . '>',
+    'Reply-To: ' . $email,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: 8bit',
+];
 
-if (!$name || !$phone || !$email || !$privacy) {
-    reply(false, 'Missing required fields');
-}
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    reply(false, 'Invalid email');
-}
-
-$subject = 'New booking enquiry — Lilium House';
-$body = "Name: $name\nPhone: $phone\nEmail: $email\nLocation: $reason\nPreferred dates: $dates\n";
-$headers = "From: no-reply@liliumhouse.miximcreativestudio.com\r\nReply-To: $email\r\n";
-
-$sent = @mail($to, $subject, $body, $headers);
-
-reply($sent, $sent ? 'Sent' : 'Mail delivery failed');
+$sent = @mail(MAIL_TO, $subject, $body, implode("\r\n", $headers), '-f' . MAIL_FROM);
+$sent ? out(true) : out(false, 'mail', 500);

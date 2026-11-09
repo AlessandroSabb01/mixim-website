@@ -1,0 +1,315 @@
+{
+ "rome-living-room": {
+  "w": 1113,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1113
+  ],
+  "source": "Giotto_Picture-11.jpg"
+ },
+ "rome-kitchen-dining": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-10.webp"
+ },
+ "rome-bedroom": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-3.webp"
+ },
+ "rome-bathroom": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-12.webp"
+ },
+ "rome-room-garden": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-13.webp"
+ },
+ "rome-kitchenette": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-14.webp"
+ },
+ "rome-living-blue": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-15.webp"
+ },
+ "rome-bedroom-double": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Giotto_Picture-16.webp"
+ },
+ "crete-bedroom": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-1.webp"
+ },
+ "crete-daybed": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-2.webp"
+ },
+ "crete-bathroom": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-4.webp"
+ },
+ "crete-living-room": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-7.webp"
+ },
+ "crete-dining": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-12.webp"
+ },
+ "crete-bougainvillea": {
+  "w": 2201,
+  "h": 1228,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2201
+  ],
+  "source": "Creta_Picture-13.webp"
+ },
+ "rome-rooftops": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_184352_44086141-3c7a-4c26-a331-2509e145d6cb.webp"
+ },
+ "rome-dome-keyhole": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_184732_bf11b955-bfe2-4bee-874b-f229d4c17d3a.webp"
+ },
+ "rome-san-saba": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_185047_79d8437a-0836-41a1-83fb-b73868a9ce54.webp"
+ },
+ "rome-skyline": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_185151_da06941b-1a93-40d1-a546-083b62713271.webp"
+ },
+ "rome-colosseum": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_185509_a5b37ece-7c35-47f1-a7f1-021dab6f1ebe.webp"
+ },
+ "rome-vatican": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_185553_f482a919-7ede-45cd-a5aa-55f3ee19add7.webp"
+ },
+ "rome-aventino-street": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_190948_4cf8e198-69de-4f79-929b-a055131ad0e0.webp"
+ },
+ "crete-taverna": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_194108_bbcf2182-2642-473a-8866-cfe9d1e8615a.webp"
+ },
+ "crete-village": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_195105_6b636ce1-505b-4d8b-a7f1-76a5ca698b8b.webp"
+ },
+ "crete-harbour": {
+  "w": 1100,
+  "h": 614,
+  "widths": [
+   480,
+   960,
+   1100
+  ],
+  "source": "hf_20260210_195340_1d025224-2810-44be-8a5f-c27081f67bf9.webp"
+ },
+ "crete-beach": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960
+  ],
+  "source": "d55b23f75_ebd5bc7b-b0ff-47a5-a352-f50bb932629d.jpg"
+ },
+ "crete-sunset": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960
+  ],
+  "source": "69ce2ce3a_9a33c1b8-a635-4c8e-9156-9c8b8e424451.jpg"
+ },
+ "crete-coast-road": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960
+  ],
+  "source": "89aa7d6ac_143e6ce0-184d-4207-9cce-61610b39c0a9.jpg"
+ },
+ "rome-st-peters-aerial": {
+  "w": 1200,
+  "h": 795,
+  "widths": [
+   480,
+   960,
+   1200
+  ],
+  "source": "photo-1531572753322-ad063cecc140.jpg"
+ },
+ "island-seafront": {
+  "w": 1200,
+  "h": 900,
+  "widths": [
+   480,
+   960,
+   1200
+  ],
+  "source": "photo-1601581875309-fafbf2d3ed3a.jpg"
+ }
+}

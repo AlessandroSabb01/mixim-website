@@ -1,0 +1,16 @@
+<section class="section section--tight" id="reviews" aria-labelledby="rev-title">
+  <div class="container">
+    <div class="review-cta on-dark" data-open>
+      <div class="qr">{{qr}}<span>{{t.reviews.qr}}</span></div>
+      <div class="review-cta__body">
+        <span class="eyebrow">{{icon google}} {{t.reviews.eyebrow}}</span>
+        <h2 id="rev-title" data-split>{{t.reviews.title}}</h2>
+        <p>{{t.reviews.text}}</p>
+      </div>
+      <div class="review-cta__actions">
+        <a class="btn btn--light btn--lg" href="{{googleReviewWriteUrl}}" target="_blank" rel="noopener" data-magnetic>{{icon star}} {{t.reviews.cta}}</a>
+        <a class="btn btn--line" href="{{googleReviewReadUrl}}" target="_blank" rel="noopener">{{t.reviews.read}} {{icon arrow-up-right}}</a>
+      </div>
+    </div>
+  </div>
+</section>

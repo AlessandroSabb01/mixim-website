@@ -1,0 +1,45 @@
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="{{u.home}}">Lilium House</a>
+        <p>{{t.footer.tagline}}</p>
+        <div class="footer__actions">
+          <button type="button" class="btn btn--light btn--sm" data-book="{{bookHome}}">{{icon calendar}} {{t.nav.book}}</button>
+          <a class="btn btn--line btn--sm" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>{{t.footer.locations}}</h3>
+        <ul>
+          <li><a href="{{u.rome}}"><i class="dot dot--rome"></i>{{t.pricing.rome.label}}</a></li>
+          <li><a href="{{u.crete}}"><i class="dot dot--crete"></i>{{t.pricing.crete.label}}</a></li>
+        </ul>
+        <h3 style="margin-top:32px">{{t.footer.contact}}</h3>
+        <ul>
+          <li><a href="tel:{{phoneHref}}">{{icon phone}} {{phone}}</a></li>
+          <li><a href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>{{t.footer.navigation}}</h3>
+        <ul>{{footerLinks}}</ul>
+      </div>
+    </div>
+    <div class="footer__wordmark" aria-hidden="true">Lilium House</div>
+    <div class="footer__bottom">
+      <span>© <span data-year>{{year}}</span> Lilium House. {{t.footer.rights}}</span>
+      <div class="footer__legal">
+        <a href="{{u.privacy}}">Privacy Policy</a>
+        <a href="{{u.cookies}}">Cookie Policy</a>
+        <button type="button" data-cookie-prefs>{{t.cookie.prefs}}</button>
+        <a href="{{altUrl}}" hreflang="{{altLang}}" lang="{{altLang}}">{{t.otherLangLabel}}</a>
+      </div>
+      <a class="footer__credit" href="https://alessandrosabbadini.com/" target="_blank" rel="noopener">
+        <span>Sito progettato e sviluppato da <strong>Alessandro Sabbadini</strong></span>
+        <span class="footer__credit-cta">Ti piace questo sito? Scopri come posso creare il tuo <i aria-hidden="true">→</i></span>
+      </a>
+      <p class="footer__compliance">{{legalName}} · VAT/P.IVA {{vatNumber}} · {{registeredOffice}} · CIN {{cinRome}} · MHTE/AMA {{mhteCrete}}</p>
+    </div>
+  </div>
+</footer>

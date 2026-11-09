@@ -1,0 +1,100 @@
+<!--meta { "titleKey": "about.metaTitle", "descKey": "about.metaDescription", "bodyClass": "page-about", "headerTheme": "dark", "ogImage": "crete-living-room", "bookHome": "", "wa": "generic" } -->
+
+<section class="page-hero" aria-labelledby="ph-title">
+  <div class="page-hero__media">{{img crete-living-room|Lilium House Crete, living room|100vw||eager}}</div>
+  <div class="container page-hero__inner center">
+    <span class="eyebrow" data-reveal>{{t.nav.about}}</span>
+    <h1 id="ph-title" data-split>{{t.about.title}}</h1>
+    <p class="page-hero__sub" data-reveal>{{t.about.sub}}</p>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="section section--paper" aria-labelledby="story-title">
+  <div class="container split split--wide-right">
+    <figure class="media media--land" data-reveal="clip">{{img rome-bedroom|Lilium House Rome, bedroom|(min-width:960px) 45vw, 100vw}}</figure>
+    <div class="story">
+      <h2 id="story-title" data-split>{{t.about.storyTitle}}</h2>
+      <div data-reveal>
+        <p class="lead">{{t.about.storyP1}}</p>
+        <p>{{t.about.storyP2}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEFINES ============ -->
+<section class="section section--stone" aria-labelledby="defines-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="defines-title" data-split>{{t.about.definesTitle}}</h2>
+    </div>
+    {{features}}
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="section is-dark" aria-labelledby="philo-title">
+  <div class="container philosophy">
+    <div class="philosophy__head">
+      <span class="eyebrow" data-reveal>Lilium House</span>
+      <h2 id="philo-title" data-split>{{t.about.philosophyTitle}}</h2>
+    </div>
+    {{philosophy}}
+  </div>
+</section>
+
+<!-- ============ PRACTICAL ============ -->
+<section class="section section--gradient" aria-labelledby="practical-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="practical-title" data-split>{{t.about.practicalTitle}}</h2>
+    </div>
+    <h3 class="sub-title" data-reveal>{{t.pricing.title}}</h3>
+    {{pricingBoth}}
+    <div class="practical">
+      <div class="practical__card" data-reveal>
+        <h3>{{t.about.checkinTitle}}</h3>
+        {{checkin}}
+      </div>
+      <div class="practical__card practical__card--dark on-dark" data-reveal data-delay=".1">
+        <h3>{{t.about.contactTitle}}</h3>
+        <div class="practical__actions">
+          <a class="btn btn--wa" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} {{t.contact.waCta}}</a>
+          <a class="btn btn--line" href="tel:{{phoneHref}}">{{icon phone}} {{phone}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCOVER HOMES ============ -->
+<section class="section section--paper" aria-labelledby="dh-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="dh-title" data-split>{{t.about.homesTitle}}</h2>
+    </div>
+    <div class="destinations destinations--even">
+      <a class="dest" href="{{u.rome}}">
+        <figure class="media media--land" data-reveal="clip">{{img rome-bedroom-double|Lilium House Rome, double bedroom|(min-width:960px) 45vw, 100vw}}<span class="dest__tag">{{t.home.tileRomeLabel}}</span></figure>
+        <div class="dest__body" data-reveal><h3>{{t.home.chooseRomeTitle}}</h3><p>{{t.home.chooseRomeText}}</p><span class="link-arrow">{{t.home.chooseRomeCta}} {{icon arrow}}</span></div>
+      </a>
+      <a class="dest" href="{{u.crete}}">
+        <figure class="media media--land" data-reveal="clip" data-delay=".15">{{img crete-bathroom|Lilium House Crete, bathroom|(min-width:960px) 45vw, 100vw}}<span class="dest__tag">{{t.home.tileCreteLabel}}</span></figure>
+        <div class="dest__body" data-reveal><h3>{{t.home.chooseCreteTitle}}</h3><p>{{t.home.chooseCreteText}}</p><span class="link-arrow">{{t.home.chooseCreteCta}} {{icon arrow}}</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEGIN ============ -->
+<section class="photo-band" aria-labelledby="begin-title" data-open>
+  <div class="photo-band__media">{{img rome-bedroom-double|Lilium House Rome, double bedroom|100vw}}</div>
+  <div class="container center photo-band__inner">
+    <h2 id="begin-title" data-split>{{t.about.beginTitle}}</h2>
+    <div class="photo-band__actions" data-reveal>
+      <a class="btn btn--light" href="{{u.rome}}">{{t.about.beginCtaRome}} {{icon arrow}}</a>
+      <a class="btn btn--glass" href="{{u.crete}}">{{t.about.beginCtaCrete}} {{icon arrow}}</a>
+    </div>
+  </div>
+</section>

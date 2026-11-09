@@ -1,0 +1,16 @@
+<div class="modal" id="booking" role="dialog" aria-modal="true" aria-labelledby="booking-title" hidden inert>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" data-lenis-prevent>
+    <div class="modal__handle" aria-hidden="true"></div>
+    <button type="button" class="modal__close" data-close aria-label="{{t.ui.close}}">{{icon close}}</button>
+    <span class="eyebrow">{{t.booking.eyebrow}}</span>
+    <h2 id="booking-title" class="modal__title">{{t.booking.title}}</h2>
+    <p class="muted" style="margin-top:10px">{{t.booking.text}}</p>
+    <div class="modal__quick">
+      <a class="btn btn--solid" href="{{waLink}}" target="_blank" rel="noopener" data-wa-link>{{icon whatsapp}} WhatsApp</a>
+      <a class="btn btn--line" href="tel:{{phoneHref}}">{{icon phone}} {{t.ui.call}}</a>
+    </div>
+    <div class="modal__divider">{{t.ui.or}}</div>
+    {{> form:m}}
+  </div>
+</div>

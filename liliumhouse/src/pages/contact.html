@@ -1,0 +1,80 @@
+<!--meta { "titleKey": "contact.metaTitle", "descKey": "contact.metaDescription", "bodyClass": "page-contact", "headerTheme": "dark", "ogImage": "rome-st-peters-aerial", "bookHome": "", "wa": "generic" } -->
+
+<section class="page-hero" aria-labelledby="ph-title">
+  <div class="page-hero__media">{{img rome-st-peters-aerial|St. Peter's Square seen from above, Rome|100vw||eager}}</div>
+  <div class="container page-hero__inner center">
+    <span class="eyebrow" data-reveal>{{t.nav.contact}}</span>
+    <h1 id="ph-title" data-split>{{t.contact.title}}</h1>
+    <p class="page-hero__sub" data-reveal>{{t.contact.sub}}</p>
+  </div>
+</section>
+
+<!-- ============ CHANNELS + FORM ============ -->
+<section class="section section--gradient" aria-label="{{t.nav.contact}}">
+  <div class="container contact-block">
+    <div class="contact-cards" data-stagger>
+      <article class="c-card c-card--accent on-dark">
+        <span class="c-card__icon">{{icon whatsapp}}</span>
+        <div><h2>{{t.contact.waTitle}}</h2><p>{{t.contact.waText}}</p></div>
+        <a class="btn btn--wa" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} {{t.contact.waCta}}</a>
+      </article>
+      <article class="c-card">
+        <span class="c-card__icon">{{icon phone}}</span>
+        <div><h2>{{t.contact.callTitle}}</h2><p>{{t.contact.callText}}</p></div>
+        <a class="btn btn--line" href="tel:{{phoneHref}}">{{icon phone}} {{phone}}</a>
+      </article>
+    </div>
+    <div class="form-card" data-reveal>
+      <h2 class="form-card__title">{{t.contact.formTitle}}</h2>
+      <p class="muted">{{t.contact.formText}}</p>
+      {{> form:c}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="section section--paper" aria-labelledby="loc-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="loc-title" data-split>{{t.contact.locationsTitle}}</h2>
+    </div>
+    <div class="locations">
+      <article class="location" data-reveal>
+        <div class="map" data-consent="external" data-embed="maps" data-src="{{romeMapsEmbedUrl}}" data-title="Google Maps — Lilium House Rome">
+          <div class="map__placeholder">
+            <span class="map__pin">{{icon pin}}</span>
+            <strong>{{t.contact.mapPhTitle}}</strong>
+            <p>{{t.contact.mapPhText}}</p>
+            <button type="button" class="btn btn--light btn--sm" data-consent-load>{{t.contact.mapPhCta}}</button>
+          </div>
+        </div>
+        <div class="location__body">
+          <span class="dot dot--rome"></span>
+          <h3>{{t.contact.romeTitle}}</h3>
+          <p>{{t.contact.romeText}}</p>
+          <p class="location__where">{{romeArea}}</p>
+          <a class="link-arrow" href="{{romeMapsUrl}}" target="_blank" rel="noopener">{{t.ui.viewOnMaps}} {{icon arrow-up-right}}</a>
+        </div>
+      </article>
+      <article class="location" data-reveal data-delay=".1">
+        <div class="map" data-consent="external" data-embed="maps" data-src="{{creteMapsEmbedUrl}}" data-title="Google Maps — Palekastro, Crete">
+          <div class="map__placeholder">
+            <span class="map__pin">{{icon pin}}</span>
+            <strong>{{t.contact.mapPhTitle}}</strong>
+            <p>{{t.contact.mapPhText}}</p>
+            <button type="button" class="btn btn--light btn--sm" data-consent-load>{{t.contact.mapPhCta}}</button>
+          </div>
+        </div>
+        <div class="location__body">
+          <span class="dot dot--crete"></span>
+          <h3>{{t.contact.creteTitle}}</h3>
+          <p>{{t.contact.creteText}}</p>
+          <p class="location__where">{{creteArea}}</p>
+          <a class="link-arrow" href="{{creteMapsUrl}}" target="_blank" rel="noopener">{{t.ui.viewOnMaps}} {{icon arrow-up-right}}</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{{> reviews}}

@@ -1,0 +1,139 @@
+<!--meta { "titleKey": "home.metaTitle", "descKey": "home.metaDescription", "bodyClass": "page-home", "headerTheme": "dark", "ogImage": "rome-living-room", "bookHome": "", "wa": "generic" } -->
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">{{img rome-living-room|Lilium House Rome, living room|100vw||eager}}</div>
+  <div class="container hero__content">
+    <div class="hero__top">
+      <span class="eyebrow hero__eyebrow" data-reveal>{{t.home.eyebrow}}</span>
+      <h1 id="hero-title" class="hero__title" data-split>{{t.home.title}}</h1>
+      <p class="hero__sub" data-reveal>{{t.home.sub}}</p>
+      <div data-reveal><a class="btn btn--glass" href="#homes">{{t.home.cta}} {{icon arrow-down}}</a></div>
+    </div>
+
+    <div class="dock" role="group" aria-label="{{t.nav.quick}}">
+      <button type="button" class="tile tile--book" data-book="">
+        <span class="tile__icon">{{icon calendar}}</span>
+        <span><span class="tile__label">{{t.home.tileBookLabel}}</span><span class="tile__title">{{t.home.tileBook}}</span></span>
+        <span class="tile__arrow">{{icon arrow}}</span>
+      </button>
+      <a class="tile tile--rome" href="{{u.rome}}">
+        <span class="tile__icon">{{icon pin}}</span>
+        <span><span class="tile__label">{{t.home.tileRomeLabel}}</span><span class="tile__title">{{t.home.tileRome}}</span><span class="tile__meta">{{t.home.tileRomeMeta}}</span></span>
+        <span class="tile__arrow">{{icon arrow}}</span>
+      </a>
+      <a class="tile tile--crete" href="{{u.crete}}">
+        <span class="tile__icon">{{icon wave}}</span>
+        <span><span class="tile__label">{{t.home.tileCreteLabel}}</span><span class="tile__title">{{t.home.tileCrete}}</span><span class="tile__meta">{{t.home.tileCreteMeta}}</span></span>
+        <span class="tile__arrow">{{icon arrow}}</span>
+      </a>
+      <div class="tile tile--contact">
+        <a class="tile__icon" href="{{waLink}}" target="_blank" rel="noopener" aria-label="WhatsApp">{{icon whatsapp}}</a>
+        <span><span class="tile__label">{{t.home.tileContactLabel}}</span><a class="tile__title" href="tel:{{phoneHref}}">{{phone}}</a></span>
+        <span class="tile__actions"><a class="btn btn--wa btn--sm" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a></span>
+      </div>
+    </div>
+  </div>
+  <a href="#welcome" class="hero__scroll" aria-label="{{t.ui.scroll}}"><i></i></a>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="section section--stone welcome" id="welcome" aria-labelledby="welcome-title">
+  <div class="container container--narrow center">
+    <span class="eyebrow" id="welcome-title" data-reveal>{{t.home.welcomeEyebrow}}</span>
+    <p class="welcome__text" data-split>{{t.home.welcomeText}}</p>
+    <div data-reveal style="margin-top:36px"><a class="btn btn--line" href="{{u.about}}">{{t.home.welcomeCta}} {{icon arrow}}</a></div>
+  </div>
+</section>
+
+<!-- ============ PERSONAL ============ -->
+<section class="section section--paper" aria-labelledby="personal-title">
+  <div class="container personal">
+    <div class="collage">
+      <figure class="media media--land" data-reveal="clip">{{img crete-living-room|Lilium House Crete, living room|(min-width:960px) 25vw, 50vw}}</figure>
+      <figure class="media media--tall" data-reveal="clip" data-delay=".15">{{img crete-bougainvillea|Bougainvillea at Lilium House Crete|(min-width:960px) 25vw, 50vw}}</figure>
+      <figure class="media media--land" data-reveal="clip" data-delay=".3">{{img rome-kitchen-dining|Lilium House Rome, kitchen and dining area|(min-width:960px) 25vw, 50vw}}</figure>
+    </div>
+    <div class="personal__body">
+      <h2 id="personal-title" data-split>{{t.home.personalTitle}}</h2>
+      <div data-reveal>
+        <p class="lead">{{t.home.personalP1}}</p>
+        <p>{{t.home.personalP2}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR HOMES ============ -->
+<section class="section section--gradient" id="homes" aria-labelledby="homes-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="homes-title" data-split>{{t.home.homesTitle}}</h2>
+    </div>
+    <div class="trio" data-stagger>
+      <div class="trio__item"><span class="trio__icon trio__icon--rome">{{icon pin}}</span><h3>{{t.home.homesRomeTitle}}</h3><p>{{t.home.homesRomeText}}</p></div>
+      <div class="trio__item"><span class="trio__icon trio__icon--crete">{{icon sun}}</span><h3>{{t.home.homesCreteTitle}}</h3><p>{{t.home.homesCreteText}}</p></div>
+      <div class="trio__item"><span class="trio__icon">{{icon lock}}</span><h3>{{t.home.homesPrivacyTitle}}</h3><p>{{t.home.homesPrivacyText}}</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHOOSE YOUR DESTINATION ============ -->
+<section class="section section--paper" aria-labelledby="choose-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="choose-title" data-split>{{t.home.chooseTitle}}</h2>
+    </div>
+    <div class="destinations">
+      <a class="dest dest--rome" href="{{u.rome}}">
+        <figure class="media media--portrait" data-reveal="clip">{{img rome-dome-keyhole|St. Peter's dome framed by trees, Rome|(min-width:960px) 45vw, 100vw}}<span class="dest__tag">{{t.home.tileRomeLabel}}</span></figure>
+        <div class="dest__body" data-reveal>
+          <h3>{{t.home.chooseRomeTitle}}</h3>
+          <p>{{t.home.chooseRomeText}}</p>
+          <span class="link-arrow">{{t.home.chooseRomeCta}} {{icon arrow}}</span>
+        </div>
+      </a>
+      <a class="dest dest--crete" href="{{u.crete}}">
+        <figure class="media media--portrait" data-reveal="clip" data-delay=".15">{{img crete-beach|Beach near Palekastro, Crete|(min-width:960px) 45vw, 100vw}}<span class="dest__tag">{{t.home.tileCreteLabel}}</span></figure>
+        <div class="dest__body" data-reveal>
+          <h3>{{t.home.chooseCreteTitle}}</h3>
+          <p>{{t.home.chooseCreteText}}</p>
+          <span class="link-arrow">{{t.home.chooseCreteCta}} {{icon arrow}}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section is-dark quote-band" aria-label="{{t.home.quoteCite}}">
+  <div class="container container--narrow center">
+    <span class="quote-band__mark" aria-hidden="true">“</span>
+    <blockquote class="quote" data-split>{{t.home.quote}}</blockquote>
+    <p class="quote-cite" data-reveal>{{t.home.quoteCite}}</p>
+  </div>
+</section>
+
+<!-- ============ THOUGHTFUL WAY OF LIVING ============ -->
+<section class="section section--stone" aria-labelledby="living-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="living-title" data-split>{{t.home.livingTitle}}</h2>
+    </div>
+    {{features}}
+  </div>
+</section>
+
+{{> reviews}}
+
+<!-- ============ BEGIN ============ -->
+<section class="photo-band" aria-labelledby="begin-title" data-open>
+  <div class="photo-band__media">{{img rome-rooftops|Rooftops of Rome at sunset|100vw}}</div>
+  <div class="container center photo-band__inner">
+    <h2 id="begin-title" data-split>{{t.home.beginTitle}}</h2>
+    <div class="photo-band__actions" data-reveal>
+      <a class="btn btn--light" href="{{u.rome}}">{{t.home.beginCtaRome}} {{icon arrow}}</a>
+      <a class="btn btn--glass" href="{{u.crete}}">{{t.home.beginCtaCrete}} {{icon arrow}}</a>
+    </div>
+  </div>
+</section>

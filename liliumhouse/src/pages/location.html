@@ -1,0 +1,71 @@
+<section class="page-hero" aria-labelledby="ph-title">
+  <div class="page-hero__media">{{img {{heroImg}}|{{heroAlt}}|100vw||eager}}</div>
+  <div class="container page-hero__inner center">
+    <span class="eyebrow page-hero__where" data-reveal>{{icon pin}} {{L.where}}</span>
+    <h1 id="ph-title" data-split>{{L.title}}</h1>
+    <div class="page-hero__actions" data-reveal>
+      <button type="button" class="btn btn--light" data-book="{{loc}}" data-magnetic>{{icon calendar}} {{t.nav.book}}</button>
+      <a class="btn btn--glass" href="{{waLink}}" target="_blank" rel="noopener">{{icon whatsapp}} WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="section section--paper" aria-labelledby="intro-title">
+  <div class="container intro">
+    <div class="intro__head">
+      <span class="eyebrow" data-reveal>{{L.where}}</span>
+      <h2 id="intro-title" data-split>{{L.introTitle}}</h2>
+    </div>
+    <div class="intro__body" data-reveal>
+      <p class="lead">{{L.introText}}</p>
+      {{facts}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROOMS ============ -->
+<section class="section section--stone" aria-labelledby="rooms-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2 id="rooms-title" data-split>{{L.roomsTitle}}</h2>
+    </div>
+    {{rooms}}
+  </div>
+</section>
+
+<!-- ============ EXPERIENCES ============ -->
+<section class="section section--paper" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <h2 id="exp-title" data-split>{{L.expTitle}}</h2>
+      <p class="lead" data-reveal>{{L.expText}}</p>
+    </div>
+    {{experiences}}
+    {{extraCta}}
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section--gradient" aria-labelledby="price-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow" data-reveal>{{L.where}}</span>
+      <h2 id="price-title" data-split>{{t.pricing.title}}</h2>
+    </div>
+    {{pricing}}
+  </div>
+</section>
+
+{{> book-band}}
+
+<!-- ============ NEXT ============ -->
+<section class="photo-band" aria-labelledby="next-title" data-open>
+  <div class="photo-band__media">{{img {{nextImg}}|{{nextAlt}}|100vw}}</div>
+  <div class="container center photo-band__inner">
+    <h2 id="next-title" data-split>{{L.nextTitle}}</h2>
+    <div class="photo-band__actions" data-reveal>
+      <a class="btn btn--light btn--lg" href="{{nextUrl}}">{{L.nextCta}} {{icon arrow}}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden data-label-customize="{{t.cookie.customize}}" data-label-save="{{t.cookie.save}}">
+  <button type="button" class="cookie__close" data-cookie-reject aria-label="{{t.cookie.closeAria}}">{{icon close}}</button>
+  <h2 id="cookie-title">{{icon cookie}} {{t.cookie.title}}</h2>
+  <p>{{t.cookie.text}} <a href="{{u.cookies}}">Cookie Policy</a> · <a href="{{u.privacy}}">Privacy Policy</a></p>
+  <div class="cookie__prefs">
+    <div class="pref">
+      <strong>{{t.cookie.necessary}}</strong>
+      <span class="switch"><input type="checkbox" checked disabled aria-label="{{t.cookie.necessaryAria}}"><span></span></span>
+      <small>{{t.cookie.necessaryText}}</small>
+    </div>
+    <div class="pref">
+      <strong>{{t.cookie.external}}</strong>
+      <span class="switch"><input type="checkbox" name="external" aria-label="{{t.cookie.externalAria}}"><span></span></span>
+      <small>{{t.cookie.externalText}}</small>
+    </div>
+  </div>
+  <div class="cookie__actions">
+    <button type="button" class="btn btn--line" data-cookie-reject>{{t.cookie.reject}}</button>
+    <button type="button" class="btn btn--solid" data-cookie-accept>{{t.cookie.accept}}</button>
+    <button type="button" class="btn btn--line btn--sm cookie__more" data-cookie-more aria-expanded="false">{{t.cookie.customize}}</button>
+  </div>
+</section>
