@@ -1,0 +1,506 @@
+{
+  "en": {
+    "lang": "en",
+    "locale": "en_GB",
+    "page": "index.html",
+    "privacy_page": "privacy.html",
+    "other_lang": "it",
+    "other_lang_label": "IT",
+    "other_lang_name": "Italiano",
+    "other_page": "it.html",
+    "meta_title": "Mixim | Creative consultancy for marketing, content, social and websites",
+    "meta_desc": "Mixim is a creative consultancy for discerning brands: marketing strategy, content creation, social media management and bespoke websites. Every plan is tailored. Book your first hour.",
+    "og_title": "Mixim, brands mixed by hand",
+    "skip": "Skip to content",
+    "nav_studio": "Studio",
+    "nav_menu": "À la carte",
+    "nav_approach": "Approach",
+    "nav_voices": "Voices",
+    "nav_faq": "Questions",
+    "nav_book": "Book a consultation",
+    "nav_book_short": "Book",
+    "nav_open": "Open menu",
+    "nav_close": "Close menu",
+    "hero_kicker": "Creative consultancy · Marketing · Content · Social · Web",
+    "hero_1": "Brands, mixed <em>by hand.</em>",
+    "hero_2": "Marketing, content, social and websites, <em>composed as one.</em>",
+    "hero_3": "Every plan is written for one client. <em>Yours.</em>",
+    "hero_cta": "Book your first hour",
+    "hero_cta2": "See the menu",
+    "hero_scroll": "Scroll",
+    "intro_label": "The studio",
+    "intro_text": "Mixim is a creative consultancy for brands that would rather be remembered than merely seen. We bring strategy, content, social and design to the same table, and compose a plan around you, never around a package.",
+    "pillar_1_t": "Tailored, always",
+    "pillar_1_d": "No packages and no templates. Every plan starts from a conversation and is written for a single client.",
+    "pillar_2_t": "Made by people",
+    "pillar_2_d": "Every idea, every line of copy and every plan is crafted by our team. Considered, not generated.",
+    "pillar_3_t": "One table, every discipline",
+    "pillar_3_d": "Strategy, content, social and web in one studio, so your brand speaks with one voice everywhere.",
+    "menu_label": "The menu",
+    "menu_title": "À la <em>carte.</em>",
+    "menu_intro": "No set menus, no price lists. Choose a single course or let us compose the full table. Every plan is shaped in conversation and quoted for exactly what you need.",
+    "menu_note": "Every plan is tailored to one client. The investment is set out clearly in your written proposal.",
+    "menu_cta": "Compose my plan",
+    "approach_label": "Approach",
+    "approach_title": "From the first hour <em>to the finished work.</em>",
+    "consult_label": "The first hour",
+    "consult_title": "Everything begins <em>with a conversation.</em>",
+    "consult_text": "One focused hour, in person or by video. We listen, ask the questions that matter and learn what your brand truly needs. From that hour we write your bespoke project plan.",
+    "consult_price": "€50",
+    "consult_price_note": "for 60 minutes",
+    "consult_credit": "Credited in full to your project if you choose to work with us.",
+    "consult_f1": "60 minutes, one to one",
+    "consult_f2": "In person or by video call",
+    "consult_f3": "A written plan follows, composed for you",
+    "consult_cta": "Book the consultation",
+    "team_label": "The founders",
+    "team_title": "Two founders, <em>one table.</em>",
+    "team_text": "A small studio by design. When you work with Mixim, you work directly with the people who think, write and build.",
+    "team_cv": "View CV",
+    "team_portfolio": "View portfolio",
+    "team_cv_request": "Request CV",
+    "voices_label": "Voices",
+    "voices_title": "Kind words <em>from our clients.</em>",
+    "faq_label": "Questions",
+    "faq_title": "Before <em>we meet.</em>",
+    "book_label": "Book",
+    "book_title": "Reserve your <em>first hour.</em>",
+    "book_text": "Tell us a little about your brand. We will reply with available times and payment details for the €50 consultation, which is credited to your project if we work together.",
+    "book_direct": "Prefer to write directly?",
+    "book_calendar": "Pick a time in our calendar",
+    "f_name": "Full name",
+    "f_email": "Email",
+    "f_company": "Company or brand",
+    "f_website": "Website or Instagram (optional)",
+    "f_interest": "What would you like to talk about?",
+    "f_format": "Preferred format",
+    "f_format_person": "In person",
+    "f_format_video": "Video call",
+    "f_message": "Tell us about your project",
+    "f_message_ph": "Goals, timing, anything we should know",
+    "f_consent": "I have read the <a href=\"{privacy}\">privacy policy</a> and agree that Mixim processes my data to answer this request.",
+    "f_submit": "Request my consultation",
+    "f_sending": "Sending…",
+    "f_ok_t": "Thank you.",
+    "f_ok": "Your request has arrived. We will be in touch within two working days with available times.",
+    "f_err": "Something went wrong. Please try again, or write to us at {email}.",
+    "f_offline": "You seem to be offline. Please check your connection and try again.",
+    "f_invalid": "Please complete the required fields and accept the privacy policy.",
+    "f_mail_fallback": "Your email app will open with the request ready to send.",
+    "f_required": "Required",
+    "footer_tag": "Creative consultancy for marketing, content, social and websites.",
+    "footer_contact": "Contact",
+    "footer_follow": "Follow",
+    "footer_legal": "Legal",
+    "footer_privacy": "Privacy policy",
+    "footer_cookies": "Cookie settings",
+    "footer_rights": "All rights reserved.",
+    "footer_top": "Back to top",
+    "cookie_title": "Your privacy",
+    "cookie_text": "We use only what is strictly necessary for the site to work. With your consent we would also like to measure visits anonymously to improve the site. You can change your choice at any time.",
+    "cookie_accept": "Accept analytics",
+    "cookie_reject": "Necessary only",
+    "cookie_more": "Read the privacy policy",
+    "menu_courses": [
+      {
+        "num": "I",
+        "id": "strategy",
+        "img": "strategy",
+        "title": "Strategy & Marketing",
+        "desc": "The thinking before the making.",
+        "alt": "An open notebook with pencil sketches and a fountain pen on an oak table",
+        "items": [
+          "Brand and marketing strategy",
+          "Positioning and messaging",
+          "Campaign planning",
+          "Audience and market research",
+          "Launch strategy"
+        ]
+      },
+      {
+        "num": "II",
+        "id": "content",
+        "img": "content",
+        "title": "Content Creation",
+        "desc": "Images and words with a point of view.",
+        "alt": "A vintage medium-format camera resting on deep red wool",
+        "items": [
+          "Photo and video direction",
+          "Short-form video and reels",
+          "Copywriting and storytelling",
+          "Editorial calendars",
+          "Product and lifestyle shoots"
+        ]
+      },
+      {
+        "num": "III",
+        "id": "social",
+        "img": "social",
+        "title": "Social Media",
+        "desc": "Present, consistent, never noisy.",
+        "alt": "Printed photographs and contact sheets with a brass loupe on dark linen",
+        "items": [
+          "Social media management",
+          "Community care",
+          "Paid social campaigns",
+          "Creator and partner collaborations",
+          "Monthly reporting and insight"
+        ]
+      },
+      {
+        "num": "IV",
+        "id": "web",
+        "img": "web",
+        "title": "Websites",
+        "desc": "Your most important room.",
+        "alt": "Website layout sketches on tracing paper with a ruler and a colour swatch card",
+        "items": [
+          "Website design and build",
+          "E-commerce",
+          "SEO foundations",
+          "Copy and user experience",
+          "Care and maintenance"
+        ]
+      },
+      {
+        "num": "V",
+        "id": "identity",
+        "img": "identity",
+        "title": "Identity & Art Direction",
+        "desc": "Recognised before a word is read.",
+        "alt": "A palette knife folding golden ochre oil paint",
+        "items": [
+          "Brand identity and logo",
+          "Art direction",
+          "Packaging and print",
+          "Brand guidelines"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "n": "01",
+        "t": "Consultation",
+        "d": "One hour together, in person or by video. We listen, question and understand what you really need."
+      },
+      {
+        "n": "02",
+        "t": "Bespoke plan",
+        "d": "You receive a written project plan: objectives, deliverables, timeline and investment, composed for you alone."
+      },
+      {
+        "n": "03",
+        "t": "Creation",
+        "d": "We make the work, with regular check-ins, honest feedback and no surprises."
+      },
+      {
+        "n": "04",
+        "t": "Care",
+        "d": "We measure, refine and stay close for as long as it is useful to you."
+      }
+    ],
+    "team": [
+      {
+        "key": "jacqueline",
+        "name": "Jacqueline",
+        "role": "Co-founder · Marketing, content and social",
+        "initial": "J"
+      },
+      {
+        "key": "alessandro",
+        "name": "Alessandro",
+        "role": "Co-founder · Design and websites",
+        "initial": "A"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is there no price list?",
+        "a": "Because no two brands need the same thing. After the consultation you receive a written plan with a clear investment for exactly what you need, nothing more and nothing less."
+      },
+      {
+        "q": "What happens during the consultation?",
+        "a": "One focused hour about your brand, your goals and what is holding you back. You leave with first insights; we leave knowing enough to write your plan."
+      },
+      {
+        "q": "What does the consultation cost?",
+        "a": "The hour costs €50. If you choose to work with us, the full €50 is credited to your project."
+      },
+      {
+        "q": "Can we order a single service?",
+        "a": "Of course. Order one course à la carte, combine a few, or ask us to compose the full table."
+      },
+      {
+        "q": "Do you work with clients outside Italy?",
+        "a": "Yes. We work in English and Italian, in person and remotely, with clients across Europe and beyond."
+      }
+    ],
+    "interests": [
+      "Strategy & Marketing",
+      "Content Creation",
+      "Social Media",
+      "Websites",
+      "Identity & Art Direction",
+      "Not sure yet"
+    ],
+    "tray": "{n} selected from the menu",
+    "picked": "From the à la carte menu:",
+    "subject": "Consultation request",
+    "dish_add": "Add to my selection",
+    "voices_preview_quote": "[Client testimonial goes here. Two or three sentences about the result and how it felt to work together.]",
+    "voices_preview_name": "[Client name]",
+    "voices_preview_role": "[Role, Company]"
+  },
+  "it": {
+    "lang": "it",
+    "locale": "it_IT",
+    "page": "it.html",
+    "privacy_page": "privacy-it.html",
+    "other_lang": "en",
+    "other_lang_label": "EN",
+    "other_lang_name": "English",
+    "other_page": "index.html",
+    "meta_title": "Mixim | Consulenza creativa per marketing, contenuti, social e siti web",
+    "meta_desc": "Mixim è una consulenza creativa per brand esigenti: strategia di marketing, creazione di contenuti, gestione dei social media e siti web su misura. Ogni piano è personalizzato. Prenotate la vostra prima ora.",
+    "og_title": "Mixim, brand miscelati a mano",
+    "skip": "Vai al contenuto",
+    "nav_studio": "Studio",
+    "nav_menu": "À la carte",
+    "nav_approach": "Metodo",
+    "nav_voices": "Voci",
+    "nav_faq": "Domande",
+    "nav_book": "Prenotate una consulenza",
+    "nav_book_short": "Prenota",
+    "nav_open": "Apri il menu",
+    "nav_close": "Chiudi il menu",
+    "hero_kicker": "Consulenza creativa · Marketing · Contenuti · Social · Web",
+    "hero_1": "Brand, miscelati <em>a mano.</em>",
+    "hero_2": "Marketing, contenuti, social e siti web, <em>in un'unica visione.</em>",
+    "hero_3": "Ogni piano è scritto per un solo cliente. <em>Voi.</em>",
+    "hero_cta": "Prenotate la prima ora",
+    "hero_cta2": "Scoprite il menu",
+    "hero_scroll": "Scorrete",
+    "intro_label": "Lo studio",
+    "intro_text": "Mixim è una consulenza creativa per i brand che preferiscono essere ricordati, non soltanto visti. Portiamo strategia, contenuti, social e design allo stesso tavolo, e componiamo un piano attorno a voi, mai attorno a un pacchetto.",
+    "pillar_1_t": "Sempre su misura",
+    "pillar_1_d": "Niente pacchetti, niente modelli. Ogni piano nasce da una conversazione ed è scritto per un solo cliente.",
+    "pillar_2_t": "Fatto da persone",
+    "pillar_2_d": "Ogni idea, ogni testo e ogni piano è creato dal nostro team. Pensato, non generato.",
+    "pillar_3_t": "Un tavolo, ogni disciplina",
+    "pillar_3_d": "Strategia, contenuti, social e web in un unico studio, perché il vostro brand parli con una sola voce, ovunque.",
+    "menu_label": "Il menu",
+    "menu_title": "À la <em>carte.</em>",
+    "menu_intro": "Nessun menu fisso, nessun listino. Scegliete una sola portata o lasciate che componiamo l'intera tavola. Ogni piano prende forma in una conversazione ed è preventivato esattamente su ciò che vi serve.",
+    "menu_note": "Ogni piano è creato per un solo cliente. L'investimento è indicato con chiarezza nella vostra proposta scritta.",
+    "menu_cta": "Componete il mio piano",
+    "approach_label": "Metodo",
+    "approach_title": "Dalla prima ora <em>al lavoro finito.</em>",
+    "consult_label": "La prima ora",
+    "consult_title": "Tutto inizia <em>con una conversazione.</em>",
+    "consult_text": "Un'ora dedicata, di persona o in videochiamata. Ascoltiamo, poniamo le domande giuste e capiamo di cosa ha davvero bisogno il vostro brand. Da quell'ora nasce il vostro piano di progetto su misura.",
+    "consult_price": "50 €",
+    "consult_price_note": "per 60 minuti",
+    "consult_credit": "Interamente scalati dal vostro progetto se scegliete di lavorare con noi.",
+    "consult_f1": "60 minuti, a tu per tu",
+    "consult_f2": "Di persona o in videochiamata",
+    "consult_f3": "Segue un piano scritto, composto per voi",
+    "consult_cta": "Prenotate la consulenza",
+    "team_label": "I fondatori",
+    "team_title": "Due fondatori, <em>un solo tavolo.</em>",
+    "team_text": "Uno studio piccolo per scelta. Lavorando con Mixim, lavorate direttamente con le persone che pensano, scrivono e costruiscono.",
+    "team_cv": "Vedi il CV",
+    "team_portfolio": "Vedi il portfolio",
+    "team_cv_request": "Richiedi il CV",
+    "voices_label": "Voci",
+    "voices_title": "Parole gentili <em>dei nostri clienti.</em>",
+    "faq_label": "Domande",
+    "faq_title": "Prima <em>di incontrarci.</em>",
+    "book_label": "Prenota",
+    "book_title": "Riservate la vostra <em>prima ora.</em>",
+    "book_text": "Raccontateci qualcosa del vostro brand. Vi risponderemo con le disponibilità e i dettagli di pagamento per la consulenza da 50 €, che viene scalata dal progetto se lavoreremo insieme.",
+    "book_direct": "Preferite scriverci direttamente?",
+    "book_calendar": "Scegliete un orario nel calendario",
+    "f_name": "Nome e cognome",
+    "f_email": "Email",
+    "f_company": "Azienda o brand",
+    "f_website": "Sito web o Instagram (facoltativo)",
+    "f_interest": "Di cosa vorreste parlare?",
+    "f_format": "Formato preferito",
+    "f_format_person": "Di persona",
+    "f_format_video": "Videochiamata",
+    "f_message": "Raccontateci il vostro progetto",
+    "f_message_ph": "Obiettivi, tempistiche, tutto ciò che dovremmo sapere",
+    "f_consent": "Ho letto l'<a href=\"{privacy}\">informativa sulla privacy</a> e acconsento al trattamento dei miei dati da parte di Mixim per rispondere a questa richiesta.",
+    "f_submit": "Richiedi la consulenza",
+    "f_sending": "Invio in corso…",
+    "f_ok_t": "Grazie.",
+    "f_ok": "La vostra richiesta è arrivata. Vi contatteremo entro due giorni lavorativi con le disponibilità.",
+    "f_err": "Qualcosa non ha funzionato. Riprovate, oppure scriveteci a {email}.",
+    "f_offline": "Sembra che siate offline. Controllate la connessione e riprovate.",
+    "f_invalid": "Compilate i campi obbligatori e accettate l'informativa sulla privacy.",
+    "f_mail_fallback": "Si aprirà la vostra app di posta con la richiesta pronta da inviare.",
+    "f_required": "Obbligatorio",
+    "footer_tag": "Consulenza creativa per marketing, contenuti, social e siti web.",
+    "footer_contact": "Contatti",
+    "footer_follow": "Seguiteci",
+    "footer_legal": "Note legali",
+    "footer_privacy": "Informativa sulla privacy",
+    "footer_cookies": "Impostazioni cookie",
+    "footer_rights": "Tutti i diritti riservati.",
+    "footer_top": "Torna su",
+    "cookie_title": "La vostra privacy",
+    "cookie_text": "Utilizziamo solo ciò che è strettamente necessario al funzionamento del sito. Con il vostro consenso vorremmo anche misurare le visite in forma anonima per migliorarlo. Potete cambiare scelta in qualsiasi momento.",
+    "cookie_accept": "Accetta statistiche",
+    "cookie_reject": "Solo necessari",
+    "cookie_more": "Leggi l'informativa",
+    "menu_courses": [
+      {
+        "num": "I",
+        "id": "strategy",
+        "img": "strategy",
+        "title": "Strategia & Marketing",
+        "desc": "Il pensiero prima del fare.",
+        "alt": "Un taccuino aperto con schizzi a matita e una penna stilografica su un tavolo di rovere",
+        "items": [
+          "Strategia di brand e di marketing",
+          "Posizionamento e messaggi",
+          "Pianificazione delle campagne",
+          "Ricerca di mercato e di pubblico",
+          "Strategia di lancio"
+        ]
+      },
+      {
+        "num": "II",
+        "id": "content",
+        "img": "content",
+        "title": "Creazione di contenuti",
+        "desc": "Immagini e parole con un punto di vista.",
+        "alt": "Una fotocamera medio formato d'epoca su lana rosso scuro",
+        "items": [
+          "Direzione foto e video",
+          "Video brevi e reel",
+          "Copywriting e storytelling",
+          "Calendari editoriali",
+          "Shooting di prodotto e lifestyle"
+        ]
+      },
+      {
+        "num": "III",
+        "id": "social",
+        "img": "social",
+        "title": "Social Media",
+        "desc": "Presenti, coerenti, mai rumorosi.",
+        "alt": "Fotografie stampate e provini a contatto con un lentino in ottone su lino scuro",
+        "items": [
+          "Gestione dei social media",
+          "Cura della community",
+          "Campagne social a pagamento",
+          "Collaborazioni con creator e partner",
+          "Report e analisi mensili"
+        ]
+      },
+      {
+        "num": "IV",
+        "id": "web",
+        "img": "web",
+        "title": "Siti web",
+        "desc": "La stanza più importante del vostro brand.",
+        "alt": "Schizzi di layout di un sito su carta da lucido con un righello e una cartella colori",
+        "items": [
+          "Design e sviluppo di siti web",
+          "E-commerce",
+          "Basi SEO",
+          "Testi ed esperienza utente",
+          "Assistenza e manutenzione"
+        ]
+      },
+      {
+        "num": "V",
+        "id": "identity",
+        "img": "identity",
+        "title": "Identità & Art Direction",
+        "desc": "Riconoscibili prima ancora di leggere una parola.",
+        "alt": "Una spatola che mescola colore a olio ocra dorato",
+        "items": [
+          "Identità di brand e logo",
+          "Art direction",
+          "Packaging e stampa",
+          "Linee guida del brand"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "n": "01",
+        "t": "Consulenza",
+        "d": "Un'ora insieme, di persona o in videochiamata. Ascoltiamo, chiediamo e capiamo ciò di cui avete davvero bisogno."
+      },
+      {
+        "n": "02",
+        "t": "Piano su misura",
+        "d": "Ricevete un piano di progetto scritto: obiettivi, attività, tempi e investimento, composto solo per voi."
+      },
+      {
+        "n": "03",
+        "t": "Creazione",
+        "d": "Realizziamo il lavoro, con aggiornamenti regolari, confronto sincero e nessuna sorpresa."
+      },
+      {
+        "n": "04",
+        "t": "Cura",
+        "d": "Misuriamo, perfezioniamo e restiamo al vostro fianco finché vi è utile."
+      }
+    ],
+    "team": [
+      {
+        "key": "jacqueline",
+        "name": "Jacqueline",
+        "role": "Co-fondatrice · Marketing, contenuti e social",
+        "initial": "J"
+      },
+      {
+        "key": "alessandro",
+        "name": "Alessandro",
+        "role": "Co-fondatore · Design e siti web",
+        "initial": "A"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Perché non c'è un listino prezzi?",
+        "a": "Perché non esistono due brand con le stesse esigenze. Dopo la consulenza ricevete un piano scritto con un investimento chiaro per esattamente ciò che vi serve, niente di più e niente di meno."
+      },
+      {
+        "q": "Cosa succede durante la consulenza?",
+        "a": "Un'ora dedicata al vostro brand, ai vostri obiettivi e a ciò che vi frena. Voi uscite con i primi spunti; noi con quanto basta per scrivere il vostro piano."
+      },
+      {
+        "q": "Quanto costa la consulenza?",
+        "a": "L'ora costa 50 €. Se scegliete di lavorare con noi, l'intero importo viene scalato dal progetto."
+      },
+      {
+        "q": "Possiamo scegliere un solo servizio?",
+        "a": "Certamente. Ordinate una sola portata à la carte, combinatene alcune, oppure chiedeteci di comporre l'intera tavola."
+      },
+      {
+        "q": "Lavorate con clienti all'estero?",
+        "a": "Sì. Lavoriamo in italiano e in inglese, di persona e da remoto, con clienti in tutta Europa e oltre."
+      }
+    ],
+    "interests": [
+      "Strategia & Marketing",
+      "Creazione di contenuti",
+      "Social Media",
+      "Siti web",
+      "Identità & Art Direction",
+      "Non lo so ancora"
+    ],
+    "tray": "{n} scelte dal menu",
+    "picked": "Dal menu à la carte:",
+    "subject": "Richiesta di consulenza",
+    "dish_add": "Aggiungi alla selezione",
+    "voices_preview_quote": "[Qui la testimonianza del cliente. Due o tre frasi sul risultato e su come è stato lavorare insieme.]",
+    "voices_preview_name": "[Nome del cliente]",
+    "voices_preview_role": "[Ruolo, Azienda]"
+  }
+}

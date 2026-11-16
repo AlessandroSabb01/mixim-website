@@ -1,0 +1,29 @@
+{
+  "_readme": "Edit these values, then run: python3 build/build.py. Empty strings hide the related button or feature.",
+
+  "brand": "Mixim",
+  "site_url": "",
+  "email": "studio.miximfx@gmail.com",
+  "phone": "+34 637 05 44 90",
+  "whatsapp": "34637054490",
+
+  "instagram": "",
+  "linkedin": "",
+
+  "form_endpoint": "",
+  "booking_url": "",
+  "ga4_id": "",
+
+  "team_links": {
+    "jacqueline": {"cv": "", "portfolio": ""},
+    "alessandro": {"cv": "", "portfolio": ""}
+  },
+
+  "legal": {
+    "company": "[Legal company name]",
+    "address": "[Registered address, postcode, city, country]",
+    "vat": "[VAT number]"
+  },
+
+  "testimonials": []
+}
