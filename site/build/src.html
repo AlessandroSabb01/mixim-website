@@ -6,7 +6,6 @@
 <title>{{meta_title}}</title>
 <meta name="description" content="{{meta_desc}}">
 <meta name="theme-color" content="#121212">
-<meta name="color-scheme" content="dark">
 {{@head_links}}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{@brand}}">
@@ -313,6 +312,16 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
 .fdone h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:56px;margin:0 0 10px;line-height:1}
 .fdone p{color:var(--bone-2);margin:0}
 .form.done .fbody{display:none}.form.done .fdone{display:block}
+.calcard{border-radius:var(--r-lg);padding:clamp(28px,3.5vw,48px);border:1px solid rgba(236,230,218,.1);background:
+  radial-gradient(90% 120% at 100% 0%,rgba(123,47,42,.5) 0%,rgba(123,47,42,0) 60%),var(--madder-deep)}
+.calcard-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid rgba(236,230,218,.16);padding-bottom:20px;margin-bottom:24px}
+.calcard-top .amt{font-family:var(--serif);font-size:clamp(56px,6vw,80px);line-height:.9}
+.calcard-top .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-2)}
+.calcard h3{margin:0 0 10px;font-size:clamp(28px,2.6vw,36px);font-weight:500;letter-spacing:-.025em}
+.calcard p{margin:0 0 28px;color:var(--bone-2)}
+.calcard .calnote{margin:18px 0 0;font-size:13px;color:var(--muted);line-height:1.5}
+.calcard .btn.loading{opacity:.7;pointer-events:none}
+.alt-title{margin:40px 0 16px;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--bone-2)}
 @media (max-width:900px){.book-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.row{grid-template-columns:1fr;gap:0}}
 
@@ -452,7 +461,8 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
           <div class="per">{{consult_price_note}}</div>
           <ul><li>{{consult_f1}}</li><li>{{consult_f2}}</li><li>{{consult_f3}}</li></ul>
           <p class="credit">{{consult_credit}}</p>
-          <a class="btn btn-solid" href="#book" data-book>{{consult_cta}} {{@arrow}}</a>
+          <!--if:cal_link--><a class="btn btn-solid" href="{{@cal_url}}" target="_blank" rel="noopener" data-cal>{{consult_cta}} {{@arrow}}</a><!--/if:cal_link-->
+          <!--ifnot:cal_link--><a class="btn btn-solid" href="#book" data-book>{{consult_cta}} {{@arrow}}</a><!--/ifnot:cal_link-->
         </div>
       </div>
     </div>
@@ -482,14 +492,25 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
       <div>
         <span class="label rv">{{book_label}}</span>
         <h2 class="h2 rv rv-d1">{{book_title}}</h2>
-        <p class="lead rv rv-d2" style="margin-top:28px">{{book_text}}</p>
+        <!--if:cal_link--><p class="lead rv rv-d2" style="margin-top:28px">{{book_text_cal}}</p><!--/if:cal_link-->
+        <!--ifnot:cal_link--><p class="lead rv rv-d2" style="margin-top:28px">{{book_text}}</p><!--/ifnot:cal_link-->
         <div class="direct rv rv-d3">
           <p>{{book_direct}}</p>
           <a class="ln" href="mailto:{{@email}}?subject={{@mail_subject}}">{{@email}}</a>
           <!--if:whatsapp--><a class="ln" href="https://wa.me/{{@whatsapp}}" target="_blank" rel="noopener">WhatsApp · {{@phone}}</a><!--/if:whatsapp-->
-          <!--if:booking_url--><a class="btn btn-ghost" style="margin-top:8px;width:fit-content" href="{{@booking_url}}" target="_blank" rel="noopener">{{book_calendar}} {{@arrow}}</a><!--/if:booking_url-->
         </div>
       </div>
+      <div class="bookcol">
+      <!--if:cal_link-->
+      <div class="calcard rv rv-d1">
+        <div class="calcard-top"><span class="amt">{{consult_price}}</span><span class="meta">{{cal_meta}}</span></div>
+        <h3>{{cal_title}}</h3>
+        <p>{{cal_text}}</p>
+        <a class="btn btn-solid" href="{{@cal_url}}" target="_blank" rel="noopener" data-cal>{{cal_btn}} {{@arrow}}</a>
+        <p class="calnote">{{cal_note}}</p>
+      </div>
+      <p class="alt-title rv">{{form_alt}}</p>
+      <!--/if:cal_link-->
       <form class="form rv rv-d1" id="bookForm" novalidate>
         <div class="fbody">
           <div class="row">
@@ -513,6 +534,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
         </div>
         <div class="fdone" tabindex="-1" id="fDone"><h3>{{f_ok_t}}</h3><p id="fDoneMsg">{{f_ok}}</p></div>
       </form>
+      </div>
     </div>
   </section>
 </main>
@@ -668,6 +690,48 @@ addEventListener('DOMContentLoaded', function () {
       .then(function () { done(); })
       .catch(function () { fMsg.className = 'fmsg err'; fMsg.textContent = T.err; })
       .then(function () { fBtn.disabled = false; fBtn.innerHTML = lbl; });
+  });
+
+  /* Cal.com booking with Stripe payment.
+     Nothing is requested from Cal.com until the visitor clicks a booking button (privacy + speed).
+     If the embed cannot load, the link simply opens the Cal.com page in a new tab. */
+  var calReady = null;
+  var loadCal = function () {
+    if (calReady) return calReady;
+    calReady = new Promise(function (res, rej) {
+      (function (C, A, L) {
+        var p = function (a, ar) { a.q.push(ar); };
+        C.Cal = C.Cal || function () {
+          var cal = C.Cal, ar = arguments;
+          if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var s = d.createElement('script'); s.src = A; s.onload = res; s.onerror = rej; d.head.appendChild(s); cal.loaded = true; }
+          if (ar[0] === L) {
+            var api = function () { p(api, arguments); }, ns = ar[1]; api.q = api.q || [];
+            if (typeof ns === 'string') { cal.ns[ns] = cal.ns[ns] || api; p(cal.ns[ns], ar); p(cal, ['initNamespace', ns]); } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, CFG.cal.js, 'init');
+      Cal('init', 'mx', { origin: CFG.cal.origin });
+      Cal.ns.mx('ui', { theme: 'dark', hideEventTypeDetails: false, layout: 'month_view',
+        cssVarsPerTheme: { dark: { 'cal-brand': '#C29A5E', 'cal-brand-emphasis': '#d4ad72', 'cal-brand-text': '#111111' } },
+        styles: { branding: { brandColor: '#C29A5E' } } });
+      setTimeout(function () { rej(new Error('timeout')); }, 8000);
+    });
+    return calReady;
+  };
+  $$('[data-cal]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!CFG.cal.link || window.Cal && window.Cal.__failed) return;
+      e.preventDefault();
+      var config = { layout: 'month_view', theme: 'dark' };
+      if (picks.length) config.notes = T.picked + '\n' + picks.map(function (p) { return '· ' + p; }).join('\n');
+      a.classList.add('loading');
+      var open = function () { Cal.ns.mx('modal', { calLink: CFG.cal.link, config: config }); };
+      loadCal().then(function () { a.classList.remove('loading'); open(); }, function () {
+        a.classList.remove('loading'); if (window.Cal) window.Cal.__failed = true; window.open(a.href, '_blank', 'noopener');
+      });
+    });
   });
 
   /* consent manager (only rendered when analytics are configured) */

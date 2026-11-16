@@ -67,7 +67,6 @@
     "book_title": "Reserve your <em>first hour.</em>",
     "book_text": "Tell us a little about your brand. We will reply with available times and payment details for the €50 consultation, which is credited to your project if we work together.",
     "book_direct": "Prefer to write directly?",
-    "book_calendar": "Pick a time in our calendar",
     "f_name": "Full name",
     "f_email": "Email",
     "f_company": "Company or brand",
@@ -249,7 +248,14 @@
     "dish_add": "Add to my selection",
     "voices_preview_quote": "[Client testimonial goes here. Two or three sentences about the result and how it felt to work together.]",
     "voices_preview_name": "[Client name]",
-    "voices_preview_role": "[Role, Company]"
+    "voices_preview_role": "[Role, Company]",
+    "book_text_cal": "Choose a date and time that suits you and pay the €50 securely when you book. If we go on to work together, the full amount is credited to your project.",
+    "cal_meta": "60 minutes · in person or video",
+    "cal_title": "Choose your hour.",
+    "cal_text": "See our live availability, pick a slot and confirm with a card payment. You receive a confirmation and a calendar invitation straight away.",
+    "cal_btn": "Choose a date and time",
+    "cal_note": "The booking calendar is provided by Cal.com and payments are processed securely by Stripe. Nothing loads from Cal.com until you click.",
+    "form_alt": "Not ready to book? Send us a note first."
   },
   "it": {
     "lang": "it",
@@ -319,7 +325,6 @@
     "book_title": "Riservate la vostra <em>prima ora.</em>",
     "book_text": "Raccontateci qualcosa del vostro brand. Vi risponderemo con le disponibilità e i dettagli di pagamento per la consulenza da 50 €, che viene scalata dal progetto se lavoreremo insieme.",
     "book_direct": "Preferite scriverci direttamente?",
-    "book_calendar": "Scegliete un orario nel calendario",
     "f_name": "Nome e cognome",
     "f_email": "Email",
     "f_company": "Azienda o brand",
@@ -501,6 +506,13 @@
     "dish_add": "Aggiungi alla selezione",
     "voices_preview_quote": "[Qui la testimonianza del cliente. Due o tre frasi sul risultato e su come è stato lavorare insieme.]",
     "voices_preview_name": "[Nome del cliente]",
-    "voices_preview_role": "[Ruolo, Azienda]"
+    "voices_preview_role": "[Ruolo, Azienda]",
+    "book_text_cal": "Scegliete il giorno e l'orario che preferite e pagate i 50 € in modo sicuro al momento della prenotazione. Se lavoreremo insieme, l'intero importo verrà scalato dal progetto.",
+    "cal_meta": "60 minuti · di persona o in video",
+    "cal_title": "Scegliete la vostra ora.",
+    "cal_text": "Consultate le nostre disponibilità in tempo reale, scegliete un orario e confermate con il pagamento con carta. Riceverete subito la conferma e l'invito in calendario.",
+    "cal_btn": "Scegliete data e orario",
+    "cal_note": "Il calendario di prenotazione è fornito da Cal.com e i pagamenti sono elaborati in modo sicuro da Stripe. Nulla viene caricato da Cal.com finché non cliccate.",
+    "form_alt": "Non siete pronti a prenotare? Scriveteci prima due righe."
   }
 }

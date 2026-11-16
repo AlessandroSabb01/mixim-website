@@ -44,12 +44,10 @@ def url(path):
 
 
 def conditionals(s):
-    """<!--if:key-->...<!--/if:key--> kept only when the config value is truthy."""
-    def repl(m):
-        key = m.group(1)
-        val = CFG.get(key)
-        return m.group(2) if val else ""
-    return re.sub(r"<!--if:(\w+)-->(.*?)<!--/if:\1-->", repl, s, flags=re.S)
+    """<!--if:key-->...<!--/if:key--> kept only when the config value is truthy,
+    <!--ifnot:key-->...<!--/ifnot:key--> only when it is empty."""
+    s = re.sub(r"<!--if:(\w+)-->(.*?)<!--/if:\1-->", lambda m: m.group(2) if CFG.get(m.group(1)) else "", s, flags=re.S)
+    return re.sub(r"<!--ifnot:(\w+)-->(.*?)<!--/ifnot:\1-->", lambda m: "" if CFG.get(m.group(1)) else m.group(2), s, flags=re.S)
 
 
 def phone_tel(p):
@@ -66,7 +64,8 @@ def gen(lang):
     g["phone"] = e(CFG.get("phone", ""))
     g["phone_tel"] = phone_tel(CFG.get("phone", ""))
     g["whatsapp"] = e(CFG.get("whatsapp", ""))
-    g["booking_url"] = e(CFG.get("booking_url", ""))
+    cal_link = CFG.get("cal_link", "").strip("/")
+    g["cal_url"] = e(f'{CFG.get("cal_origin", "https://cal.com").rstrip("/")}/{cal_link}')
     g["mail_subject"] = e(t["subject"]).replace(" ", "%20")
     g["legal_line"] = e(brand) if CFG["legal"]["company"].startswith("[") else e(CFG["legal"]["company"])
     g["hero_first"] = HERO["d"]["path"] + "001.webp"
@@ -174,7 +173,9 @@ def gen(lang):
     g["social"] = "".join(social)
 
     g["cfg_json"] = json.dumps({
-        "email": CFG["email"], "endpoint": CFG.get("form_endpoint", ""), "ga4": CFG.get("ga4_id", ""), "hero": HERO})
+        "email": CFG["email"], "endpoint": CFG.get("form_endpoint", ""), "ga4": CFG.get("ga4_id", ""), "hero": HERO,
+        "cal": {"link": cal_link, "origin": CFG.get("cal_origin", "https://cal.com"),
+                "js": CFG.get("cal_embed_js", "https://app.cal.com/embed/embed.js")}})
     g["t_json"] = json.dumps({
         "lang": lang, "tray": t["tray"], "picked": t["picked"], "subject": t["subject"],
         "invalid": t["f_invalid"], "sending": t["f_sending"], "offline": t["f_offline"],

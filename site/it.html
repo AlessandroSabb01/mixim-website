@@ -6,7 +6,6 @@
 <title>Mixim | Consulenza creativa per marketing, contenuti, social e siti web</title>
 <meta name="description" content="Mixim è una consulenza creativa per brand esigenti: strategia di marketing, creazione di contenuti, gestione dei social media e siti web su misura. Ogni piano è personalizzato. Prenotate la vostra prima ora.">
 <meta name="theme-color" content="#121212">
-<meta name="color-scheme" content="dark">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mixim">
@@ -313,6 +312,16 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
 .fdone h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:56px;margin:0 0 10px;line-height:1}
 .fdone p{color:var(--bone-2);margin:0}
 .form.done .fbody{display:none}.form.done .fdone{display:block}
+.calcard{border-radius:var(--r-lg);padding:clamp(28px,3.5vw,48px);border:1px solid rgba(236,230,218,.1);background:
+  radial-gradient(90% 120% at 100% 0%,rgba(123,47,42,.5) 0%,rgba(123,47,42,0) 60%),var(--madder-deep)}
+.calcard-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid rgba(236,230,218,.16);padding-bottom:20px;margin-bottom:24px}
+.calcard-top .amt{font-family:var(--serif);font-size:clamp(56px,6vw,80px);line-height:.9}
+.calcard-top .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-2)}
+.calcard h3{margin:0 0 10px;font-size:clamp(28px,2.6vw,36px);font-weight:500;letter-spacing:-.025em}
+.calcard p{margin:0 0 28px;color:var(--bone-2)}
+.calcard .calnote{margin:18px 0 0;font-size:13px;color:var(--muted);line-height:1.5}
+.calcard .btn.loading{opacity:.7;pointer-events:none}
+.alt-title{margin:40px 0 16px;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--bone-2)}
 @media (max-width:900px){.book-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.row{grid-template-columns:1fr;gap:0}}
 
@@ -452,6 +461,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
           <div class="per">per 60 minuti</div>
           <ul><li>60 minuti, a tu per tu</li><li>Di persona o in videochiamata</li><li>Segue un piano scritto, composto per voi</li></ul>
           <p class="credit">Interamente scalati dal vostro progetto se scegliete di lavorare con noi.</p>
+          
           <a class="btn btn-solid" href="#book" data-book>Prenotate la consulenza <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
@@ -482,14 +492,16 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
       <div>
         <span class="label rv">Prenota</span>
         <h2 class="h2 rv rv-d1">Riservate la vostra <em>prima ora.</em></h2>
+        
         <p class="lead rv rv-d2" style="margin-top:28px">Raccontateci qualcosa del vostro brand. Vi risponderemo con le disponibilità e i dettagli di pagamento per la consulenza da 50 €, che viene scalata dal progetto se lavoreremo insieme.</p>
         <div class="direct rv rv-d3">
           <p>Preferite scriverci direttamente?</p>
           <a class="ln" href="mailto:studio.miximfx@gmail.com?subject=Richiesta%20di%20consulenza">studio.miximfx@gmail.com</a>
           <a class="ln" href="https://wa.me/34637054490" target="_blank" rel="noopener">WhatsApp · +34 637 05 44 90</a>
-          
         </div>
       </div>
+      <div class="bookcol">
+      
       <form class="form rv rv-d1" id="bookForm" novalidate>
         <div class="fbody">
           <div class="row">
@@ -513,6 +525,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
         </div>
         <div class="fdone" tabindex="-1" id="fDone"><h3>Grazie.</h3><p id="fDoneMsg">La vostra richiesta è arrivata. Vi contatteremo entro due giorni lavorativi con le disponibilità.</p></div>
       </form>
+      </div>
     </div>
   </section>
 </main>
@@ -544,7 +557,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
 
 
 
-<script>window.__CFG={"email": "studio.miximfx@gmail.com", "endpoint": "", "ga4": "", "hero": {"d": {"path": "media/hero/f", "n": 121}, "m": {"path": "media/hero-m/f", "n": 121}}};window.__T={"lang": "it", "tray": "{n} scelte dal menu", "picked": "Dal menu à la carte:", "subject": "Richiesta di consulenza", "invalid": "Compilate i campi obbligatori e accettate l'informativa sulla privacy.", "sending": "Invio in corso…", "offline": "Sembra che siate offline. Controllate la connessione e riprovate.", "err": "Qualcosa non ha funzionato. Riprovate, oppure scriveteci a studio.miximfx@gmail.com.", "mail_fallback": "Si aprirà la vostra app di posta con la richiesta pronta da inviare.", "f_name": "Nome e cognome", "f_company": "Azienda o brand", "f_website": "Sito web o Instagram (facoltativo)", "f_interest": "Di cosa vorreste parlare?", "f_format": "Formato preferito"};</script>
+<script>window.__CFG={"email": "studio.miximfx@gmail.com", "endpoint": "", "ga4": "", "hero": {"d": {"path": "media/hero/f", "n": 121}, "m": {"path": "media/hero-m/f", "n": 121}}, "cal": {"link": "", "origin": "https://cal.com", "js": "https://app.cal.com/embed/embed.js"}};window.__T={"lang": "it", "tray": "{n} scelte dal menu", "picked": "Dal menu à la carte:", "subject": "Richiesta di consulenza", "invalid": "Compilate i campi obbligatori e accettate l'informativa sulla privacy.", "sending": "Invio in corso…", "offline": "Sembra che siate offline. Controllate la connessione e riprovate.", "err": "Qualcosa non ha funzionato. Riprovate, oppure scriveteci a studio.miximfx@gmail.com.", "mail_fallback": "Si aprirà la vostra app di posta con la richiesta pronta da inviare.", "f_name": "Nome e cognome", "f_company": "Azienda o brand", "f_website": "Sito web o Instagram (facoltativo)", "f_interest": "Di cosa vorreste parlare?", "f_format": "Formato preferito"};</script>
 <script src="js/gsap.min.js" defer></script>
 <script src="js/ScrollTrigger.min.js" defer></script>
 <script src="js/lenis.min.js" defer></script>
@@ -658,6 +671,48 @@ addEventListener('DOMContentLoaded', function () {
       .then(function () { done(); })
       .catch(function () { fMsg.className = 'fmsg err'; fMsg.textContent = T.err; })
       .then(function () { fBtn.disabled = false; fBtn.innerHTML = lbl; });
+  });
+
+  /* Cal.com booking with Stripe payment.
+     Nothing is requested from Cal.com until the visitor clicks a booking button (privacy + speed).
+     If the embed cannot load, the link simply opens the Cal.com page in a new tab. */
+  var calReady = null;
+  var loadCal = function () {
+    if (calReady) return calReady;
+    calReady = new Promise(function (res, rej) {
+      (function (C, A, L) {
+        var p = function (a, ar) { a.q.push(ar); };
+        C.Cal = C.Cal || function () {
+          var cal = C.Cal, ar = arguments;
+          if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var s = d.createElement('script'); s.src = A; s.onload = res; s.onerror = rej; d.head.appendChild(s); cal.loaded = true; }
+          if (ar[0] === L) {
+            var api = function () { p(api, arguments); }, ns = ar[1]; api.q = api.q || [];
+            if (typeof ns === 'string') { cal.ns[ns] = cal.ns[ns] || api; p(cal.ns[ns], ar); p(cal, ['initNamespace', ns]); } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, CFG.cal.js, 'init');
+      Cal('init', 'mx', { origin: CFG.cal.origin });
+      Cal.ns.mx('ui', { theme: 'dark', hideEventTypeDetails: false, layout: 'month_view',
+        cssVarsPerTheme: { dark: { 'cal-brand': '#C29A5E', 'cal-brand-emphasis': '#d4ad72', 'cal-brand-text': '#111111' } },
+        styles: { branding: { brandColor: '#C29A5E' } } });
+      setTimeout(function () { rej(new Error('timeout')); }, 8000);
+    });
+    return calReady;
+  };
+  $$('[data-cal]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!CFG.cal.link || window.Cal && window.Cal.__failed) return;
+      e.preventDefault();
+      var config = { layout: 'month_view', theme: 'dark' };
+      if (picks.length) config.notes = T.picked + '\n' + picks.map(function (p) { return '· ' + p; }).join('\n');
+      a.classList.add('loading');
+      var open = function () { Cal.ns.mx('modal', { calLink: CFG.cal.link, config: config }); };
+      loadCal().then(function () { a.classList.remove('loading'); open(); }, function () {
+        a.classList.remove('loading'); if (window.Cal) window.Cal.__failed = true; window.open(a.href, '_blank', 'noopener');
+      });
+    });
   });
 
   /* consent manager (only rendered when analytics are configured) */
