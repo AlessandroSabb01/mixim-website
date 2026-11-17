@@ -201,15 +201,17 @@
     "team": [
       {
         "key": "jacqueline",
-        "name": "Jacqueline",
+        "name": "Jacqueline Obert",
         "role": "Co-founder · Marketing, content and social",
-        "initial": "J"
+        "initial": "J",
+        "bio": ""
       },
       {
         "key": "alessandro",
-        "name": "Alessandro",
-        "role": "Co-founder · Design and websites",
-        "initial": "A"
+        "name": "Alessandro Sabbadini",
+        "role": "Co-founder · Websites, film and CGI",
+        "initial": "A",
+        "bio": "Founder of Mixim Creative Studio since 2022. Websites, brand films and CGI for luxury, real estate and hospitality brands in six countries. Works in Italian, English, French and Spanish."
       }
     ],
     "faq": [
@@ -255,7 +257,110 @@
     "cal_text": "See our live availability, pick a slot and confirm with a card payment. You receive a confirmation and a calendar invitation straight away.",
     "cal_btn": "Choose a date and time",
     "cal_note": "The booking calendar is provided by Cal.com and payments are processed securely by Stripe. Nothing loads from Cal.com until you click.",
-    "form_alt": "Not ready to book? Send us a note first."
+    "form_alt": "Not ready to book? Send us a note first.",
+    "nav_work": "Work",
+    "work_label": "Selected work",
+    "work_title": "Proof, <em>not promises.</em>",
+    "work_intro": "A selection of websites and films by the founders for luxury, hospitality, real estate and professional brands in Italy, France and the United States, with the results each client saw after launch.",
+    "work_visit": "Visit site",
+    "work_more": "See Alessandro's full portfolio",
+    "work_stats": [
+      {
+        "n": "40+",
+        "t": "projects delivered"
+      },
+      {
+        "n": "6",
+        "t": "markets: Italy, Spain, France, Switzerland, USA, Canada"
+      },
+      {
+        "n": "2022",
+        "t": "Mixim Creative Studio founded"
+      }
+    ],
+    "team_linkedin": "LinkedIn",
+    "work": [
+      {
+        "key": "orangetree",
+        "name": "Orange Tree Homes",
+        "url": "https://orangetreehome.it/",
+        "year": "2025",
+        "sector": "Luxury rental · Rome",
+        "services": "Website, booking, film",
+        "n": "+120%",
+        "label": "direct bookings"
+      },
+      {
+        "key": "gabizon",
+        "name": "Marco Gabizon Atelier",
+        "url": "https://marcogabizon.com/",
+        "year": "2025",
+        "sector": "Bespoke tailoring · Rome",
+        "services": "Website, brand film",
+        "n": "+50%",
+        "label": "quote requests"
+      },
+      {
+        "key": "mogador",
+        "name": "La Villa Mogador",
+        "url": "https://www.lavillamogadorcapferret.com/",
+        "year": "2025",
+        "sector": "Guesthouse · Cap Ferret",
+        "services": "Website, film",
+        "n": "+70%",
+        "label": "inquiries"
+      },
+      {
+        "key": "colouraddict",
+        "name": "Colour Addict",
+        "url": "https://colouraddictofficial.com/",
+        "year": "2025",
+        "sector": "Colour and image consulting",
+        "services": "Website, booking, brand film",
+        "n": "+85%",
+        "label": "online bookings"
+      },
+      {
+        "key": "unica",
+        "name": "Atelier Unica",
+        "url": "https://atelier-unica.com/",
+        "year": "2025",
+        "sector": "Luxury brand consultancy",
+        "services": "Website, motion",
+        "n": "+60%",
+        "label": "qualified inquiries"
+      },
+      {
+        "key": "altraroma",
+        "name": "L'Altra Roma",
+        "url": "https://laltraroma.com/",
+        "year": "2025",
+        "sector": "Cultural events · Rome",
+        "services": "Website, membership, film",
+        "n": "+70%",
+        "label": "event participation"
+      },
+      {
+        "key": "comodista",
+        "name": "Comodista Capital",
+        "url": "https://comodistacap.com/",
+        "year": "2025",
+        "sector": "Real estate investment · Miami",
+        "services": "Website",
+        "n": "+65%",
+        "label": "investor inquiries"
+      },
+      {
+        "key": "depetris",
+        "name": "Studio De Petris",
+        "url": "https://studioassociatodepetris.com/",
+        "year": "2025",
+        "sector": "Tax and legal firm · Rome",
+        "services": "Website, brand film",
+        "n": "+65%",
+        "label": "consultancy requests"
+      }
+    ]
   },
   "it": {
     "lang": "it",
@@ -459,15 +564,17 @@
     "team": [
       {
         "key": "jacqueline",
-        "name": "Jacqueline",
+        "name": "Jacqueline Obert",
         "role": "Co-fondatrice · Marketing, contenuti e social",
-        "initial": "J"
+        "initial": "J",
+        "bio": ""
       },
       {
         "key": "alessandro",
-        "name": "Alessandro",
-        "role": "Co-fondatore · Design e siti web",
-        "initial": "A"
+        "name": "Alessandro Sabbadini",
+        "role": "Co-fondatore · Siti web, film e CGI",
+        "initial": "A",
+        "bio": "Fondatore di Mixim Creative Studio dal 2022. Siti web, brand film e CGI per brand del lusso, dell'immobiliare e dell'ospitalità in sei Paesi. Lavora in italiano, inglese, francese e spagnolo."
       }
     ],
     "faq": [
@@ -513,6 +620,109 @@
     "cal_text": "Consultate le nostre disponibilità in tempo reale, scegliete un orario e confermate con il pagamento con carta. Riceverete subito la conferma e l'invito in calendario.",
     "cal_btn": "Scegliete data e orario",
     "cal_note": "Il calendario di prenotazione è fornito da Cal.com e i pagamenti sono elaborati in modo sicuro da Stripe. Nulla viene caricato da Cal.com finché non cliccate.",
-    "form_alt": "Non siete pronti a prenotare? Scriveteci prima due righe."
+    "form_alt": "Non siete pronti a prenotare? Scriveteci prima due righe.",
+    "nav_work": "Lavori",
+    "work_label": "Lavori scelti",
+    "work_title": "Risultati, <em>non promesse.</em>",
+    "work_intro": "Una selezione di siti web e film realizzati dai fondatori per brand del lusso, dell'ospitalità, dell'immobiliare e delle professioni in Italia, Francia e Stati Uniti, con i risultati ottenuti da ciascun cliente dopo il lancio.",
+    "work_visit": "Visita il sito",
+    "work_more": "Vedi il portfolio completo di Alessandro",
+    "work_stats": [
+      {
+        "n": "40+",
+        "t": "progetti realizzati"
+      },
+      {
+        "n": "6",
+        "t": "mercati: Italia, Spagna, Francia, Svizzera, USA, Canada"
+      },
+      {
+        "n": "2022",
+        "t": "nasce Mixim Creative Studio"
+      }
+    ],
+    "team_linkedin": "LinkedIn",
+    "work": [
+      {
+        "key": "orangetree",
+        "name": "Orange Tree Homes",
+        "url": "https://orangetreehome.it/",
+        "year": "2025",
+        "sector": "Affitti di lusso · Roma",
+        "services": "Sito, prenotazioni, film",
+        "n": "+120%",
+        "label": "prenotazioni dirette"
+      },
+      {
+        "key": "gabizon",
+        "name": "Marco Gabizon Atelier",
+        "url": "https://marcogabizon.com/",
+        "year": "2025",
+        "sector": "Sartoria su misura · Roma",
+        "services": "Sito, brand film",
+        "n": "+50%",
+        "label": "richieste di preventivo"
+      },
+      {
+        "key": "mogador",
+        "name": "La Villa Mogador",
+        "url": "https://www.lavillamogadorcapferret.com/",
+        "year": "2025",
+        "sector": "Maison d'hôtes · Cap Ferret",
+        "services": "Sito, film",
+        "n": "+70%",
+        "label": "richieste"
+      },
+      {
+        "key": "colouraddict",
+        "name": "Colour Addict",
+        "url": "https://colouraddictofficial.com/",
+        "year": "2025",
+        "sector": "Consulenza di colore e immagine",
+        "services": "Sito, prenotazioni, brand film",
+        "n": "+85%",
+        "label": "prenotazioni online"
+      },
+      {
+        "key": "unica",
+        "name": "Atelier Unica",
+        "url": "https://atelier-unica.com/",
+        "year": "2025",
+        "sector": "Consulenza per brand di lusso",
+        "services": "Sito, motion design",
+        "n": "+60%",
+        "label": "richieste qualificate"
+      },
+      {
+        "key": "altraroma",
+        "name": "L'Altra Roma",
+        "url": "https://laltraroma.com/",
+        "year": "2025",
+        "sector": "Eventi culturali · Roma",
+        "services": "Sito, area membri, film",
+        "n": "+70%",
+        "label": "partecipazione agli eventi"
+      },
+      {
+        "key": "comodista",
+        "name": "Comodista Capital",
+        "url": "https://comodistacap.com/",
+        "year": "2025",
+        "sector": "Investimenti immobiliari · Miami",
+        "services": "Sito web",
+        "n": "+65%",
+        "label": "richieste di investitori"
+      },
+      {
+        "key": "depetris",
+        "name": "Studio De Petris",
+        "url": "https://studioassociatodepetris.com/",
+        "year": "2025",
+        "sector": "Studio tributario e legale · Roma",
+        "services": "Sito, brand film",
+        "n": "+65%",
+        "label": "richieste di consulenza"
+      }
+    ]
   }
 }

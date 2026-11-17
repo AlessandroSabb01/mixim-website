@@ -209,6 +209,29 @@ section{position:relative}
 .tray p{margin:0;font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tray .btn{height:42px;padding:0 18px;background:var(--ink);color:var(--bone)}
 
+/* work */
+.work{background:var(--char)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(48px,6vw,80px);padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(48px,5vw,72px);line-height:1;color:var(--bone)}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:15px;max-width:26ch}
+.works{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px) clamp(20px,3vw,40px);margin-top:clamp(56px,7vw,96px)}
+.wk{display:block;color:inherit}
+.wk:nth-child(even){margin-top:clamp(0px,8vw,120px)}
+.wk-img{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:960/572;background:var(--stone);border:1px solid var(--line)}
+.wk-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease),filter .8s var(--ease);filter:saturate(.85)}
+.wk:hover .wk-img img{transform:scale(1.035);filter:saturate(1)}
+.wk-go{position:absolute;right:16px;top:16px;height:38px;padding:0 16px;border-radius:99px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;background:rgba(17,17,17,.7);color:var(--bone);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transform:translateY(-6px);transition:all .5s var(--ease)}
+.wk-go svg{width:14px;height:14px}
+.wk:hover .wk-go,.wk:focus-visible .wk-go{opacity:1;transform:none}
+.wk-meta{display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:end;margin-top:22px}
+.wk h3{margin:0;font-size:clamp(24px,2.2vw,30px);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.wk .sector{margin:6px 0 0;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--muted)}
+.wk .svc{margin:12px 0 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-2)}
+.wk .res{text-align:right;grid-row:1/4;grid-column:2}
+.wk .res b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,3.6vw,56px);line-height:.9;color:var(--ochre)}
+.wk .res span{display:block;margin-top:6px;font-size:13px;color:var(--muted);max-width:16ch;margin-left:auto}
+@media (max-width:800px){.works{grid-template-columns:1fr}.wk:nth-child(even){margin-top:0}.stats{grid-template-columns:1fr;gap:20px}.wk-go{opacity:1;transform:none}}
+
 /* approach */
 .approach{background:var(--char)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.5vw,36px);margin-top:clamp(56px,7vw,96px);counter-reset:s}
@@ -251,6 +274,7 @@ section{position:relative}
 .person:nth-child(2) .mono{background:var(--bone)}
 .person h3{margin:0;font-size:clamp(32px,3.4vw,48px);font-weight:500;letter-spacing:-.03em;line-height:1}
 .person .role{margin:10px 0 0;color:var(--muted)}
+.person .bio{margin:18px 0 0;color:var(--bone-2);font-size:16px;max-width:46ch}
 .person .acts{display:flex;gap:10px;flex-wrap:wrap}
 @media (max-width:800px){.team-head,.people{grid-template-columns:1fr}.person{min-height:0}}
 
@@ -364,6 +388,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
     <nav class="nav" aria-label="Main">
       <a href="#studio">Studio</a>
       <a href="#menu">À la carte</a>
+      <a href="#work">Work</a>
       <a href="#approach">Approach</a>
       
       <a href="#faq">Questions</a>
@@ -377,6 +402,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
 <div class="mnav" id="mnav" aria-hidden="true">
   <a class="big" href="#studio">Studio</a>
   <a class="big" href="#menu">À la carte</a>
+  <a class="big" href="#work">Work</a>
   <a class="big" href="#approach">Approach</a>
   
   <a class="big" href="#faq">Questions</a>
@@ -440,6 +466,18 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
     </div>
   </section>
 
+  <section class="work sec" id="work">
+    <div class="wrap">
+      <div class="menu-head">
+        <div><span class="label rv">Selected work</span><h2 class="h2 rv rv-d1">Proof, <em>not promises.</em></h2></div>
+        <p class="lead rv rv-d2">A selection of websites and films by the founders for luxury, hospitality, real estate and professional brands in Italy, France and the United States, with the results each client saw after launch.</p>
+      </div>
+      <div class="stats rv"><div class="stat"><b>40+</b><span>projects delivered</span></div><div class="stat"><b>6</b><span>markets: Italy, Spain, France, Switzerland, USA, Canada</span></div><div class="stat"><b>2022</b><span>Mixim Creative Studio founded</span></div></div>
+      <div class="works"><a class="wk rv" href="https://orangetreehome.it/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/orangetree.webp" width="960" height="572" alt="Orange Tree Homes, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Orange Tree Homes</h3><p class="res"><b>+120%</b><span>direct bookings</span></p><p class="sector">Luxury rental · Rome</p><p class="svc">Website, booking, film · 2025</p></div></a><a class="wk rv" href="https://marcogabizon.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/gabizon.webp" width="960" height="572" alt="Marco Gabizon Atelier, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Marco Gabizon Atelier</h3><p class="res"><b>+50%</b><span>quote requests</span></p><p class="sector">Bespoke tailoring · Rome</p><p class="svc">Website, brand film · 2025</p></div></a><a class="wk rv" href="https://www.lavillamogadorcapferret.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/mogador.webp" width="960" height="572" alt="La Villa Mogador, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>La Villa Mogador</h3><p class="res"><b>+70%</b><span>inquiries</span></p><p class="sector">Guesthouse · Cap Ferret</p><p class="svc">Website, film · 2025</p></div></a><a class="wk rv" href="https://colouraddictofficial.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/colouraddict.webp" width="960" height="572" alt="Colour Addict, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Colour Addict</h3><p class="res"><b>+85%</b><span>online bookings</span></p><p class="sector">Colour and image consulting</p><p class="svc">Website, booking, brand film · 2025</p></div></a><a class="wk rv" href="https://atelier-unica.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/unica.webp" width="960" height="572" alt="Atelier Unica, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Atelier Unica</h3><p class="res"><b>+60%</b><span>qualified inquiries</span></p><p class="sector">Luxury brand consultancy</p><p class="svc">Website, motion · 2025</p></div></a><a class="wk rv" href="https://laltraroma.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/altraroma.webp" width="960" height="572" alt="L&#x27;Altra Roma, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>L&#x27;Altra Roma</h3><p class="res"><b>+70%</b><span>event participation</span></p><p class="sector">Cultural events · Rome</p><p class="svc">Website, membership, film · 2025</p></div></a><a class="wk rv" href="https://comodistacap.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/comodista.webp" width="960" height="572" alt="Comodista Capital, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Comodista Capital</h3><p class="res"><b>+65%</b><span>investor inquiries</span></p><p class="sector">Real estate investment · Miami</p><p class="svc">Website · 2025</p></div></a><a class="wk rv" href="https://studioassociatodepetris.com/" target="_blank" rel="noopener"><div class="wk-img"><img src="img/work/depetris.webp" width="960" height="572" alt="Studio De Petris, visit site" loading="lazy" decoding="async"><span class="wk-go" aria-hidden="true">Visit site <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wk-meta"><h3>Studio De Petris</h3><p class="res"><b>+65%</b><span>consultancy requests</span></p><p class="sector">Tax and legal firm · Rome</p><p class="svc">Website, brand film · 2025</p></div></a></div>
+      <div class="menu-foot rv"><span></span><a class="btn btn-ghost" href="https://alessandrosabbadini.com/" target="_blank" rel="noopener">See Alessandro's full portfolio <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+  </section>
+
   <section class="approach sec" id="approach">
     <div class="wrap">
       <span class="label rv">Approach</span>
@@ -474,7 +512,7 @@ fieldset.fld legend{padding:0;margin-bottom:10px}
         <div><span class="label rv">The founders</span><h2 class="h2 rv rv-d1">Two founders, <em>one table.</em></h2></div>
         <p class="lead rv rv-d2">A small studio by design. When you work with Mixim, you work directly with the people who think, write and build.</p>
       </div>
-      <div class="people"><article class="person rv"><div class="mono" aria-hidden="true">J</div><div><h3>Jacqueline</h3><p class="role">Co-founder · Marketing, content and social</p></div><div class="acts"><a class="btn btn-ghost btn-sm" href="mailto:studio.miximfx@gmail.com?subject=Request%20CV%20·%20Jacqueline">Request CV <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article><article class="person rv"><div class="mono" aria-hidden="true">A</div><div><h3>Alessandro</h3><p class="role">Co-founder · Design and websites</p></div><div class="acts"><a class="btn btn-ghost btn-sm" href="mailto:studio.miximfx@gmail.com?subject=Request%20CV%20·%20Alessandro">Request CV <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article></div>
+      <div class="people"><article class="person rv"><div class="mono" aria-hidden="true">J</div><div><h3>Jacqueline Obert</h3><p class="role">Co-founder · Marketing, content and social</p></div><div class="acts"><a class="btn btn-ghost btn-sm" href="mailto:studio.miximfx@gmail.com?subject=Request%20CV%20·%20Jacqueline%20Obert">Request CV <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/jacquelineobert/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article><article class="person rv"><div class="mono" aria-hidden="true">A</div><div><h3>Alessandro Sabbadini</h3><p class="role">Co-founder · Websites, film and CGI</p><p class="bio">Founder of Mixim Creative Studio since 2022. Websites, brand films and CGI for luxury, real estate and hospitality brands in six countries. Works in Italian, English, French and Spanish.</p></div><div class="acts"><a class="btn btn-ghost btn-sm" href="https://alessandrosabbadini.com/Alessandro_Sabbadini_CV.pdf" target="_blank" rel="noopener">View CV <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-solid btn-sm" href="https://alessandrosabbadini.com/" target="_blank" rel="noopener">View portfolio <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/alessandro-sabbadini-lafrance/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article></div>
     </div>
   </section>
 

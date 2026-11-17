@@ -15,11 +15,13 @@
   "team_links": {
     "jacqueline": {
       "cv": "",
-      "portfolio": ""
+      "portfolio": "",
+      "linkedin": "https://www.linkedin.com/in/jacquelineobert/"
     },
     "alessandro": {
-      "cv": "",
-      "portfolio": ""
+      "cv": "https://alessandrosabbadini.com/Alessandro_Sabbadini_CV.pdf",
+      "portfolio": "https://alessandrosabbadini.com/",
+      "linkedin": "https://www.linkedin.com/in/alessandro-sabbadini-lafrance/"
     }
   },
   "legal": {
@@ -27,5 +29,6 @@
     "address": "[Registered address, postcode, city, country]",
     "vat": "[VAT number]"
   },
-  "testimonials": []
+  "testimonials": [],
+  "portfolio_url": "https://alessandrosabbadini.com/"
 }

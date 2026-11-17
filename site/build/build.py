@@ -134,11 +134,26 @@ def gen(lang):
             acts.append(f'<a class="btn btn-ghost btn-sm" href="mailto:{e(CFG["email"])}?subject={subj}">{e(t["team_cv_request"])} {ARROW}</a>')
         if links.get("portfolio"):
             acts.append(f'<a class="btn btn-solid btn-sm" href="{e(links["portfolio"])}" target="_blank" rel="noopener">{e(t["team_portfolio"])} {ARROW}</a>')
+        if links.get("linkedin"):
+            acts.append(f'<a class="btn btn-ghost btn-sm" href="{e(links["linkedin"])}" target="_blank" rel="noopener">{e(t["team_linkedin"])} {ARROW}</a>')
+        bio = f'<p class="bio">{e(p["bio"])}</p>' if p.get("bio") else ""
         people.append(
             f'<article class="person rv"><div class="mono" aria-hidden="true">{p["initial"]}</div>'
-            f'<div><h3>{e(p["name"])}</h3><p class="role">{e(p["role"])}</p></div>'
+            f'<div><h3>{e(p["name"])}</h3><p class="role">{e(p["role"])}</p>{bio}</div>'
             f'<div class="acts">{"".join(acts)}</div></article>')
     g["team"] = "".join(people)
+
+    g["portfolio_url"] = e(CFG.get("portfolio_url", ""))
+    g["work_stats"] = "".join(f'<div class="stat"><b>{e(s["n"])}</b><span>{e(s["t"])}</span></div>' for s in t["work_stats"])
+    g["work"] = "".join(
+        f'<a class="wk rv" href="{e(w["url"])}" target="_blank" rel="noopener">'
+        f'<div class="wk-img"><img src="img/work/{w["key"]}.webp" width="960" height="572" '
+        f'alt="{e(w["name"])}, {e(t["work_visit"].lower())}" loading="lazy" decoding="async">'
+        f'<span class="wk-go" aria-hidden="true">{e(t["work_visit"])} {ARROW}</span></div>'
+        f'<div class="wk-meta"><h3>{e(w["name"])}</h3>'
+        f'<p class="res"><b>{e(w["n"])}</b><span>{e(w["label"])}</span></p>'
+        f'<p class="sector">{e(w["sector"])}</p><p class="svc">{e(w["services"])} · {e(w["year"])}</p></div></a>'
+        for w in t["work"])
 
     g["faq"] = "".join(
         f'<details class="qa"><summary>{e(q["q"])}<i aria-hidden="true"></i></summary><p>{e(q["a"])}</p></details>'
