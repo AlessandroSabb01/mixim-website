@@ -281,6 +281,15 @@ section{position:relative;z-index:2;padding:var(--s5) max(var(--gutter),env(safe
 .cols .rule{background:linear-gradient(transparent,rgba(94,42,28,.25),transparent);align-self:stretch}
 .cols p{font-size:15px;margin:16px auto 0;max-width:36ch}
 .cols .oval{margin-top:26px}
+.mb-thumb{display:block;width:min(340px,100%);margin:24px auto 0;padding:0;border:0;background:none;cursor:zoom-in;box-shadow:0 18px 34px -22px rgba(94,42,28,.45);transition:transform .5s var(--ease)}
+.mb-thumb:hover{transform:scale(1.02)}
+.mb-thumb img{display:block;width:100%;height:auto}
+.mb-box{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:16px;background:rgba(30,16,10,.86);cursor:zoom-out}
+.mb-box[hidden]{display:none}
+.mb-box img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;cursor:default}
+.mb-bar{display:flex;gap:22px;align-items:center}
+.mb-dl{font:400 26px/1 var(--script);color:#F7D89A;text-decoration:none}
+.mb-x{width:44px;height:44px;border:1px solid rgba(247,216,154,.6);border-radius:50%;background:none;color:#F7D89A;font-size:26px;line-height:1;cursor:pointer}
 @media(max-width:720px){.cols{grid-template-columns:1fr}.cols .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(94,42,28,.25),transparent)}}
 
 /* rsvp: a window onto the painting, barely breathing */
@@ -469,6 +478,11 @@ footer .langs{justify-content:center;margin-top:30px}
   </div>
 </div>
 
+<div class="mb-box" id="mb-box" role="dialog" aria-modal="true" hidden>
+  <img alt="">
+  <div class="mb-bar"><a class="mb-dl" download><span data-i18n="mb_dl">Download</span> ↓</a><button type="button" class="mb-x" aria-label="Close">×</button></div>
+</div>
+
 <!-- ═════════ HEADER ═════════ -->
 <header class="hdr" id="hdr">
   <a class="mono-link" href="#top" aria-label="Emily & Alexandre"><span class="a">E</span><span class="amp">&amp;</span><span class="b">A</span></a>
@@ -584,6 +598,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="ev_welcome">Welcome Party</p>
         <h3 class="script s-lg" data-i18n="dolce">Italian Dolce Vita</h3>
         <p data-i18n="dolce_p">An Italian Dolce Vita style, think vibrant colors, light fabrics and relaxed elegance.</p>
+        <button type="button" class="mb-thumb" data-full="img/moodboard-welcome.jpg" aria-label="Welcome Party moodboard"><img src="img/moodboard-welcome-thumb.webp" alt="Welcome Party moodboard" loading="lazy" width="720" height="511"></button>
         <a class="oval" href="https://pin.it/3baWWxGk0" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a>
       </div>
       <div class="rule" aria-hidden="true"></div>
@@ -591,6 +606,7 @@ footer .langs{justify-content:center;margin-top:30px}
         <p class="eyebrow" data-i18n="wedding_day">Wedding Day</p>
         <h3 class="script s-lg" data-i18n="blacktie">Black Tie Elegant</h3>
         <p data-i18n="blacktie_p">Please note the event will be held in a garden, black tie attire, with shoes that can handle the lawn.</p>
+        <button type="button" class="mb-thumb" data-full="img/moodboard-blacktie.jpg" aria-label="Black Tie moodboard"><img src="img/moodboard-blacktie-thumb.webp" alt="Black Tie moodboard" loading="lazy" width="720" height="511"></button>
         <a class="oval" href="https://pin.it/nuo5X9XCH" target="_blank" rel="noopener"><svg viewBox="0 0 250 58" preserveAspectRatio="none"><ellipse cx="125" cy="29" rx="124" ry="28"/><ellipse class="o2" pathLength="1" cx="125" cy="29" rx="122" ry="26" transform="rotate(-1.5 125 29)"/></svg><span data-i18n="btn_moodboard">View the moodboard</span></a><br>
         
       </div>
@@ -856,7 +872,7 @@ const I18N = {
   "steps": "Just steps from the Great Synagogue of Rome (Tempio Maggiore).",
   "citizen": "Modern design, right across from the Great Synagogue of Rome (Tempio Maggiore).",
   "visit": "Visit website",
-  "code": "Code TheRomilys · 10% off",
+  "code": "Code THE ROMILYS · 10% off",
   "others": "Other options in the city",
   "kids_eyebrow": "For Peace of Mind",
   "kids_title": "Kids &amp; Private Transfers",
@@ -891,7 +907,8 @@ const I18N = {
   "remind": "Haven't replied yet? It only takes a minute.",
   "remind_btn": "Reply to the RSVP",
   "btn_moodboard": "View the Pinterest moodboard",
-  "code_47": "Code TheRomilys · 10% off",
+  "mb_dl": "Download",
+  "code_47": "Code THE ROMILYS · 10% off",
   "code_rh": "15% off",
   "note_rh": "Contact <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> and say that you are coming for our wedding, you will get 15% off.",
   "f_first": "First name",
@@ -987,7 +1004,7 @@ const I18N = {
   "steps": "À deux pas de la Grande Synagogue de Rome (Tempio Maggiore).",
   "citizen": "Design moderne, juste en face de la Grande Synagogue de Rome (Tempio Maggiore).",
   "visit": "Voir le site",
-  "code": "Code TheRomilys · -10 %",
+  "code": "Code THE ROMILYS · -10 %",
   "others": "Autres options en ville",
   "kids_eyebrow": "En toute sérénité",
   "kids_title": "Enfants &amp; transferts privés",
@@ -1022,7 +1039,8 @@ const I18N = {
   "remind": "Vous n'avez pas encore répondu ? Cela ne prend qu'une minute.",
   "remind_btn": "Répondre au RSVP",
   "btn_moodboard": "Voir le moodboard Pinterest",
-  "code_47": "Code TheRomilys · -10 %",
+  "mb_dl": "Télécharger",
+  "code_47": "Code THE ROMILYS · -10 %",
   "code_rh": "-15 %",
   "note_rh": "Écrivez à <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> en précisant que vous venez pour notre mariage : vous bénéficierez de 15 % de réduction.",
   "f_first": "Prénom",
@@ -1118,7 +1136,7 @@ const I18N = {
   "steps": "A pochi passi dal Tempio Maggiore di Roma.",
   "citizen": "Design moderno, proprio di fronte al Tempio Maggiore di Roma.",
   "visit": "Visitate il sito",
-  "code": "Codice TheRomilys · 10% di sconto",
+  "code": "Codice THE ROMILYS · 10% di sconto",
   "others": "Altre opzioni in città",
   "kids_eyebrow": "Per la vostra tranquillità",
   "kids_title": "Bambini &amp; transfer privati",
@@ -1153,7 +1171,8 @@ const I18N = {
   "remind": "Non avete ancora risposto? Ci vuole solo un minuto.",
   "remind_btn": "Rispondete all'RSVP",
   "btn_moodboard": "Guardate il moodboard su Pinterest",
-  "code_47": "Codice TheRomilys · 10% di sconto",
+  "mb_dl": "Scarica",
+  "code_47": "Codice THE ROMILYS · 10% di sconto",
   "code_rh": "15% di sconto",
   "note_rh": "Scrivete a <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> dicendo che venite per il nostro matrimonio: avrete il 15% di sconto.",
   "f_first": "Nome",
@@ -1300,6 +1319,15 @@ const I18N = {
   const WAKE = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'];
   const woke = new Promise(res => { const go = () => { WAKE.forEach(ev => removeEventListener(ev, go, true)); res(); }; WAKE.forEach(ev => addEventListener(ev, go, { capture: true, passive: true })); });
   const small = matchMedia('(max-width: 820px), (pointer: coarse)').matches;
+
+  /* ═════════ Moodboards: thumbnail opens full size, downloadable ═════════ */
+  (() => {
+    const box = $('#mb-box'), im = box.querySelector('img'), dl = box.querySelector('.mb-dl');
+    const close = () => { box.hidden = true; im.src = ''; };
+    $$('.mb-thumb').forEach(b => b.addEventListener('click', () => { im.src = b.dataset.full; im.alt = b.getAttribute('aria-label'); dl.href = b.dataset.full; box.hidden = false; box.querySelector('.mb-x').focus(); }));
+    box.addEventListener('click', e => { if (e.target === box || e.target.closest('.mb-x')) close(); });
+    addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) close(); });
+  })();
 
   /* ═════════ Videos: load lazily, play only while visible ═════════ */
   const vio = new IntersectionObserver(es => es.forEach(e => {
