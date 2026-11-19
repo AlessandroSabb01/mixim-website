@@ -9,126 +9,6 @@
   ],
   "source": "Giotto_Picture-11.jpg"
  },
- "rome-kitchen-dining": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-10.webp"
- },
- "rome-bedroom": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-3.webp"
- },
- "rome-bathroom": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-12.webp"
- },
- "rome-room-garden": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-13.webp"
- },
- "rome-kitchenette": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-14.webp"
- },
- "rome-living-blue": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-15.webp"
- },
- "rome-bedroom-double": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Giotto_Picture-16.webp"
- },
- "crete-bedroom": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Creta_Picture-1.webp"
- },
- "crete-daybed": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Creta_Picture-2.webp"
- },
- "crete-bathroom": {
-  "w": 2201,
-  "h": 1228,
-  "widths": [
-   480,
-   960,
-   1280,
-   1920,
-   2201
-  ],
-  "source": "Creta_Picture-4.webp"
- },
  "crete-living-room": {
   "w": 2201,
   "h": 1228,
@@ -235,16 +115,6 @@
   ],
   "source": "hf_20260210_190948_4cf8e198-69de-4f79-929b-a055131ad0e0.webp"
  },
- "crete-taverna": {
-  "w": 1100,
-  "h": 614,
-  "widths": [
-   480,
-   960,
-   1100
-  ],
-  "source": "hf_20260210_194108_bbcf2182-2642-473a-8866-cfe9d1e8615a.webp"
- },
  "crete-village": {
   "w": 1100,
   "h": 614,
@@ -255,25 +125,6 @@
   ],
   "source": "hf_20260210_195105_6b636ce1-505b-4d8b-a7f1-76a5ca698b8b.webp"
  },
- "crete-harbour": {
-  "w": 1100,
-  "h": 614,
-  "widths": [
-   480,
-   960,
-   1100
-  ],
-  "source": "hf_20260210_195340_1d025224-2810-44be-8a5f-c27081f67bf9.webp"
- },
- "crete-beach": {
-  "w": 1024,
-  "h": 768,
-  "widths": [
-   480,
-   960
-  ],
-  "source": "d55b23f75_ebd5bc7b-b0ff-47a5-a352-f50bb932629d.jpg"
- },
  "crete-sunset": {
   "w": 1024,
   "h": 768,
@@ -282,15 +133,6 @@
    960
   ],
   "source": "69ce2ce3a_9a33c1b8-a635-4c8e-9156-9c8b8e424451.jpg"
- },
- "crete-coast-road": {
-  "w": 1024,
-  "h": 768,
-  "widths": [
-   480,
-   960
-  ],
-  "source": "89aa7d6ac_143e6ce0-184d-4207-9cce-61610b39c0a9.jpg"
  },
  "rome-st-peters-aerial": {
   "w": 1200,
@@ -302,14 +144,391 @@
   ],
   "source": "photo-1531572753322-ad063cecc140.jpg"
  },
- "island-seafront": {
-  "w": 1200,
+ "rome-g1-bathroom": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-18.jpg"
+ },
+ "rome-g1-bedroom": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-19.jpg"
+ },
+ "rome-g1-bedroom-2": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-20.jpg"
+ },
+ "rome-g1-bedroom-3": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-21.jpg"
+ },
+ "rome-g2-bathroom": {
+  "w": 1086,
+  "h": 1448,
+  "widths": [
+   480,
+   960,
+   1086
+  ],
+  "source": "drive-rome-12.jpg"
+ },
+ "rome-g2-bedroom": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-13.jpg"
+ },
+ "rome-g2-bedroom-2": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-14.jpg"
+ },
+ "rome-g2-dining": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-17.jpg"
+ },
+ "rome-g2-living": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-15.jpg"
+ },
+ "rome-g2-sofa-bed": {
+  "w": 1600,
   "h": 900,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-rome-16.jpg"
+ },
+ "rome-g3-bathroom": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-06.jpg"
+ },
+ "rome-g3-bedroom": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-02.jpg"
+ },
+ "rome-g3-bedroom-2": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-03.jpg"
+ },
+ "rome-g3-bedroom-3": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-05.jpg"
+ },
+ "rome-g3-kitchen": {
+  "w": 1452,
+  "h": 1083,
+  "widths": [
+   480,
+   960,
+   1280,
+   1452
+  ],
+  "source": "drive-rome-04.jpg"
+ },
+ "rome-g4-bathroom": {
+  "w": 1086,
+  "h": 1448,
+  "widths": [
+   480,
+   960,
+   1086
+  ],
+  "source": "drive-rome-01.jpg"
+ },
+ "rome-g4-bedroom": {
+  "w": 1451,
+  "h": 1084,
+  "widths": [
+   480,
+   960,
+   1280,
+   1451
+  ],
+  "source": "drive-rome-07.jpg"
+ },
+ "rome-g4-bedroom-2": {
+  "w": 1451,
+  "h": 1084,
+  "widths": [
+   480,
+   960,
+   1280,
+   1451
+  ],
+  "source": "drive-rome-08.jpg"
+ },
+ "rome-g4-bedroom-3": {
+  "w": 1086,
+  "h": 1448,
+  "widths": [
+   480,
+   960,
+   1086
+  ],
+  "source": "drive-rome-10.jpg"
+ },
+ "rome-g4-kitchenette": {
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-rome-09.jpg"
+ },
+ "rome-g4-living": {
+  "w": 1448,
+  "h": 1086,
+  "widths": [
+   480,
+   960,
+   1280,
+   1448
+  ],
+  "source": "drive-rome-11.jpg"
+ },
+ "crete2-entrance": {
+  "w": 1530,
+  "h": 2040,
+  "widths": [
+   480,
+   960,
+   1280,
+   1530
+  ],
+  "source": "drive-crete2-01.jpg"
+ },
+ "crete2-bedroom": {
+  "w": 1200,
+  "h": 1600,
   "widths": [
    480,
    960,
    1200
   ],
-  "source": "photo-1601581875309-fafbf2d3ed3a.jpg"
+  "source": "drive-crete2-02.jpg"
+ },
+ "crete2-room": {
+  "w": 1288,
+  "h": 966,
+  "widths": [
+   480,
+   960,
+   1280
+  ],
+  "source": "drive-crete2-03.jpg"
+ },
+ "crete2-daybed": {
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2048
+  ],
+  "source": "drive-crete2-04.jpg"
+ },
+ "crete2-bathroom": {
+  "w": 966,
+  "h": 1288,
+  "widths": [
+   480,
+   960
+  ],
+  "source": "drive-crete2-05.jpg"
+ },
+ "crete2-room-view": {
+  "w": 1536,
+  "h": 2048,
+  "widths": [
+   480,
+   960,
+   1280,
+   1536
+  ],
+  "source": "drive-crete2-06.jpg"
+ },
+ "crete3-kitchen": {
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920,
+   2048
+  ],
+  "source": "drive-crete3-01.jpg"
+ },
+ "crete3-room": {
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   480,
+   960,
+   1200
+  ],
+  "source": "drive-crete3-02.jpg"
+ },
+ "crete3-sofa": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-crete3-03.jpg"
+ },
+ "crete3-bedroom": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-crete3-04.jpg"
+ },
+ "crete3-kitchenette": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-crete3-06.jpg"
+ },
+ "crete-windsurf": {
+  "w": 1931,
+  "h": 1007,
+  "widths": [
+   480,
+   960,
+   1280,
+   1920
+  ],
+  "source": "drive-crete-general-01.jpg"
+ },
+ "crete-beach-rock": {
+  "w": 1200,
+  "h": 1600,
+  "widths": [
+   480,
+   960,
+   1200
+  ],
+  "source": "drive-crete-general-03.jpg"
+ },
+ "crete-seaside-taverna": {
+  "w": 900,
+  "h": 1600,
+  "widths": [
+   480,
+   900
+  ],
+  "source": "drive-crete-general-04.jpg"
+ },
+ "crete-cave-view": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280,
+   1600
+  ],
+  "source": "drive-crete-general-05.jpg"
  }
 }

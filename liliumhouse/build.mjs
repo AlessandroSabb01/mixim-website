@@ -40,16 +40,25 @@ const LOC = {
   rome: {
     meta: { titleKey: "rome.metaTitle", descKey: "rome.metaDescription", bodyClass: "page-location page-rome", headerTheme: "dark", ogImage: "rome-skyline", wa: "rome", bookHome: "rome" },
     heroImg: "rome-skyline", heroAlt: "Rome skyline at sunset", nextImg: "crete-living-room", nextAlt: "Lilium House Crete, living room", next: "crete",
-    rooms: [["rome-bathroom"], ["rome-room-garden"], ["rome-living-blue"], ["rome-kitchenette"]],
-    roomPool: ["rome-bathroom", "rome-room-garden", "rome-living-blue", "rome-kitchenette", "rome-bedroom", "rome-bedroom-double"],
+    rooms: [
+      ["rome-g1-bedroom", "rome-living-room", "rome-g1-bedroom-2", "rome-g1-bedroom-3", "rome-g1-bathroom"],
+      ["rome-g2-bedroom", "rome-g2-living", "rome-g2-dining", "rome-g2-bedroom-2", "rome-g2-sofa-bed", "rome-g2-bathroom"],
+      ["rome-g3-bedroom", "rome-g3-bedroom-2", "rome-g3-bedroom-3", "rome-g3-kitchen", "rome-g3-bathroom"],
+      ["rome-g4-bedroom", "rome-g4-living", "rome-g4-bedroom-3", "rome-g4-bedroom-2", "rome-g4-kitchenette", "rome-g4-bathroom"],
+    ],
+    roomPool: [],
     exp: ["rome-colosseum", "rome-vatican", "rome-san-saba", "rome-aventino-street", "rome-rooftops", "rome-dome-keyhole"],
   },
   crete: {
-    meta: { titleKey: "crete.metaTitle", descKey: "crete.metaDescription", bodyClass: "page-location page-crete", headerTheme: "dark", ogImage: "crete-harbour", wa: "crete", bookHome: "crete" },
-    heroImg: "crete-harbour", heroAlt: "Harbour town in eastern Crete", nextImg: "crete-dining", nextAlt: "Lilium House Crete, dining area", next: "about",
-    rooms: [["crete-bedroom"], ["crete-daybed"], ["crete-bathroom"]],
-    roomPool: ["crete-bedroom", "crete-daybed", "crete-bathroom", "crete-living-room", "crete-dining"],
-    exp: ["crete-taverna", "island-seafront", "crete-beach", "crete-sunset", "crete-coast-road", "crete-village"],
+    meta: { titleKey: "crete.metaTitle", descKey: "crete.metaDescription", bodyClass: "page-location page-crete", headerTheme: "dark", ogImage: "crete-beach-rock", wa: "crete", bookHome: "crete" },
+    heroImg: "crete-beach-rock", heroAlt: "Beach near Palekastro, eastern Crete", nextImg: "crete2-entrance", nextAlt: "Entrance of Lilium House Crete", next: "about",
+    rooms: [
+      ["crete-living-room", "crete-dining"],
+      ["crete2-bedroom", "crete2-room", "crete2-daybed", "crete2-room-view", "crete2-bathroom", "crete2-entrance"],
+      ["crete3-bedroom", "crete3-sofa", "crete3-room", "crete3-kitchen", "crete3-kitchenette"],
+    ],
+    roomPool: [],
+    exp: ["crete-seaside-taverna", "crete-windsurf", "crete-beach-rock", "crete-sunset", "crete-cave-view", "crete-village"],
   },
 };
 
@@ -106,7 +115,7 @@ const blocks = {
     const L = LOC[ctx.loc];
     return `<div class="rooms rooms--${t.rooms[ctx.loc].length}" data-stagger>${t.rooms[ctx.loc].map((r, i) => {
       const own = L.rooms[i][0];
-      const pics = [own, ...L.roomPool.filter((p) => p !== own)];
+      const pics = L.rooms[i].length > 1 ? L.rooms[i] : [own, ...L.roomPool.filter((p) => p !== own)];
       const sizes = t.rooms[ctx.loc].length === 3 ? "(min-width:1100px) 32vw, (min-width:720px) 50vw, 100vw" : "(min-width:720px) 48vw, 100vw";
       const figs = pics.map((p, k) => `<figure class="${k === 0 ? "is-active" : ""}">${img(p, `${r.name} — ${t.ui.photo} ${k + 1}`, sizes)}</figure>`).join("");
       return `
@@ -121,7 +130,7 @@ const blocks = {
         <div class="room__body">
           <h3>${r.name}</h3>
           <p>${r.text}</p>
-          <ul class="room__meta"><li>${icons.users}${r.guests}</li><li>${icons.bed}${r.bed}</li></ul>
+          <ul class="room__meta">${r.size ? `<li>${icons.home}${r.size}</li>` : ""}${r.guests ? `<li>${icons.users}${r.guests}</li>` : ""}<li>${icons.bed}${r.bed}</li>${r.extra ? `<li>${icons.leaf}${r.extra}</li>` : ""}</ul>
         </div>
       </article>`;
     }).join("")}

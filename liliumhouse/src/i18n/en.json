@@ -4,7 +4,18 @@
   "otherLangLabel": "Italiano",
   "otherLangShort": "IT",
   "skip": "Skip to content",
-  "nav": { "home": "Home", "rome": "Rome", "crete": "Crete", "about": "About", "contact": "Contact", "book": "Book Now", "openMenu": "Open menu", "closeMenu": "Close menu", "main": "Main navigation", "quick": "Quick actions" },
+  "nav": {
+    "home": "Home",
+    "rome": "Rome",
+    "crete": "Crete",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book Now",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "main": "Main navigation",
+    "quick": "Quick actions"
+  },
   "ui": {
     "call": "Call",
     "whatsapp": "WhatsApp",
@@ -37,7 +48,7 @@
     "tileBook": "Book Your Stay",
     "tileRomeLabel": "Rome — Aventino",
     "tileRome": "The Roman Home",
-    "tileRomeMeta": "Viale Giotto · 3–5 guests",
+    "tileRomeMeta": "Viale Giotto · 4 apartments",
     "tileCreteLabel": "Crete — Palekastro",
     "tileCrete": "The Cretan Home",
     "tileCreteMeta": "Sea, olive groves and open horizons",
@@ -70,22 +81,55 @@
     "beginCtaCrete": "Discover Crete"
   },
   "features": [
-    { "icon": "home", "title": "Residential, Not Hotel", "text": "Our homes are real residences, designed for living rather than brief overnight stays. Each space has a kitchen, a comfortable workspace, and room to breathe." },
-    { "icon": "sun", "title": "Natural Light & Space", "text": "Generous rooms filled with Mediterranean warmth and breathing room." },
-    { "icon": "leaf", "title": "Calm Neighborhoods", "text": "Carefully chosen locations away from tourist crowds, close to real life." },
-    { "icon": "compass", "title": "Local Connection", "text": "Thoughtful recommendations to experience each place authentically." },
-    { "icon": "key", "title": "Independent Living", "text": "Full kitchens, comfortable workspaces, and everything you need." },
-    { "icon": "hourglass", "title": "Slow Travel Philosophy", "text": "Designed for those who prefer depth over rushing through destinations." }
+    {
+      "icon": "home",
+      "title": "Residential, Not Hotel",
+      "text": "Our homes are real residences, designed for living rather than brief overnight stays. Each space has a kitchen, a comfortable workspace, and room to breathe."
+    },
+    {
+      "icon": "sun",
+      "title": "Natural Light & Space",
+      "text": "Generous rooms filled with Mediterranean warmth and breathing room."
+    },
+    {
+      "icon": "leaf",
+      "title": "Calm Neighborhoods",
+      "text": "Carefully chosen locations away from tourist crowds, close to real life."
+    },
+    {
+      "icon": "compass",
+      "title": "Local Connection",
+      "text": "Thoughtful recommendations to experience each place authentically."
+    },
+    {
+      "icon": "key",
+      "title": "Independent Living",
+      "text": "Full kitchens, comfortable workspaces, and everything you need."
+    },
+    {
+      "icon": "hourglass",
+      "title": "Slow Travel Philosophy",
+      "text": "Designed for those who prefer depth over rushing through destinations."
+    }
   ],
   "rome": {
     "metaTitle": "Lilium House Rome — Apartment in the Aventino District",
-    "metaDescription": "A warm and bright 45 sqm apartment in Rome’s elegant Aventino district, on Viale Giotto. Perfect for 3–5 guests, fully equipped kitchen, air-conditioning. Parking on request.",
+    "metaDescription": "Four warm and bright apartments (44–65 sqm) in Rome’s elegant Aventino district, on Viale Giotto, each with a private entrance, kitchen and air-conditioning. Parking on request.",
     "title": "Lilium House — <em>Rome</em>",
     "where": "Viale Giotto · Aventino",
     "introTitle": "The Roman <em>Home</em>",
-    "introText": "A warm and bright 45 sqm apartment in Rome’s elegant Aventino district. Features a spacious bedroom with king-size bed, large living room with double sofa bed, fully equipped kitchen, and bathroom with washing machine. Air-conditioned with TV and hair dryer. Perfect for 3–5 guests. Parking available on request.",
-    "facts": ["45 sqm", "3–5 guests", "King-size bed", "Double sofa bed", "Full kitchen", "Washing machine", "Air-conditioning", "Parking on request"],
-    "roomsTitle": "Rooms & <em>Spaces</em>",
+    "introText": "Four warm and bright apartments, from 44 to 65 sqm, in Rome’s elegant Aventino district. Each one has a private entrance, a separate bedroom, a living room with sofa bed, a fully equipped kitchen and its own bathroom. Air-conditioned, with TV, washing machine and coffee maker. Parking available on request.",
+    "facts": [
+      "4 apartments",
+      "44–65 sqm",
+      "Private entrance",
+      "Separate bedroom",
+      "Full kitchen",
+      "Washing machine",
+      "Air-conditioning",
+      "Parking on request"
+    ],
+    "roomsTitle": "The <em>Apartments</em>",
     "expTitle": "Experiences <em>Around Rome</em>",
     "expText": "From ancient wonders to authentic trattorias, discover the best of the eternal city.",
     "nextTitle": "Discover Our <em>Crete Home</em>",
@@ -98,7 +142,14 @@
     "where": "Palekastro · Greek Island",
     "introTitle": "The Cretan <em>Home</em>",
     "introText": "A peaceful house surrounded by nature and sea, designed for slow living and complete relaxation.",
-    "facts": ["3 rooms", "Aegean views", "Olive grove", "Private garden", "Kitchen", "Slow living"],
+    "facts": [
+      "3 rooms",
+      "Aegean views",
+      "Olive grove",
+      "Private garden",
+      "Kitchen",
+      "Slow living"
+    ],
     "roomsTitle": "Rooms & <em>Spaces</em>",
     "expTitle": "Experiences <em>Around Palekastro</em>",
     "expText": "From quiet beaches to authentic tavernas, discover the beauty of eastern Crete.",
@@ -108,33 +159,107 @@
   },
   "rooms": {
     "rome": [
-      { "name": "Giotto 1", "text": "Elegant double room with natural light and quiet surroundings.", "guests": "3 persons", "bed": "Double bed" },
-      { "name": "Giotto 2", "text": "Comfortable and bright, ideal for couples or guests.", "guests": "4 persons", "bed": "Double or twin bed" },
-      { "name": "Giotto 3", "text": "Perfect for solo travelers or longer stays.", "guests": "4 persons", "bed": "Single bed" },
-      { "name": "Giotto 4", "text": "Flexible room suitable for families or friends.", "guests": "5 persons", "bed": "Flexible" }
+      {
+        "name": "Giotto 1",
+        "text": "Ground-floor apartment with a private entrance: a spacious living room, a separate bedroom and a bathroom with shower.",
+        "size": "65 sqm",
+        "bed": "1 large double bed + 2 sofa beds"
+      },
+      {
+        "name": "Giotto 2",
+        "text": "Bright apartment with a balcony, a living room with dining area and a separate bedroom.",
+        "size": "48 sqm",
+        "bed": "1 large double bed + 1 sofa bed",
+        "extra": "Balcony"
+      },
+      {
+        "name": "Giotto 3",
+        "text": "Quiet apartment overlooking the garden, with a balcony, a separate bedroom and a well-fitted kitchen.",
+        "size": "44 sqm",
+        "bed": "1 double bed + 1 sofa bed",
+        "extra": "Garden view"
+      },
+      {
+        "name": "Giotto 4",
+        "text": "Warm apartment with a balcony and garden view, a living room with sofa bed and a separate bedroom.",
+        "size": "45 sqm",
+        "bed": "1 large double bed + 1 sofa bed",
+        "extra": "Garden view"
+      }
     ],
     "crete": [
-      { "name": "Palekastro 1", "text": "Wake up to the sound of waves and stunning Aegean views.", "guests": "5 persons", "bed": "Double bed" },
-      { "name": "Palekastro 2", "text": "Peaceful room overlooking the olive grove and private garden.", "guests": "3 persons", "bed": "Double or twin bed" },
-      { "name": "Palekastro 3", "text": "Flexible space ideal for families or additional guests.", "guests": "2 persons", "bed": "Single bed" }
+      {
+        "name": "Palekastro 1",
+        "text": "Wake up to the sound of waves and stunning Aegean views.",
+        "guests": "5 persons",
+        "bed": "Double bed"
+      },
+      {
+        "name": "Palekastro 2",
+        "text": "Peaceful room overlooking the olive grove and private garden.",
+        "guests": "3 persons",
+        "bed": "Double or twin bed"
+      },
+      {
+        "name": "Palekastro 3",
+        "text": "Flexible space ideal for families or additional guests.",
+        "guests": "2 persons",
+        "bed": "Single bed"
+      }
     ]
   },
   "experiences": {
     "rome": [
-      { "title": "The Colosseum", "text": "Experience the grandeur of ancient Rome at the iconic Colosseum, just a short journey away." },
-      { "title": "Vatican City", "text": "Discover the artistic treasures of the Vatican Museums and St. Peter’s Basilica." },
-      { "title": "San Saba District", "text": "Wander the quiet, leafy streets around the medieval church of San Saba, just steps from home." },
-      { "title": "Restaurants in Aventino", "text": "Dine in the neighborhood’s finest trattorias and enjoy peaceful local charm." },
-      { "title": "Roman Rooftops", "text": "Stroll through scenic terraces and discover hidden views across the eternal city." },
-      { "title": "Aventino District", "text": "Explore your peaceful residential neighborhood, away from tourist crowds." }
+      {
+        "title": "The Colosseum",
+        "text": "Experience the grandeur of ancient Rome at the iconic Colosseum, just a short journey away."
+      },
+      {
+        "title": "Vatican City",
+        "text": "Discover the artistic treasures of the Vatican Museums and St. Peter’s Basilica."
+      },
+      {
+        "title": "San Saba District",
+        "text": "Wander the quiet, leafy streets around the medieval church of San Saba, just steps from home."
+      },
+      {
+        "title": "Restaurants in Aventino",
+        "text": "Dine in the neighborhood’s finest trattorias and enjoy peaceful local charm."
+      },
+      {
+        "title": "Roman Rooftops",
+        "text": "Stroll through scenic terraces and discover hidden views across the eternal city."
+      },
+      {
+        "title": "Aventino District",
+        "text": "Explore your peaceful residential neighborhood, away from tourist crowds."
+      }
     ],
     "crete": [
-      { "title": "Local Tavernas", "text": "Savor authentic Cretan cuisine in family-run tavernas by the sea." },
-      { "title": "Island Living", "text": "Experience the genuine rhythm of Cretan life, far from the crowds." },
-      { "title": "Pristine Beaches", "text": "Discover untouched coastlines and crystal-clear waters just moments away." },
-      { "title": "Aegean Sunsets", "text": "Watch the sun descend over the endless horizon in peaceful solitude." },
-      { "title": "Coastal Exploration", "text": "Follow winding roads to hidden coves and secluded Mediterranean escapes." },
-      { "title": "Ancient Villages", "text": "Explore traditional Cretan villages where time moves at a different pace." }
+      {
+        "title": "Local Tavernas",
+        "text": "Savor authentic Cretan cuisine in family-run tavernas by the sea."
+      },
+      {
+        "title": "Island Living",
+        "text": "Experience the genuine rhythm of Cretan life, far from the crowds."
+      },
+      {
+        "title": "Pristine Beaches",
+        "text": "Discover untouched coastlines and crystal-clear waters just moments away."
+      },
+      {
+        "title": "Aegean Sunsets",
+        "text": "Watch the sun descend over the endless horizon in peaceful solitude."
+      },
+      {
+        "title": "Coastal Exploration",
+        "text": "Follow winding roads to hidden coves and secluded Mediterranean escapes."
+      },
+      {
+        "title": "Ancient Villages",
+        "text": "Explore traditional Cretan villages where time moves at a different pace."
+      }
     ]
   },
   "pricing": {
@@ -147,10 +272,26 @@
       "highDates": "01 Apr – 31 Oct / 22 Dec – 06 Jan",
       "lowDates": "01 Nov – 02 Mar",
       "rows": [
-        ["Per night (2 people)", "€100", "€75"],
-        ["Additional person", "€15", "€10"],
-        ["City tax (per person/day)", "€6", "€6"],
-        ["Final cleaning", "€50", "€50"]
+        [
+          "Per night (2 people)",
+          "€100",
+          "€75"
+        ],
+        [
+          "Additional person",
+          "€15",
+          "€10"
+        ],
+        [
+          "City tax (per person/day)",
+          "€6",
+          "€6"
+        ],
+        [
+          "Final cleaning",
+          "€50",
+          "€50"
+        ]
       ]
     },
     "crete": {
@@ -158,10 +299,26 @@
       "highDates": "15 May – 15 Oct",
       "lowDates": "15 Oct – 15 May",
       "rows": [
-        ["Per apartment", "€70 – €100", "€40 – €80"],
-        ["Additional person", "€15", "€10"],
-        ["City tax (per person/day)", "€8", "€8"],
-        ["Final cleaning", "€30", "€30"]
+        [
+          "Per apartment",
+          "€70 – €100",
+          "€40 – €80"
+        ],
+        [
+          "Additional person",
+          "€15",
+          "€10"
+        ],
+        [
+          "City tax (per person/day)",
+          "€8",
+          "€8"
+        ],
+        [
+          "Final cleaning",
+          "€30",
+          "€30"
+        ]
       ]
     }
   },
@@ -181,10 +338,20 @@
     "storyP2": "From the quiet streets of Rome’s Aventino district to the open landscapes of eastern Crete, Lilium House reflects a Mediterranean way of living — calm, authentic, and unhurried.",
     "definesTitle": "What Defines a <em>Lilium House</em>",
     "philosophyTitle": "Our <em>Philosophy</em>",
-    "philosophy": ["Calm over excess", "Authentic neighborhoods", "Thoughtful, lived-in spaces", "Independence and privacy", "Connection to place"],
+    "philosophy": [
+      "Calm over excess",
+      "Authentic neighborhoods",
+      "Thoughtful, lived-in spaces",
+      "Independence and privacy",
+      "Connection to place"
+    ],
     "practicalTitle": "Practical <em>Information</em>",
     "checkinTitle": "Check-in & Stay Information",
-    "checkin": ["Flexible check-in upon request", "Quiet residential homes", "Suitable for short and long stays"],
+    "checkin": [
+      "Flexible check-in upon request",
+      "Quiet residential homes",
+      "Suitable for short and long stays"
+    ],
     "contactTitle": "For availability, questions, or special requests, feel free to contact us directly.",
     "homesTitle": "Discover Our <em>Homes</em>",
     "beginTitle": "Begin Your Stay with <em>Lilium House</em>",
