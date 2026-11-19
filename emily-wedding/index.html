@@ -417,6 +417,9 @@ footer .remind{margin:40px auto 0;padding-top:30px;border-top:1px solid rgba(94,
 footer .remind p{font-size:14px}
 footer .remind .oval{margin-top:16px}
 footer .langs{justify-content:center;margin-top:30px}
+footer .credit{margin-top:26px;font:300 11px/1.6 var(--sans);letter-spacing:.04em;opacity:.65}
+footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+footer .credit a:hover{color:var(--sunset)}
 
 /* scroll seal (progress + back to top) */
 .sealprog{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border:0;background:none;cursor:pointer;opacity:0;transform:scale(.6);transition:opacity .6s,transform .6s var(--ease)}
@@ -813,6 +816,7 @@ footer .langs{justify-content:center;margin-top:30px}
     <a class="oval" href="#rsvp"><svg viewBox="0 0 210 58" preserveAspectRatio="none"><ellipse cx="105" cy="29" rx="104" ry="28"/><ellipse class="o2" pathLength="1" cx="105" cy="29" rx="102" ry="26" transform="rotate(-2 105 29)"/></svg><span data-i18n="remind_btn">Reply to the RSVP</span></a>
   </div>
   <div class="langs" data-langs></div>
+  <p class="credit" data-i18n="credit">Want a website like this for your wedding? <a href="https://alessandrosabbadini.com/" target="_blank" rel="noopener">Contact Alessandro Sabbadini</a></p>
 </footer>
 
 <button class="sealprog" type="button" aria-label="Back to top"><img src="img/seal.webp" alt=""><svg viewBox="0 0 58 58"><circle class="tr" cx="29" cy="29" r="27.5"/><circle class="pg" cx="29" cy="29" r="27.5" pathLength="1"/></svg><span>E&amp;A</span></button>
@@ -908,6 +912,7 @@ const I18N = {
   "remind_btn": "Reply to the RSVP",
   "btn_moodboard": "View the Pinterest moodboard",
   "mb_dl": "Download",
+  "credit": "Want a website like this for your wedding? <a href=\"https://alessandrosabbadini.com/\" target=\"_blank\" rel=\"noopener\">Contact Alessandro Sabbadini</a>",
   "code_47": "Code THE ROMILYS · 10% off",
   "code_rh": "15% off",
   "note_rh": "Contact <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> and say that you are coming for our wedding, you will get 15% off.",
@@ -1040,6 +1045,7 @@ const I18N = {
   "remind_btn": "Répondre au RSVP",
   "btn_moodboard": "Voir le moodboard Pinterest",
   "mb_dl": "Télécharger",
+  "credit": "Vous voulez un site comme celui-ci pour votre mariage ? <a href=\"https://alessandrosabbadini.com/\" target=\"_blank\" rel=\"noopener\">Contactez Alessandro Sabbadini</a>",
   "code_47": "Code THE ROMILYS · -10 %",
   "code_rh": "-15 %",
   "note_rh": "Écrivez à <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> en précisant que vous venez pour notre mariage : vous bénéficierez de 15 % de réduction.",
@@ -1172,6 +1178,7 @@ const I18N = {
   "remind_btn": "Rispondete all'RSVP",
   "btn_moodboard": "Guardate il moodboard su Pinterest",
   "mb_dl": "Scarica",
+  "credit": "Volete un sito come questo per il vostro matrimonio? <a href=\"https://alessandrosabbadini.com/\" target=\"_blank\" rel=\"noopener\">Contattate Alessandro Sabbadini</a>",
   "code_47": "Codice THE ROMILYS · 10% di sconto",
   "code_rh": "15% di sconto",
   "note_rh": "Scrivete a <a href=\"mailto:hospitality@rhinocerosroma.com\">hospitality@rhinocerosroma.com</a> dicendo che venite per il nostro matrimonio: avrete il 15% di sconto.",
