@@ -38,16 +38,14 @@
     else window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + (offset || -80), behavior: reduce ? "auto" : "smooth" });
   }
 
-  /* ---------------- Intro: the lily fills from 0 to 100 ---------------- */
+  /* ---------------- Intro: the wordmark fills from bottom to top ---------------- */
   function runIntro(done) {
     var loader = $("#loader");
     if (!loader || doc.classList.contains("no-intro")) { if (loader) loader.remove(); done(); return; }
     try { sessionStorage.setItem("lh-intro", "1"); } catch (e) {}
-    var wave = $("#lily-wave", loader);
-    var pctEl = $(".loader__pct", loader);
-    var bar = $(".loader__bar i", loader);
+    var word = $(".loader__word", loader);
     var start = performance.now();
-    var MIN = 2200, MAX = 6000;
+    var MIN = 1900, MAX = 6000;
     var ready = false, shown = 0;
     var waits = [];
     var heroImg = $(".hero__media img, .page-hero__media img");
@@ -55,30 +53,20 @@
     if (document.fonts && document.fonts.ready) waits.push(document.fonts.ready);
     Promise.all(waits).then(function () { ready = true; });
     setTimeout(function () { ready = true; }, MAX);
-
-    function wavePath(level, t) {
-      var y = 118 - level * 124;
-      var amp = 2.4 * (1 - level) + 0.5;
-      var d = "M -10 " + y.toFixed(2);
-      for (var x = -10; x <= 110; x += 5) d += " L " + x + " " + (y + Math.sin((x / 100) * Math.PI * 2.2 + t / 280) * amp).toFixed(2);
-      return d + " L 110 130 L -10 130 Z";
-    }
     function frame(now) {
       var timeP = Math.min((now - start) / MIN, 1);
       var eased = 1 - Math.pow(1 - timeP, 3);
       var target = ready ? eased : Math.min(eased, 0.9);
       shown += (target - shown) * 0.12;
       if (target >= 1 && shown > 0.995) shown = 1;
-      if (wave) wave.setAttribute("d", wavePath(shown, now));
-      if (pctEl) pctEl.textContent = Math.round(shown * 100);
-      if (bar) bar.style.transform = "scaleX(" + shown + ")";
+      if (word) word.style.setProperty("--p", shown.toFixed(4));
       if (shown < 1) requestAnimationFrame(frame); else finish();
     }
     function finish() {
       if (hasGsap) {
         gsap.timeline({ onComplete: function () { loader.remove(); } })
-          .to(".loader__lily", { scale: 1.08, duration: 0.45, ease: "back.out(2.5)" })
-          .add(function () { done(); }, "+=0.05")
+          .to({}, { duration: 0.25 })
+          .add(function () { done(); })
           .to(loader, { clipPath: "inset(0 0 100% 0)", duration: 1.05, ease: "expo.inOut" }, "<")
           .to(".loader__inner", { y: -60, opacity: 0, duration: 0.8, ease: "power2.in" }, "<");
       } else {
